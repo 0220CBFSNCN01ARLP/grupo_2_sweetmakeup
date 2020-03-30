@@ -31,3 +31,8 @@ Referentes
 - Huda Beauty: https://hudabeauty.com/en_AR/home?changeCountry=true
 - Tarte: https://tartecosmetics.com/en_AR/home
 - BeautyBay: https://www.beautybay.com/
+
+BRAINSTORMING de "cosas" sobre la industria:
+5 patrones que se repiten en las paginas webs: uñas, labios, ojos, cejas, piel.
+La edad influye a la hora de elegir una base.
+Influencia de la Colorimetria en el makeup. Estudiar la colorimetria.
