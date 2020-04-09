@@ -21,17 +21,18 @@ Resumen de entregables:
 TEMATICA DEL SITIO:
 
 -   ¿Qué productos o servicios brindará nuestro sitio?
-    * Nuestra plataforma vendera productos de makeup (comestica) y servicio de asesoramiento para el mismo. Nuestro objetivo es que por medio de diferentes preguntas que la herramienta le brinda al usuario, la plataforma sea lo suficientemente inteligente para poder brindarle los mejores productos segun: su piel, sus ojos, sus cejas, uñas, entre otras cosas.
+    * Nuestra plataforma vendera productos de makeup (comestica) y servicio de asesoramiento para el mismo. Nuestro objetivo es que dicho asesoramiento, se de por medio de un breve cuestionario el cual nos permita conocer al usuario y brindarle los mejores productos segun: su piel, ojos, cejas, uñas, entre otras cosas.
+    Y a mediano plazo, lograr esto con reconocimiento facial.
 
 -   ¿Quién será nuestra audiencia objetivo?
-    * Nuestra audiciencia objetivo: mujeres de entre 15 años a 35 años (millenials). Su frustracion: no poder encontrar el makeup perfecto para ellas.
+    * Audiciencia objetivo: mujeres de entre 16 años y 35 años (millenials). Su frustracion: no poder encontrar el makeup perfecto para ellas. Personas con un perfil de la estetica marcado.
 
 -   ¿Cómo ajustaremos nuestra oferta a ese público?
-    * Asesoramiento personalizado y automatizado.
+    * Asesoramiento personalizado.
 
 
 -   Referentes del mercado:
-    * MAC Cosmetics: https://www.maccosmetics.com/ 
+    * MAC Cosmetics: https://www.maccosmetics.com/
     Una marca líder, con un ecommerce muy completo. El diseño prioriza imágenes grandes, títulos en mayúsculas y color blanco y negro, logrando una estética muy llamativa y memorable. Nos llama la atención la función de "virtual try on" donde el producto se superpone a la imagen de una modelo, o del mismo cliente, por medio de filtros.
 
     * ColourPop: https://colourpop.com/
