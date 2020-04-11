@@ -25,7 +25,7 @@ TEMATICA DEL SITIO:
     Y a mediano plazo, lograr esto con reconocimiento facial.
 
 -   ¿Quién será nuestra audiencia objetivo?
-    * Audiciencia objetivo: mujeres de entre 16 años y 35 años (millenials). Su frustracion: no poder encontrar el makeup perfecto para ellas. Personas con un perfil de la estetica marcado.
+    * Audiciencia objetivo: mujeres sin conocimiento del makeup, de entre 16 años y 35 años (millenials). Su frustracion: no poder encontrar el makeup perfecto para ellas. Personas con un perfil de la estetica marcado pero con poco conocimiento de makeup.
 
 -   ¿Cómo ajustaremos nuestra oferta a ese público?
     * Asesoramiento personalizado.
