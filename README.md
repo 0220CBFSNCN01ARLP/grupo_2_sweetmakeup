@@ -52,3 +52,8 @@ BRAINSTORMING sobre la industria:
 - 5 patrones que se repiten en las paginas webs: uñas, labios, ojos, cejas, piel.
 - La edad influye a la hora de elegir una base.
 - Influencia de la Colorimetria en el makeup. Estudiar la colorimetria.
+---
+
+URL´s Trello:
+-   Sprint´s: https://trello.com/b/TVwpqKv8/grupo-2-sprints
+-   Starfish retrospective: https://trello.com/b/iiNZfon6/grupo-2-starfish-retrospective
