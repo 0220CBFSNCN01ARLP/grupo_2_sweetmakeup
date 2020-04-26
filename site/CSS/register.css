@@ -3,50 +3,6 @@
 }
 
 
-/*Globales */
-
-
-/*header*/
-
-.site-header {
-    background-color: #F2D7DE;
-    height: 80px;
-    margin: 0px;
-}
-
-.site-header nav a {
-    padding-left: 21px;
-    font-size: 22.5px;
-}
-
-.navegacion1 {
-    width: 33%;
-    float: left;
-    padding: 2px 0px;
-}
-
-.navegacion2 {
-    float: left;
-    width: 33%;
-    text-align: center;
-    padding: 25px 0px;
-}
-
-.navegacion3 {
-    float: right;
-    width: 33%;
-    text-align: right;
-    padding: 25px 0px;
-}
-
-a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-}
-
-
 /*main*/
 
 .contenedor {
@@ -58,7 +14,7 @@ a {
 }
 
 h1 {
-    padding-left: 33%;
+    padding-left: 38%;
     font-size: 1.6rem;
 }
 
@@ -82,12 +38,6 @@ section {
     margin-bottom: 2rem;
 }
 
-.connect1 a {
-    padding-left: 10px;
-    font-size: 22.5px;
-    color: white;
-}
-
 .connect2 {
     font-size: 22.5px;
     text-align: center;
@@ -99,10 +49,12 @@ section {
     margin-bottom: 2rem;
 }
 
-.connect2 a {
+form nav a {
     padding-left: 10px;
-    font-size: 22.5px;
+    font-size: 25.5px;
     color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 
@@ -174,41 +126,8 @@ button:hover {
 }
 
 
-/*footer*/
-
-footer {
-    overflow: hidden;
-    margin: 0px;
-    background-color: rgb(174, 169, 172)
-}
-
-.footer-columna1 {
-    width: 33%;
-    float: left;
-    text-align: center;
-    padding: 10px;
-}
-
-.footer-columna2 {
-    width: 33%;
-    float: left;
-    text-align: center;
-    padding: 10px;
-}
-
-.redes-sociales {
-    width: 33%;
-    float: right;
-    padding: 2% 0%;
-    font-size: 30.5px;
-}
-
-.redes-sociales a {
-    padding-left: 20px 0px;
-    padding-left: 50px;
-}
-
+/*
 .footer-derechos {
     display: flex;
     width: 100%;
-}
+}*/
