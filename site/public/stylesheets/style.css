@@ -7,6 +7,9 @@ a {
   color: #00B7FF;
 }
 
+/* La idea es poner todo el CSS de la barra principal en style.css
+ya que se repite en todas la paginas */
+
 .navegacion1 {
   display: block;
   height: 71px;
