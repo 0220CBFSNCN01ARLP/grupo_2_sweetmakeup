@@ -1,0 +1,15 @@
+.imagen-home {
+    width: 100%;
+    height: 10%;
+    opacity: 0.5;
+}
+
+.img-producto-rostro {
+    width: 20%;
+    height: 20%;
+
+}
+
+#section-face {
+    background-color: blue;
+}

@@ -7,3 +7,31 @@ a {
   color: #00B7FF;
 }
 
+.navegacion1 {
+  display: block;
+  height: 71px;
+  background-color: #F2D7DE;
+  opacity: 0.5;
+}
+
+#logo {
+  height: 20px;
+  width: 70px;
+}
+
+ul li {
+  text-align: center;
+}
+
+.navegacion1 ul {
+  display: inline-block;
+}
+
+.navegacion1 ul li {
+  display: inline-block;
+}
+
+#nav-right {
+  float: right;
+  margin:10px;
+}
