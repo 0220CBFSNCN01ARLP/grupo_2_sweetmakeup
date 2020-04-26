@@ -43,19 +43,28 @@
             <li><img src="../IMG/productoLabios3.png" alt="Imagen del producto 3"></li>
         </ul>
     </div>
-    <article class=productBox>
+    <article class=productCard>
         <h1 class="productName">Nombre del Producto</h1>
         <img class= "imgMain"src="../img/productoLabios1.png" alt="">
+        <p class= "price">$500</p>
         <button class= "tryItOn">Try it on</button>
 
     </article>
 
-    <article class=productVariants>
-        <label for="color">Tono:</label>
-        <ul id= "color">
-            <li></li>
-        </ul>
+    <article class=productDetails>
 
+        <span>Tono:</span>
+        <ul id= "color">
+            <li><input type="radio" name= "color" value="rojo" id= "rojo"><label for="rojo">Rojo</label></li>
+            <li><input type="radio" name= "color" value="rosa" id= "rosa"><label for="rosa">Rosa</label></li>
+            <li><input type="radio" name= "color" value="fucsia" id= "fucsia"><label for="fucsia">Fucsia</label></li>
+        </ul>
+        <button class= "carrito">
+            Agregar al Carrito
+        </button>
+        <button class= "wishlist">
+            Agregar a la Wishlist
+        </button>
     </article>
 </body>
 
