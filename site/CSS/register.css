@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/*Globales */
+
+
+/*header*/
+
+.site-header {
+    background-color: #F2D7DE;
+    height: 80px;
+    margin: 0px;
+}
+
+.site-header nav a {
+    padding-left: 21px;
+    font-size: 22.5px;
+}
+
+.navegacion1 {
+    width: 33%;
+    float: left;
+    padding: 2px 0px;
+}
+
+.navegacion2 {
+    float: left;
+    width: 33%;
+    text-align: center;
+    padding: 25px 0px;
+}
+
+.navegacion3 {
+    float: right;
+    width: 33%;
+    text-align: right;
+    padding: 25px 0px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+
+/*main*/
+
+.contenedor {
+    padding: 5%;
+    margin: 0px;
+    background-image: url(../IMG/fondo-formulario.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    padding-left: 33%;
+    font-size: 1.6rem;
+}
+
+section {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: rgba(238, 238, 238, 0.4);
+    border: pink solid 2px;
+}
+
+.connect1 {
+    font-size: 22.5px;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    float: left;
+    width: 50%;
+    background-color: rgb(2, 2, 85);
+    margin-bottom: 2rem;
+}
+
+.connect1 a {
+    padding-left: 10px;
+    font-size: 22.5px;
+    color: white;
+}
+
+.connect2 {
+    font-size: 22.5px;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    float: left;
+    width: 50%;
+    background-color: cornflowerblue;
+    margin-bottom: 2rem;
+}
+
+.connect2 a {
+    padding-left: 10px;
+    font-size: 22.5px;
+    color: white;
+}
+
+
+/*
+input {
+    font-size: 22.5px;
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border: none;
+}
+*/
+
+form .campo {
+    font-size: 22.5px;
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #fdfbfb;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+.contenedor-novedades {
+    padding: 10px;
+}
+
+.contenedor-novedades label {
+    font-size: 24px;
+    padding-left: 14px;
+    color: rgb(27, 27, 27);
+}
+
+form .campo-novedades {
+    float: left;
+    font-size: 22.5px;
+    width: 10%;
+}
+
+input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+    background-color: #fdfbfb;
+}
+
+.p-olvidastecontraseña {
+    padding-top: 5px;
+    font-size: 24px;
+    color: rgb(27, 27, 27);
+}
+
+button {
+    color: white;
+    background-color: rgb(255, 139, 255);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    text-align: center;
+    border: none;
+    display: block;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+/*footer*/
+
+footer {
+    overflow: hidden;
+    margin: 0px;
+    background-color: rgb(174, 169, 172)
+}
+
+.footer-columna1 {
+    width: 33%;
+    float: left;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-columna2 {
+    width: 33%;
+    float: left;
+    text-align: center;
+    padding: 10px;
+}
+
+.redes-sociales {
+    width: 33%;
+    float: right;
+    padding: 2% 0%;
+    font-size: 30.5px;
+}
+
+.redes-sociales a {
+    padding-left: 20px 0px;
+    padding-left: 50px;
+}
+
+.footer-derechos {
+    display: flex;
+    width: 100%;
+}
