@@ -1,0 +1,40 @@
+.productBox {
+  float: left;
+  margin-left: 20px;
+  margin-top: 30px;
+  width: 400px;
+  height: 600px;
+  border: solid 1px black;
+}
+
+.imgMain {
+    width: 90%;
+}
+
+.productName {
+  font-weight: bold;
+  text-align: center;
+}
+
+.productImgList {
+  float: left;
+}
+
+.productImgList img {
+  width: 100px;
+}
+
+.productImgList ul {
+  list-style-type: none;
+}
+
+.tryItOn {
+    text-transform: uppercase;
+    text-align: center;
+    background-color: white;
+    border: solid 1px black;
+}
+
+.tryItOn :hover{
+    font-weight: bold;
+}
