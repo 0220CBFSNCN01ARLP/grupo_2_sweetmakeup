@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
         <link rel="stylesheet" href="../CSS/style.css">
         <link rel="stylesheet" href="../CSS/loadProduct.css">
-        <title>Make.u</title>
+        <title>Make.u - Load Product</title>
     </head>
 
 <body>
@@ -34,19 +34,55 @@
     </header>
 
     <!-- Menu para la carga de producto -->
-    <div class="encabezado">
+    <nav id="navbar">
         <h2 id="title-welcome">Menu del administrador</h2>
-        <nav id="navbar">
-            <ul>
-                <li>
-                    <a href="#">Cargar un producto     <i class="fa fa-chevron-right"></i></a>
-            </ul>
-        </nav>
-    </div>
-
+        <ul>
+            <li>
+                <a href="#">Cargar un producto     <i class="fa fa-chevron-right"></i></a>
+        </ul>
+    </nav>
 
     <!-- Cargar el producto -->
-    <main></main>
+    <main id="main">
+        <div class="div1"><h1>Nombre del producto</h1>
+        </div>
+        <div class="div2">
+            <ul>
+                <li class="li1">
+                    <form action="" method="POST">
+                        <label for="familia">Familia</label> <br>
+                        <select name="familia" id="">
+                            <option value="rostro">Rostro</option>
+                            <option value="labios">Labios</option>
+                            <option value="ojos">Ojos</option>
+                        </select>
+                    </form>
+                </li>
+                <li class="li2">
+                    <form action="" method="POST">
+                        <label for="familia">Sub-Familia</label> <br>
+                        <select name="familia" id="">
+                            <option value="rostro">Rostro</option>
+                            <option value="labios">Labios</option>
+                            <option value="ojos">Ojos</option>
+                        </select>
+                    </form>
+                </li>
+                <li class="li3">
+                    <form action="" method="POST">
+                        <label for="familia">Marca</label> <br>
+                        <select name="familia" id="">
+                            <option value="rostro">Rostro</option>
+                            <option value="labios">Labios</option>
+                            <option value="ojos">Ojos</option>
+                        </select>
+                    </form>
+                </li>
+            </ul>
+        </div>
+            <!-- <img src="../IMG/productoFace2.jpg" alt=""> -->
+        </div>
+    </main>
 
 </body>
 </html>
