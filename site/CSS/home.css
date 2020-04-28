@@ -1,7 +1,8 @@
 #section-home {
     position: relative;
-    /* display: inline-block; */
+    display: inline-block;
     text-align: center;
+    height: 100%;
 }
 
 #title-welcome {
@@ -20,7 +21,8 @@
 
 .imagen-home {
     width: 100%;
-    height: 10%;
+    /* height: 10%; */
+    object-fit: cover;
 }
 
 .section {
