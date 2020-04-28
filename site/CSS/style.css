@@ -1,113 +1,170 @@
 /*Globales */
 
+body {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*header-movil*/
+
+.mobile-header {
+  display: none;
+  background-color: #f2d7de;
+  height: 80px;
+  margin: 0px;
+  width: 100%;
+}
+
+.link-home {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  object-fit: contain;
+}
+
+.drop-down-menu {
+  padding: 1.5%;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  display: flex;
+}
+
+.drop-down-menu i {
+  font-size: 20px;
+  color: black;
+}
+.header-right {
+  display: flex;
+  padding: 1.5%;
+  font-size: 20px;
+}
+.header-right a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
 
 /*header*/
-
 .site-header {
-    background-color: #F2D7DE;
-    height: 80px;
-    margin: 0px;
+  background-color: #f2d7de;
+  height: 80px;
+  margin: 0px;
+  width: 100%;
 }
 
 .site-header nav a {
-    padding: 0px 30px;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
+  padding: 1.5%;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 
 .navegacion1 {
-    width: 33%;
-    float: left;
-    padding: 7px 0px;
-    left: 2%;
-    position: relative;
+  width: 20%;
+  float: left;
+  padding: 7px 0px;
+  left: 2%;
+  position: relative;
 }
 
 .navegacion2 {
-    display: flex;
-    float: left;
-    width: 33%;
-    text-align: center;
-    padding: 12px 0px;
-    list-style: none;
-    left: 3%;
-    position: relative;
+  display: flex;
+  float: left;
+  width: 33%;
+  text-align: center;
+  padding: 12px 0px;
+  list-style: none;
+  left: 3%;
+  position: relative;
 }
 
 .navegacion3 {
-    display: flex;
-    float: right;
-    width: 33%;
-    padding: 12px 0px;
-    list-style: none;
-    left: 7%;
-    position: relative;
+  display: flex;
+  float: right;
+  width: 33%;
+  padding: 12px 0px;
+  list-style: none;
+  left: 7%;
+  position: relative;
 }
 
+/*Responsive*/
+@media (max-width: 425px) {
+  .site-header {
+    display: none;
+  }
+  .mobile-header {
+    display: flex;
+    flex-direction: row;
+  }
+}
 
 /*footer*/
 
 footer {
-    overflow: hidden;
-    margin: 0px;
-    background-color: rgb(174, 169, 172)
+  overflow: hidden;
+  margin: 0px;
+  background-color: rgb(174, 169, 172);
 }
 
 .footer-columna1 {
-    width: 33%;
-    float: left;
-    text-align: center;
-    padding: 10px;
+  width: 33%;
+  float: left;
+  text-align: center;
+  padding: 10px;
 }
 
 .footer-columna2 {
-    width: 33%;
-    float: left;
-    text-align: center;
-    padding: 10px;
+  width: 33%;
+  float: left;
+  text-align: center;
+  padding: 10px;
 }
 
 footer div.redes-sociales {
-    width: 33%;
-    float: right;
-    text-align: center;
+  width: 33%;
+  float: right;
+  text-align: center;
 }
 
 footer h3 {
-    color: #ffffff;
-    text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
-    margin-bottom: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 20px;
 }
 
 footer h3 span {
-    color: #F2D7DE;
+  color: #f2d7de;
 }
 
 footer nav.redes-sociales {
-    text-align: center;
+  text-align: center;
 }
 
 footer a {
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: bold;
-    color: black;
-    padding-left: 25px;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  padding-left: 25px;
 }
 
 footer p {
-    font-size: 20px;
-    color: black;
+  font-size: 20px;
+  color: black;
 }
 
 p.copyright {
-    display: flex;
-    width: 100%;
-    padding: 20px 0;
-    color: black;
-    margin: 0;
-    text-align: center;
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  color: black;
+  margin: 0;
+  text-align: center;
 }
