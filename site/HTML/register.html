@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/register.css">
     <link rel="stylesheet" href="../CSS/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulario Registro</title>
 </head>
 
@@ -14,7 +15,7 @@
     <header class="site-header ">
         <nav>
             <div class="navegacion1">
-                <img src="../IMG/logo.jpg" alt="Logotipo de Make.u">
+                <img src="../IMG/logo3.png" alt="Logotipo de Make.u">
             </div>
 
             <ul class="navegacion2">
@@ -36,7 +37,7 @@
     <main class="contenedor ">
         <!-- <img width="100% " src="/HTML5/modelo-imagenFormulario.jpg " alt="Imagen de fondo del Formulario "> -->
         <h1>Llena el formulario de Contacto</h1>
-        <section>
+        <section class="section-contenedor">
 
             <form action=" " method="GET ">
                 <nav>
@@ -55,22 +56,22 @@
 
 
                 <p><label for="nombre "></label></p>
-                <p><input class="campo" type="text " id="nombre " name="nombre " placeholder="First Name "></p>
+                <p><input class="campo" type="text " id="nombre " name="nombre " placeholder="First Name " required></p>
 
 
 
                 <p><label for="apellido "></label></p>
-                <p><input class="campo" type="text " id="apellido " name="apellido " placeholder="Last Name "></p>
+                <p><input class="campo" type="text " id="apellido " name="apellido " placeholder="Last Name " required></p>
 
 
 
                 <p><label for="email "></label></p>
-                <p><input class="campo" type="email " id="email " name="email " placeholder="your@email.com "></p>
+                <p><input class="campo" type="email " id="email " name="email " placeholder="your@email.com " required></p>
 
 
 
                 <p><label for="password "></label></p>
-                <p><input class="campo" type="password " id="password " name="password " placeholder="password "></p>
+                <p><input class="campo" type="password " id="password " name="password " placeholder="password " required></p>
 
 
                 <div class="contenedor-novedades">
@@ -88,28 +89,16 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-contenedor">
-            <div class="footer-columna1">
-                <p>Parrafo 1 , ver que Opciones a poner? un SOBRE Make.U con un breve comentario o un link . </p>
-
-            </div>
-            <div class="footer-columna2">
-                <p>Parrafo 2, otra opcion seria repetir los Enlaces del Header, o crear unos nuevos (pero siendo nuevos, implica hacer nuevos archivos html).</p>
-            </div>
-            <div class="redes-sociales ">
-                <h3>Redes<span> Sociales</span></h3>
-                <nav class="redes-sociales">
-                    <a href="https://www.facebook.com/ "><i class="fab fa-facebook-f "></i></a>
-                    <a href="https://www.instagram.com/ "><i class="fab fa-twitter "></i></a>
-                    <a href="# "><i class="fab fa-pinterest "></i></a>
-                    <a href="# "><i class="fab fa-youtube "></i></a>
-                    <a href="# "><i class="fab fa-instagram "></i></a>
-                </nav>
-            </div>
-        </div>
-        <div class="footer-derechos">
-            <p class="copyright">Todos los derechos reservados</p>
+    <footer class="site-footer seccionf">
+        <div class="contenedorf contenedor-footer">
+            <nav class="redes">
+                <a href="https://www.facebook.com/ "><i class="fab fa-facebook-f "></i></a>
+                <a href="https://www.instagram.com/ "><i class="fab fa-twitter "></i></a>
+                <a href="# "><i class="fab fa-pinterest "></i></a>
+                <a href="# "><i class="fab fa-youtube "></i></a>
+                <a href="# "><i class="fab fa-instagram "></i></a>
+            </nav>
+            <p class="footer-derechos">Todos los Derechos Reservados 2020 </p>
         </div>
     </footer>
 
