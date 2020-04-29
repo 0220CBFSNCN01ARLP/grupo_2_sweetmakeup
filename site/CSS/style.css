@@ -1,16 +1,68 @@
 /*Globales */
 
+body {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/*header-movil*/
+
+.mobile-header {
+    display: none;
+    background-color: #f2d7de;
+    height: 80px;
+    margin: 0px;
+    width: 100%;
+}
+
+.link-home {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    object-fit: contain;
+}
+
+.drop-down-menu {
+    padding: 1.5%;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    display: flex;
+}
+
+.drop-down-menu i {
+    font-size: 20px;
+    color: black;
+}
+
+.header-right {
+    display: flex;
+    padding: 1.5%;
+    font-size: 20px;
+}
+
+.header-right a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
 
 /*header*/
 
 .site-header {
-    background-color: #F2D7DE;
+    background-color: #f2d7de;
     height: 80px;
     margin: 0px;
+    width: 100%;
 }
 
 .site-header nav a {
-    padding: 0px 30px;
+    padding: 1.5%;
     font-size: 20px;
     text-decoration: none;
     font-weight: bold;
@@ -18,9 +70,9 @@
 }
 
 .navegacion1 {
-    width: 33%;
+    width: 20%;
     float: left;
-    padding: 2px 0px;
+    padding: 7px 0px;
     left: 2%;
     position: relative;
 }
@@ -34,7 +86,6 @@
     list-style: none;
     left: 3%;
     position: relative;
-    font-family: "Josefina Sans";
 }
 
 .navegacion3 {
@@ -45,6 +96,19 @@
     list-style: none;
     left: 7%;
     position: relative;
+}
+
+
+/*Responsive*/
+
+@media (max-width: 425px) {
+    .site-header {
+        display: none;
+    }
+    .mobile-header {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 
