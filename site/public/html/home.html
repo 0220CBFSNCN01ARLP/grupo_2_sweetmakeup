@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Raleway">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/home.css">
     <title>Make.u</title>
@@ -15,32 +16,46 @@
 
     <!-- Barra de navegacion principal -->
     <header class="site-header">
-    
+
         <nav class="logo">
-              <a href="home.html"><img src="../IMG/logo3.png" alt="Logotipo de Make.u"></a>
-          </nav>
-  
-          <nav class="site-header-sections">
-              <a href="rostro.html">Rostro</a>
-              <a href="labios.html">Labios</a>
-              <a href="ojos.html">Ojos</a>
-              <a href="cejas.html">Cejas</a>
-          </nav>
-  
-          <nav class="site-header-right">
-              <a href="forme.html">for.me</a>
-              <a href="#"><i class= "fa fa-heart"></i></a>
-              <a href="#"><i class="fa fa-shopping-cart"></i></a>
-              <a href="login.html">Login</a>
-          </nav>
-  </header>
+            <a href="home.html"><img src="../IMG/logo3.png" alt="Logotipo de Make.u"></a>
+        </nav>
+
+        <nav class="site-header-sections">
+            <a href="rostro.html">Rostro</a>
+            <a href="labios.html">Labios</a>
+            <a href="ojos.html">Ojos</a>
+            <a href="cejas.html">Cejas</a>
+        </nav>
+
+        <nav class="site-header-right">
+            <a href="forme.html">for.me</a>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-shopping-cart"></i></a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <!-- Header para pantallas angostas -->
+    <header class="mobile-header">
+        <div class="drop-down-menu"><a href=""><i class="fa fa-bars"></i></a></div>
+        <div class="mobile-logo">
+            <a href="home.html"><img src="../IMG/logo3.png" alt="Logotipo de Make.u"></a>
+        </div>
+        <div class="mobile-header-right">
+            <a href="forme.html">for.me</a>
+            <a href="#"><i class="fa fa-shopping-cart"></i></a>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="register.html">Login</a>
+        </div>
+    </header>
 
     <!-- Cuerpo principal de la home con las 4 secciones destacadas -->
     <main>
         <!-- Imagen principal con titulo de bienvenida -->
         <div id="home">
             <div>
-                <img class="imagen-home" src="../IMG/assorted-eye-shadow-and-blusher-palette-2113855.jpg" alt="Imagen de portada">
+                <img class="imagen-home" src="../IMG/assorted-eye-shadow-and-blusher-palette-2113855.jpg"
+                    alt="Imagen de portada">
             </div>
             <div id="title-welcome">
                 <!-- Mejorar: quiero una barra rosa mas amplia y quiero eliminar los br -->
@@ -49,8 +64,8 @@
         </div>
 
         <!-- 3 secciones -->
-        <div class= "flex-container">
-             <!-- Seccion Rostro -->
+        <div class="flex-container">
+            <!-- Seccion Rostro -->
             <section class="section1">
                 <div class="division-section">
                     <div>
@@ -59,28 +74,33 @@
                     <div id="product-section">
                         <article class="article1">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoRostro1.webp" alt="Producto para el rostro">
+                                <img class="img-product-home" src="../IMG/productos/productoRostro1.webp"
+                                    alt="Producto para el rostro">
                                 <h3>Producto 1</h3>
                                 <p>$ 1.200</p>
                             </a>
                         </article>
                         <article class="article1">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoRostro2.png" alt="Producto para el rostro">
+                                <img class="img-product-home" src="../IMG/productos/productoRostro2.png"
+                                    alt="Producto para el rostro">
                                 <h3>Producto 1</h3>
                                 <p>$ 1.200</p>
                             </a>
                         </article>
                         <article class="article1">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoRostro3.png" alt="Producto para el rostro">
+                                <img class="img-product-home" src="../IMG/productos/productoRostro3.png"
+                                    alt="Producto para el rostro">
                                 <h3>Producto 1</h3>
                                 <p>$ 1.200</p>
                             </a>
                         </article>
                     </div>
                     <div id="ver-mas">
-                        <a href="#"><p>Ver mas ></p></a>
+                        <a href="#">
+                            <p>Ver mas ></p>
+                        </a>
                     </div>
                 </div>
                 <div class="img-alone-right">
@@ -88,7 +108,7 @@
                 </div>
             </section>
 
-             <!-- Seccion Labios -->
+            <!-- Seccion Labios -->
             <section class="section2">
                 <div class="img-alone-left">
                     <img class="img-left" src="../img/labiosArt.jpg" alt="">
@@ -121,12 +141,14 @@
                         </article>
                     </div>
                     <div id="ver-mas">
-                        <a href="#"><p>Ver mas ></p></a>
+                        <a href="#">
+                            <p>Ver mas ></p>
+                        </a>
                     </div>
                 </div>
             </section>
 
-        <!-- Seccion Ojos -->
+            <!-- Seccion Ojos -->
             <section class="section1">
                 <div class="division-section">
                     <div>
@@ -135,28 +157,33 @@
                     <div id="product-section">
                         <article class="article1">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoOjos1.png" alt="Producto para el rostro">
+                                <img class="img-product-home" src="../IMG/productos/productoOjos1.png"
+                                    alt="Producto para el rostro">
                                 <h3>Producto 1</h3>
                                 <p>$ 1.200</p>
                             </a>
                         </article>
                         <article class="article1">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoOjos4.png" alt="Producto para el rostro">
+                                <img class="img-product-home" src="../IMG/productos/productoOjos4.png"
+                                    alt="Producto para el rostro">
                                 <h3>Producto 1</h3>
                                 <p>$ 1.200</p>
                             </a>
                         </article>
                         <article class="article1">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoOjos6.png" alt="Producto para el rostro">
+                                <img class="img-product-home" src="../IMG/productos/productoOjos6.png"
+                                    alt="Producto para el rostro">
                                 <h3>Producto 1</h3>
                                 <p>$ 1.200</p>
                             </a>
                         </article>
                     </div>
                     <div id="ver-mas">
-                        <a href="ojos.html"><p>Ver mas ></p></a>
+                        <a href="ojos.html">
+                            <p>Ver mas ></p>
+                        </a>
                     </div>
                 </div>
                 <div class="img-alone-right">
@@ -164,7 +191,7 @@
                 </div>
             </section>
 
-                <!-- Seccion Labios -->
+            <!-- Seccion Labios -->
             <!-- <section class="section fondo-par">
                 <h2 class="title-section">Destacados <strong>Labios</strong></h2>
                 <ul>
@@ -193,8 +220,8 @@
 
 
 
-        <!-- Seccion Ojos -->
-        <!-- <section class="section fondo-impar">
+            <!-- Seccion Ojos -->
+            <!-- <section class="section fondo-impar">
             <div style="display: flex;">
                 <h2 class="title-section">Destacados <strong>Ojos</strong> </h2>
             </div>
@@ -219,7 +246,7 @@
                 </div>
         </section> -->
 
-        
+
 
     </main>
 

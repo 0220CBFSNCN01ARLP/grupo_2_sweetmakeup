@@ -16,51 +16,14 @@ body {
 }
 
 
-/*header-movil*/
 
-.mobile-header {
-    display: none;
-    background-color: #f2d7de;
-    height: 80px;
-    margin: 0px;
-    width: 100%;
-}
-
-.link-home {
-    height: 100%;
-    width: 60%;
-    display: flex;
-    object-fit: contain;
-}
-
-.drop-down-menu {
-    padding: 1.5%;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    display: flex;
-}
-
-.drop-down-menu i {
-    font-size: 20px;
-    color: black;
-}
-
-.header-right {
-    display: flex;
-    padding: 1.5%;
-    font-size: 20px;
-}
-
-.header-right a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-}
 
 
 /*header*/
+.mobile-header{
+    display: none;
+}
+
 .site-header {
     overflow: hidden;
     background-color: #f2d7de;
@@ -73,15 +36,13 @@ body {
   }
   
   .site-header a {
-    float: left;
     color: black;
-    text-align: center;
-    padding: 2%;
+    padding: 10px;
     text-decoration: none;
     font-size: 120%;
     line-height: 25px;
-    border-radius: 4px;
     align-items: center;
+    justify-items: center;
   }
   
   .site-header nav{
@@ -99,24 +60,76 @@ body {
   }
   
   .site-header-sections{
-  width: 50%;
+  margin-right: auto;
   }
   
   .site-header-right{
-  width: 25%;
   justify-items: right;
+  margin-left: auto;
+  margin-right: 2%
   }
 
-/*Responsive*/
 
-@media (max-width: 425px) {
+/*header móvil, sólo para pantallas angostas*/
+
+@media (max-width: 767px) {
     .site-header {
         display: none;
     }
+
     .mobile-header {
         display: flex;
         flex-direction: row;
+        background-color: #f2d7de;
+        height: 80px;
+        overflow: hidden;
+        padding: 5px;
+        width: 100%;
+        align-items: center;
+        box-sizing: border-box;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
+
+    .mobile-header nav{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    
+    .mobile-logo {
+        height: 100%;
+        width: 60%;
+        display: flex;
+        object-fit: contain;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .drop-down-menu {
+        padding: 1.5%;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        display: flex;
+    }
+    
+    .drop-down-menu i {
+        font-size: 20px;
+        color: black;
+    }
+    
+    .mobile-header-right {
+      justify-items: right;
+      margin-left: auto;
+      margin-right: 2%
+    }
+    
+    .mobile-header-right a {
+        text-decoration: none;
+        color: black;
+    }
+    
 }
 
 
