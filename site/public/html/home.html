@@ -11,7 +11,6 @@
     <title>Make.u</title>
 </head>
 
-
 <body>
 
     <!-- Barra de navegacion principal -->
@@ -39,102 +38,164 @@
 
     <!-- Cuerpo principal de la home con las 4 secciones destacadas -->
     <main>
-        <section id="section-home">
-            <img class="imagen-home" src="../IMG/assorted-eye-shadow-and-blusher-palette-2113855.jpg" alt="Imagen de portada">
+        <!-- Imagen principal con titulo de bienvenida -->
+        <div id="home">
+            <div>
+                <img class="imagen-home" src="../IMG/assorted-eye-shadow-and-blusher-palette-2113855.jpg" alt="Imagen de portada">
+            </div>
             <div id="title-welcome">
+                <!-- Mejorar: quiero una barra rosa mas amplia y quiero eliminar los br -->
                 <h1>Beuaty <br> Style <br> & Tips</h1>
-                <!-- <h1>
-                    <div class="title1">Beuaty</div>
-                    <div class="title2">Style</div>
-                    <div class="title3">& Tips</div>
-                </h1> -->
             </div>
-        </section>
+        </div>
 
-        <!-- Seccion Rostro -->
-        <section class="section fondo-impar">
-            <h2 class="title-section">Destacados <strong>Rostro</strong></h2>
-            <ul>
-                <li class="lista-home1">
-                    <a href="producto.html">
-                        <img class="img-product-home" src="../IMG/productos/productoRostro1.webp" alt="Producto para el rostro">
-                        <h3>Producto 1</h3>
-                        <p class="price">$ 1.200</p>
-                    </a>
-                </li>
-                <li class="lista-home1">
-                    <a href="producto.html">
-                        <img class="img-product-home" src="../IMG/productos/productoRostro2.png" alt="Producto para el rostro">
-                        <h3>Producto 1</h3>
-                        <p class="price">$ 1.200</p>
-                    </a>
-                    <a id="ver-mas" href="ojos.html">
-                        <p>Ver mas ></p>
-                    </a>
-                </li>
-                <li class="lista-home1">
-                    <a href="producto.html">
-                        <img class="img-product-home" src="../IMG/productos/productoRostro3.png" alt="Producto para el rostro">
-                        <h3>Producto 1</h3>
-                        <p class="price">$ 1.200</p>
-                    </a>
-                </li>
-            </ul>
-            <div class="img-alone-right">
-                <img class="img-alone-home" src="../IMG/faceArt.jpg" alt="">
-            </div>
-        </section>
+        <!-- 3 secciones -->
+        <div class= "flex-container">
+             <!-- Seccion Rostro -->
+            <section class="section">
+                <div class="division-section">
+                    <div>
+                        <h2> <span>Destacados</span> <strong>Rostro</strong></h2>
+                    </div>
+                    <div id="product-section">
+                        <article class="article1">
+                            <a href="producto.html">
+                                <img class="img-product-home" src="../IMG/productos/productoRostro1.webp" alt="Producto para el rostro">
+                                <h3>Producto 1</h3>
+                                <p>$ 1.200</p>
+                            </a>
+                        </article>
+                        <article class="article1">
+                            <a href="producto.html">
+                                <img class="img-product-home" src="../IMG/productos/productoRostro2.png" alt="Producto para el rostro">
+                                <h3>Producto 1</h3>
+                                <p>$ 1.200</p>
+                            </a>
+                        </article>
+                        <article class="article1">
+                            <a href="producto.html">
+                                <img class="img-product-home" src="../IMG/productos/productoRostro3.png" alt="Producto para el rostro">
+                                <h3>Producto 1</h3>
+                                <p>$ 1.200</p>
+                            </a>
+                        </article>
+                    </div>
+                    <div id="ver-mas">
+                        <a href="#"><p>Ver mas ></p></a>
+                    </div>
+                </div>
+                <div class="img-alone-right">
+                    <img class="img-alone" src="../img/faceArt.jpg" alt="">
+                </div>
+            </section>
 
-        <!-- Seccion Labios -->
-        <section class="section fondo-par">
-            <h2 class="title-section">Destacados <strong>Labios</strong></h2>
-            <ul>
-                <li class="lista-home2">
-                    <img class="img-product-home" src="../IMG/productos/productoLabios1.png" alt="">
-                    <h3>Producto 1</h3>
-                    <p class="price">$ 1.200</p>
-                </li>
-                <li class="lista-home2">
-                    <img class="img-product-home" src="../IMG/productos/productoLabios2.png" alt="">
-                    <h3>Producto 1</h3>
-                    <p class="price">$ 1.200</p>
-                </li>
-                <li class="lista-home2">
-                    <img class="img-product-home" src="../IMG/productos/productoLabios3.png" alt="">
-                    <h3>Producto 1</h3>
-                    <p class="price">$ 1.200</p>
-                </li>
-            </ul>
-            <div class="img-alone-left">
-                <img class="img-alone-home" src="../IMG/labiosArt.jpg" alt="">
-            </div>
-        </section>
-
-        <!-- Vieja propuesta
-        <section class="section fondo2">
-            <p class="title-art">Destacados <strong>Labios</strong></p>
-            <article class="article2">
-                <img class="img-art" src="../IMG/productoLabios1.png" alt="">
-                <h3>Producto 1</h3>
-                <p class="price">$ 1.200</p>
-            </article>
-            <article class="article2">
-                <img class="img-art" src="../IMG/productoLabios2.png" alt="">
-                <h3>Producto 1</h3>
-                <p class="price">$ 1.200</p>
-            </article>
-            <article class="article2">
-                <img class="img-art" src="../IMG/productoLabios3.png" alt="">
-                <h3>Producto 1</h3>
-                <p class="price">$ 1.200</p>
-            </article>
-            <article class="art-alone-left">
-                <img class="img-art-home" src="../IMG/labiosArt.jpg" alt="">
-            </article>
-        </section> -->
+             <!-- Seccion Labios -->
+            <section class="section">
+                <div class="img-alone-left">
+                    <img class="img-alone" src="../img/labiosArt.jpg" alt="">
+                </div>
+                <div class="division-section2">
+                    <div>
+                        <h2><span>Destacados</span> <strong>Labios</strong></h2>
+                    </div>
+                    <div id="product-section">
+                        <article class="lista-home2">
+                            <a href="producto.html">
+                                <img class="img-product-home" src="../IMG/productos/productoLabios1.png" alt="">
+                                <h3>Producto 1</h3>
+                                <p>$ 1.200</p>
+                            </a>
+                        </article>
+                        <article class="lista-home2">
+                            <a href="producto.html">
+                                <img class="img-product-home" src="../IMG/productos/productoLabios2.png" alt="">
+                                <h3>Producto 1</h3>
+                                <p>$ 1.200</p>
+                            </a>
+                        </article>
+                        <article class="lista-home2">
+                            <a href="producto.html">
+                                <img class="img-product-home" src="../IMG/productos/productoLabios3.png" alt="">
+                                <h3>Producto 1</h3>
+                                <p>$ 1.200</p>
+                            </a>
+                        </article>
+                    </div>
+                    <div id="ver-mas">
+                        <a href="#"><p>Ver mas ></p></a>
+                    </div>
+                </div>
+            </section>
 
         <!-- Seccion Ojos -->
-        <section class="section fondo-impar">
+            <section class="section">
+                <div class="division-section">
+                    <div>
+                        <h2><span>Destacados</span> <strong>Ojos</strong></h2>
+                    </div>
+                    <div id="product-section">
+                        <article class="article1">
+                            <a href="producto.html">
+                                <img class="img-product-home" src="../IMG/productos/productoOjos1.png" alt="Producto para el rostro">
+                                <h3>Producto 1</h3>
+                                <p>$ 1.200</p>
+                            </a>
+                        </article>
+                        <article class="article1">
+                            <a href="producto.html">
+                                <img class="img-product-home" src="../IMG/productos/productoOjos4.png" alt="Producto para el rostro">
+                                <h3>Producto 1</h3>
+                                <p>$ 1.200</p>
+                            </a>
+                        </article>
+                        <article class="article1">
+                            <a href="producto.html">
+                                <img class="img-product-home" src="../IMG/productos/productoOjos6.png" alt="Producto para el rostro">
+                                <h3>Producto 1</h3>
+                                <p>$ 1.200</p>
+                            </a>
+                        </article>
+                    </div>
+                    <div id="ver-mas">
+                        <a href="ojos.html"><p>Ver mas ></p></a>
+                    </div>
+                </div>
+                <div class="img-alone-right">
+                    <img class="img-alone" src="../img/ojosArt.jpg" alt="">
+                </div>
+            </section>
+
+                <!-- Seccion Labios -->
+            <!-- <section class="section fondo-par">
+                <h2 class="title-section">Destacados <strong>Labios</strong></h2>
+                <ul>
+                    <li class="lista-home2">
+                        <img class="img-product-home" src="../IMG/productos/productoLabios1.png" alt="">
+                        <h3>Producto 1</h3>
+                        <p class="price">$ 1.200</p>
+                    </li>
+                    <li class="lista-home2">
+                        <img class="img-product-home" src="../IMG/productos/productoLabios2.png" alt="">
+                        <h3>Producto 1</h3>
+                        <p class="price">$ 1.200</p>
+                    </li>
+                    <li class="lista-home2">
+                        <img class="img-product-home" src="../IMG/productos/productoLabios3.png" alt="">
+                        <h3>Producto 1</h3>
+                        <p class="price">$ 1.200</p>
+                    </li>
+                </ul>
+                <div class="img-alone-left">
+                    <img class="img-alone-home" src="../IMG/labiosArt.jpg" alt="">
+                </div>
+            </section>
+        </div> -->
+
+
+
+
+        <!-- Seccion Ojos -->
+        <!-- <section class="section fondo-impar">
             <div style="display: flex;">
                 <h2 class="title-section">Destacados <strong>Ojos</strong> </h2>
             </div>
@@ -145,19 +206,21 @@
                     <p class="price">$ 1.200</p>
                 </li>
                 <li class="lista-home1">
-                    <img class="img-product-home" src="../IMG/productos/productoOjos2.png" alt="">
+                    <img class="img-product-home" src="../IMG/productos/productoOjos4.png" alt="">
                     <h3>Producto 1</h3>
                     <p class="price">$ 1.200</p>
                 </li>
                 <li class="lista-home1">
-                    <img class="img-product-home" src="../IMG/productos/productoOjos3.png" alt="">
+                    <img class="img-product-home" src="../IMG/productos/productoOjos6.png" alt="">
                     <h3>Producto 1</h3>
                     <p class="price">$ 1.200</p>
                 </li>
                 <div class="img-alone-right">
                     <img class="img-alone-home" src="../IMG/ojosArt.jpg" alt="">
                 </div>
-        </section>
+        </section> -->
+
+        
 
     </main>
 
