@@ -57,3 +57,36 @@ BRAINSTORMING sobre la industria:
 URL´s Trello:
 -   Sprint´s: https://trello.com/b/TVwpqKv8/grupo-2-sprints
 -   Starfish retrospective: https://trello.com/b/iiNZfon6/grupo-2-starfish-retrospective
+---
+
+FUNCIONALIDADES
+-   URL´s (o URN)
+    *   Make.u
+    *   Rostro
+    *   Labios
+    *   Ojos
+    *   For.me
+    *   Carrito
+    *   Perfil
+    *   Registro
+    *   Producto
+-   Productos
+*   Los más vendidos
+*   Filtros
+*   Precio – descuento
+*   Mostrar los nuevos
+*   Wish
+*   Compra
+    *   ¿Pago – con MercadoPago? Api: https://www.mercadopago.com.ar/developers/es/
+    *   ¿Envío – Con que empresa? Andreani tiene API: https://developers.andreani.com/documentacion#cotizarEnvio
+    *   ¿El tema de la factura?
+    *   ¿Compra protegida? ¿Como es? Certificado SSL.
+-   ¿Vale la pena colocar un buscador?
+-   ¿Try it on? ¿Esta funcionalidad no va con la funcionalidad de sacarse la foto? ¿O tiene que ver con el perfil beauty que creo el usuario? ¿Y si no lo creo previamente?
+-   Footer
+    *   Faqs
+    *   Contacto
+    *   Termino y condiciones
+    *   Redes sociales
+    *   Afip?
+    *   ¿Que es Make.u? Hacemos la vida más fácil a aquellas personas que le gusta la estética, pero no tienen tiempo de conocer sobre el tema. Potenciamos a las personas a lucirse con los mejores productos de cosmética fabricados en nuestro país.

@@ -1,0 +1,56 @@
+#navbar {
+    float: left;
+    background-color: rgb(240, 218, 222);
+    padding-right: 20px;
+    padding-top: 3%;
+    width: 20%;
+    text-align: center;
+    height: 400vh;
+}
+
+#navbar ul li {
+    list-style: none;
+    text-align: right;
+}
+
+#title-welcome {
+    margin-left: 9%;
+    margin-bottom: 15%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.title-main {
+    margin-right: 35%;
+    margin-left: 5%;
+}
+
+.div1 {
+    margin-left: 7%;
+    margin-right: 15%;
+}
+
+.load-img {
+    float: left;
+    width: 15%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 4%;
+}
+
+.button-load-img {
+    margin-top: 12%;
+    margin-left: 5%;
+}
+
+.form-descripcion {
+    margin-top: 5%;
+}
