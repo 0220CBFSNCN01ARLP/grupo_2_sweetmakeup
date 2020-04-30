@@ -50,49 +50,50 @@ body {
 
 /*header*/
 .site-header {
+  overflow: hidden;
   background-color: #f2d7de;
-  height: 80px;
-  margin: 0px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
   width: 100%;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.site-header nav a {
-  padding: 1.5%;
-  font-size: 20px;
-  text-decoration: none;
-  font-weight: bold;
+.site-header a {
+  float: left;
   color: black;
-}
-
-.navegacion1 {
-  width: 20%;
-  float: left;
-  padding: 7px 0px;
-  left: 2%;
-  position: relative;
-}
-
-.navegacion2 {
-  display: flex;
-  float: left;
-  width: 33%;
   text-align: center;
-  padding: 12px 0px;
-  list-style: none;
-  left: 3%;
-  position: relative;
+  padding: 2%;
+  text-decoration: none;
+  font-size: 25px;
+  line-height: 25px;
+  border-radius: 4px;
+  align-items: center;
 }
 
-.navegacion3 {
-  display: flex;
-  float: right;
-  width: 33%;
-  padding: 12px 0px;
-  list-style: none;
-  left: 7%;
-  position: relative;
+.site-header nav{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }
 
+.logo{
+ width: 25%
+}
+
+.logo img{
+width: 100%;
+}
+
+.site-header-sections{
+width: 50%;
+}
+
+.site-header-right{
+width: 25%;
+justify-items: right;
+}
 /*Responsive*/
 @media (max-width: 425px) {
   .site-header {
