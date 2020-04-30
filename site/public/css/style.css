@@ -7,6 +7,14 @@ body {
     margin-right: 0;
 }
 
+.site-header-sections {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.site-header-right {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 
 /*header-movil*/
 
@@ -70,7 +78,7 @@ body {
     text-align: center;
     padding: 2%;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 120%;
     line-height: 25px;
     border-radius: 4px;
     align-items: center;
