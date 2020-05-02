@@ -27,6 +27,7 @@ body {
   align-items: center;
 }
 
+<<<<<<< HEAD
 .mobile-header nav {
   display: flex;
   align-items: center;
@@ -60,6 +61,112 @@ body {
   justify-items: right;
   margin-left: auto;
   margin-right: 2%;
+=======
+/*header*/
+
+.mobile-header {
+    display: none;
+}
+
+.site-header {
+    overflow: hidden;
+    background-color: #f2d7de;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.site-header a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 120%;
+    line-height: 25px;
+    align-items: center;
+    justify-items: center;
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.logo {
+    width: 25%
+}
+
+.logo img {
+    width: 100%;
+}
+
+.site-header-sections {
+    margin-right: auto;
+}
+
+.site-header-right {
+    justify-items: right;
+    margin-left: auto;
+    margin-right: 2%
+}
+
+
+/*header móvil, sólo para pantallas angostas*/
+
+@media (max-width: 767px) {
+    .site-header {
+        display: none;
+    }
+    .mobile-header {
+        display: flex;
+        flex-direction: row;
+        background-color: #f2d7de;
+        height: 80px;
+        overflow: hidden;
+        padding: 5px;
+        width: 100%;
+        align-items: center;
+        box-sizing: border-box;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .mobile-header nav {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    .mobile-logo {
+        height: 100%;
+        width: 60%;
+        display: flex;
+        object-fit: contain;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .drop-down-menu {
+        padding: 1.5%;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        display: flex;
+    }
+    .drop-down-menu i {
+        font-size: 20px;
+        color: black;
+    }
+    .mobile-header-right {
+        justify-items: right;
+        margin-left: auto;
+        margin-right: 2%
+    }
+    .mobile-header-right a {
+        text-decoration: none;
+        color: black;
+    }
+>>>>>>> 9b313b3e15d748034417800c2c28688f1ff4ef01
 }
 
 .mobile-header-right a {
@@ -109,8 +216,13 @@ body {
 }
 
 .site-footer {
+<<<<<<< HEAD
   background-color: #7e7e7e;
   margin: 0;
+=======
+    background-color: #9a8a8e;
+    margin: 0;
+>>>>>>> 9b313b3e15d748034417800c2c28688f1ff4ef01
 }
 
 .contenedor-footer {
