@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/register.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,62 +48,55 @@
         </div>
     </header>
 
-    <main class="contenedor ">
-        <!-- <img width="100% " src="/HTML5/modelo-imagenFormulario.jpg " alt="Imagen de fondo del Formulario "> -->
-        <h1>Llena el formulario de Contacto</h1>
-        <section class="section-contenedor">
-
-            <form action=" " method="GET ">
-                <nav>
-                    <div class="connect1">
-                        <i class="fab fa-facebook-f "></i>
-                        <a href="https://en-gb.facebook.com/login/ ">Connect with Facebook</a>
-                    </div>
-                    <div class="connect2">
-                        <i class="fab fa-twitter "></i>
-                        <a href="https://twitter.com/login?lang=es ">Connect with Twitter</a>
-                    </div>
-                </nav>
-                <!-- En este caso, los redirecciona a la web de Facebook y Twiter para logearse, pero lo
-            que queremos hacer, es llamar a un servicio o una appi para que devuelva los datos ya cargados
-            en dichas web, y no tenga que llenar el formulario-->
+    <main class="container">
+        <div class="row">
+            <div class="row formulario1 col-12 col-md-6 col-lg-6">
+                <form class="container" action=" " method="GET ">
+                    <h1>Iniciar sesión</h1>
+                    <nav>
+                        <div class="connect1">
+                            <i class="fab fa-facebook-f "></i>
+                            <a href="https://en-gb.facebook.com/login/ ">Connect with Facebook</a>
+                        </div>
+                        <div class="connect2">
+                            <i class="fab fa-twitter "></i>
+                            <a href="https://twitter.com/login?lang=es ">Connect with Twitter</a>
+                        </div>
+                    </nav>
 
 
-                <p><label for="nombre "></label></p>
-                <p><input class="campo" type="text " id="nombre " name="nombre " placeholder="First Name " required></p>
+                    <label for="exampleInputEmail1">Direccion de correo electronico</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
 
+                    <p class="p-olvidastecontraseña">¿Olvido su contraseña?</p>
 
-                <p><label for="apellido "></label></p>
-                <p><input class="campo" type="text " id="apellido " name="apellido " placeholder="Last Name " required>
-                </p>
+                    <button type="submit ">Entrar</button>
+                </form>
+            </div>
 
+            <div class="row formulario2 col-12 col-md-6 col-lg-6">
+                <form class="container" action=" " method="GET ">
+                    <h1>Registrarse</h1>
+                    <label for="nombre ">Nombre</label>
+                    <input class="form-control" type="text " id="nombre " name="nombre " required>
 
+                    <label for="apellido ">Apellido</label>
+                    <input class="form-control" type="text " id="apellido " name="apellido " required>
 
-                <p><label for="email "></label></p>
-                <p><input class="campo" type="email " id="email " name="email " placeholder="your@email.com " required>
-                </p>
+                    <label for="exampleInputEmail1">Direccion de correo electronico</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
 
+                    <button type="submit ">Registrarse</button>
+                </form>
+            </div>
+        </div>
 
-                <p><label for="password "></label></p>
-                <p><input class="campo" type="password " id="password " name="password " placeholder="password "
-                        required></p>
-
-
-                <div class="contenedor-novedades">
-                    <label for="">Quiere recibir via e-mail ofertas y novedades de Make.u</label>
-                    <input class="campo-novedades" type="checkbox" name="novedades" value="">
-                </div>
-
-                <p class="p-olvidastecontraseña">¿Se te olvido tu contraseña?</p>
-                <!-- Deberia direccionarte a la web, para enviarte un mail y blanquer tu contrasena-->
-
-                <p><button type="submit ">GUARDAR</button></p>
-
-
-            </form>
-        </section>
     </main>
 
     <footer class="site-footer seccionf">
@@ -121,6 +114,9 @@
 
 
 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -16,11 +16,9 @@ body {
 }
 
 
-
-
-
 /*header*/
-.mobile-header{
+
+.mobile-header {
     display: none;
 }
 
@@ -33,9 +31,9 @@ body {
     width: 100%;
     align-items: center;
     box-sizing: border-box;
-  }
-  
-  .site-header a {
+}
+
+.site-header a {
     color: black;
     padding: 10px;
     text-decoration: none;
@@ -43,31 +41,31 @@ body {
     line-height: 25px;
     align-items: center;
     justify-items: center;
-  }
-  
-  .site-header nav{
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-  }
-  
-  .logo{
-   width: 25%
-  }
-  
-  .logo img{
-  width: 100%;
-  }
-  
-  .site-header-sections{
-  margin-right: auto;
-  }
-  
-  .site-header-right{
-  justify-items: right;
-  margin-left: auto;
-  margin-right: 2%
-  }
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.logo {
+    width: 25%
+}
+
+.logo img {
+    width: 100%;
+}
+
+.site-header-sections {
+    margin-right: auto;
+}
+
+.site-header-right {
+    justify-items: right;
+    margin-left: auto;
+    margin-right: 2%
+}
 
 
 /*header móvil, sólo para pantallas angostas*/
@@ -76,7 +74,6 @@ body {
     .site-header {
         display: none;
     }
-
     .mobile-header {
         display: flex;
         flex-direction: row;
@@ -89,13 +86,11 @@ body {
         box-sizing: border-box;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-
-    .mobile-header nav{
+    .mobile-header nav {
         display: flex;
         align-items: center;
         flex-direction: row;
     }
-    
     .mobile-logo {
         height: 100%;
         width: 60%;
@@ -104,7 +99,6 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
-    
     .drop-down-menu {
         padding: 1.5%;
         font-size: 20px;
@@ -113,23 +107,19 @@ body {
         color: black;
         display: flex;
     }
-    
     .drop-down-menu i {
         font-size: 20px;
         color: black;
     }
-    
     .mobile-header-right {
-      justify-items: right;
-      margin-left: auto;
-      margin-right: 2%
+        justify-items: right;
+        margin-left: auto;
+        margin-right: 2%
     }
-    
     .mobile-header-right a {
         text-decoration: none;
         color: black;
     }
-    
 }
 
 
@@ -175,7 +165,7 @@ body {
 }
 
 .site-footer {
-    background-color: #7e7e7e;
+    background-color: #9a8a8e;
     margin: 0;
 }
 
