@@ -91,7 +91,7 @@ a {
     padding: 8%;
 }
 
-#ver-mas {
+.ver-mas {
     font-size: 120%;
     text-decoration: underline;
     text-align: center;
@@ -148,6 +148,33 @@ a {
 .title-section {
     font-size: 140%;
     text-align: center;
+}
+
+
+@media (max-width: 767px) {
+    .ver-mas {
+        display: none;
+    }
+
+    .container-left {
+        display: none;
+    }
+
+    .container-right {
+        display: none;
+    }
+
+    .product-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    #banner {
+       display: none;
+    }
+
 }
 
 
