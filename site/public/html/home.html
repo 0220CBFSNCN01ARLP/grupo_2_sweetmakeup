@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Font Family -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Raleway">
-
     <!-- Iconografias -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -42,6 +39,7 @@
             <a href="login.html">Login</a>
         </nav>
     </header>
+
     <!-- Header para pantallas angostas -->
     <header class="mobile-header">
         <div class="drop-down-menu"><a href=""><i class="fa fa-bars"></i></a></div>
@@ -56,47 +54,47 @@
         </div>
     </header>
 
-    <!-- Cuerpo principal de la home con las 4 secciones destacadas -->
+    <!-- Cuerpo principal de la home -->
     <main>
-        <!-- Imagen principal con titulo de bienvenida -->
-        <div id="home">
+        <!-- Banner + Titulo -->
+        <div id="banner">
             <div>
-                <img class="imagen-home" src="../IMG/assorted-eye-shadow-and-blusher-palette-2113855.jpg"
-                    alt="Imagen de portada">
+                <img class="img-banner" src="../IMG/assorted-eye-shadow-and-blusher-palette-2113855.jpg"
+                    alt="Imagen principal del site">
             </div>
-            <div id="title-welcome">
-                <h1> <span class="prueba">Beuaty</span> <span class="prueba">Style</span> <span class="prueba">& Tips</span></h1>
+            <div id="title-banner">
+                <h1> <span class="title-main">Beuaty</span> <span class="title-main">Style</span> <span class="title-main">& Tips</span></h1>
             </div>
         </div>
 
         <!-- 3 secciones -->
         <div class="flex-container">
             <!-- Seccion Rostro -->
-            <section class="section1">
-                <div class="division-section">
+            <section class="section-odd">
+                <div class="product-container-odd">
                     <div>
                         <h2 class="title-section"> <span>Destacados</span> <strong>Rostro</strong></h2>
                     </div>
-                    <div id="product-section">
-                        <article class="article1">
+                    <div class="product-section">
+                        <article class="article-odd">
                             <a href="#">
-                                <img class="img-product-home" src="../IMG/productos/productoRostro1.webp"
+                                <img class="img-product" src="../IMG/productos/productoRostro1.webp"
                                     alt="Producto para el rostro">
                                 <h3 class="product-name">Producto 1</h3>
                                 <p class="price">$ 1.200</p>
                             </a>
                         </article>
-                        <article class="article1">
+                        <article class="article-odd">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoRostro2.png"
+                                <img class="img-product" src="../IMG/productos/productoRostro2.png"
                                     alt="Producto para el rostro">
                                 <h3 class="product-name">Producto 1</h3>
                                 <p class="price">$ 1.200</p>
                             </a>
                         </article>
-                        <article class="article1">
+                        <article class="article-odd">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoRostro3.png"
+                                <img class="img-product" src="../IMG/productos/productoRostro3.png"
                                     alt="Producto para el rostro">
                                 <h3 class="product-name">Producto 1</h3>
                                 <p class="price">$ 1.200</p>
@@ -109,40 +107,40 @@
                         </a>
                     </div>
                 </div>
-                <div class="img-alone-right">
+                <div class="container-right">
                     <img class="img-right" src="../img/faceArt.jpg" alt="">
                 </div>
             </section>
 
             <!-- Seccion Labios -->
-            <section class="section2">
-                <div class="img-alone-left">
+            <section class="section-pair">
+                <div class="container-left">
                     <img class="img-left" src="../img/labiosArt.jpg" alt="">
                 </div>
-                <div class="division-section2">
+                <div class="product-container-pair">
                     <div>
-                        <h2><span>Destacados</span> <strong>Labios</strong></h2>
+                        <h2 class="title-section"><span>Destacados</span> <strong>Labios</strong></h2>
                     </div>
-                    <div id="product-section">
-                        <article class="lista-home2">
+                    <div class="product-section">
+                        <article class="article-pair">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoLabios1.png" alt="">
-                                <h3>Producto 1</h3>
-                                <p>$ 1.200</p>
+                                <img class="img-product" src="../IMG/productos/productoLabios1.png" alt="">
+                                <h3 class="product-name">Producto 1</h3>
+                                <p class="price">$ 1.200</p>
                             </a>
                         </article>
-                        <article class="lista-home2">
+                        <article class="article-pair">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoLabios2.png" alt="">
-                                <h3>Producto 1</h3>
-                                <p>$ 1.200</p>
+                                <img class="img-product" src="../IMG/productos/productoLabios2.png" alt="">
+                                <h3 class="product-name">Producto 1</h3>
+                                <p class="price">$ 1.200</p>
                             </a>
                         </article>
-                        <article class="lista-home2">
+                        <article class="article-pair">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoLabios3.png" alt="">
-                                <h3>Producto 1</h3>
-                                <p>$ 1.200</p>
+                                <img class="img-product" src="../IMG/productos/productoLabios3.png" alt="">
+                                <h3 class="product-name">Producto 1</h3>
+                                <p class="price">$ 1.200</p>
                             </a>
                         </article>
                     </div>
@@ -155,34 +153,34 @@
             </section>
 
             <!-- Seccion Ojos -->
-            <section class="section1">
-                <div class="division-section">
+            <section class="section-odd">
+                <div class="product-container-odd">
                     <div>
-                        <h2><span>Destacados</span> <strong>Ojos</strong></h2>
+                        <h2 class="title-section"><span>Destacados</span> <strong>Ojos</strong></h2>
                     </div>
-                    <div id="product-section">
-                        <article class="article1">
+                    <div class="product-section">
+                        <article class="article-odd">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoOjos1.png"
+                                <img class="img-product" src="../IMG/productos/productoOjos1.png"
                                     alt="Producto para el rostro">
-                                <h3>Producto 1</h3>
-                                <p>$ 1.200</p>
+                                <h3 class="product-name">Producto 1</h3>
+                                <p class="price">$ 1.200</p>
                             </a>
                         </article>
-                        <article class="article1">
+                        <article class="article-odd">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoOjos4.png"
+                                <img class="img-product" src="../IMG/productos/productoOjos4.png"
                                     alt="Producto para el rostro">
-                                <h3>Producto 1</h3>
-                                <p>$ 1.200</p>
+                                <h3 class="product-name">Producto 1</h3>
+                                <p class="price">$ 1.200</p>
                             </a>
                         </article>
-                        <article class="article1">
+                        <article class="article-odd">
                             <a href="producto.html">
-                                <img class="img-product-home" src="../IMG/productos/productoOjos6.png"
+                                <img class="img-product" src="../IMG/productos/productoOjos6.png"
                                     alt="Producto para el rostro">
-                                <h3>Producto 1</h3>
-                                <p>$ 1.200</p>
+                                <h3 class="product-name">Producto 1</h3>
+                                <p class="price">$ 1.200</p>
                             </a>
                         </article>
                     </div>
@@ -192,68 +190,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="img-alone-right">
-                    <img class="img-right" src="../img/ojosArt4.jpg" alt="">
+                <div class="container-right">
+                    <img class="img-right" src="../img/ojosArt.jpg" alt="">
                 </div>
             </section>
-
-            <!-- Seccion Labios -->
-            <!-- <section class="section fondo-par">
-                <h2 class="title-section">Destacados <strong>Labios</strong></h2>
-                <ul>
-                    <li class="lista-home2">
-                        <img class="img-product-home" src="../IMG/productos/productoLabios1.png" alt="">
-                        <h3>Producto 1</h3>
-                        <p class="price">$ 1.200</p>
-                    </li>
-                    <li class="lista-home2">
-                        <img class="img-product-home" src="../IMG/productos/productoLabios2.png" alt="">
-                        <h3>Producto 1</h3>
-                        <p class="price">$ 1.200</p>
-                    </li>
-                    <li class="lista-home2">
-                        <img class="img-product-home" src="../IMG/productos/productoLabios3.png" alt="">
-                        <h3>Producto 1</h3>
-                        <p class="price">$ 1.200</p>
-                    </li>
-                </ul>
-                <div class="img-alone-left">
-                    <img class="img-alone-home" src="../IMG/labiosArt.jpg" alt="">
-                </div>
-            </section>
-        </div> -->
-
-
-
-
-            <!-- Seccion Ojos -->
-            <!-- <section class="section fondo-impar">
-            <div style="display: flex;">
-                <h2 class="title-section">Destacados <strong>Ojos</strong> </h2>
-            </div>
-            <ul>
-                <li class="lista-home1">
-                    <img class="img-product-home" src="../IMG/productos/productoOjos1.png" alt="">
-                    <h3>Producto 1</h3>
-                    <p class="price">$ 1.200</p>
-                </li>
-                <li class="lista-home1">
-                    <img class="img-product-home" src="../IMG/productos/productoOjos4.png" alt="">
-                    <h3>Producto 1</h3>
-                    <p class="price">$ 1.200</p>
-                </li>
-                <li class="lista-home1">
-                    <img class="img-product-home" src="../IMG/productos/productoOjos6.png" alt="">
-                    <h3>Producto 1</h3>
-                    <p class="price">$ 1.200</p>
-                </li>
-                <div class="img-alone-right">
-                    <img class="img-alone-home" src="../IMG/ojosArt.jpg" alt="">
-                </div>
-        </section> -->
-
-
-
     </main>
 
     <footer class="site-footer seccionf">
