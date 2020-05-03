@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css">
@@ -51,37 +53,49 @@
         </div>
     </header>
 
+    <main class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
 
-    <nav class=productImgList>
-        <ul>
-            <li><img src="../IMG/productos/productoLabios1.png" alt="Imagen del producto 1"></li>
-            <li><img src="../IMG/productos/productoLabios2.png" alt="Imagen del producto 1"></li>
-            <li><img src="../IMG/productos/productoLabios3.png" alt="Imagen del producto 1"></li>
-        </ul>
-    </nav>
-    <article class=productCard>
-        <h1 class="productName">Nombre del Producto</h1>
-        <img class="imgMain" src="../IMG/productos/productoLabios1.png" alt="">
-        <p class="price">$500</p>
-        <button class="tryItOn">Try it on</button>
+                <article class="product-card card col-9">
+                    <h4 class="card-title">Nombre del Producto</h5>
+                        <img class="imgMain card-img-top" src="../img/productos/productoLabios1.png" alt="">
+                        <div class="card-body">
+                            <p class="price">$500</p>
 
-    </article>
+                        </div>
 
-    <article class=productDetails>
+                        <div class="row">
+                            <img class="img-responsive img-thumbnail col-2" src="../IMG/productos/productoLabios1.png"
+                                alt="Imagen del producto 1"></li>
+                            <img class="img-responsive img-thumbnail col-2" src="../IMG/productos/productoLabios2.png"
+                                alt="Imagen del producto 2"></li>
+                            <img class="img-responsive img-thumbnail col-2" src="../IMG/productos/productoLabios3.png"
+                                alt="Imagen del producto 3"></li>
+                        </div>
 
-        <span>Tono:</span>
-        <ul id="color">
-            <li><input type="radio" name="color" value="rojo" id="rojo"><label for="rojo">Rojo</label></li>
-            <li><input type="radio" name="color" value="rosa" id="rosa"><label for="rosa">Rosa</label></li>
-            <li><input type="radio" name="color" value="fucsia" id="fucsia"><label for="fucsia">Fucsia</label></li>
-        </ul>
-        <button class="carrito">
-            Agregar al Carrito
-        </button>
-        <button class="wishlist">
-            Agregar a la Wishlist
-        </button>
-    </article>
+                </article>
+            </div>
+            <article class="productDetails col-12 col-md-6">
+
+                <span>Tono:</span>
+                <ul id="color">
+                    <li><input type="radio" name="color" value="rojo" id="rojo"><label for="rojo">Rojo</label></li>
+                    <li><input type="radio" name="color" value="rosa" id="rosa"><label for="rosa">Rosa</label></li>
+                    <li><input type="radio" name="color" value="fucsia" id="fucsia"><label for="fucsia">Fucsia</label>
+                    </li>
+                </ul>
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ad
+                    necessitatibus, aut corporis vitae quidem sunt iste sed eveniet qui ea amet
+                    dignissimos itaque, repudiandae cumque harum veritatis ratione beatae.
+                </p>
+                <button class="btn btn-primary col-6">Agregar a la wishlist</button>
+                <button class="btn btn-primary col-6">Agregar al carrito</button>
+            </article>
+
+        </div>
+    </main>
 
 
     <footer class="site-footer seccionf">
@@ -96,6 +110,16 @@
             <p class="footer-derechos">Todos los Derechos Reservados 2020 </p>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
