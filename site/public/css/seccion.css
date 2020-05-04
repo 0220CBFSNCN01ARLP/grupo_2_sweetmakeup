@@ -1,53 +1,45 @@
-/* Barra de filtros */
-.filtros {
-    background-color: #F2D7DE;
-    font-size: large;
-    float: left;
-    width: 25%;
-    height: 600px;
-    margin-top: 0;
-
-}
-
-.filtros h2{
-    margin-top: 0;
-    padding: 5px;
-    background-color: darkgray;
-}
 /* color placeholder, podría ser un rosa más oscuro como en el wireframe o un gris oscuro */
+main {
+  padding: 20px
+}
+
+.uwu {
+  background-color: #dc92a5;
+}
+
+.nav {
+  background-color: #f2d7de;
+}
 
 .banner {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.productCard {
+  border: solid 1px black;
+}
+.productCard p {
+  text-align: center;
 }
 
-/* Product Cards */
-.productCard {
-    padding: 5px;
-    float: left;
-    margin-left: 20px;
-    margin-top: 30px;
-    width: 20%;
-    height: 300px;
-    border: solid 1px black;
-    box-sizing: border-box;
-  }
-  
-  .productCard p{
+.imgMain {
+  width: 90%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.card-title {
+  font-weight: bold;
   text-align: center;
-  }
-  .imgMain {
-      margin-left:5%;
-      margin-right:5%;
-    width: 90%;
-    height: 70%;
-    object-fit: contain;
-  }
-  
-  .productName {
-    font-weight: bold;
-    text-align: center;
-    padding: 5px;
-    margin-top:0;
-  }
+}
+
+.btn-primary {
+  background-color: #f2d7de;
+  border-color: black;
+  color: black;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, {
+  background-color: #dc92a5;
+}
