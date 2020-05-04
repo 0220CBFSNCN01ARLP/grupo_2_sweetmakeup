@@ -34,21 +34,20 @@
     background-color: #e8b4b4;
 }
 
-.flex-title{
-
-}
-
 .title-section {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     margin-bottom: 0;
+    padding-top: 9px;
 }
 
 .ver-todos {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
-    font-size: 100%;
+    font-size: 90%;
+    padding-top: 20px;
     margin-bottom: 0;
+    padding-left: 15px;
 }
 
 .product-name {
@@ -68,5 +67,8 @@
 
 .backgroung-pair {
     background-color: #d7d7d7;
+}
 
+.prueba {
+    padding-top: 15px;
 }
