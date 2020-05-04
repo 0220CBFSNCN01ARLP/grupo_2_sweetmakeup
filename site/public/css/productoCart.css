@@ -1,3 +1,163 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    background-color: whitesmoke
+}
+
+.compras {
+    padding-bottom: 20px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.resumen-pedido {
+    padding-bottom: 35px;
+    padding-top: 35px;
+    text-align: center;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 25px;
+}
+
+.main-centrado {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor-1 {
+    background-color: rgba(255, 255, 255, 0.37);
+}
+
+.contenedor-2 {
+    background-color: rgba(255, 255, 255, 0.37);
+}
+
+.producto-header {
+    border-top: 1px solid rgba(85, 84, 84, 0.5);
+    border-bottom: 1px solid rgba(85, 84, 84, 0.5);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 0px;
+    padding-top: 11px;
+    align-items: end;
+}
+
+.producto {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(85, 84, 84, 0.5);
+}
+
+.agregar-producto {
+    margin-top: 39px;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.precio {
+    text-align: right;
+}
+
+.inicio {
+    text-align: start;
+    line-height: 25px;
+    font-size: 1rem;
+}
+
+.inicio-f {
+    text-transform: uppercase;
+    text-align: start;
+    line-height: 25px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.fin {
+    text-align: end;
+    line-height: 25px;
+    font-size: 1rem;
+}
+
+.fin-f {
+    text-align: end;
+    line-height: 25px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.linea {
+    width: 100%;
+    border-bottom: 1px solid rgba(85, 84, 84, 0.5);
+}
+
+button {
+    color: white;
+    align-self: center;
+    width: 100%;
+    background-color: rgb(255, 139, 255);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid pink;
+    display: block;
+    padding: 0.8rem;
+    border-radius: 0.25rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.mr-sm-2:focus {
+    color: #495057;
+    border-color: rgb(248, 142, 248);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
+}
+
+button:focus {
+    color: #495057;
+    border-color: rgb(248, 142, 248);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
+}
+
+.fa-lock {
+    padding-right: 8px;
+}
+
+@media (min-width: 768px) {
+    main {
+        height: 80vh;
+    }
+    .resumen-pedido {
+        padding-bottom: 20px;
+    }
+    .inicio {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .inicio-f {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .fin {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .fin-f {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

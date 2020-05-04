@@ -1,11 +1,11 @@
 /*formulario registro*/
 
 body {
-    background-image: url(../img/fondo-formulario.jpeg);
+    background-color: whitesmoke
 }
 
 main {
-    border: 1px solid black;
+    border: 1px solid rgb(75, 74, 74);
     margin-top: 15px;
     margin-bottom: 15px;
     width: 80%;
@@ -97,6 +97,13 @@ button {
     display: block;
     padding: 0.8rem;
     border-radius: 0.25rem;
+}
+
+button:focus {
+    color: #495057;
+    border-color: rgb(248, 142, 248);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
 }
 
 button:hover {
