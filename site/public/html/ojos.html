@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css">
@@ -48,59 +50,100 @@
     </header>
 
     <img src="../IMG/ojosArt.jpg" alt="Imagen de modelo con maquillaje en los ojos" class="banner">
-    <nav class=filtros>
-        <h2>Filtros</h2>
-        <ul>
-            <li>Best Sellers</li>
-            <li>Lo nuevo</li>
-            <li>Precio: <input type="number" id="min" name="min"> - <input type="number" id="max" name="max"></li>
-            <li>Corrector de Ojeras</li>
-            <li>Delineador</li>
-            <li>Sombra</li>
+
+
+
+    <nav>
+        <ul class="nav justify-content-center filtros">
+            <li class="nav-item"><a class="nav-link">Best Sellers</a></li>
+            <li class="nav-item"><a class="nav-link">Lo nuevo</a></li>
+            <li class="nav-item"><a class="nav-link">Precio</a></li>
+            <li class="nav-item"><a class="nav-link">Corrector de Ojeras</a></li>
+            <li class="nav-item"><a class="nav-link">Delineador</a></li>
+            <li class="nav-item"><a class="nav-link">Sombra</a></li>
         </ul>
     </nav>
 
-    <main>
-        <div class="container">
-            <article class=productCard>
-                <h3 class="productName">Nombre del Producto</h3>
-                <img class="imgMain" src="../img/productoLabios1.png" alt="">
-                <p class="price">$500</p>
+    <main class="container">
 
-            </article>
-            <article class=productCard>
-                <h3 class="productName">Nombre del Producto</h3>
-                <img class="imgMain" src="../img/productoLabios1.png" alt="">
-                <p class="price">$500</p>
+        <div class="row">
 
-            </article>
-            <article class=productCard>
-                <h3 class="productName">Nombre del Producto</h3>
-                <img class="imgMain" src="../img/productoLabios1.png" alt="">
-                <p class="price">$500</p>
+            <div class="container col-12 col-sm-6 col-md-4 col-lg-3">
+                <article class="productCard card">
+                    <h4 class="card-title">Nombre del Producto</h5>
+                        <img class="imgMain" src="../img/productos/productoOjos1.png" alt="">
+                        <div class="card-body">
+                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.Recusandae,
+                                ex. Id illo doloribus, saepe uwu officia.
+                            </p>
+                            <p class="price">$500</p>
+                            <button class="btn btn-primary btn-block">Agregar a la wishlist</button>
+                            <button class="btn btn-primary btn-block">Agregar al carrito</button>
+                        </div>
+                </article>
+            </div>
 
-            </article>
+            <div class="container col-12 col-sm-6 col-md-4 col-lg-3">
+                <article class="productCard card">
+                    <h4 class="card-title">Nombre del Producto</h5>
+                        <img class="imgMain" src="../img/productos/productoOjos1.png" alt="">
+                        <div class="card-body">
+                            <p class="description">
+                            </p>
+                            <p class="price">$500</p>
+                            <button class="btn btn-primary btn-block">Agregar a la wishlist</button>
+                            <button class="btn btn-primary btn-block">Agregar al carrito</button>
+                        </div>
+                </article>
+            </div>
+
+            <div class="container col-12 col-sm-6 col-md-4 col-lg-3">
+                <article class="productCard card">
+                    <h4 class="card-title">Nombre del Producto</h5>
+                        <img class="imgMain" src="../img/productos/productoOjos1.png" alt="">
+                        <div class="card-body">
+                            <p class="description">
+
+                            </p>
+                            <p class="price">$500</p>
+                            <button class="btn btn-primary btn-block">Agregar a la wishlist</button>
+                            <button class="btn btn-primary btn-block">Agregar al carrito</button>
+                        </div>
+                </article>
+            </div>
+
+            <div class="container col-12 col-sm-6 col-md-4 col-lg-3">
+                <article class="productCard card">
+                    <h4 class="card-title">Nombre del Producto</h5>
+                        <img class="imgMain" src="../img/productos/productoOjos1.png" alt="">
+                        <div class="card-body">
+                            <p class="description">
+
+                            </p>
+                            <p class="price">$500</p>
+                            <button class="btn btn-primary btn-block">Agregar a la wishlist</button>
+                            <button class="btn btn-primary btn-block">Agregar al carrito</button>
+                        </div>
+                </article>
+            </div>
+
+            <div class="container col-12 col-sm-6 col-md-4 col-lg-3">
+                <article class="productCard card">
+                    <h4 class="card-title">Nombre del Producto</h5>
+                        <img class="imgMain" src="../img/productos/productoOjos1.png" alt="">
+                        <div class="card-body">
+                            <p class="description">
+
+                            </p>
+                            <p class="price">$500</p>
+                            <button class="btn btn-primary btn-block">Agregar a la wishlist</button>
+                            <button class="btn btn-primary btn-block">Agregar al carrito</button>
+                        </div>
+                </article>
+            </div>
+
         </div>
-        <div class="container">
-            <article class=productCard>
-                <h3 class="productName">Nombre del Producto</h3>
-                <img class="imgMain" src="../img/productoLabios1.png" alt="">
-                <p class="price">$500</p>
 
-            </article>
-            <article class=productCard>
-                <h3 class="productName">Nombre del Producto</h3>
-                <img class="imgMain" src="../img/productoLabios1.png" alt="">
-                <p class="price">$500</p>
-
-            </article>
-            <article class=productCard>
-                <h3 class="productName">Nombre del Producto</h3>
-                <img class="imgMain" src="../img/productoLabios1.png" alt="">
-                <p class="price">$500</p>
-
-            </article>
-        </div>
     </main>
 
     <footer class="site-footer seccionf">
@@ -115,6 +158,16 @@
             <p class="footer-derechos">Todos los Derechos Reservados 2020 </p>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
