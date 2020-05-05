@@ -53,46 +53,47 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container my-3">
         <div class="row">
             <div class="col-12 col-md-6">
 
-                <article class="product-card card col-9">
-                    <h4 class="card-title">Nombre del Producto</h5>
-                        <img class="imgMain card-img-top" src="../img/productos/productoLabios1.png" alt="">
-                        <div class="card-body">
-                            <p class="price">$500</p>
+                <article class="product-card card">
+                    <img class="card-img-top mh-50" src="../img/productos/productoLabios1.png" alt="">
 
-                        </div>
-
-                        <div class="row">
-                            <img class="img-responsive img-thumbnail col-2" src="../IMG/productos/productoLabios1.png"
-                                alt="Imagen del producto 1"></li>
-                            <img class="img-responsive img-thumbnail col-2" src="../IMG/productos/productoLabios2.png"
-                                alt="Imagen del producto 2"></li>
-                            <img class="img-responsive img-thumbnail col-2" src="../IMG/productos/productoLabios3.png"
-                                alt="Imagen del producto 3"></li>
-                        </div>
+                    <div class="row p-1 m-0">
+                        <img class="col-3 img-fluid img-thumbnail" src="../IMG/productos/productoLabios1.png"
+                            alt="Imagen del producto 1">
+                        <img class="col-3 img-fluid img-thumbnail" src="../IMG/productos/productoLabios2.png"
+                            alt="Imagen del producto 2">
+                        <img class="col-3 img-fluid img-thumbnail" src="../IMG/productos/productoLabios3.png"
+                            alt="Imagen del producto 3">
+                    </div>
+                    <div class="justify-content-center d-flex border-top">
+                        <h4 class="card-title ">Nombre del Producto</h4>
+                    </div>
 
                 </article>
             </div>
-            <article class="productDetails col-12 col-md-6">
 
-                <span>Tono:</span>
-                <ul id="color">
-                    <li><input type="radio" name="color" value="rojo" id="rojo"><label for="rojo">Rojo</label></li>
-                    <li><input type="radio" name="color" value="rosa" id="rosa"><label for="rosa">Rosa</label></li>
-                    <li><input type="radio" name="color" value="fucsia" id="fucsia"><label for="fucsia">Fucsia</label>
-                    </li>
-                </ul>
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ad
+            <div class= "color-selector col-2" style="display: none;"></div>
+            <div class="productDetails col p-2">
+
+                <p class=marca>
+                    Marca: Hana Cosmetics
+                </p>
+                <p class=description>
+                    Descripción: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates tempora veritatis
+                    voluptas minus voluptatem maiores.
+                </p>
+                <p class="ingredients">
+                    Ingredientes: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ad
                     necessitatibus, aut corporis vitae quidem sunt iste sed eveniet qui ea amet
                     dignissimos itaque, repudiandae cumque harum veritatis ratione beatae.
                 </p>
-                <button class="btn btn-primary col-6">Agregar a la wishlist</button>
+
                 <button class="btn btn-primary col-6">Agregar al carrito</button>
-            </article>
+                <button class="btn btn-primary col-6">Agregar a la wishlist</button>
+            </div>
 
         </div>
     </main>
