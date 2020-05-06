@@ -6,67 +6,17 @@
 }
 
 body {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
 }
 
-
-/*header móvil*/
-
-.site-header {
-    display: none;
-}
-
-.mobile-header {
-    display: flex;
-    flex-direction: row;
+header {
     background-color: #f2d7de;
-    height: 80px;
-    padding: 5px;
-    width: 100%;
-    align-items: center;
 }
 
-.mobile-header nav {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-
-.mobile-logo {
-    height: 100%;
-    width: 60%;
-    display: flex;
-    object-fit: contain;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.drop-down-menu {
-    padding: 1.5%;
-    font-size: 20px;
+header a{
     text-decoration: none;
+    color: black;
     font-weight: bold;
-    color: black;
-    display: flex;
-}
-
-.drop-down-menu i {
-    font-size: 20px;
-    color: black;
-}
-
-.mobile-header-right {
-    justify-items: right;
-    margin-left: auto;
-    margin-right: 2%;
-}
-
-.mobile-header-right a {
-    text-decoration: none;
-    color: black;
 }
 
 

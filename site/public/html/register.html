@@ -13,38 +13,31 @@
 </head>
 
 <body>
-    <header class="site-header">
-
-        <nav class="logo">
-            <a href="home.html"><img src="../IMG/logo3.png" alt="Logotipo de Make.u"></a>
-        </nav>
-
-        <nav class="site-header-sections">
-            <a href="rostro.html">Rostro</a>
-            <a href="labios.html">Labios</a>
-            <a href="ojos.html">Ojos</a>
-            <a href="cejas.html">Cejas</a>
-        </nav>
-
-        <nav class="site-header-right">
-            <a href="forme.html">for.me</a>
-            <a href="#"><i class="fa fa-heart"></i></a>
-            <a href="#"><i class="fa fa-shopping-cart"></i></a>
-            <a href="login.html">Login</a>
-        </nav>
-    </header>
-
-    <!-- Header para pantallas angostas -->
-    <header class="mobile-header">
-        <div class="drop-down-menu"><a href=""><i class="fa fa-bars"></i></a></div>
-        <div class="mobile-logo">
+    <header class="site-header container-fluid">
+        <div class="d-flex justify-content-center align-items-center">
             <a href="home.html"><img src="../IMG/logo3.png" alt="Logotipo de Make.u"></a>
         </div>
-        <div class="mobile-header-right">
-            <a href="forme.html">for.me</a>
-            <a href="#"><i class="fa fa-shopping-cart"></i></a>
-            <a href="#"><i class="fa fa-heart"></i></a>
-            <a href="register.html">Login</a>
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Secciones
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="rostro.html">Rostro</a>
+                    <a class="dropdown-item" href="labios.html">Labios</a>
+                    <a class="dropdown-item" href="ojos.html">Ojos</a>
+                    <a class="dropdown-item" href="cejas.html">Cejas</a>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <a href="forme.html">for.me</a>
+                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                <a href="#"><i class="fa fa-heart"></i></a>
+                <a href="register.html"><i class="fa fa-sign-in-alt"></i></a>
+            </div>
         </div>
     </header>
 
