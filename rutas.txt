@@ -1,0 +1,9 @@
+Rutas del sitio:
+
+home-mobile: /mobile
+index (antes llamada home): /
+loadProduct: /product/load
+ojos: /section/ojos
+productCart: /cart
+producto: /product/detail
+register: /register
