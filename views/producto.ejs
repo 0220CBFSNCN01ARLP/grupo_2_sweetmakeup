@@ -12,7 +12,7 @@
 
 <body>
     <!-- Barra de navegacion principal -->
-    <%- include('partials/header') %> 
+    <%- include('partials/header') %>
 
     <main class="container my-3">
         <div class="row">
@@ -36,30 +36,34 @@
                 </article>
             </div>
 
-            <div class= "color-selector col-2" style="display: none;"></div>
             <div class="productDetails col p-2">
 
-                <p class=marca>
+                <p>
                     Marca: Hana Cosmetics
                 </p>
-                <p class=description>
+                <p>
+                    $1200
+                </p>
+                <p>
                     Descripción: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates tempora veritatis
                     voluptas minus voluptatem maiores.
                 </p>
-                <p class="ingredients">
+                <p>
                     Ingredientes: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ad
                     necessitatibus, aut corporis vitae quidem sunt iste sed eveniet qui ea amet
                     dignissimos itaque, repudiandae cumque harum veritatis ratione beatae.
                 </p>
-
-                <button class="btn btn-primary col-6">Agregar al carrito</button>
-                <button class="btn btn-primary col-6">Agregar a la wishlist</button>
+                <div class="btn-wrapper row">
+                    <div class= "col-12 col-md-6 py-1"><button class="btn btn-pink btn-block">Agregar al carrito</button></div>
+                    <div class= "col-12 col-md-6 py-1"><button class="btn btn-pink btn-block">Agregar a la wishlist</button></div>
+                    
+                </div>
             </div>
 
         </div>
     </main>
 
-    <%- include("partials/footer")  %> 
+    <%- include("partials/footer")  %>
 </body>
 
 </html>
