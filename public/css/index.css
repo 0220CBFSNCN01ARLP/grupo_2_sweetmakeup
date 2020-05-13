@@ -1,3 +1,4 @@
+/* Banner principal */
 .banner {
   position: relative;
   padding: 0;
@@ -28,19 +29,13 @@
   display: block;
   margin-right: 10px;
 }
+/* /Banner principal  */
 
+/* Submenu secciones iconos */
 .img-icon {
   width: 85%;
 }
-
-.btn-secondary {
-  background-color: white;
-  border-color: white;
-}
-
-.btn {
-  text-decoration: none;
-}
+/* /Submenu secciones iconos */
 
 .section-odd {
   background-color: rgb(241, 216, 220);
@@ -58,6 +53,10 @@
   color: white;
   text-align: left;
   display: inline;
+}
+
+.btn {
+  text-decoration: none;
 }
 
 .ver-todos {
@@ -105,16 +104,17 @@
   text-decoration: none;
 }
 
-.award-icon {
+/* Agregar icono */
+/* .award-icon {
   color: #009975;
   font-size: 30px;
-}
+} 
 
 .position-icon {
   position: relative;
   left: 70px;
   bottom: 220px;
-}
+} */
 
 .section-pair {
   background-color: whitesmoke;
@@ -144,8 +144,18 @@
   background-color: white;
 }
 
+/* Seccion Informacion */
+
+.p-info {
+  padding: 40px;
+}
+
 .padding-info {
   padding-top: 15px;
+}
+
+.info-align {
+  text-align: center;
 }
 
 .icon {
@@ -159,14 +169,6 @@
 
 .info-p {
   font-size: 16px;
-}
-
-.p-info {
-  padding: 40px;
-}
-
-.info-align {
-  text-align: center;
 }
 
 @media (min-width: 426px) {
