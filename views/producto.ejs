@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <%- include("partials/head")  %>
-    <link rel="stylesheet" href="/CSS/producto.css">
+  <head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/CSS/producto.css" />
     <title>Página de producto</title>
     <!-- El título debería ser el nombre de cada producto, esto es un placeholder -->
-</head>
+  </head>
 
-
-
-<body>
+  <body>
     <!-- Barra de navegacion principal -->
     <%- include('partials/header') %>
 
     <main class="container my-3">
-        <div class="row">
-            <div class="col-12 col-md-6">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <article class="product-card card">
+            <img
+              class="card-img-top mh-50"
+              src="../img/productos/productoLabios1.png"
+              alt=""
+            />
 
-                <article class="product-card card">
-                    <img class="card-img-top mh-50" src="../img/productos/productoLabios1.png" alt="">
-
-                    <div class="row p-1 m-0">
-                        <img class="col-3 img-fluid img-thumbnail" src="../IMG/productos/productoLabios1.png"
-                            alt="Imagen del producto 1">
-                        <img class="col-3 img-fluid img-thumbnail" src="../IMG/productos/productoLabios2.png"
-                            alt="Imagen del producto 2">
-                        <img class="col-3 img-fluid img-thumbnail" src="../IMG/productos/productoLabios3.png"
-                            alt="Imagen del producto 3">
-                    </div>
-                    <div class="justify-content-center d-flex border-top">
-                        <h4 class="card-title ">Nombre del Producto</h4>
-                    </div>
-
-                </article>
+            <div class="row p-1 m-0">
+              <img
+                class="col-3 img-fluid img-thumbnail"
+                src="../IMG/productos/productoLabios1.png"
+                alt="Imagen del producto 1"
+              />
+              <img
+                class="col-3 img-fluid img-thumbnail"
+                src="../IMG/productos/productoLabios2.png"
+                alt="Imagen del producto 2"
+              />
+              <img
+                class="col-3 img-fluid img-thumbnail"
+                src="../IMG/productos/productoLabios3.png"
+                alt="Imagen del producto 3"
+              />
             </div>
-
-            <div class="productDetails col p-2">
-
-                <p>
-                    Marca: Hana Cosmetics
-                </p>
-                <p>
-                    $1200
-                </p>
-                <p>
-                    Descripción: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates tempora veritatis
-                    voluptas minus voluptatem maiores.
-                </p>
-                <p>
-                    Ingredientes: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ad
-                    necessitatibus, aut corporis vitae quidem sunt iste sed eveniet qui ea amet
-                    dignissimos itaque, repudiandae cumque harum veritatis ratione beatae.
-                </p>
-                <div class="btn-wrapper row">
-                    <div class= "col-12 col-md-6 py-1"><button class="btn btn-pink btn-block">Agregar al carrito</button></div>
-                    <div class= "col-12 col-md-6 py-1"><button class="btn btn-pink btn-block">Agregar a la wishlist</button></div>
-                    
-                </div>
+            <div class="justify-content-center d-flex border-top">
+              <h4 class="card-title">Nombre del Producto</h4>
             </div>
-
+          </article>
         </div>
+
+        <div class="color-selector col-2" style="display: none;"></div>
+        <div class="productDetails col p-2">
+          <p class="marca">
+            Marca: Hana Cosmetics
+          </p>
+          <p class="description">
+            Descripción: Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Voluptates tempora veritatis voluptas minus voluptatem
+            maiores.
+          </p>
+          <p class="ingredients">
+            Ingredientes: Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Architecto ad necessitatibus, aut corporis vitae quidem sunt
+            iste sed eveniet qui ea amet dignissimos itaque, repudiandae cumque
+            harum veritatis ratione beatae.
+          </p>
+
+          <button class="btn btn-primary col-6">Agregar al carrito</button>
+          <button class="btn btn-primary col-6">Agregar a la wishlist</button>
+        </div>
+      </div>
     </main>
 
-    <%- include("partials/footer")  %>
-</body>
-
+    <%- include("partials/footer") %>
+  </body>
 </html>
