@@ -7,6 +7,7 @@ rosa claro {
 } */
 .banner {
   height: 20vh;
+  object-fit: cover;
 }
 
 nav{
