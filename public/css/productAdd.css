@@ -6,7 +6,7 @@
 /* /Navbar */
 
 .margin-col {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 #title {
@@ -15,6 +15,11 @@
 
 .title-p {
   margin-bottom: 0px;
+}
+
+.p-datos {
+  font-size: 10px;
+  padding-top: 20px;
 }
 
 .form-control:focus {
@@ -59,6 +64,7 @@
 .btn-primary {
   background-color: #e8b4b4;
   border-color: #e8b4b4;
+  margin-right: 10px;
 }
 
 @media (min-width: 768px) {
