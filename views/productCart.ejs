@@ -2,39 +2,40 @@
 <html lang="en">
 
 <head>
-    <%- include("partials/head")  %><link rel="stylesheet" href="../CSS/productoCart.css">
-    <link rel="stylesheet" href="/CSS/productoCart.css">
-    <title>Product Cart</title>
+    <%- include("partials/head")  %>
+        <link rel="stylesheet" href="../CSS/productoCart.css">
+        <link rel="stylesheet" href="/CSS/productoCart.css">
+        <title>Product Cart</title>
 </head>
 
 <body>
-    <%- include('partials/header') %> 
-    <main class="row main-centrado">
+    <%- include('partials/header') %>
+        <main class="row main-center">
 
-        <div class="contenedor-1 col-12 col-md-6 col-lg-6">
-            <h1 class="compras">Carrito de Compras</h1>
-            <div class="row producto-header">
-                <div class="centrado col-3">
-                    <p>Producto</p>
-                </div>
-                <div class="centrado col-4">
-                    <p>Cantidad</p>
-                </div>
-                <div class="centrado col-2">
-                    <p>Precio</p>
-                </div>
-                <div class="centrado col-1">
-                    <p>Elim.</p>
-                </div>
+            <div class="container-1 col-12 col-md-6 col-lg-6">
+                <h1 class="h-1">Carrito de Compras</h1>
+                <div class="row product-header">
+                    <div class="center col-3">
+                        <p>Producto</p>
+                    </div>
+                    <div class="center col-4">
+                        <p>Cantidad</p>
+                    </div>
+                    <div class="center col-2">
+                        <p>Precio</p>
+                    </div>
+                    <div class="center col-1">
+                        <p>Elim.</p>
+                    </div>
 
-            </div>
-            <div class="row producto">
-                <div class="centrado col-3" style="display:block;"><img src="../img/productos/productoLabios4.png" alt=""></div>
-                <div class="centrado col-4">
-                    <form>
-                        <div class="col-auto my-1">
+                </div>
+                <div class="row product">
+                    <div class="center col-3" style="display:block;"><img src="../img/productos/productoLabios4.png" alt=""></div>
+                    <div class="center col-4">
+                        <form>
+                            <div class="col-auto my-1">
 
-                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                                  <option value="1" selected>1</option>
                                  <option value="2">2</option>
                                  <option value="3">3</option>
@@ -46,69 +47,69 @@
                                  <option value="9">9</option>
                                  <option value="10">10</option>
                             </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="centrado col-2">
-                    <p>$80</p>
-                </div>
-                <div class="centrado col-1">
-                    <button type="button" class="close" aria-label="Close" onclick="eliminarProducto(this)">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="center col-2">
+                        <p>$80</p>
+                    </div>
+                    <div class="center col-1">
+                        <button type="button" class="close" aria-label="Close" onclick="eliminarProducto(this)">
 				        <span aria-hidden="true">&times;</span>
 				    </button>
-                </div>
+                    </div>
 
-            </div>
-            <button class="agregar-producto" onclick="agregarProducto()">+ Agregar nuevo producto</button>
-        </div>
-
-        <div class="contenedor-2 col-12 col-md-4 col-lg-4">
-            <h2 class="resumen-pedido">Resumen de pedido</h2>
-            <div class="row">
-
-                <div class="col-6">
-                    <p class="inicio">Subtotal</p>
                 </div>
-                <div class="col-6">
-                    <p class="fin">$80.00</p>
-                </div>
-                <div class="col-6">
-                    <p class="inicio">Costo de envío</p>
-                </div>
-                <div class="col-6">
-                    <p class="fin">$00.00</p>
-                </div>
-                <div class="col-6">
-                    <p class="inicio">Impuestos</p>
-                </div>
-                <div class="col-6">
-                    <p class="fin">$15.00</p>
-                </div>
-                <div class="col-6">
-                    <p class="inicio">Descuento</p>
-                </div>
-                <div class="col-6">
-                    <p class="fin">$00.00</p>
-                </div>
-
-                <p class="linea"></p>
-                <div class="col-6">
-                    <p class="inicio-f">Total</p>
-                </div>
-                <div class="col-6">
-                    <p class="fin-f">$95.00</p>
-                </div>
-
-                <button type="submit "><i class="fas fa-lock"></i></i>Comprar</button>
-
+                <button class="btn btn-pink btn-block add-product" onclick="agregarProducto()">+ Agregar nuevo producto</button>
             </div>
 
+            <div class="container-2 col-12 col-md-4 col-lg-4">
+                <h2 class="h-2">Resumen de pedido</h2>
+                <div class="row">
 
-    </main>
+                    <div class="col-6">
+                        <p class="start">Subtotal</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="end">$80.00</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="start">Costo de envío</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="end">$00.00</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="start">Impuestos</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="end">$15.00</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="start">Descuento</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="end">$00.00</p>
+                    </div>
+
+                    <p class="line"></p>
+                    <div class="col-6">
+                        <p class="start-f">Total</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="end-f">$95.00</p>
+                    </div>
+
+                    <button class="btn btn-pink btn-block" type="submit "><i class="fas fa-lock"></i></i>Comprar</button>
+
+                </div>
+
+
+        </main>
 
 
 
-    <%- include("partials/footer")  %> 
+        <%- include("partials/footer")  %>
 </body>
 
 </html>

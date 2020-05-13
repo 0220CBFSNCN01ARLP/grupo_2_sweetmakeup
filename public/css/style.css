@@ -16,11 +16,43 @@ header {
 }
 
 header a {
+<<<<<<< HEAD
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
 
+=======
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+/*button*/
+
+.btn-pink {
+    background-color: #f2d7de;
+    font-weight: bold;
+}
+
+.btn-pink:hover {
+    background-color: #dc92a5;
+    color: white;
+}
+
+.btn-pink:hover,
+.btn-pink.active.focus,
+.btn-pink.active:focus,
+.btn-pink.focus,
+.btn-pink.focus:active,
+.btn-pink:active:focus,
+.btn-pink:focus {
+    box-shadow: none;
+}
+
+
+>>>>>>> 527a9e04f4aa57970fd134e5e91c50c059a2db8b
 /**Footer*/
 
 .redes a {
