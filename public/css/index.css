@@ -1,0 +1,194 @@
+.banner {
+  position: relative;
+  padding: 0;
+}
+
+.banner-img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.title-banner {
+  position: absolute;
+  bottom: 30%;
+  background-color: coral;
+  width: 300px;
+  opacity: 0.6;
+}
+
+.title {
+  font-size: 35px;
+  line-height: 45px;
+  text-align: right;
+  color: white;
+}
+
+.title-main {
+  display: block;
+  margin-right: 10px;
+}
+
+.img-icon {
+  width: 85%;
+}
+
+.btn-secondary {
+  background-color: white;
+  border-color: white;
+}
+
+.btn {
+  text-decoration: none;
+}
+
+.section-odd {
+  background-color: rgb(241, 216, 220);
+}
+
+.padding-category {
+  padding-top: 15px;
+  padding-left: 40px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  align-content: center;
+}
+
+.category {
+  color: white;
+  text-align: left;
+  display: inline;
+}
+
+.ver-todos {
+  display: initial;
+  color: white;
+  padding-left: 20px;
+  display: inline;
+}
+
+.margin-row {
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.article-odd {
+  width: 230px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.hover-odd:hover {
+  background-color: #fff0f5;
+}
+
+.img-product {
+  width: 75%;
+  margin: auto;
+  margin-top: 7px;
+}
+
+.name-product {
+  color: #716669;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  text-decoration: none;
+}
+
+.price-product {
+  color: #716669;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+}
+
+.award-icon {
+  color: #009975;
+  font-size: 30px;
+}
+
+.position-icon {
+  position: relative;
+  left: 70px;
+  bottom: 220px;
+}
+
+.section-pair {
+  background-color: whitesmoke;
+}
+
+.category-pair {
+  color: #4b4445;
+  text-align: left;
+  display: inline;
+}
+
+.ver-todos-pair {
+  color: #4b4445;
+  padding-left: 20px;
+  display: inline;
+}
+
+.article-pair {
+  width: 230px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: rgb(241, 216, 220);
+  border-radius: 10px;
+}
+
+.hover-pair:hover {
+  background-color: white;
+}
+
+.padding-info {
+  padding-top: 15px;
+}
+
+.icon {
+  font-size: 25px;
+  color: #f7adad;
+}
+
+.info-h3 {
+  font-size: 22px;
+}
+
+.info-p {
+  font-size: 16px;
+}
+
+.p-info {
+  padding: 40px;
+}
+
+.info-align {
+  text-align: center;
+}
+
+@media (min-width: 426px) {
+  .img-icon {
+    width: 50%;
+  }
+  .arrow {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .img-icon {
+    width: 30%;
+  }
+  .title-banner {
+    bottom: 15%;
+    width: 400px;
+  }
+
+  .title {
+    font-size: 55px;
+    line-height: 60px;
+  }
+}

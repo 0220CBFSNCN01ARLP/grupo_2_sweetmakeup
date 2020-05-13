@@ -1,6 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/CSS/register.css" />
+  </head>
 
+<<<<<<< HEAD
+  <body>
+    <%- include('partials/header') %>
+
+    <main class="container">
+      <div class="row">
+        <div class="row formulario1 col-12 col-md-6 col-lg-6">
+          <form class="container" action=" " method="GET ">
+            <h1>Iniciar sesión</h1>
+            <nav>
+              <div class="connect1">
+                <i class="fab fa-facebook-f"></i>
+                <a href="https://en-gb.facebook.com/login/ "
+                  >Connect with Facebook</a
+                >
+              </div>
+              <div class="connect2">
+                <i class="fab fa-twitter"></i>
+                <a href="https://twitter.com/login?lang=es "
+                  >Connect with Twitter</a
+                >
+              </div>
+            </nav>
+
+            <label for="exampleInputEmail1"
+              >Direccion de correo electronico</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+
+            <p class="p-olvidastecontraseña">¿Olvido su contraseña?</p>
+
+            <button type="submit ">Entrar</button>
+          </form>
+        </div>
+
+        <div class="row formulario2 col-12 col-md-6 col-lg-6">
+          <form class="container" action=" " method="GET ">
+            <h1>Registrarse</h1>
+            <label for="nombre ">Nombre</label>
+            <input
+              class="form-control"
+              type="text "
+              id="nombre "
+              name="nombre "
+              required
+            />
+
+            <label for="apellido ">Apellido</label>
+            <input
+              class="form-control"
+              type="text "
+              id="apellido "
+              name="apellido "
+              required
+            />
+
+            <label for="exampleInputEmail1"
+              >Direccion de correo electronico</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+
+            <button type="submit ">Registrarse</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <%- include("partials/footer") %>
+  </body>
+</html>
+=======
 <head>
     <%- include('partials/head')  %>
         <link rel="stylesheet" href="/CSS/register.css">
@@ -66,3 +165,4 @@
 </body>
 
 </html>
+>>>>>>> 527a9e04f4aa57970fd134e5e91c50c059a2db8b
