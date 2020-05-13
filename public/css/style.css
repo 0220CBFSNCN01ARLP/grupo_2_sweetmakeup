@@ -16,13 +16,6 @@ header {
 }
 
 header a {
-<<<<<<< HEAD
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
-=======
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -66,10 +59,11 @@ header a {
 .btn-pink:active:focus,
 .btn-pink:focus {
     box-shadow: none;
+    background-color: #dc92a5;
+    color: white;
 }
 
 
->>>>>>> 527a9e04f4aa57970fd134e5e91c50c059a2db8b
 /**Footer*/
 
 .redes a {

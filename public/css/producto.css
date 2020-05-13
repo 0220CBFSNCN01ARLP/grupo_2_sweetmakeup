@@ -1,23 +1,5 @@
-.btn-pink {
-    background-color: #f2d7de;
-}
-
-.btn-pink:hover{
-    background-color: #dc92a5;
-}
-
-.btn-pink:hover,
-.btn-pink.active.focus,
-.btn-pink.active:focus,
-.btn-pink.focus,
-.btn-pink.focus:active,
-.btn-pink:active:focus,
-.btn-pink:focus {
-    box-shadow: none;
-}
-
 .related {
-    background-color: darkgray;
+    background-color: #716669;
 }
 
 .product-card a {

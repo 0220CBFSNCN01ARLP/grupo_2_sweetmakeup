@@ -19,15 +19,15 @@ router.get("/ojos", function (req, res, next) {
 });
 
 router.get("/labios", function (req, res, next) {
-  res.render("section", { title: "labios", subsections: ["lápiz labial", "delineador", "lorem", "ipsum"] });
+  res.render("section", { title: "labios", subsections: ["lápiz labial", "delineador", "brillo labial"] });
 });
 
-router.get("/cara", function (req, res, next) {
-  res.render("section", { title: "cara", subsections: ["base", "rubor", "lorem", "mascara"] });
+router.get("/rostro", function (req, res, next) {
+  res.render("section", { title: "rostro", subsections: ["base en polvo", "base en crema", "iluminador", "concealer"] });
 });
 
 router.get("/cejas", function (req, res, next) {
-  res.render("section", { title: "cejas", subsections: ["lorem", "ipsum", "corrector de ojeras", "mascara"] });
+  res.render("section", { title: "cejas", subsections: ["perfilador", "rellenador", "fijador", "cepillos"] });
 });
 
 module.exports = router;
