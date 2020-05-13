@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head")  %>
+    <link rel="stylesheet" href="/CSS/section.css">
+    <title>Make.u | <%= title  %> </title>
+</head>
+
+<body>
+
+    <%- include('partials/header') %>
+     
+
+   <img src="../IMG/<%= title %>Art.jpg" alt="Imagen de modelo con maquillaje en los ojos" class="banner w-100">
+    
+
+    <nav>
+        <ul class="nav justify-content-center filtros"> 
+            <li class="nav-item"><a class="nav-link">best sellers</a></li>
+            <li class="nav-item"><a class="nav-link">lo nuevo</a></li>
+            <li class="nav-item"><a class="nav-link">precio</a></li>
+            <% for (subsection of subsections){ %>
+                <li class="nav-item"><a class="nav-link"><%= subsection %> </a></li>
+            <% } %> 
+        </ul>
+    </nav>
+
+    <main class="container mt-1">
+
+        <div class="row vh-75">
+
+            <div class="col-12 col-sm-6 col-md-4 h-100">
+                <article class="productCard card mt-2">
+                    <a href="producto.html">
+                        <h4 class="card-title">Nombre del Producto</h4>
+                    </a>
+                    <a href="producto.html"><img class="imgMain card-img-top img-fluid"
+                            src="../img/productos/productoOjos1.png" alt=""></a>
+                    <div class="card-body h-30">
+                        <p class="description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, id sequi illum
+                            corporis labore explicabo!
+                        </p>
+                        <p class="price">$500</p>
+                        <button class="btn btn-primary btn-block m-1">Agregar a la wishlist</button>
+                        <button class="btn btn-primary btn-block m-1">Agregar al carrito</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 h-100">
+                <article class="productCard card mt-2">
+                    <a href="producto.html">
+                        <h4 class="card-title">Nombre del Producto</h4>
+                    </a>
+                    <a href="producto.html"><img class="imgMain card-img-top img-fluid"
+                            src="../img/productos/productoOjos1.png" alt=""></a>
+                    <div class="card-body h-30">
+                        <p class="description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, id sequi illum
+                            corporis labore explicabo!
+                        </p>
+                        <p class="price">$500</p>
+                        <button class="btn btn-primary btn-block">Agregar a la wishlist</button>
+                        <button class="btn btn-primary btn-block">Agregar al carrito</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 h-100">
+                <article class="productCard card mt-2">
+                    <a href="producto.html">
+                        <h4 class="card-title">Nombre del Producto</h4>
+                    </a>
+                    <a href="producto.html"><img class="imgMain card-img-top img-fluid"
+                            src="../img/productos/productoOjos1.png" alt=""></a>
+                    <div class="card-body h-30">
+                        <p class="description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, id sequi illum
+                            corporis labore explicabo!
+                        </p>
+                        <p class="price">$500</p>
+                        <button class="btn btn-primary btn-block">Agregar a la wishlist</button>
+                        <button class="btn btn-primary btn-block">Agregar al carrito</button>
+                    </div>
+                </article>
+            </div>
+
+
+        </div>
+
+    </main>
+    <%- include("partials/footer")  %> 
+</body>
+
+</html>

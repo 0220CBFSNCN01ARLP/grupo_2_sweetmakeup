@@ -14,6 +14,9 @@ nav{
   background-color: #f2d7de;
 }
 
+.nav-item {
+  text-transform: capitalize;
+}
 .nav-item :hover{
   background-color: #dc92a5;
 }
