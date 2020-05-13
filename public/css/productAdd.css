@@ -1,0 +1,70 @@
+.margin-menu {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#title {
+  margin-bottom: 20px;
+}
+
+.margin-col {
+  margin-bottom: 30px;
+}
+
+.title-p {
+  margin-bottom: 0px;
+}
+
+.form-control:focus {
+  border-color: rgb(248, 142, 248);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
+}
+
+.none-cell {
+  display: none;
+}
+
+.descuento {
+  font-size: 0.8em;
+}
+
+.envios {
+  padding-left: 0px;
+}
+
+.margin-dimension {
+  margin-top: 15px;
+}
+
+.p-dimension {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.form-margin {
+  margin-bottom: 10px;
+}
+
+.button-margin {
+  margin: 3px;
+}
+
+.mg-button {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  background-color: #e8b4b4;
+  border-color: #e8b4b4;
+}
+
+@media (min-width: 768px) {
+  .none-tablet {
+    display: none;
+  }
+
+  .none-cell {
+    display: initial;
+  }
+}
