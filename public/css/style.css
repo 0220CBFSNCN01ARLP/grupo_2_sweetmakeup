@@ -28,6 +28,23 @@ header a {
     font-weight: bold;
 }
 
+.header-nav {
+    flex-grow: 1;
+}
+
+.dropdown-expanded {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .dropdown {
+        display: none;
+    }
+
+    .dropdown-expanded {
+        display: flex;
+    }
+}
 
 /*button*/
 

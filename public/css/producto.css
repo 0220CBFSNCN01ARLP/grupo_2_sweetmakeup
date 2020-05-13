@@ -15,3 +15,12 @@
 .btn-pink:focus {
     box-shadow: none;
 }
+
+.related {
+    background-color: darkgray;
+}
+
+.product-card a {
+    color: black;
+    text-decoration: none;;
+}
