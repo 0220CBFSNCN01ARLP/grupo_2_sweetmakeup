@@ -1,14 +1,16 @@
+/* Navbar */
 .margin-menu {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
-#title {
-  margin-bottom: 20px;
-}
+/* /Navbar */
 
 .margin-col {
   margin-bottom: 30px;
+}
+
+#title {
+  margin-bottom: 20px;
 }
 
 .title-p {
@@ -21,12 +23,12 @@
   box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
 }
 
-.none-cell {
-  display: none;
-}
-
 .descuento {
   font-size: 0.8em;
+}
+
+.none-cell {
+  display: none;
 }
 
 .envios {
@@ -46,12 +48,12 @@
   margin-bottom: 10px;
 }
 
-.button-margin {
-  margin: 3px;
-}
-
 .mg-button {
   margin-bottom: 15px;
+}
+
+.button-margin {
+  margin: 3px;
 }
 
 .btn-primary {
