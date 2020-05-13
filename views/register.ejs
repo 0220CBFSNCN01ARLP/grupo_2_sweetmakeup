@@ -1,72 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- aparece dos veces el head -->
   <head>
     <%- include('partials/head') %>
     <link rel="stylesheet" href="/CSS/register.css" />
   </head>
 
-<head>
-    <%- include('partials/head')  %>
-        <link rel="stylesheet" href="/CSS/register.css">
+  <head>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/CSS/register.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <%- include('partials/header') %>
 
-        <main class="container">
+    <main class="container">
+      <div class="row">
+        <div class="row form-1 col-12 col-md-6 col-lg-6">
+          <!-- en method va get o post? tengo entendido que post -->
+          <form class="container" action=" " method="GET ">
+            <h1>Iniciar sesión</h1>
+            <nav>
+              <div class="connect-1">
+                <i class="fab fa-facebook-f"></i>
+                <a href="https://en-gb.facebook.com/login/ "
+                  >Continuar con Facebook</a
+                >
+              </div>
+              <div class="connect-2">
+                <i class="fab fa-twitter"></i>
+                <a href="https://twitter.com/login?lang=es "
+                  >Continuar con Twitter</a
+                >
+              </div>
+            </nav>
 
-            <div class="row">
-                <div class="row form-1 col-12 col-md-6 col-lg-6">
-                    <form class="container" action=" " method="GET ">
-                        <h1>Iniciar sesión</h1>
-                        <nav>
-                            <div class="connect-1">
-                                <i class="fab fa-facebook-f "></i>
-                                <a href="https://en-gb.facebook.com/login/ ">Continuar con Facebook</a>
-                            </div>
-                            <div class="connect-2">
-                                <i class="fab fa-twitter "></i>
-                                <a href="https://twitter.com/login?lang=es ">Continuar con Twitter</a>
-                            </div>
-                        </nav>
+            <!-- la clase pasada dijo que tengamos cuidado con estas etiquetas que vienen de bootstrap: exampleInputEmail1, aca tenemos que poner algo nosotros, y ponerlo en id y todos los lugares donde este -->
+            <label for="exampleInputEmail1"
+              >Direccion de correo electronico</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
 
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
 
-                        <label for="exampleInputEmail1">Direccion de correo electronico</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <p class="password-p">¿Olvido su contraseña?</p>
 
-                        <label for="exampleInputPassword1">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+            <button class="btn btn-pink btn-block" type="submit ">
+              Ingresar
+            </button>
+          </form>
+        </div>
 
-                        <p class="password-p">¿Olvido su contraseña?</p>
+        <div class="row form-2 col-12 col-md-6 col-lg-6">
+          <form class="container" action=" " method="GET ">
+            <h1>Registrarse</h1>
+            <label for="nombre ">Nombre</label>
+            <input
+              class="form-control"
+              type="text "
+              id="nombre "
+              name="nombre "
+              required
+            />
 
-                        <button class="btn btn-pink btn-block" type="submit ">Ingresar</button>
-                    </form>
-                </div>
+            <label for="apellido ">Apellido</label>
+            <input
+              class="form-control"
+              type="text "
+              id="apellido "
+              name="apellido "
+              required
+            />
 
-                <div class="row form-2 col-12 col-md-6 col-lg-6">
-                    <form class="container" action=" " method="GET ">
-                        <h1>Registrarse</h1>
-                        <label for="nombre ">Nombre</label>
-                        <input class="form-control" type="text " id="nombre " name="nombre " required>
+            <label for="exampleInputEmail1"
+              >Direccion de correo electronico</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
 
-                        <label for="apellido ">Apellido</label>
-                        <input class="form-control" type="text " id="apellido " name="apellido " required>
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
 
-                        <label for="exampleInputEmail1">Direccion de correo electronico</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <button class="btn btn-pink btn-block" type="submit ">
+              Registrarse
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
 
-                        <label for="exampleInputPassword1">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-
-                        <button class="btn btn-pink btn-block" type="submit ">Registrarse</button>
-                    </form>
-                </div>
-            </div>
-
-        </main>
-
-        <%- include("partials/footer")  %>
-</body>
-
+    <%- include("partials/footer") %>
+  </body>
 </html>
