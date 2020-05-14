@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.h-1 {
+    padding-bottom: 20px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.h-2 {
+    padding-bottom: 35px;
+    padding-top: 35px;
+    text-align: center;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 25px;
+}
+
+.main-center {
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+}
+
+.container-1 {
+    background-color: rgba(255, 255, 255, 0.37);
+}
+
+.container-2 {
+    background-color: rgba(255, 255, 255, 0.37);
+}
+
+.product-header {
+    border-top: 1px solid rgba(85, 84, 84, 0.5);
+    border-bottom: 1px solid rgba(85, 84, 84, 0.5);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 0px;
+    padding-top: 11px;
+    align-items: end;
+}
+
+.product {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(85, 84, 84, 0.5);
+}
+
+.add-product {
+    margin-top: 39px;
+}
+
+.center {
+    text-align: center;
+}
+
+.start {
+    text-align: start;
+    line-height: 25px;
+    font-size: 1rem;
+}
+
+.start-f {
+    text-transform: uppercase;
+    text-align: start;
+    line-height: 25px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.end {
+    text-align: end;
+    line-height: 25px;
+    font-size: 1rem;
+}
+
+.end-f {
+    text-align: end;
+    line-height: 25px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.line {
+    width: 100%;
+    border-bottom: 1px solid rgba(85, 84, 84, 0.5);
+}
+
+.fa-lock {
+    padding-right: 6px;
+}
+
+@media (min-width: 768px) {
+    main {
+        height: 80vh;
+    }
+    .h-2 {
+        padding-bottom: 20px;
+    }
+    .start {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .start-f {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .end {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .end-f {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

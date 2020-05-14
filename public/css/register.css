@@ -1,102 +1,102 @@
 /*formulario registro*/
 
 body {
-  background-color: whitesmoke;
+    background-color: whitesmoke;
 }
 
 main {
-  border: 1px solid rgb(75, 74, 74);
-  margin-top: 15px;
-  margin-bottom: 15px;
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.37);
+    border: 1px solid rgb(75, 74, 74);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.37);
 }
 
 .form-1 {
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
 }
 
 .form-2 {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 form {
-  width: 100%;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  text-align: center;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
 }
 
 .row {
-  margin-right: 0px;
-  margin-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 .connect-1 {
-  color: white;
-  background-color: rgb(2, 2, 85);
-  padding: 0.8rem;
-  border-radius: 0.25rem;
+    color: white;
+    background-color: rgb(2, 2, 85);
+    padding: 0.8rem;
+    border-radius: 0.25rem;
 }
 
 .connect-2 {
-  color: white;
-  background-color: cornflowerblue;
-  padding: 0.8rem;
-  border-radius: 0.25rem;
+    color: white;
+    background-color: cornflowerblue;
+    padding: 0.8rem;
+    border-radius: 0.25rem;
 }
 
 input {
-  width: 100%;
+    width: 100%;
 }
 
 .form-1 label {
-  margin-top: 20.5px;
-  margin-bottom: 4.5px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    margin-top: 20.5px;
+    margin-bottom: 4.5px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .form-2 label {
-  margin-bottom: 4.5px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    margin-bottom: 4.5px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .form-2 input {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 form nav a {
-  font-size: 15.5px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 15.5px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .password-p {
-  text-decoration: underline;
-  color: rgb(27, 27, 27);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    text-decoration: underline;
+    color: rgb(27, 27, 27);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 h1 {
-  padding-bottom: 15px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    padding-bottom: 15px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 @media (min-width: 768px) {
-  .row {
-    justify-content: space-around;
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-  .form-1 {
-    border-bottom: none;
-    border-right: 1px solid black;
-  }
+    .row {
+        justify-content: space-around;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .form-1 {
+        border-bottom: none;
+        border-right: 1px solid black;
+    }
 }

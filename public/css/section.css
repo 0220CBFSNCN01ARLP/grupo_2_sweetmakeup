@@ -5,36 +5,41 @@
 rosa claro {
   background-color: #f2d7de;
 } */
+
 .banner {
-  height: 20vh;
-  object-fit: cover;
+    height: 20vh;
+    object-fit: cover;
 }
 
-nav{
-  background-color: #f2d7de;
+.nav-section {
+    background-color: #f2d7de;
 }
 
 .nav-item {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
-.nav-item :hover{
-  background-color: #dc92a5;
+
+.nav-item :hover {
+    background-color: #dc92a5;
 }
 
 .card-title {
-  font-weight: bold;
-  text-align: center;
-  color: black;
-  text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    text-decoration: none;
 }
 
 .btn-primary {
-  background-color: #f2d7de;
-  border-color: black;
-  color: black;
+    background-color: #f2d7de;
+    border-color: black;
+    color: black;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
-  background-color: #dc92a5;
-  border-color: black;
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #dc92a5;
+    border-color: black;
 }

@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- aparece dos veces el head -->
-  <head>
-    <%- include('partials/head') %>
-    <link rel="stylesheet" href="/CSS/register.css" />
-  </head>
 
-  <head>
+<head>
     <%- include('partials/head') %>
-    <link rel="stylesheet" href="/CSS/register.css" />
-  </head>
+        <link rel="stylesheet" href="/CSS/register.css" />
+</head>
 
-  <body>
+<head>
+    <%- include('partials/head') %>
+        <link rel="stylesheet" href="/CSS/register.css" />
+</head>
+
+<body>
     <%- include('partials/header') %>
 
-    <main class="container">
-      <div class="row">
-        <div class="row form-1 col-12 col-md-6 col-lg-6">
-          <!-- en method va get o post? tengo entendido que post -->
-          <form class="container" action=" " method="GET ">
-            <h1>Iniciar sesión</h1>
-            <nav>
-              <div class="connect-1">
-                <i class="fab fa-facebook-f"></i>
-                <a href="https://en-gb.facebook.com/login/ "
-                  >Continuar con Facebook</a
+        <main class="container">
+            <div class="row">
+                <div class="row form-1 col-12 col-md-6 col-lg-6">
+                    <form class="container" action=" " method="POST">
+                        <h1>Iniciar sesión</h1>
+                        <nav>
+                            <div class="connect-1">
+                                <i class="fab fa-facebook-f"></i>
+                                <a href="https://en-gb.facebook.com/login/ ">Continuar con Facebook</a
                 >
               </div>
               <div class="connect-2">
@@ -35,22 +33,22 @@
               </div>
             </nav>
 
-            <!-- la clase pasada dijo que tengamos cuidado con estas etiquetas que vienen de bootstrap: exampleInputEmail1, aca tenemos que poner algo nosotros, y ponerlo en id y todos los lugares donde este -->
-            <label for="exampleInputEmail1"
+            
+            <label for="email"
               >Direccion de correo electronico</label
             >
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail1"
+              id="email"
               aria-describedby="emailHelp"
             />
 
-            <label for="exampleInputPassword1">Contraseña</label>
+            <label for="password">Contraseña</label>
             <input
               type="password"
               class="form-control"
-              id="exampleInputPassword1"
+              id="password"
             />
 
             <p class="password-p">¿Olvido su contraseña?</p>
@@ -82,24 +80,24 @@
               required
             />
 
-            <label for="exampleInputEmail1"
+            <label for="email"
               >Direccion de correo electronico</label
             >
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail1"
+              id="email"
               aria-describedby="emailHelp"
             />
 
-            <label for="exampleInputPassword1">Contraseña</label>
+            <label for="password">Contraseña</label>
             <input
               type="password"
               class="form-control"
-              id="exampleInputPassword1"
+              id="password"
             />
 
-            <button class="btn btn-pink btn-block" type="submit ">
+            <button class="btn btn-pink btn-block" type="submit">
               Registrarse
             </button>
           </form>

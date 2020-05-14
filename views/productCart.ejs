@@ -3,11 +3,8 @@
 
 <head>
     <%- include("partials/head")  %>
-    <!-- se repite dos veces este link -->
-        <link rel="stylesheet" href="../CSS/productoCart.css">
-        <link rel="stylesheet" href="/CSS/productoCart.css">
-        <!-- poner el titulo en español -->
-        <title>Product Cart</title>
+        <link rel="stylesheet" href="/CSS/productCart.css">
+        <title>Carrito de Compras</title>
 </head>
 
 <body>
@@ -32,14 +29,14 @@
 
                 </div>
                 <div class="row product">
-                    <!-- en teoria el src deberia ser sin el ../ -->
-                    <div class="center col-3" style="display:block;"><img src="../img/productos/productoLabios4.png" alt=""></div>
-                    <!-- alt deberia tener una descripcion (yo me comi todas las alt! olvide ponerlas jaja ) -->
+
+                    <div class="center col-3" style="display:block;"><img src="img/productos/productoLabios4.png" alt="imagen producto"></div>
+
                     <div class="center col-4">
                         <form>
                             <div class="col-auto my-1">
 
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <select class="custom-select form-control" id="inlineFormCustomSelect">
                                  <option value="1" selected>1</option>
                                  <option value="2">2</option>
                                  <option value="3">3</option>
