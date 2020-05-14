@@ -1,78 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/CSS/productAdd.css" />
 
-<head>
-  <%- include("partials/head") %>
-  <link rel="stylesheet" href="/CSS/productAdd.css" />
+    <title>Agregar Producto</title>
+  </head>
 
-  <title>Agregar Producto</title>
-</head>
+  <body>
+    <!-- Header -->
+    <%- include('partials/header') %>
+    <!-- /Header -->
 
-<body>
-  <!-- Header -->
-  <%- include('partials/header') %>
-  <!-- /Header -->
-
-  <!-- Navbar -->
-  <!-- Creo que la clase .nav-link no hace nada si no esta dentro de un .navbar -->
-  <div class="container">
-    <div class="row">
-      <div class="col-12 margin-menu">
-        <nav class="nav">
-          <a class="nav-link active" href="#">Agregar</a>
-          <a class="nav-link" href="#">Mis Productos</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-  <!-- /Navbar -->
-
-  <main>
-    <!-- Cargar Producto -->
-    <!-- Debería ser un solo formulario de carga, de lo contrario no hay forma de mandar la información-->
+    <!-- Navbar -->
     <div class="container">
       <div class="row">
-        <div class="col-12 margin-col">
-          <h2 id="title">Agregar un producto</h2>
-          <p class="title-p none-tablet">
-            Agregue las caracterásticas esenciales del producto para subirlo
-            rápidamente a la pagina, y luego en el desktop, siga editándolo
-            con mayor precisión.
-          </p>
-        </div>
-        <div class="col-12 col-sm-6 margin-col">
-          <form action="" method="POST">
-            <label for="productName">Nombre del Producto</label>
-            <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName"
-              id="productName" />
-          </form>
-        </div>
-        <div class="col-12 col-sm-6 margin-col">
-          <form action="" method="POST">
-            <label for="productPrice">Precio</label>
-            <input type="number" class="form-control" placeholder="Precio" name="productPrice" id="productPrice" />
-          </form>
-        </div>
-        <!-- Acá el id "subirImagen" está en español-->
-        <div class="col-12 margin-col">
-          <form action="" method="POST">
-            <div class="form-group">
-              <label for="subirImagen">Subir una Imagen</label>
-              <input type="file" class="form-control-file" id="subirImagen" accept="image/*," />
-            </div>
-          </form>
-        </div>
-        <!-- Acá había dos option "rostro" y uno quedó sin texto, supongo que ahí iría cejas -->
-        <div class="col-12 col-sm-6 margin-col">
-          <form action="" method="POST">
-            <label for="familia">Familia de Producto</label>
-            <select class="form-control" name="familia" id="familia">
-              <option value="cejas">Cejas</option>
-              <option value="rostro">Rostro</option>
-              <option value="labios">Labios</option>
-              <option value="ojos">Ojos</option>
-            </select>
-          </form>
         <div class="col-12 margin-menu">
           <nav class="nav">
             <button type="button" class="btn btn-primary btn-sm">
@@ -83,6 +25,9 @@
             </button>
           </nav>
         </div>
+      </div>
+    </div>
+    <!-- /Navbar -->
 
     <main>
       <!-- Cargar Producto -->
@@ -123,78 +68,205 @@
               />
             </form>
           </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta" value="conDescuento" />
-            <label class="custom-control-label" for="descuento">Con Descuento</label>
-          </div>
-        </div>
-<!-- descripción está en español -->
-        <!-- Solo para tablet y desktop -->
-        <div class="col-sm-6 none-cell margin-col">
-          <form class="form-descripcion" action="" method="POST">
-            <label for="descripcion">Descripcion del Producto</label><br />
-            <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300"
-              placeholder="300 caracteres maximo"></textarea>
-          </form>
-        </div>
 
-        <div class="col-sm-6 none-cell margin-col">
-          <form class="form-descripcion" action="" method="POST">
-            <label for="descripcion">Informacion de Pago</label><br />
-            <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300"
-              placeholder="300 caracteres maximo"></textarea>
-          </form>
-        </div>
-
-        <div class="col-sm-6 none-cell margin-col">
-          <form class="form-descripcion" action="" method="POST">
-            <label for="descripcion">Politicas de Devolucion</label><br />
-            <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300"
-              placeholder="300 caracteres maximo"></textarea>
-          </form>
-        </div>
-
-        <div class="col-sm-6 none-cell margin-col">
-          <form class="form-descripcion" action="" method="POST">
-            <label for="descripcion">Informacion de Envio</label><br />
-            <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300"
-              placeholder="300 caracteres maximo"></textarea>
-          </form>
-        </div>
-
-        <div class="col-12 none-cell margin-col">
-          <form action="">
-            <label for="muestrario">Variantes del Producto:</label>
-            <input type="color" value="#e8b4b4" id="muestrario" />
-          </form>
-        </div>
-
-        <div class="col-12 none-cell margin-col envios">
-          <div class="col-12">
-            <h5><span>Envios</span></h5>
-          </div>
-          <div class="col-sm-6">
+          <div class="col-12 margin-col">
             <form action="" method="POST">
-              <label for="peso">Peso:</label>
-              <input type="number" class="form-control" placeholder="kilogramos" name="peso" id="peso" />
+              <div class="form-group">
+                <label for="subirImagen">Subir una Imagen</label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  id="subirImagen"
+                  accept="image/*,"
+                />
+              </div>
             </form>
           </div>
-          <div class="col-sm-6 margin-dimension">
-            <p class="p-dimension">Dimensiones:</p>
+
+          <div class="col-12 col-sm-6 margin-col">
             <form action="" method="POST">
-              <input type="number" class="form-control form-margin" placeholder="Alto (mm)" name="dimensiones"
-                id="alto" />
-            </form>
-            <form action="" method="POST">
-              <input type="number" class="form-control form-margin" placeholder="Ancho (mm)" name="dimensiones"
-                id="ancho" />
-            </form>
-            <form action="" method="POST">
-              <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="dimensiones"
-                id="largo" />
+              <label for="familia">Familia de Producto</label>
+              <select class="form-control" name="familia" id="familia">
+                <option value="rostro"></option>
+                <option value="rostro">Rostro</option>
+                <option value="labios">Labios</option>
+                <option value="ojos">Ojos</option>
+              </select>
             </form>
           </div>
-        </div>
+
+          <div class="col-12 col-sm-6 margin-col">
+            <form action="" method="POST">
+              <label for="oferta"
+                >Oferta <span class="descuento">(de 1 a 100)</span></label
+              >
+              <input
+                class="form-control"
+                placeholder="Porcentaje"
+                type="number"
+                min="1"
+                max="100"
+                id="oferta"
+              />
+            </form>
+          </div>
+
+          <div class="col-12 margin-col">
+            <label for="etiqueta">Etiqueta</label>
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="new"
+                name="etiqueta"
+                value="nuevoLanzamiento"
+              />
+              <label class="custom-control-label" for="new"
+                >Nuevo Lanzamiento</label
+              >
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="descuento"
+                name="etiqueta"
+                value="conDescuento"
+              />
+              <label class="custom-control-label" for="descuento"
+                >Con Descuento</label
+              >
+            </div>
+          </div>
+
+          <!-- Solo para tablet y desktop -->
+          <div class="col-sm-6 none-cell margin-col">
+            <form class="form-descripcion" action="" method="POST">
+              <label for="descripcion">Descripcion del Producto</label><br />
+              <textarea
+                class="form-control"
+                name="descripcion"
+                id=""
+                cols="35"
+                rows="3"
+                maxlength="300"
+                placeholder="300 caracteres maximo"
+              ></textarea>
+            </form>
+          </div>
+
+          <div class="col-sm-6 none-cell margin-col">
+            <form class="form-descripcion" action="" method="POST">
+              <label for="descripcion">Informacion de Pago</label><br />
+              <textarea
+                class="form-control"
+                name="descripcion"
+                id=""
+                cols="35"
+                rows="3"
+                maxlength="300"
+                placeholder="300 caracteres maximo"
+              ></textarea>
+            </form>
+          </div>
+
+          <div class="col-sm-6 none-cell margin-col">
+            <form class="form-descripcion" action="" method="POST">
+              <label for="descripcion">Politicas de Devolucion</label><br />
+              <textarea
+                class="form-control"
+                name="descripcion"
+                id=""
+                cols="35"
+                rows="3"
+                maxlength="300"
+                placeholder="300 caracteres maximo"
+              ></textarea>
+            </form>
+          </div>
+
+          <div class="col-sm-6 none-cell margin-col">
+            <form class="form-descripcion" action="" method="POST">
+              <label for="descripcion">Informacion de Envio</label><br />
+              <textarea
+                class="form-control"
+                name="descripcion"
+                id=""
+                cols="35"
+                rows="3"
+                maxlength="300"
+                placeholder="300 caracteres maximo"
+              ></textarea>
+            </form>
+          </div>
+
+          <div class="col-12 none-cell margin-col">
+            <form action="">
+              <label for="muestrario">Variantes del Producto:</label>
+              <input type="color" value="#e8b4b4" id="muestrario" />
+            </form>
+          </div>
+
+          <div class="col-12 none-cell margin-col envios">
+            <div class="col-12">
+              <h5><span>Envios</span></h5>
+            </div>
+            <div class="col-sm-6">
+              <form action="" method="POST">
+                <label for="peso">Peso:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="kilogramos"
+                  name="peso"
+                  id="peso"
+                />
+              </form>
+            </div>
+            <div class="col-sm-6 margin-dimension">
+              <p class="p-dimension">Dimensiones:</p>
+              <form action="" method="POST">
+                <input
+                  type="number"
+                  class="form-control form-margin"
+                  placeholder="Alto (mm)"
+                  name="dimensiones"
+                  id="alto"
+                />
+              </form>
+              <form action="" method="POST">
+                <input
+                  type="number"
+                  class="form-control form-margin"
+                  placeholder="Ancho (mm)"
+                  name="dimensiones"
+                  id="ancho"
+                />
+              </form>
+              <form action="" method="POST">
+                <input
+                  type="number"
+                  class="form-control form-margin"
+                  placeholder="Largo (mm)"
+                  name="dimensiones"
+                  id="largo"
+                />
+              </form>
+            </div>
+          </div>
+
+          <div class="col-12 none-cell margin-col">
+            <form action="" method="POST">
+              <label for="linkVideo">Subir video de YouTube</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Pegar el Link"
+                name="linkVideo"
+                id="linkVideo"
+              />
+            </form>
+          </div>
 
           <div class="col-12 d-flex justify-content-end mg-button">
             <form action="">
@@ -220,13 +292,11 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- /Cargar Producto -->
-  </main>
+      <!-- /Cargar Producto -->
+    </main>
 
-  <!-- Footer -->
-  <%- include("partials/footer") %>
-  <!-- /Footer -->
-</body>
-
+    <!-- Footer -->
+    <%- include("partials/footer") %>
+    <!-- /Footer -->
+  </body>
 </html>
