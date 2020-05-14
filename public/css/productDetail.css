@@ -4,5 +4,9 @@
 
 .product-card a {
     color: black;
-    text-decoration: none;;
+    text-decoration: none;
+}
+
+.button-wrapper a {
+    text-decoration: none;
 }
