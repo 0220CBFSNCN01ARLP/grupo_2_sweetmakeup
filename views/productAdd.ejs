@@ -32,73 +32,68 @@
     <main>
       <!-- Cargar Producto -->
       <div class="container">
-        <div class="row">
-          <div class="col-12 margin-col">
-            <h2 id="title">Agregar un producto</h2>
-            <p class="title-p none-tablet">
-              Agregue las caracteristicas esenciales del producto para subirlo
-              rapidamente a la pagina, y luego en el desktop, siga editandolo
-              con mas datos.
-            </p>
-            <p class="p-datos none-tablet">
-              * Todos los datos son obligatorios
-            </p>
-          </div>
-          <div class="col-12 col-sm-6 margin-col">
-            <form action="" method="POST">
-              <label for="productName">Nombre del Producto</label>
+        <form action="" method="POST">
+          <div class="row">
+            <div class="col-12 margin-col">
+              <h2 id="title">Agregar un producto</h2>
+              <p class="title-p none-tablet">
+                Agregue las caracteristicas esenciales del producto para subirlo
+                rapidamente a la pagina, y luego en el desktop, siga editandolo
+                con mas datos.
+              </p>
+              <p class="p-datos none-tablet">
+                * Campos obligatorios
+              </p>
+            </div>
+            <div class="col-12 col-sm-6 margin-col">
+              <label for="productName">Nombre del Producto *</label>
               <input
                 type="text"
                 class="form-control"
                 placeholder="Nombre del Producto"
                 name="productName"
                 id="productName"
+                required
               />
-            </form>
-          </div>
-          <div class="col-12 col-sm-6 margin-col">
-            <form action="" method="POST">
-              <label for="productPrice">Precio</label>
+            </div>
+            <div class="col-12 col-sm-6 margin-col">
+              <label for="productPrice">Precio *</label>
               <input
                 type="number"
                 class="form-control"
                 placeholder="Precio"
                 name="productPrice"
                 id="productPrice"
+                required
               />
-            </form>
-          </div>
+            </div>
 
-          <div class="col-12 margin-col">
-            <form action="" method="POST">
+            <div class="col-12 margin-col">
               <div class="form-group">
-                <label for="subirImagen">Subir una Imagen</label>
+                <label for="subirImagen">Subir una Imagen *</label>
                 <input
                   type="file"
                   class="form-control-file"
                   id="subirImagen"
                   accept="image/*,"
+                  required
                 />
               </div>
-            </form>
-          </div>
+            </div>
 
-          <div class="col-12 col-sm-6 margin-col">
-            <form action="" method="POST">
-              <label for="familia">Familia de Producto</label>
-              <select class="form-control" name="familia" id="familia">
+            <div class="col-12 col-sm-6 margin-col">
+              <label for="familia">Familia de Producto *</label>
+              <select required class="form-control" name="familia" id="familia">
                 <option value="rostro"></option>
                 <option value="rostro">Rostro</option>
                 <option value="labios">Labios</option>
                 <option value="ojos">Ojos</option>
               </select>
-            </form>
-          </div>
+            </div>
 
-          <div class="col-12 col-sm-6 margin-col">
-            <form action="" method="POST">
+            <div class="col-12 col-sm-6 margin-col">
               <label for="oferta"
-                >Oferta <span class="descuento">(de 1 a 100)</span></label
+                >Oferta * <span class="descuento">(de 1 a 100)</span></label
               >
               <input
                 class="form-control"
@@ -107,41 +102,39 @@
                 min="1"
                 max="100"
                 id="oferta"
+                required
               />
-            </form>
-          </div>
-
-          <div class="col-12 margin-col">
-            <label for="etiqueta">Etiqueta</label>
-            <div class="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                class="custom-control-input"
-                id="new"
-                name="etiqueta"
-                value="nuevoLanzamiento"
-              />
-              <label class="custom-control-label" for="new"
-                >Nuevo Lanzamiento</label
-              >
             </div>
-            <div class="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                class="custom-control-input"
-                id="descuento"
-                name="etiqueta"
-                value="conDescuento"
-              />
-              <label class="custom-control-label" for="descuento"
-                >Con Descuento</label
-              >
-            </div>
-          </div>
 
-          <!-- Solo para tablet y desktop -->
-          <div class="col-sm-6 none-cell margin-col">
-            <form class="form-descripcion" action="" method="POST">
+            <div class="col-12 margin-col">
+              <label for="etiqueta">Etiqueta *</label>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="new"
+                  name="etiqueta"
+                  value="nuevoLanzamiento"
+                />
+                <label class="custom-control-label" for="new"
+                  >Nuevo Lanzamiento</label
+                >
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="descuento"
+                  name="etiqueta"
+                  value="conDescuento"
+                />
+                <label class="custom-control-label" for="descuento"
+                  >Con Descuento</label
+                >
+              </div>
+            </div>
+
+            <div class="col-sm-6 none-cell margin-col">
               <label for="descripcion">Descripcion del Producto</label><br />
               <textarea
                 class="form-control"
@@ -152,11 +145,9 @@
                 maxlength="300"
                 placeholder="300 caracteres maximo"
               ></textarea>
-            </form>
-          </div>
+            </div>
 
-          <div class="col-sm-6 none-cell margin-col">
-            <form class="form-descripcion" action="" method="POST">
+            <div class="col-sm-6 none-cell margin-col">
               <label for="descripcion">Informacion de Pago</label><br />
               <textarea
                 class="form-control"
@@ -167,11 +158,9 @@
                 maxlength="300"
                 placeholder="300 caracteres maximo"
               ></textarea>
-            </form>
-          </div>
+            </div>
 
-          <div class="col-sm-6 none-cell margin-col">
-            <form class="form-descripcion" action="" method="POST">
+            <div class="col-sm-6 none-cell margin-col">
               <label for="descripcion">Politicas de Devolucion</label><br />
               <textarea
                 class="form-control"
@@ -182,11 +171,9 @@
                 maxlength="300"
                 placeholder="300 caracteres maximo"
               ></textarea>
-            </form>
-          </div>
+            </div>
 
-          <div class="col-sm-6 none-cell margin-col">
-            <form class="form-descripcion" action="" method="POST">
+            <div class="col-sm-6 none-cell margin-col">
               <label for="descripcion">Informacion de Envio</label><br />
               <textarea
                 class="form-control"
@@ -197,22 +184,18 @@
                 maxlength="300"
                 placeholder="300 caracteres maximo"
               ></textarea>
-            </form>
-          </div>
+            </div>
 
-          <div class="col-12 none-cell margin-col">
-            <form action="">
+            <div class="col-12 none-cell margin-col">
               <label for="muestrario">Variantes del Producto:</label>
               <input type="color" value="#e8b4b4" id="muestrario" />
-            </form>
-          </div>
-
-          <div class="col-12 none-cell margin-col envios">
-            <div class="col-12">
-              <h5><span>Envios</span></h5>
             </div>
-            <div class="col-sm-6">
-              <form action="" method="POST">
+
+            <div class="col-12 none-cell margin-col envios">
+              <div class="col-12">
+                <h5><span>Envios</span></h5>
+              </div>
+              <div class="col-sm-6">
                 <label for="peso">Peso:</label>
                 <input
                   type="number"
@@ -221,11 +204,10 @@
                   name="peso"
                   id="peso"
                 />
-              </form>
-            </div>
-            <div class="col-sm-6 margin-dimension">
-              <p class="p-dimension">Dimensiones:</p>
-              <form action="" method="POST">
+              </div>
+              <div class="col-sm-6 margin-dimension">
+                <p class="p-dimension">Dimensiones:</p>
+
                 <input
                   type="number"
                   class="form-control form-margin"
@@ -233,8 +215,7 @@
                   name="dimensiones"
                   id="alto"
                 />
-              </form>
-              <form action="" method="POST">
+
                 <input
                   type="number"
                   class="form-control form-margin"
@@ -242,8 +223,7 @@
                   name="dimensiones"
                   id="ancho"
                 />
-              </form>
-              <form action="" method="POST">
+
                 <input
                   type="number"
                   class="form-control form-margin"
@@ -251,12 +231,10 @@
                   name="dimensiones"
                   id="largo"
                 />
-              </form>
+              </div>
             </div>
-          </div>
 
-          <div class="col-12 none-cell margin-col">
-            <form action="" method="POST">
+            <div class="col-12 none-cell margin-col">
               <label for="linkVideo">Subir video de YouTube</label>
               <input
                 type="text"
@@ -265,11 +243,9 @@
                 name="linkVideo"
                 id="linkVideo"
               />
-            </form>
-          </div>
+            </div>
 
-          <div class="col-12 d-flex justify-content-end mg-button">
-            <form action="">
+            <div class="col-12 d-flex justify-content-end mg-button">
               <button
                 type="button"
                 class="btn btn-secondary btn-sm button-margin"
@@ -288,9 +264,9 @@
               >
                 Publicar
               </button>
-            </form>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
       <!-- /Cargar Producto -->
     </main>

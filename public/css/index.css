@@ -116,23 +116,23 @@
   bottom: 220px;
 } */
 
-.section-pair {
+.section-even {
   background-color: whitesmoke;
 }
 
-.category-pair {
+.category-even {
   color: #4b4445;
   text-align: left;
   display: inline;
 }
 
-.ver-todos-pair {
+.ver-todos-even {
   color: #4b4445;
   padding-left: 20px;
   display: inline;
 }
 
-.article-pair {
+.article-even {
   width: 230px;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -140,7 +140,7 @@
   border-radius: 10px;
 }
 
-.hover-pair:hover {
+.hover-even:hover {
   background-color: white;
 }
 
