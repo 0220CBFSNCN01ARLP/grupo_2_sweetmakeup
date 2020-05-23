@@ -1,33 +1,19 @@
 var express = require("express");
 var router = express.Router();
-
+const mainController = require('../controllers/mainController');
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index");
-});
+router.get("/", mainController.index);
 
-router.get("/register", function (req, res, next) {
-  res.render("register");
-});
+router.get("/register", mainController.register);
 
-router.get("/cart", function (req, res, next) {
-  res.render("productCart");
-});
+router.get("/cart", mainController.cart);
 
-router.get("/ojos", function (req, res, next) {
-  res.render("section", { title: "ojos", subsections: ["sombra", "delineador", "corrector de ojeras", "mascara"] });
-});
+router.get("/ojos", mainController.ojos);
 
-router.get("/labios", function (req, res, next) {
-  res.render("section", { title: "labios", subsections: ["lápiz labial", "delineador", "brillo labial"] });
-});
+router.get("/labios", mainController.labios);
 
-router.get("/rostro", function (req, res, next) {
-  res.render("section", { title: "rostro", subsections: ["base en polvo", "base en crema", "iluminador", "concealer"] });
-});
+router.get("/rostro", mainController.rostro);
 
-router.get("/cejas", function (req, res, next) {
-  res.render("section", { title: "cejas", subsections: ["perfilador", "rellenador", "fijador", "cepillos"] });
-});
+router.get("/cejas", mainController.cejas);
 
 module.exports = router;
