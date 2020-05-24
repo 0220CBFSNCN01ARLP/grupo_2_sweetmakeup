@@ -9,11 +9,11 @@
 
 <body>
     <%- include('partials/header') %>
-        <main class="row main-center">
+        <main class="row position main-center">
 
             <div class="container-1 col-12 col-md-6 col-lg-6">
                 <h1 class="h-1">Carrito de Compras</h1>
-                <div class="row product-header">
+                <div class="row position product-header">
                     <div class="center col-3">
                         <p>Producto</p>
                     </div>
@@ -28,7 +28,7 @@
                     </div>
 
                 </div>
-                <div class="row product">
+                <div class="row position product">
 
                     <div class="center col-3" style="display:block;"><img src="img/productos/productoLabios4.png" alt="imagen producto"></div>
 
@@ -37,16 +37,16 @@
                             <div class="col-auto my-1">
 
                                 <select class="custom-select form-control" id="inlineFormCustomSelect">
-                                 <option value="1" selected>1</option>
-                                 <option value="2">2</option>
-                                 <option value="3">3</option>
-                                 <option value="4">4</option>
-                                 <option value="5">5</option>
-                                 <option value="6">6</option>
-                                 <option value="7">7</option>
-                                 <option value="8">8</option>
-                                 <option value="9">9</option>
-                                 <option value="10">10</option>
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
                             </select>
                             </div>
                         </form>
@@ -56,17 +56,18 @@
                     </div>
                     <div class="center col-1">
                         <button type="button" class="close" aria-label="Close" onclick="eliminarProducto(this)">
-				        <span aria-hidden="true">&times;</span>
-				    </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     </div>
 
                 </div>
-                <button class="btn btn-pink btn-block add-product" onclick="agregarProducto()">+ Agregar nuevo producto</button>
+                <button class="btn btn-pink btn-block add-product" onclick="agregarProducto()">+ Agregar nuevo
+                producto</button>
             </div>
 
             <div class="container-2 col-12 col-md-4 col-lg-4">
                 <h2 class="h-2">Resumen de pedido</h2>
-                <div class="row">
+                <div class="row position">
 
                     <div class="col-6">
                         <p class="start">Subtotal</p>

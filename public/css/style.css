@@ -36,15 +36,6 @@ header a {
     display: none;
 }
 
-@media (min-width: 768px) {
-    .dropdown {
-        display: none;
-    }
-    .dropdown-expanded {
-        display: flex;
-    }
-}
-
 
 /*button*/
 
@@ -81,16 +72,6 @@ header a {
     display: block;
 }
 
-@media (min-width: 768px) {
-    .redes a {
-        display: inline-block;
-        margin-right: 1.5rem;
-    }
-    .redes a:last-of-type {
-        margin: 0;
-    }
-}
-
 .redes a:hover {
     color: pink;
 }
@@ -112,13 +93,6 @@ header a {
     margin: 0;
 }
 
-@media (min-width: 768px) {
-    .container-footer {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
 .site-footer nav {
     display: none;
 }
@@ -128,14 +102,31 @@ header a {
     color: white;
 }
 
-@media (min-width: 768px) {
-    .site-footer nav {
-        display: block;
-    }
-}
-
 .footer-derechos {
     margin: 0;
     color: white;
     padding-top: 8px;
+}
+
+@media (min-width: 768px) {
+    .dropdown {
+        display: none;
+    }
+    .dropdown-expanded {
+        display: flex;
+    }
+    .container-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+    .site-footer nav {
+        display: block;
+    }
+    .redes a {
+        display: inline-block;
+        margin-right: 1.5rem;
+    }
+    .redes a:last-of-type {
+        margin: 0;
+    }
 }

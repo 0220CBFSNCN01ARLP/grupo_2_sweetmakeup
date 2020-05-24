@@ -30,7 +30,7 @@ form {
     text-align: center;
 }
 
-.row {
+.position {
     margin-right: 0px;
     margin-left: 0px;
 }
@@ -90,7 +90,7 @@ h1 {
 }
 
 @media (min-width: 768px) {
-    .row {
+    .position {
         justify-content: space-around;
         padding-top: 25px;
         padding-bottom: 25px;
