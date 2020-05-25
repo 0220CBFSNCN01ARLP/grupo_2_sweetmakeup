@@ -50,7 +50,7 @@
   margin-bottom: 10px;
 }
 
-.mg-button {
+.b-margin {
   margin-bottom: 15px;
 }
 
@@ -58,7 +58,7 @@
   margin: 3px;
 }
 
-.btn-primary {
+.button-primary {
   background-color: #e8b4b4;
   border-color: #e8b4b4;
   margin-right: 10px;
