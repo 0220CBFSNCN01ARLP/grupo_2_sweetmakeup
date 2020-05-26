@@ -7,7 +7,8 @@ let controller = {
   detail: function (req, res, next) {
     res.render("productDetail");
   },
-  create: function (req, res, next) {
+
+  create: function (req, res) {
     const products = getProducts();
     let id = req.params.id;
     let product = products[id];
