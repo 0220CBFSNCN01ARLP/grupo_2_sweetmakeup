@@ -5,7 +5,7 @@
     <%- include("partials/head") %>
         <link rel="stylesheet" href="/CSS/productAdd.css" />
 
-        <title>Agregar Producto</title>
+        <title>Editar Producto</title>
 </head>
 
 <body>
@@ -19,11 +19,11 @@
                 <div class="col-12 margin-menu">
                     <nav class="nav">
                         <button type="button" class="btn btn-primary btn-sm">
-            Agregar
-          </button>
+                        Agregar
+                    </button>
                         <button type="button" class="btn btn-secondary btn-sm">
-            Mis Productos
-          </button>
+                        Mis Productos
+                    </button>
                     </nav>
                 </div>
             </div>
@@ -33,10 +33,10 @@
         <main>
             <!-- Cargar Producto -->
             <div class="container">
-                <form action="" method="POST">
+                <form action="/products/edit/<%= product.id %>?_method=put" method="POST">
                     <div class="row">
                         <div class="col-12 margin-col">
-                            <h2 id="title">Agregar un producto</h2>
+                            <h2 id="title">Editar producto</h2>
                             <p class="title-p none-tablet">
                                 Agregue las caracteristicas esenciales del producto para subirlo rapidamente a la pagina, y luego en el desktop, siga editandolo con mas datos.
                             </p>
@@ -46,11 +46,11 @@
                         </div>
                         <div class="col-12 col-sm-6 margin-col">
                             <label for="productName">Nombre del Producto *</label>
-                            <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName" id="productName" required />
+                            <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName" id="productName" required value="<%= product.productName %>" />
                         </div>
                         <div class="col-12 col-sm-6 margin-col">
-                            <label for="productPrice">Precio *</label>
-                            <input type="number" class="form-control" placeholder="Precio" name="productPrice" id="productPrice" required />
+                            <label for="price">Precio *</label>
+                            <input type="number" class="form-control" placeholder="Precio" name="price" id="price" required value="<%= product.price %>" />
                         </div>
 
                         <div class="col-12 margin-col">
@@ -61,18 +61,24 @@
                         </div>
 
                         <div class="col-12 col-sm-6 margin-col">
-                            <label for="familia">Familia de Producto *</label>
-                            <select required class="form-control" name="familia" id="familia">
-              <option value="rostro"></option>
-              <option value="rostro">Rostro</option>
-              <option value="labios">Labios</option>
-              <option value="ojos">Ojos</option>
-            </select>
+                            <label for="thematic">Familia de Producto *</label>
+                            <select required class="form-control" name="thematic" id="thematic">
+
+                            <option value="rostro" <%= product.thematic == "rostro" ? "selected" : "" %>>Rostro
+                            </option>
+                            <option value="labios" <%= product.thematic == "labios" ? "selected" : "" %>>Labios
+                            </option>
+                            <option value="ojos" <%= product.thematic == "ojos" ? "selected" : "" %>>Ojos
+                            </option>
+                            <option value="cejas" <%= product.thematic == "cejas" ? "selected" : "" %>>Cejas
+                            </option>
+
+                        </select>
                         </div>
 
                         <div class="col-12 col-sm-6 margin-col">
                             <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
-                            <input class="form-control" placeholder="Porcentaje" type="number" min="1" max="100" id="oferta" required />
+                            <input class="form-control" placeholder="Porcentaje" type="number" name="discount" id="discount" min="1" max="100" id="oferta" required value="<%= product.discount %>" />
                         </div>
 
                         <div class="col-12 margin-col">
@@ -89,22 +95,22 @@
 
                         <div class="col-sm-6 none-cell margin-col">
                             <label for="descripcion">Descripcion del Producto</label><br />
-                            <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
                         </div>
 
                         <div class="col-sm-6 none-cell margin-col">
                             <label for="descripcion">Informacion de Pago</label><br />
-                            <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
                         </div>
 
                         <div class="col-sm-6 none-cell margin-col">
                             <label for="descripcion">Politicas de Devolucion</label><br />
-                            <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
                         </div>
 
                         <div class="col-sm-6 none-cell margin-col">
                             <label for="descripcion">Informacion de Envio</label><br />
-                            <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
                         </div>
 
                         <div class="col-12 none-cell margin-col">
@@ -118,16 +124,16 @@
                             </div>
                             <div class="col-sm-6">
                                 <label for="peso">Peso:</label>
-                                <input type="number" class="form-control" placeholder="kilogramos" name="peso" id="peso" />
+                                <input type="number" class="form-control" placeholder="kilogramos" name="peso" id="peso" value="<%= product.peso %>" />
                             </div>
                             <div class="col-sm-6 margin-dimension">
                                 <p class="p-dimension">Dimensiones:</p>
 
-                                <input type="number" class="form-control form-margin" placeholder="Alto (mm)" name="dimensiones" id="alto" />
+                                <input type="number" class="form-control form-margin" placeholder="Alto (mm)" name="dimensiones" id="dimensiones" value="<%= product.dimensiones[0] %>" />
 
-                                <input type="number" class="form-control form-margin" placeholder="Ancho (mm)" name="dimensiones" id="ancho" />
+                                <input type="number" class="form-control form-margin" placeholder="Ancho (mm)" name="dimensiones" id="dimensiones" value="<%= product.dimensiones[1] %>" />
 
-                                <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="dimensiones" id="largo" />
+                                <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="dimensiones" id="dimensiones" value="<%= product.dimensiones[2] %>" />
                             </div>
                         </div>
 
@@ -138,14 +144,14 @@
 
                         <div class="col-12 d-flex justify-content-end mg-button">
                             <button type="button" class="btn btn-secondary btn-sm button-margin">
-              Ver adelanto
-            </button>
+                            Ver adelanto
+                        </button>
                             <button type="button" class="btn btn-secondary btn-sm button-margin">
-              Guardar Borrador
-            </button>
+                            Guardar Borrador
+                        </button>
                             <button type="submit" class="btn btn-primary btn-sm button-margin">
-              Publicar
-            </button>
+                            Publicar
+                        </button>
                         </div>
                     </div>
                 </form>
