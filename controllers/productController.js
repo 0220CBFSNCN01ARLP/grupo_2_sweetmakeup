@@ -51,7 +51,7 @@ let controller = {
             ...req.body,
         };
 
-        //GUARDAR EL PRODUCTO EN LA DB
+        //GUARDAR EL PRODUCTO 
         const index = products.findIndex((product, index) => {
             return product.id == req.params.id;
         });
@@ -59,7 +59,8 @@ let controller = {
 
         fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
 
-        res.redirect("/products");
+        res.redirect("/product/detail/" + productToEdit.id);
+
     }
 
 
