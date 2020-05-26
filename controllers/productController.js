@@ -57,7 +57,20 @@ let controller = {
     res.redirect("/products/" + product.id);
   },
 
-  destroy: (req, res) => {},
+  destroy: (req, res) => {
+    const products = getProducts();
+    const index = products.findIndex((e) => {
+      return e.id == req.params.id;
+    });
+
+    if (index == -1) return res.redirect("/");
+
+    products.splice(index, 1);
+
+    fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
+
+    res.redirect("/");
+  },
 };
 
 module.exports = controller;

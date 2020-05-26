@@ -3,7 +3,7 @@
 
 <head>
     <%- include("partials/head") %>
-        <link rel="stylesheet" href="/css/productAdd.css" />
+        <link rel="stylesheet" href="/css/productEdit.css" />
 
         <title>Editar Producto</title>
 </head>
@@ -143,9 +143,11 @@
                         </div>
 
                         <div class="col-12 d-flex justify-content-end mg-button">
-                            <button type="button" class="btn btn-secondary btn-sm button-margin">
-                            ¡Borrar!
-                        </button>
+                            <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
+                                <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
+                                    ¡Borrar!
+                                </button>
+                            </form>
                             <button type="button" class="btn btn-secondary btn-sm button-margin">
                             Guardar Borrador
                         </button>
