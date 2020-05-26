@@ -143,17 +143,17 @@
                         </div>
 
                         <div class="col-12 d-flex justify-content-end mg-button">
-                            <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
-                                <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
-                                    ¡Borrar!
-                                </button>
-                            </form>
                             <button type="button" class="btn btn-secondary btn-sm button-margin">
                             Guardar Borrador
                         </button>
                             <button type="submit" class="btn btn-primary btn-sm button-margin">
                             Publicar
                         </button>
+                        </form>
+                        <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
+                            <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
+                                ¡Borrar!
+                            </button>
                         </div>
                     </div>
                 </form>

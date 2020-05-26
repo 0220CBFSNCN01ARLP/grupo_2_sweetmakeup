@@ -4,8 +4,10 @@ const productController = require("../controllers/productController");
 
 router.get("/:id?", productController.detail);
 
-/*** EDIT ONE PRODUCT ***/
+// Creando desde cero un producto
+router.get("/create", productController.create);
 
+/*** EDIT ONE PRODUCT ***/
 router.get("/edit/:id", productController.edit); /* GET - Form to create */
 router.put("/edit/:id", productController.update); /* PUT - Update in DB */
 

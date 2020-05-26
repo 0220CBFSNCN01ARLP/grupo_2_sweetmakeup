@@ -7,8 +7,11 @@ let controller = {
   detail: function (req, res, next) {
     res.render("productDetail");
   },
-  showLoad: function (req, res, next) {
-    res.render("productAdd");
+  create: function (req, res, next) {
+    const products = getProducts();
+    let id = req.params.id;
+    let product = products[id];
+    res.render("productAdd", { product: product });
   },
 
   edit: (req, res) => {
