@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const productController = require("../controllers/productController")
+const productController = require("../controllers/productController");
 
 router.get("/:id?", productController.detail);
 
@@ -8,5 +8,8 @@ router.get("/:id?", productController.detail);
 
 router.get("/edit/:id", productController.edit); /* GET - Form to create */
 router.put("/edit/:id", productController.update); /* PUT - Update in DB */
+
+// Borrando un producto
+router.delete("/delete/:id", productController.destroy);
 
 module.exports = router;

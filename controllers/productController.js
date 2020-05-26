@@ -1,68 +1,63 @@
 const fs = require("fs");
 const path = require("path");
 
-const {
-    getProducts,
-    productsFilePath
-} = require("../utils/products");
+const { getProducts, productsFilePath } = require("../utils/products");
 
 let controller = {
-    detail: function(req, res, next) {
-        res.render("productDetail");
-    },
-    showLoad: function(req, res, next) {
-        res.render("productAdd");
-    },
+  detail: function (req, res, next) {
+    res.render("productDetail");
+  },
+  showLoad: function (req, res, next) {
+    res.render("productAdd");
+  },
 
+  edit: (req, res) => {
+    //GET -> muestra el formulario
 
+    const products = getProducts();
+    const product = products.find((e) => {
+      return e.id == req.params.id;
+    });
 
-    edit: (req, res) => {
-        //GET -> muestra el formulario
+    if (product == null) return res.redirect("/");
 
-        const products = getProducts();
-        const product = products.find((e) => {
-            return e.id == req.params.id;
-        });
+    res.render("productEdit", {
+      product,
+    });
+  },
+  //PUT /products/edit/12385
+  update: (req, res, next) => {
+    //PUT -> procesar el formulario y redireccionar(o renderizar)
+    const products = getProducts();
+    let product = products.find((e) => {
+      return e.id == req.params.id;
+    });
 
-        if (product == null) return res.redirect("/");
+    if (product == null) return res.redirect("/");
 
-        res.render("productEdit", {
-            product
-        });
-    },
-    //PUT /products/edit/12385
-    update: (req, res) => {
-        //PUT -> procesar el formulario y redireccionar(o renderizar)
-        const products = getProducts();
-        let product = products.find((e) => {
-            return e.id == req.params.id;
-        });
+    //MODIFICAR EL PRODUCTO EN BASE A LO QUE VIENE DEL FORM y VERIFICAR SI LOS DATOS SON VALIDOS
 
-        if (product == null) return res.redirect("/");
+    req.body.price = Number.parseFloat(req.body.price);
+    req.body.discount = Number.parseFloat(req.body.discount);
 
-        //MODIFICAR EL PRODUCTO EN BASE A LO QUE VIENE DEL FORM y VERIFICAR SI LOS DATOS SON VALIDOS
+    //ACTUALIZAR LOS DATOS DEL PRODUCTO
+    product = {
+      ...product,
+      ...req.body,
+    };
 
-        req.body.price = Number.parseFloat(req.body.price);
-        req.body.discount = Number.parseFloat(req.body.discount);
+    //GUARDAR EL PRODUCTO EN LA DB
+    const index = products.findIndex((product, index) => {
+      return product.id == req.params.id;
+    });
+    products.splice(index, 1, product);
 
-        //ACTUALIZAR LOS DATOS DEL PRODUCTO
-        product = {
-            ...product,
-            ...req.body,
-        };
+    fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
 
-        //GUARDAR EL PRODUCTO EN LA DB
-        const index = products.findIndex((product, index) => {
-            return product.id == req.params.id;
-        });
-        products.splice(index, 1, product);
+    res.redirect("/products/" + product.id);
+  },
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
-
-        res.redirect("/products");
-    }
-
-
+  destroy: (req, res) => {},
 };
 
 module.exports = controller;
