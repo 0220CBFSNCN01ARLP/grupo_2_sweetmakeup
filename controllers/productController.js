@@ -10,11 +10,15 @@ let controller = {
     detail: function(req, res, next) {
         res.render("productDetail");
     },
-    showLoad: function(req, res, next) {
-        res.render("productAdd");
+
+    create: function(req, res) {
+        const products = getProducts();
+        let id = req.params.id;
+        let product = products[id];
+        res.render("productAdd", {
+            product: product
+        });
     },
-
-
 
     edit: (req, res) => {
         //GET -> muestra el formulario
@@ -27,11 +31,11 @@ let controller = {
         if (product == null) return res.redirect("/");
 
         res.render("productEdit", {
-            product
+            product,
         });
     },
     //PUT /products/edit/12385
-    update: (req, res) => {
+    update: (req, res, next) => {
         //PUT -> procesar el formulario y redireccionar(o renderizar)
         const products = getProducts();
         let product = products.find((e) => {
@@ -51,7 +55,7 @@ let controller = {
             ...req.body,
         };
 
-        //GUARDAR EL PRODUCTO 
+        //GUARDAR EL PRODUCTO EN LA DB
         const index = products.findIndex((product, index) => {
             return product.id == req.params.id;
         });
@@ -59,11 +63,25 @@ let controller = {
 
         fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
 
-        res.redirect("/product/detail/" + productToEdit.id);
+        res.redirect("/products/edit/" + product.id);
+    },
 
-    }
 
 
+    destroy: (req, res) => {
+        const products = getProducts();
+        const index = products.findIndex((e) => {
+            return e.id == req.params.id;
+        });
+
+        if (index == -1) return res.redirect("/");
+
+        products.splice(index, 1);
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
+
+        res.redirect("/");
+    },
 };
 
 module.exports = controller;

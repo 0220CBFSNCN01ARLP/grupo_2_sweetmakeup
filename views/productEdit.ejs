@@ -3,7 +3,7 @@
 
 <head>
     <%- include("partials/head") %>
-        <link rel="stylesheet" href="/CSS/productAdd.css" />
+        <link rel="stylesheet" href="/css/productEdit.css" />
 
         <title>Editar Producto</title>
 </head>
@@ -33,7 +33,7 @@
         <main>
             <!-- Cargar Producto -->
             <div class="container">
-                <form action="/products/edit/<%= product.id %>?_method=put" method="POST">
+                <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
                     <div class="row">
                         <div class="col-12 margin-col">
                             <h2 id="title">Editar producto</h2>
@@ -56,7 +56,7 @@
                         <div class="col-12 margin-col">
                             <div class="form-group">
                                 <label for="subirImagen">Subir una Imagen *</label>
-                                <input type="file" class="form-control-file" id="subirImagen" accept="image/*," required />
+                                <input type="file" class="form-control-file" id="subirImagen" accept="image/*," />
                             </div>
                         </div>
 
@@ -100,17 +100,17 @@
 
                         <div class="col-sm-6 none-cell margin-col">
                             <label for="descripcion">Informacion de Pago</label><br />
-                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
+                            <textarea class="form-control" name="payment" id="payment" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.payment %></textarea>
                         </div>
 
                         <div class="col-sm-6 none-cell margin-col">
                             <label for="descripcion">Politicas de Devolucion</label><br />
-                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
+                            <textarea class="form-control" name="politics" id="politics" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.politics %></textarea>
                         </div>
 
                         <div class="col-sm-6 none-cell margin-col">
                             <label for="descripcion">Informacion de Envio</label><br />
-                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
+                            <textarea class="form-control" name="deliver" id="deliver" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.deliver %></textarea>
                         </div>
 
                         <div class="col-12 none-cell margin-col">
@@ -144,15 +144,17 @@
 
                         <div class="col-12 d-flex justify-content-end mg-button">
                             <button type="button" class="btn btn-secondary btn-sm button-margin">
-                            Ver adelanto
-                        </button>
-                            <button type="button" class="btn btn-secondary btn-sm button-margin">
                             Guardar Borrador
                         </button>
                             <button type="submit" class="btn btn-primary btn-sm button-margin">
                             Publicar
                         </button>
-                        </div>
+                </form>
+                <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
+                    <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
+                    ¡Borrar!
+                </button>
+                    </div>
                     </div>
                 </form>
             </div>

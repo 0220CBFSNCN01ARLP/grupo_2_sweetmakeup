@@ -3,7 +3,7 @@
 
 <head>
     <%- include("partials/head") %>
-        <link rel="stylesheet" href="/CSS/productAdd.css" />
+        <link rel="stylesheet" href="/css/productAdd.css" />
 
         <title>Agregar Producto</title>
 </head>
@@ -33,7 +33,7 @@
         <main>
             <!-- Cargar Producto -->
             <div class="container">
-                <form action="" method="POST">
+                <form action="/products/detail/<%= product.id %>" method="POST">
                     <div class="row">
                         <div class="col-12 margin-col">
                             <h2 id="title">Agregar un producto</h2>
@@ -56,7 +56,7 @@
                         <div class="col-12 margin-col">
                             <div class="form-group">
                                 <label for="subirImagen">Subir una Imagen *</label>
-                                <input type="file" class="form-control-file" id="subirImagen" accept="image/*," required />
+                                <input type="file" class="form-control-file" id="subirImagen" />
                             </div>
                         </div>
 
