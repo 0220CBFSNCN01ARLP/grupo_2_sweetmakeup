@@ -14,6 +14,18 @@ let controller = {
     let product = products[id];
     res.render("productAdd", { product: product });
   },
+  store: function (req, res, next) {
+    const products = getProducts();
+    //buscar el ID máximo entre los productos existentes, y setear el nuevo como maxId + 1 para asegurar que no se repitan
+    const maxId = Math.max(...products.map(o => o.id), 0);
+    let newId = maxId + 1
+    let newProduct = {id: newId, ...req.body};
+    console.log(newProduct);
+    products.push(newProduct);
+    fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
+
+    res.redirect("/");
+  },
 
   edit: (req, res) => {
     //GET -> muestra el formulario
