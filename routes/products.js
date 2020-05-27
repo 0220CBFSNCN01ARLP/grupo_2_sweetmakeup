@@ -6,6 +6,7 @@ router.get("/:id", productController.detail);
 
 // Creando desde cero un producto
 router.get("/create", productController.create);
+router.post("/create", productController.store);
 
 /*** EDIT ONE PRODUCT ***/
 router.get("/edit/:id", productController.edit); /* GET - Form to create */
