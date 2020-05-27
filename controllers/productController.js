@@ -4,22 +4,26 @@ const path = require("path");
 const { getProducts, productsFilePath } = require("../utils/products");
 
 let controller = {
-  detail: function (req, res, next) {
-    res.render("productDetail");
-  },
 
-  create: function (req, res) {
+  detail: function (req, res, next) {
     const products = getProducts();
-    let id = req.params.id;
-    let product = products[id];
-    res.render("productAdd", { product: product });
+    const product = products.find((e) => {
+      return e.id == req.params.id;
+    });
+    if (product == null) return res.redirect("/");
+    res.render("productDetail", { product });
   },
+  
+  create: function (req, res, next) {
+    res.render("productAdd");
+  },  
+
   store: function (req, res, next) {
     const products = getProducts();
     //buscar el ID máximo entre los productos existentes, y setear el nuevo como maxId + 1 para asegurar que no se repitan
-    const maxId = Math.max(...products.map(o => o.id), 0);
-    let newId = maxId + 1
-    let newProduct = {id: newId, ...req.body};
+    const maxId = Math.max(...products.map((o) => o.id), 0);
+    let newId = maxId + 1;
+    let newProduct = { id: newId, ...req.body };
     console.log(newProduct);
     products.push(newProduct);
     fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");

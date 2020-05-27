@@ -3,7 +3,7 @@
   <head>
     <%- include("partials/head") %>
     <link rel="stylesheet" href="/css/productDetail.css" />
-    <title>Página de producto</title>
+    <title>Make.u | <%= product.productName%></title>
     <!-- El título debería ser el nombre de cada producto, esto es un placeholder -->
   </head>
 
@@ -17,14 +17,14 @@
           <article class="product-card card">
             <img
               class="card-img-top mh-50"
-              src="/img/productos/productoLabios1.png"
-              alt=""
+              src="/img/productos/<%= product.image%>"
+              alt="Imagen del producto"
             />
 
             <div class="row p-1 m-0">
               <img
                 class="col-3 img-fluid img-thumbnail"
-                src="/ing/productos/productoLabios1.png"
+                src="/img/productos/productoLabios1.png"
                 alt="Imagen del producto 1"
               />
               <img
@@ -39,20 +39,16 @@
               />
             </div>
             <div class="justify-content-center d-flex border-top">
-              <h4 class="card-title">Nombre del Producto</h4>
+              <h4 class="card-title"><%= product.productName%></h4>
             </div>
           </article>
         </div>
 
         <div class="col-2" style="display: none;"></div>
         <div class="productDetails col p-2">
-          <p class="marca">
-            Marca: Hana Cosmetics
-          </p>
+          
           <p class="description">
-            Descripción: Lorem ipsum dolor sit, amet consectetur adipisicing
-            elit. Voluptates tempora veritatis voluptas minus voluptatem
-            maiores.
+            <%= product.description%>
           </p>
           <p class="ingredients">
             Ingredientes: Lorem ipsum dolor sit amet, consectetur adipisicing

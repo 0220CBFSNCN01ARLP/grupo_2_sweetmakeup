@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const productController = require("../controllers/productController");
 
-//router.get("/:id", productController.detail);
+router.get("/:id", productController.detail);
 
 // Creando desde cero un producto
 router.get("/create", productController.create);
