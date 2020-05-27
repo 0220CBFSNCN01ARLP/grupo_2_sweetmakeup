@@ -4,7 +4,6 @@ const path = require("path");
 const { getProducts, productsFilePath } = require("../utils/products");
 
 let controller = {
-
   detail: function (req, res, next) {
     const products = getProducts();
     const product = products.find((e) => {
@@ -13,10 +12,10 @@ let controller = {
     if (product == null) return res.redirect("/");
     res.render("productDetail", { product });
   },
-  
+
   create: function (req, res, next) {
     res.render("productAdd");
-  },  
+  },
 
   store: function (req, res, next) {
     const products = getProducts();
@@ -27,7 +26,6 @@ let controller = {
     console.log(newProduct);
     products.push(newProduct);
     fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
-
     res.redirect("/");
   },
 
