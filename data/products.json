@@ -13,19 +13,6 @@
     "linkVideo": null
   },
   {
-    "id": 3,
-    "productName": "Lápiz de cejas",
-    "description": "nulla integer pede justo lacinia eget tincidunt eget tempus vel pede",
-    "image": "product_3.jpg",
-    "colour": ["Goldenrod", "Orange", "Goldenrod", "Turquoise", "Yellow"],
-    "price": 501.8,
-    "discount": 3,
-    "thematic": "cejas",
-    "peso": 4.18,
-    "dimensiones": [43, 45, 31],
-    "linkVideo": null
-  },
-  {
     "id": 4,
     "productName": "Barra de labios",
     "description": "volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed",
