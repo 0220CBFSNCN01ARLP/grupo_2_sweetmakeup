@@ -80,7 +80,7 @@ let controller = {
 
         fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
 
-        res.redirect("/products/edit/" + product.id);
+        res.redirect("/products/" + product.id);
     },
 
 
