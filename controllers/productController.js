@@ -1,22 +1,11 @@
 const fs = require("fs");
 const path = require("path");
-
 const {
     getProducts,
     productsFilePath
 } = require("../utils/products");
 
 let controller = {
-    detail: function(req, res, next) {
-        const products = getProducts();
-        const product = products.find((e) => {
-            return e.id == req.params.id;
-        });
-        if (product == null) return res.redirect("/");
-        res.render("productDetail", {
-            product
-        });
-    },
 
     create: function(req, res, next) {
         res.render("productAdd");
@@ -83,8 +72,6 @@ let controller = {
         res.redirect("/products/" + product.id);
     },
 
-
-
     destroy: (req, res) => {
         const products = getProducts();
         const index = products.findIndex((e) => {
@@ -98,6 +85,19 @@ let controller = {
         fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
 
         res.redirect("/");
+    },
+
+    detail: function(req, res, next) {
+        const products = getProducts();
+        const product = products.find((e) => {
+            return e.id == req.params.id;
+        });
+        if (product == null){
+            return res.redirect("/")
+        };
+        res.render("productDetail", {
+            product
+        });
     },
 };
 
