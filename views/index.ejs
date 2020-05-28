@@ -1,219 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("partials/head") %>
-    <link rel="stylesheet" href="/css/index.css" />
 
-    <title>Make.u</title>
-  </head>
+<head>
+  <%- include("partials/head") %>
+  <link rel="stylesheet" href="/css/index.css" />
 
-  <body>
-    <!-- Header -->
-    <%- include('partials/header') %>
-    <!-- /Header -->
+  <title>Make.u</title>
+</head>
 
-    <main>
-      <!-- Banner principal -->
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12 banner">
-            <div>
-              <img class="banner-img" src="/img/fondoHome2.jpg" alt="" />
-            </div>
-            <div class="title-banner">
-              <h1 class="title">
-                <span class="title-main">Beauty</span>
-                <span class="title-main">Style</span>
-                <span class="title-main">& Tips</span>
-              </h1>
-            </div>
+<body>
+  <!-- Header -->
+  <%- include('partials/header') %>
+  <!-- /Header -->
+
+  <main>
+    <!-- Banner principal -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 banner">
+          <div>
+            <img class="banner-img" src="/img/fondoHome2.jpg" alt="" />
+          </div>
+          <div class="title-banner">
+            <h1 class="title">
+              <span class="title-main">Beauty</span>
+              <span class="title-main">Style</span>
+              <span class="title-main">& Tips</span>
+            </h1>
           </div>
         </div>
       </div>
-      <!-- /Banner Principal -->
+    </div>
+    <!-- /Banner Principal -->
 
-      <!-- Submenu de seccion -->
-      <div class="container">
-        <div class="row">
-          <div class="col-3 d-flex justify-content-center">
-            <a href="/rostro">
-              <button type="button" class="btn btn-link" title="Rostro">
-                <img class="img-icon" src="/img/rostro-icon.png" alt="" />
-              </button>
-            </a>
-          </div>
-          <div class="col-3 d-flex justify-content-center">
-            <a href="/labios">
-              <button type="button" class="btn btn-link" title="Labios">
-                <img class="img-icon" src="/img/labios-icon.png" alt="" />
-              </button>
-            </a>
-          </div>
-          <div class="col-3 d-flex justify-content-center">
-            <a href="/ojos">
-              <button type="button" class="btn btn-link" title="Ojos">
-                <img class="img-icon" src="/img/ojos-icon.png" alt="" />
-              </button>
-            </a>
-          </div>
-          <div class="col-3 d-flex justify-content-center">
-            <a href="/cejas">
-              <button type="button" class="btn btn-link" title="Cejas">
-                <img class="img-icon" src="/img/cejas-icon.png" alt="" />
-              </button>
-            </a>
-          </div>
+    <!-- Submenu de seccion -->
+    <div class="container">
+      <div class="row">
+        <div class="col-3 d-flex justify-content-center">
+          <a href="/rostro">
+            <button type="button" class="btn btn-link" title="Rostro">
+              <img class="img-icon" src="/img/rostro-icon.png" alt="" />
+            </button>
+          </a>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+          <a href="/labios">
+            <button type="button" class="btn btn-link" title="Labios">
+              <img class="img-icon" src="/img/labios-icon.png" alt="" />
+            </button>
+          </a>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+          <a href="/ojos">
+            <button type="button" class="btn btn-link" title="Ojos">
+              <img class="img-icon" src="/img/ojos-icon.png" alt="" />
+            </button>
+          </a>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+          <a href="/cejas">
+            <button type="button" class="btn btn-link" title="Cejas">
+              <img class="img-icon" src="/img/cejas-icon.png" alt="" />
+            </button>
+          </a>
         </div>
       </div>
-      <!-- /Submenu de seccion -->
+    </div>
+    <!-- /Submenu de seccion -->
 
-      <!-- Container impar -->
-      <div class="container-fluid section-odd">
-        <div class="row">
-          <div class="col-12 padding-category">
-            <h2 class="category">Ojos</h2>
-            <a href="/ojos" class="btn-todos">
-              <p class="ver-todos">Ver todos</p>
-            </a>
-          </div>
-        </div>
-
-        <div class="row margin-row">
-          <% for (product of ojos) { %>
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-odd">
-              <a href="/products/<%= product.id %>" class="btn hover-odd">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/<%= product.image %>"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  <%= product.productName %>
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  <%= product.price %>
-                </p>
-              </a>
-            </article>
-          </div>
-          <% } %>
+    <!-- Container impar -->
+    <div class="container-fluid section-odd">
+      <div class="row">
+        <div class="col-12 padding-category">
+          <h2 class="category">Ojos</h2>
+          <a href="/ojos" class="btn-todos">
+            <p class="ver-todos">Ver todos</p>
+          </a>
         </div>
       </div>
-      <!-- /Container impar -->
 
-      <!-- Container par -->
-      <div class="container-fluid section-even">
-        <div class="row">
-          <div class="col-12 padding-category">
-            <h2 class="category-even">Labios</h2>
-            <a href="/labios" class="btn-todos">
-              <p class="ver-todos-even">Ver todos</p>
+      <div class="row margin-row">
+        <% for (let i= 0; i<4; i++) { %>
+        <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
+          <article class="article-odd">
+            <a href="/products/<%= ojos[i].id %>" class="btn hover-odd">
+              <img class="img-product d-flex align-items-center justify-content-center"
+                src="/img/productos/<%= ojos[i].image %>" alt="" />
+              <h5 class="d-flex justify-content-center name-product">
+                <%= ojos[i].productName %>
+              </h5>
+              <p class="d-flex justify-content-center price-product">
+                <%= ojos[i].price %>
+              </p>
             </a>
-          </div>
+          </article>
         </div>
+        <% } %>
+      </div>
+    </div>
+    <!-- /Container impar -->
 
-        <div class="row margin-row">
-          <% for (product of labios) { %>
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-even">
-              <a href="/products/<%= product.id %>" class="btn hover-even">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/<%= product.image %>"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  <%= product.productName %>
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  <%= product.price %>
-                </p>
-              </a>
-            </article>
-          </div>
-          <% } %>
+    <!-- Container par -->
+    <div class="container-fluid section-even">
+      <div class="row">
+        <div class="col-12 padding-category">
+          <h2 class="category-even">Labios</h2>
+          <a href="/labios" class="btn-todos">
+            <p class="ver-todos-even">Ver todos</p>
+          </a>
         </div>
       </div>
-      <!-- /Container par -->
 
-      <!-- container impar -->
-      <div class="container-fluid section-odd">
-        <div class="row">
-          <div class="col-12 padding-category">
-            <h2 class="category">Cejas</h2>
-            <a href="/cejas" class="btn">
-              <p class="ver-todos">Ver todos</p>
+      <div class="row margin-row">
+        <% for (let i= 0; i<4; i++) { %>
+        <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
+          <article class="article-even">
+            <a href="/products/<%= labios[i].id %>" class="btn hover-even">
+              <img class="img-product d-flex align-items-center justify-content-center"
+                src="/img/productos/<%= labios[i].image %>" alt="" />
+              <h5 class="d-flex justify-content-center name-product">
+                <%= labios[i].productName %>
+              </h5>
+              <p class="d-flex justify-content-center price-product">
+                <%= labios[i].price %>
+              </p>
             </a>
-          </div>
+          </article>
         </div>
+        <% } %>
+      </div>
+    </div>
+    <!-- /Container par -->
 
-        <div class="row margin-row">
-          <% for (product of cejas) { %>
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-odd">
-              <a href="/products/<%= product.id %>" class="btn hover-odd">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/<%= product.image %>"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  <%= product.productName %>
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  <%= product.price %>
-                </p>
-              </a>
-            </article>
-          </div>
-          <% } %>
+    <!-- container impar -->
+    <div class="container-fluid section-odd">
+      <div class="row">
+        <div class="col-12 padding-category">
+          <h2 class="category">Cejas</h2>
+          <a href="/cejas" class="btn">
+            <p class="ver-todos">Ver todos</p>
+          </a>
         </div>
       </div>
-      <!-- /Container impar -->
 
-      <!-- Container par -->
-      <div class="container-fluid section-even">
-        <div class="row">
-          <div class="col-12 padding-category">
-            <h2 class="category-even">Rostro</h2>
-            <a href="/rostro" class="btn-todos">
-              <p class="ver-todos-even">Ver todos</p>
+      <div class="row margin-row">
+        <% for (let i= 0; i<4; i++) { %>
+        <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
+          <article class="article-odd">
+            <a href="/products/<%= cejas[i].id %>" class="btn hover-odd">
+              <img class="img-product d-flex align-items-center justify-content-center"
+                src="/img/productos/<%= cejas[i].image %>" alt="" />
+              <h5 class="d-flex justify-content-center name-product">
+                <%= cejas[i].productName %>
+              </h5>
+              <p class="d-flex justify-content-center price-product">
+                <%= cejas[i].price %>
+              </p>
             </a>
-          </div>
+          </article>
         </div>
+        <% } %>
+      </div>
+    </div>
+    <!-- /Container impar -->
 
-        <div class="row margin-row">
-          <% for (product of rostro) { %>
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-even">
-              <a href="/products/<%= product.id %>" class="btn hover-even">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/<%= product.image %>"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  <%= product.productName %>
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  <%= product.price %>
-                </p>
-              </a>
-            </article>
-          </div>
-          <% } %>
+    <!-- Container par -->
+    <div class="container-fluid section-even">
+      <div class="row">
+        <div class="col-12 padding-category">
+          <h2 class="category-even">Rostro</h2>
+          <a href="/rostro" class="btn-todos">
+            <p class="ver-todos-even">Ver todos</p>
+          </a>
         </div>
       </div>
-      <!-- /Container par -->
 
-      <!-- Pre-Footer -->
-      <%- include("partials/pre-footer") %>
-      <!-- /Pre-Footer -->
-    </main>
+      <div class="row margin-row">
+        <% for (let i= 0; i<4; i++) { %>
+        <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
+          <article class="article-even">
+            <a href="/products/<%= rostro[i].id %>" class="btn hover-even">
+              <img class="img-product d-flex align-items-center justify-content-center"
+                src="/img/productos/<%= rostro[i].image %>" alt="" />
+              <h5 class="d-flex justify-content-center name-product">
+                <%= rostro[i].productName %>
+              </h5>
+              <p class="d-flex justify-content-center price-product">
+                <%= rostro[i].price %>
+              </p>
+            </a>
+          </article>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <!-- /Container par -->
 
-    <!-- Footer -->
-    <%- include("partials/footer") %>
-    <!-- /Footer -->
-  </body>
+    <!-- Pre-Footer -->
+    <%- include("partials/pre-footer") %>
+    <!-- /Pre-Footer -->
+  </main>
+
+  <!-- Footer -->
+  <%- include("partials/footer") %>
+  <!-- /Footer -->
+</body>
+
 </html>
