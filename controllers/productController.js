@@ -95,8 +95,15 @@ let controller = {
         if (product == null){
             return res.redirect("/")
         };
+        let related = [];
+        for (let i = 0; i < 4; i++) {
+            var item = products[Math.floor(Math.random() * products.length)];
+            related.push(item);
+        }
+    
+
         res.render("productDetail", {
-            product
+            product, related
         });
     },
 };
