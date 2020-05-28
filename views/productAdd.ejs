@@ -3,223 +3,245 @@
 
 <head>
     <%- include("partials/head") %>
-        <link rel="stylesheet" href="/css/productAdd.css" />
+    <link rel="stylesheet" href="/css/productAdd.css" />
 
-        <title>Make.u | Agregar Producto</title>
+    <title>Make.u | Agregar Producto</title>
 </head>
 
 <body>
     <!-- Header -->
     <%- include('partials/header') %>
-        <!-- /Header -->
+    <!-- /Header -->
 
-        <!-- Navbar -->
-        <div class="container">
-            <div class="row">
-                <div class="col-12 margin-menu">
-                    <nav class="nav">
-                        <button type="button" class="btn btn-primary btn-sm">
+    <!-- Navbar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 margin-menu">
+                <nav class="nav">
+                    <button type="button" class="btn btn-primary btn-sm">
                         Agregar
                     </button>
-                        <button type="button" class="btn btn-secondary btn-sm">
+                    <button type="button" class="btn btn-secondary btn-sm">
                         Mis Productos
                     </button>
-                    </nav>
-                </div>
+                </nav>
             </div>
         </div>
-        <!-- /Navbar -->
+    </div>
+    <!-- /Navbar -->
 
-        <main>
-            <!-- Cargar Producto -->
-            <div class="container">
-                <form action="/products/create" method="POST">
-                    <div class="row">
-                        <div class="col-12 margin-col">
-                            <h2 id="title">Agregar un producto</h2>
-                            <p class="title-p none-tablet">
-                                Agregue las caracteristicas esenciales del producto para subirlo rapidamente a la pagina, y luego en el desktop, siga editandolo con mas datos.
-                            </p>
-                            <p class="p-datos none-tablet">
-                                * Campos obligatorios
-                            </p>
-                        </div>
-                        <div class="col-12 col-sm-6 margin-col">
-                            <label for="productName">Nombre del Producto *</label>
-                            <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName" id="productName" required />
-                        </div>
-                        <div class="col-12 col-sm-6 margin-col">
-                            <label for="productPrice">Precio *</label>
-                            <input type="number" class="form-control" placeholder="Precio" name="productPrice" id="productPrice" required />
-                        </div>
+    <main>
+        <!-- Cargar Producto -->
+        <div class="container">
+            <form action="/products/create" method="POST">
+                <div class="row">
+                    <div class="col-12 margin-col">
+                        <h2 id="title">Agregar un producto</h2>
+                        <p class="title-p none-tablet">
+                            Agregue las caracteristicas esenciales del producto para subirlo rapidamente a la pagina, y
+                            luego en el desktop, siga editandolo con mas datos.
+                        </p>
+                        <p class="p-datos none-tablet">
+                            * Campos obligatorios
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-6 margin-col">
+                        <label for="productName">Nombre del Producto *</label>
+                        <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName"
+                            id="productName" required />
+                    </div>
+                    <div class="col-12 col-sm-6 margin-col">
+                        <label for="productPrice">Precio *</label>
+                        <input type="number" class="form-control" placeholder="Precio" name="productPrice"
+                            id="productPrice" required />
+                    </div>
 
-                        <div class="col-12 margin-col">
-                            <div class="form-group">
-                                <label for="subirImagen">Subir una Imagen *</label>
-                                <input type="file" class="form-control-file" id="subirImagen" />
-                            </div>
+                    <div class="col-12 margin-col">
+                        <div class="form-group">
+                            <label for="subirImagen">Subir una Imagen *</label>
+                            <input type="file" class="form-control-file" id="subirImagen" />
                         </div>
+                    </div>
 
-                        <div class="col-12 col-sm-6 margin-col">
-                            <label for="familia">Familia de Producto *</label>
-                            <select required class="form-control" name="familia" id="familia">
+                    <div class="col-12 col-sm-6 margin-col">
+                        <label for="familia">Familia de Producto *</label>
+                        <select required class="form-control" name="familia" id="familia">
                             <option value="rostro"></option>
                             <option value="rostro">Rostro</option>
                             <option value="labios">Labios</option>
                             <option value="ojos">Ojos</option>
                         </select>
-                        </div>
+                    </div>
 
-                        <div class="col-12 col-sm-6 margin-col">
-                            <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
-                            <input class="form-control" placeholder="Porcentaje" type="number" min="1" max="100" id="oferta" required />
-                        </div>
+                    <div class="col-12 col-sm-6 margin-col">
+                        <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
+                        <input class="form-control" placeholder="Porcentaje" type="number" min="1" max="100" id="oferta"
+                            required />
+                    </div>
 
-                        <div class="col-12 margin-col">
-                            <label for="etiqueta">Etiqueta *</label>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="new" name="etiqueta" value="nuevoLanzamiento" />
-                                <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta" value="conDescuento" />
-                                <label class="custom-control-label" for="descuento">Con Descuento</label>
-                            </div>
+                    <div class="col-12 margin-col">
+                        <label for="etiqueta">Etiqueta *</label>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="new" name="etiqueta"
+                                value="nuevoLanzamiento" />
+                            <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
                         </div>
-
-                        <div class="col-sm-6 none-cell margin-col">
-                            <label for="descripcion">Descripcion del Producto</label><br />
-                            <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta"
+                                value="conDescuento" />
+                            <label class="custom-control-label" for="descuento">Con Descuento</label>
                         </div>
                     </div>
-                    <!-- /Navbar -->
 
-                    <main>
-                        <!-- Cargar Producto -->
-                        <div class="container">
-                            <form action="/products/create" method="POST">
-                                <div class="row">
-                                    <div class="col-12 margin-col">
-                                        <h2 id="title">Agregar un producto</h2>
-                                        <p class="title-p none-tablet">
-                                            Agregue las caracteristicas esenciales del producto para subirlo rapidamente a la pagina, y luego en el desktop, siga editandolo con mas datos.
-                                        </p>
-                                        <p class="p-datos none-tablet">
-                                            * Campos obligatorios
-                                        </p>
-                                    </div>
-                                    <div class="col-12 col-sm-6 margin-col">
-                                        <label for="productName">Nombre del Producto *</label>
-                                        <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName" id="productName" required />
-                                    </div>
-                                    <div class="col-12 col-sm-6 margin-col">
-                                        <label for="productPrice">Precio *</label>
-                                        <input type="number" class="form-control" placeholder="Precio" name="productPrice" id="productPrice" required />
-                                    </div>
+                    <div class="col-sm-6 none-cell margin-col">
+                        <label for="descripcion">Descripcion del Producto</label><br />
+                        <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300"
+                            placeholder="300 caracteres maximo"></textarea>
+                    </div>
+                </div>
+                <!-- /Navbar -->
 
-                                    <div class="col-12 margin-col">
-                                        <div class="form-group">
-                                            <label for="subirImagen">Subir una Imagen *</label>
-                                            <input type="file" class="form-control-file" id="subirImagen" />
-                                        </div>
-                                    </div>
+                <main>
+                    <!-- Cargar Producto -->
+                    <div class="container">
+                        <form action="/products/create" method="POST">
+                            <div class="row">
+                                <div class="col-12 margin-col">
+                                    <h2 id="title">Agregar un producto</h2>
+                                    <p class="title-p none-tablet">
+                                        Agregue las caracteristicas esenciales del producto para subirlo rapidamente a
+                                        la pagina, y luego en el desktop, siga editandolo con mas datos.
+                                    </p>
+                                    <p class="p-datos none-tablet">
+                                        * Campos obligatorios
+                                    </p>
+                                </div>
+                                <div class="col-12 col-sm-6 margin-col">
+                                    <label for="productName">Nombre del Producto *</label>
+                                    <input type="text" class="form-control" placeholder="Nombre del Producto"
+                                        name="productName" id="productName" required />
+                                </div>
+                                <div class="col-12 col-sm-6 margin-col">
+                                    <label for="productPrice">Precio *</label>
+                                    <input type="number" class="form-control" placeholder="Precio" name="productPrice"
+                                        id="productPrice" required />
+                                </div>
 
-                                    <div class="col-12 col-sm-6 margin-col">
-                                        <label for="familia">Familia de Producto *</label>
-                                        <select required class="form-control" name="familia" id="familia">
+                                <div class="col-12 margin-col">
+                                    <div class="form-group">
+                                        <label for="subirImagen">Subir una Imagen *</label>
+                                        <input type="file" class="form-control-file" id="subirImagen" />
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6 margin-col">
+                                    <label for="familia">Familia de Producto *</label>
+                                    <select required class="form-control" name="familia" id="familia">
                                         <option value="rostro"></option>
                                         <option value="rostro">Rostro</option>
                                         <option value="labios">Labios</option>
                                         <option value="ojos">Ojos</option>
                                     </select>
+                                </div>
+
+                                <div class="col-12 col-sm-6 margin-col">
+                                    <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
+                                    <input class="form-control" placeholder="Porcentaje" type="number" min="1" max="100"
+                                        id="oferta" required />
+                                </div>
+
+                                <div class="col-12 margin-col">
+                                    <label for="etiqueta">Etiqueta *</label>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="new" name="etiqueta"
+                                            value="nuevoLanzamiento" />
+                                        <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
                                     </div>
-
-                                    <div class="col-12 col-sm-6 margin-col">
-                                        <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
-                                        <input class="form-control" placeholder="Porcentaje" type="number" min="1" max="100" id="oferta" required />
-                                    </div>
-
-                                    <div class="col-12 margin-col">
-                                        <label for="etiqueta">Etiqueta *</label>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="new" name="etiqueta" value="nuevoLanzamiento" />
-                                            <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta" value="conDescuento" />
-                                            <label class="custom-control-label" for="descuento">Con Descuento</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6 none-cell margin-col">
-                                        <label for="descripcion">Descripcion del Producto</label><br />
-                                        <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
-                                    </div>
-
-                                    <div class="col-sm-6 none-cell margin-col">
-                                        <label for="descripcion">Informacion de Pago</label><br />
-                                        <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
-                                    </div>
-
-                                    <div class="col-sm-6 none-cell margin-col">
-                                        <label for="descripcion">Politicas de Devolucion</label><br />
-                                        <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
-                                    </div>
-
-                                    <div class="col-sm-6 none-cell margin-col">
-                                        <label for="descripcion">Informacion de Envio</label><br />
-                                        <textarea class="form-control" name="descripcion" id="" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
-                                    </div>
-
-                                    <div class="col-12 none-cell margin-col">
-                                        <label for="muestrario">Variantes del Producto:</label>
-                                        <input type="color" value="#e8b4b4" id="muestrario" />
-                                    </div>
-
-                                    <div class="col-12 none-cell margin-col envios">
-                                        <div class="col-12">
-                                            <h5><span>Envios</span></h5>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <label for="peso">Peso:</label>
-                                            <input type="number" class="form-control" placeholder="kilogramos" name="peso" id="peso" />
-                                        </div>
-                                        <div class="col-sm-6 margin-dimension">
-                                            <p class="p-dimension">Dimensiones:</p>
-
-                                            <input type="number" class="form-control form-margin" placeholder="Alto (mm)" name="dimensiones" id="alto" />
-
-                                            <input type="number" class="form-control form-margin" placeholder="Ancho (mm)" name="dimensiones" id="ancho" />
-
-                                            <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="dimensiones" id="largo" />
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 none-cell margin-col">
-                                        <label for="linkVideo">Subir video de YouTube</label>
-                                        <input type="text" class="form-control" placeholder="Pegar el Link" name="linkVideo" id="linkVideo" />
-                                    </div>
-
-                                    <div class="col-12 d-flex justify-content-end mg-button">
-                                        <button type="button" class="btn btn-secondary btn-sm button-margin">
-                                        Ver adelanto
-                                    </button>
-                                        <button type="button" class="btn btn-secondary btn-sm button-margin">
-                                        Guardar Borrador
-                                    </button>
-                                        <button type="submit" class="btn btn-primary btn-sm button-margin">
-                                        Publicar
-                                    </button>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="descuento"
+                                            name="etiqueta" value="conDescuento" />
+                                        <label class="custom-control-label" for="descuento">Con Descuento</label>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                        <!-- /Cargar Producto -->
-                    </main>
 
-                    <!-- Footer -->
-                    <%- include("partials/footer") %>
-                        <!-- /Footer -->
+                                <div class="col-sm-6 none-cell margin-col">
+                                    <label for="descripcion">Descripcion del Producto</label><br />
+                                    <textarea class="form-control" name="descripcion" id="" cols="35" rows="3"
+                                        maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                                </div>
+
+                                <div class="col-sm-6 none-cell margin-col">
+                                    <label for="descripcion">Informacion de Pago</label><br />
+                                    <textarea class="form-control" name="descripcion" id="" cols="35" rows="3"
+                                        maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                                </div>
+
+                                <div class="col-sm-6 none-cell margin-col">
+                                    <label for="descripcion">Politicas de Devolucion</label><br />
+                                    <textarea class="form-control" name="descripcion" id="" cols="35" rows="3"
+                                        maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                                </div>
+
+                                <div class="col-sm-6 none-cell margin-col">
+                                    <label for="descripcion">Informacion de Envio</label><br />
+                                    <textarea class="form-control" name="descripcion" id="" cols="35" rows="3"
+                                        maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                                </div>
+
+                                <div class="col-12 none-cell margin-col">
+                                    <label for="muestrario">Variantes del Producto:</label>
+                                    <input type="color" value="#e8b4b4" id="muestrario" />
+                                </div>
+
+                                <div class="col-12 none-cell margin-col envios">
+                                    <div class="col-12">
+                                        <h5><span>Envios</span></h5>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="peso">Peso:</label>
+                                        <input type="number" class="form-control" placeholder="kilogramos" name="peso"
+                                            id="peso" />
+                                    </div>
+                                    <div class="col-sm-6 margin-dimension">
+                                        <p class="p-dimension">Dimensiones:</p>
+
+                                        <input type="number" class="form-control form-margin" placeholder="Alto (mm)"
+                                            name="dimensiones" id="alto" />
+
+                                        <input type="number" class="form-control form-margin" placeholder="Ancho (mm)"
+                                            name="dimensiones" id="ancho" />
+
+                                        <input type="number" class="form-control form-margin" placeholder="Largo (mm)"
+                                            name="dimensiones" id="largo" />
+                                    </div>
+                                </div>
+
+                                <div class="col-12 none-cell margin-col">
+                                    <label for="linkVideo">Subir video de YouTube</label>
+                                    <input type="text" class="form-control" placeholder="Pegar el Link" name="linkVideo"
+                                        id="linkVideo" />
+                                </div>
+
+                                <div class="col-12 d-flex justify-content-end mg-button">
+                                    <button type="button" class="btn btn-secondary btn-sm button-margin">
+                                        Ver adelanto
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-sm button-margin">
+                                        Guardar Borrador
+                                    </button>
+                                    <button type="submit" class="btn btn-primary btn-sm button-margin">
+                                        Publicar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /Cargar Producto -->
+                </main>
+
+                <!-- Footer -->
+                <%- include("partials/footer") %>
+                <!-- /Footer -->
 </body>
 
 </html>
