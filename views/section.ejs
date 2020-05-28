@@ -32,11 +32,8 @@
 
     <main class="container mt-1">
       <div class="row vh-75">
-        <% for( let i = 0; i < products.length; i++ ) { %>
-
-         <%- include("partials/productCard.ejs", {product: products[i]})  %> 
-        
-        <% } %>
+        <% for( let i = 0; i < products.length; i++ ) { %> <%-
+        include("partials/productCard.ejs", {product: products[i]}) %> <% } %>
       </div>
     </main>
     <%- include("partials/footer") %>

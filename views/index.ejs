@@ -36,28 +36,28 @@
       <div class="container">
         <div class="row">
           <div class="col-3 d-flex justify-content-center">
-            <a href="#">
+            <a href="/rostro">
               <button type="button" class="btn btn-link" title="Rostro">
                 <img class="img-icon" src="/img/rostro-icon.png" alt="" />
               </button>
             </a>
           </div>
           <div class="col-3 d-flex justify-content-center">
-            <a href="#">
+            <a href="/labios">
               <button type="button" class="btn btn-link" title="Labios">
                 <img class="img-icon" src="/img/labios-icon.png" alt="" />
               </button>
             </a>
           </div>
           <div class="col-3 d-flex justify-content-center">
-            <a href="#">
+            <a href="/ojos">
               <button type="button" class="btn btn-link" title="Ojos">
                 <img class="img-icon" src="/img/ojos-icon.png" alt="" />
               </button>
             </a>
           </div>
           <div class="col-3 d-flex justify-content-center">
-            <a href="#">
+            <a href="/cejas">
               <button type="button" class="btn btn-link" title="Cejas">
                 <img class="img-icon" src="/img/cejas-icon.png" alt="" />
               </button>
@@ -85,7 +85,7 @@
               <a href="/products/<%= product.id %>" class="btn hover-odd">
                 <img
                   class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoRostro1.webp"
+                  src="/img/productos/<%= product.image %>"
                   alt=""
                 />
                 <h5 class="d-flex justify-content-center name-product">
@@ -107,7 +107,7 @@
         <div class="row">
           <div class="col-12 padding-category">
             <h2 class="category-even">Labios</h2>
-            <a href="#" class="btn-todos">
+            <a href="/labios" class="btn-todos">
               <p class="ver-todos-even">Ver todos</p>
             </a>
           </div>
@@ -120,7 +120,7 @@
               <a href="/products/<%= product.id %>" class="btn hover-even">
                 <img
                   class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoRostro1.webp"
+                  src="/img/productos/<%= product.image %>"
                   alt=""
                 />
                 <h5 class="d-flex justify-content-center name-product">
@@ -142,7 +142,7 @@
         <div class="row">
           <div class="col-12 padding-category">
             <h2 class="category">Cejas</h2>
-            <a href="#" class="btn">
+            <a href="/cejas" class="btn">
               <p class="ver-todos">Ver todos</p>
             </a>
           </div>
@@ -155,7 +155,7 @@
               <a href="/products/<%= product.id %>" class="btn hover-odd">
                 <img
                   class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoRostro1.webp"
+                  src="/img/productos/<%= product.image %>"
                   alt=""
                 />
                 <h5 class="d-flex justify-content-center name-product">
@@ -177,7 +177,7 @@
         <div class="row">
           <div class="col-12 padding-category">
             <h2 class="category-even">Rostro</h2>
-            <a href="#" class="btn-todos">
+            <a href="/rostro" class="btn-todos">
               <p class="ver-todos-even">Ver todos</p>
             </a>
           </div>
@@ -190,7 +190,7 @@
               <a href="/products/<%= product.id %>" class="btn hover-even">
                 <img
                   class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoRostro1.webp"
+                  src="/img/productos/<%= product.image %>"
                   alt=""
                 />
                 <h5 class="d-flex justify-content-center name-product">
