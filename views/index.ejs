@@ -69,310 +69,147 @@
 
       <!-- Container impar -->
       <div class="container-fluid section-odd">
-        <!-- Titulo container -->
         <div class="row">
           <div class="col-12 padding-category">
-            <h2 class="category">Destacados</h2>
-            <a href="#" class="btn-todos">
+            <h2 class="category">Ojos</h2>
+            <a href="/ojos" class="btn-todos">
               <p class="ver-todos">Ver todos</p>
             </a>
           </div>
         </div>
-        <!-- /Titulo container -->
 
-        <!-- Card´s -->
         <div class="row margin-row">
+          <% for (product of ojos) { %>
           <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
             <article class="article-odd">
-              <a href="/products" class="btn hover-odd">
+              <a href="/products/<%= product.id %>" class="btn hover-odd">
                 <img
                   class="img-product d-flex align-items-center justify-content-center"
                   src="/img/productos/productoRostro1.webp"
                   alt=""
                 />
                 <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
+                  <%= product.productName %>
                 </h5>
                 <p class="d-flex justify-content-center price-product">
-                  $ 1.200
-                </p>
-                <!-- para una instancia mas avanzada, agregar este icono -->
-                <!-- <div class="position-icon">
-                  <span>
-                    <i class="fas fa-award award-icon"></i>
-                  </span>
-                </div> -->
-              </a>
-            </article>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-odd">
-              <a href="/products" class="btn hover-odd">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoLabios1.png"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  $ 1.200
+                  <%= product.price %>
                 </p>
               </a>
             </article>
           </div>
-
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-odd">
-              <a href="/products" class="btn hover-odd">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoOjos1.png"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  $ 1.200
-                </p>
-              </a>
-            </article>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-odd">
-              <a href="/products" class="btn hover-odd">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoRostro2.png"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  $ 1.200
-                </p>
-              </a>
-            </article>
-          </div>
+          <% } %>
         </div>
       </div>
       <!-- /Container impar -->
 
-      <!-- Container even -->
+      <!-- Container par -->
       <div class="container-fluid section-even">
-        <!-- Titulo container -->
         <div class="row">
           <div class="col-12 padding-category">
-            <h2 class="category-even">Lanzamiento</h2>
+            <h2 class="category-even">Labios</h2>
             <a href="#" class="btn-todos">
               <p class="ver-todos-even">Ver todos</p>
             </a>
           </div>
         </div>
-        <!-- /Titulo container -->
 
-        <!-- Card´s -->
         <div class="row margin-row">
+          <% for (product of labios) { %>
           <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
             <article class="article-even">
-              <a href="#" class="btn hover-even">
+              <a href="/products/<%= product.id %>" class="btn hover-even">
                 <img
                   class="img-product d-flex align-items-center justify-content-center"
                   src="/img/productos/productoRostro1.webp"
                   alt=""
                 />
                 <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
+                  <%= product.productName %>
                 </h5>
                 <p class="d-flex justify-content-center price-product">
-                  $ 1.200
+                  <%= product.price %>
                 </p>
               </a>
             </article>
           </div>
-
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-even">
-              <a href="#" class="btn hover-even">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoRostro2.png"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  $ 1.200
-                </p>
-              </a>
-            </article>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-even">
-              <a href="#" class="btn hover-even">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoRostro3.png"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  $ 1.200
-                </p>
-              </a>
-            </article>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-even">
-              <a href="#" class="btn hover-even">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoRostro6.png"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  $ 1.200
-                </p>
-              </a>
-            </article>
-          </div>
+          <% } %>
         </div>
       </div>
-      <!-- /Container even -->
+      <!-- /Container par -->
 
       <!-- container impar -->
       <div class="container-fluid section-odd">
-        <!-- Titulo cotainer -->
         <div class="row">
           <div class="col-12 padding-category">
-            <h2 class="category">Para vos</h2>
+            <h2 class="category">Cejas</h2>
             <a href="#" class="btn">
               <p class="ver-todos">Ver todos</p>
             </a>
           </div>
         </div>
-        <!-- /Titulo Container -->
 
-        <!-- Card´s -->
         <div class="row margin-row">
+          <% for (product of cejas) { %>
           <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
             <article class="article-odd">
-              <a href="/products" class="btn hover-odd">
+              <a href="/products/<%= product.id %>" class="btn hover-odd">
                 <img
                   class="img-product d-flex align-items-center justify-content-center"
                   src="/img/productos/productoRostro1.webp"
                   alt=""
                 />
                 <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
+                  <%= product.productName %>
                 </h5>
                 <p class="d-flex justify-content-center price-product">
-                  $ 1.200
+                  <%= product.price %>
                 </p>
               </a>
             </article>
           </div>
-
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-odd">
-              <a href="/products" class="btn hover-odd">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoLabios1.png"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  $ 1.200
-                </p>
-              </a>
-            </article>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-odd">
-              <a href="/products" class="btn hover-odd">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoOjos1.png"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  $ 1.200
-                </p>
-              </a>
-            </article>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <article class="article-odd">
-              <a href="/products" class="btn hover-odd">
-                <img
-                  class="img-product d-flex align-items-center justify-content-center"
-                  src="/img/productos/productoRostro2.png"
-                  alt=""
-                />
-                <h5 class="d-flex justify-content-center name-product">
-                  Producto 1
-                </h5>
-                <p class="d-flex justify-content-center price-product">
-                  $ 1.200
-                </p>
-              </a>
-            </article>
-          </div>
+          <% } %>
         </div>
       </div>
       <!-- /Container impar -->
 
-      <!-- Informacion -->
-      <div class="container-fluid">
-        <div class="row d-flex justify-content-around p-info">
-          <div class="col-12 col-sm-3 padding-info info-align">
-            <i class="fa fa-money-check icon"></i>
-            <h3 class="info-h3">Pagá con tarjeta o en efectivo</h3>
-            <p class="info-p">
-              Con Mercado Pago, tenés cuotas sin interés con tarjeta o efectivo
-              en puntos de pago. ¡Y siempre es seguro!
-            </p>
-          </div>
-          <div class="col-12 col-sm-3 padding-info info-align">
-            <i class="fa fa-shipping-fast icon"></i>
-            <h3 class="info-h3">Envío gratis desde $ 2.500</h3>
-            <p class="info-p">
-              Al registrarte en Make.U tenés envíos gratis en muchos productos.
-              Y tambien al superar los $ 2.500 el envio es totalmente gratis.
-            </p>
-          </div>
-          <div class="col-12 col-sm-3 padding-info info-align">
-            <i class="fa fa-shield-alt icon"></i>
-            <h3 class="info-h3">Seguridad, de principio a fin</h3>
-            <p class="info-p">
-              Tus visita al sitio, y tus compras estan protegidas bajo el
-              certificado SSL.
-            </p>
+      <!-- Container par -->
+      <div class="container-fluid section-even">
+        <div class="row">
+          <div class="col-12 padding-category">
+            <h2 class="category-even">Rostro</h2>
+            <a href="#" class="btn-todos">
+              <p class="ver-todos-even">Ver todos</p>
+            </a>
           </div>
         </div>
+
+        <div class="row margin-row">
+          <% for (product of rostro) { %>
+          <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
+            <article class="article-even">
+              <a href="/products/<%= product.id %>" class="btn hover-even">
+                <img
+                  class="img-product d-flex align-items-center justify-content-center"
+                  src="/img/productos/productoRostro1.webp"
+                  alt=""
+                />
+                <h5 class="d-flex justify-content-center name-product">
+                  <%= product.productName %>
+                </h5>
+                <p class="d-flex justify-content-center price-product">
+                  <%= product.price %>
+                </p>
+              </a>
+            </article>
+          </div>
+          <% } %>
+        </div>
       </div>
-      <!-- /Informacion -->
+      <!-- /Container par -->
+
+      <!-- Pre-Footer -->
+      <%- include("partials/pre-footer") %>
+      <!-- /Pre-Footer -->
     </main>
 
     <!-- Footer -->
