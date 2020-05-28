@@ -1,41 +1,30 @@
 # Retrospectiva Starfish 1
 
 ### Start Doing:
-- #### Organizar reuniones programadas con horarios fijos
-    Coordinamos reuniones virtuales los días martes y sábados a las 18:30 hs, a los fines de informar progresos, evacuar dudas, y coordinar evolución del proyecto.
-- #### Investigar nuevas practicas sobre css html y js para poder renderizar mejor la pagina y crear diseños mas atractivos
-    Proponemos dedicar tiempo a buscar información sobre técnicas y herramientas que no conocemos para aplicarlas a las páginas, y compartir lo que encontremos en slack y en las reuniones semanales. Esto nos va a abrir muchas más posibilidades de diseño.
-- #### Utilizar Bootstrap
-    Comenzar a utilizar Bootstrap para la creación de interfaces limpias y con un diseño responsive, un sitio web 100% adaptable a cualquier dispositivo.
+- #### Tomarnos 15 minutos en las reuniones para que cada integrante muestre su pantalla
+    La idea es que cada uno pueda mostrar lo que hizo y los problemas que tiene, para que podamos ayudarnos entre todos.
+
+- #### Prestar atención a la indentación y demás cuestiones de orden que le dan prolijidad al código
+    
 
 ### More of: 
 
-- #### Control de Calidad
-    Proponemos realizar testeo de calidad entre nosotros.
-Este testeo se basara en observar diferentes variables preestablecidas por nosotros. Cada participante tendrá la responsabilidad de mirar el código de su compañero y poder discutir sobre potenciales modificaciones en pos de la calidad del código.
+- #### Crear práctica con git
+    Dedicar tiempo para aprender buenas prácticas de uso de git, para organizar mejor el trabajo y evitar errores generados por un uso descuidado de la herramienta.
 
-    Para el sprint 2 proponemos observar las siguientes variables:
-Etiquetas semánticas.
-Unificar "class and id" en un solo idioma.
-Que no haya "<br>.
-Correcto diseño responsive.
-prescripción de imágenes: "Alt:...".
-Otros: se podrá discutir otras variables que vayan surgiendo.
+- #### Reuniones programadas
+    Las reuniones vienen dando buenos resultados. Proponemos aumentar la frecuencia y hacer una durante la semana para ver los avances, y otra el fin de semana, con más tiempo, para enfocarnos en problemas o bugs.
 
-    Para este sprint, así serán los testeos:
-1) Agustin --> Genaro
-2) Genaro --> Fernando
-3) Fernando --> Agustin
+- #### Commits más focalizados
+    Proponemos prestar atención a cuándo y cómo hacemos commit de los cambios introducidos. Si cada commit está enfocado en una sola funcionalidad e incluye cambios en unos pocos archivos, es más fácil detectar la raíz de los errores y se generan menos conflictos.
 
-- #### Copiar código de los compañeros
-    Copiar y pegar html y css que hayan hecho los otros miembros del equipo a nuestras páginas no solamente ahorra tiempo y trabajo, sino que tambien ayuda a tener un diseño más uniforme en el sitio.
 
 ### Keep Doing:
 - #### Mantener la comunicación fluida via Slack y Trello
     Desde el principio hicimos buen uso de estas plataformas para comunicarnos, organizar tareas, unificar criterios y ayudarnos a resolver problemas. Proponemos seguir utilizándolas frecuentemente para mantener la comunicación abierta.
 
-- #### Agregar información y referencias al README que pueden ser útiles a futuro
-    Encontramos muy útil, la idea de agregar información y referencias al archivo README que puedan ser de utilidad a lo largo del proyecto.
+- #### Reuniones programadas
+    Consideramos muy productivas las reuniones periódicas.
 
 - #### Mantenernos en actitud innovadora y proactiva
     
@@ -54,13 +43,14 @@ Otros: se podrá discutir otras variables que vayan surgiendo.
 
 ### Stop Doing:
 
-- #### Investigar certificado SSL de encriptación de datos
+- #### Hacer el control de calidad de manera sincrónica
+    Si bien fue una buena idea controlar el código de los compañeros antes de la entrega, el método de revisar y corregir todos al mismo tiempo, cada uno desde su repositorio, terminó generando problemas con las versiones. Proponemos utilizar las funcionalidades de github para controlar el código, o hacerlo compartiendo pantalla durante las reuniones.
 
 - #### Investigar las APIs que podemos necesitar
     Coincidimos en que no es el momento de investigar sobre estos temas, al igual que el certificado SSL, y que probablemente aprendamos más adelante conceptos y métodos que necesitamos para implementar estas tecnologías. 
 
-- #### Comenzar a investigar lo que necesitamos para la funcionalidad for.me
-    Nos dimos cuenta de que esta funcionalidad agrega valor a nuestro sitio, pero no es esencial, y nos puede llevar mucho tiempo que necesitamos para maquetar las páginas principales. Esto se puede dejar para más adelante, o trabajarse si nos encontramos sobrados de tiempo.
+- #### Modificar el css de clases de bootstrap
+    Esto no es una buena práctica, y hacerlo en una página puede causar problemas en otras.
 
 
 

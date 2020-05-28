@@ -65,6 +65,10 @@ body {
     text-align: center;
 }
 
+.block {
+    display: block;
+}
+
 .start {
     text-align: start;
     line-height: 25px;

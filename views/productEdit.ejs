@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-12 col-sm-6 margin-col">
                             <label for="price">Precio *</label>
-                            <input type="number" class="form-control" placeholder="Precio" name="price" id="price" required value="<%= product.price %>" />
+                            <input type="number" class="form-control" placeholder="Precio" name="price" id="price" required step="any" value="<%= product.price %>" />
                         </div>
 
                         <div class="col-12 margin-col">
@@ -100,17 +100,17 @@
 
                         <div class="col-sm-6 none-cell margin-col">
                             <label for="descripcion">Informacion de Pago</label><br />
-                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
+                            <textarea class="form-control" name="payment" id="payment" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.payment %></textarea>
                         </div>
 
                         <div class="col-sm-6 none-cell margin-col">
                             <label for="descripcion">Politicas de Devolucion</label><br />
-                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
+                            <textarea class="form-control" name="politics" id="politics" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.politics %></textarea>
                         </div>
 
                         <div class="col-sm-6 none-cell margin-col">
                             <label for="descripcion">Informacion de Envio</label><br />
-                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
+                            <textarea class="form-control" name="deliver" id="deliver" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.deliver %></textarea>
                         </div>
 
                         <div class="col-12 none-cell margin-col">
@@ -149,12 +149,21 @@
                             <button type="submit" class="btn btn-primary btn-sm button-margin">
                             Publicar
                         </button>
+<<<<<<< HEAD
                         </form>
                         <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
                             <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
                                 ¡Borrar!
                             </button>
                         </form>
+=======
+                </form>
+                <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
+                    <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
+                    ¡Borrar!
+                </button>
+                    </div>
+>>>>>>> bed583150ae565d2ba55403cfaed5fe978d7b178
                     </div>
                 </form>
             </div>

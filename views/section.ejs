@@ -32,85 +32,11 @@
 
     <main class="container mt-1">
       <div class="row vh-75">
-        <div class="col-12 col-sm-6 col-md-4 h-100">
-          <article class="productCard card mt-2">
-            <a href="/products">
-              <h4 class="card-title">Nombre del Producto</h4>
-            </a>
-            <a href="/products"
-              ><img
-                class="imgMain card-img-top img-fluid"
-                src="../img/productos/productoOjos1.png"
-                alt=""
-            /></a>
+        <% for( let i = 0; i < products.length; i++ ) { %>
 
-            <div class="card-body h-30">
-              <p class="description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Architecto, id sequi illum corporis labore explicabo!
-              </p>
-              <p class="price">$500</p>
-              <button class="btn btn-pink btn-block m-1">
-                Agregar a la wishlist
-              </button>
-              <button class="btn btn-pink btn-block m-1">
-                Agregar al carrito
-              </button>
-            </div>
-          </article>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 h-100">
-          <article class="productCard card mt-2">
-            <a href="/products">
-              <h4 class="card-title">Nombre del Producto</h4>
-            </a>
-            <a href="/products"
-              ><img
-                class="imgMain card-img-top img-fluid"
-                src="../img/productos/productoOjos1.png"
-                alt=""
-            /></a>
-
-            <div class="card-body h-30">
-              <p class="description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Architecto, id sequi illum corporis labore explicabo!
-              </p>
-              <p class="price">$500</p>
-              <button class="btn btn-pink btn-block">
-                Agregar a la wishlist
-              </button>
-              <button class="btn btn-pink btn-block">Agregar al carrito</button>
-            </div>
-          </article>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 h-100">
-          <article class="productCard card mt-2">
-            <a href="/products">
-              <h4 class="card-title">Nombre del Producto</h4>
-            </a>
-            <a href="/products"
-              ><img
-                class="imgMain card-img-top img-fluid"
-                src="../img/productos/productoOjos1.png"
-                alt=""
-            /></a>
-
-            <div class="card-body h-30">
-              <p class="description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Architecto, id sequi illum corporis labore explicabo!
-              </p>
-              <p class="price">$500</p>
-              <button class="btn btn-pink btn-block">
-                Agregar a la wishlist
-              </button>
-              <button class="btn btn-pink btn-block">Agregar al carrito</button>
-            </div>
-          </article>
-        </div>
+         <%- include("partials/productCard.ejs", {product: products[i]})  %> 
+        
+        <% } %>
       </div>
     </main>
     <%- include("partials/footer") %>
