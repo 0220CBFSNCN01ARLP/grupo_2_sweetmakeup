@@ -1,14 +1,18 @@
 var express = require("express");
 var router = express.Router();
+var path = require("path");
 const usersController = require("../controllers/usersController");
 const multer = require("multer");
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "upLoads/avatar");
+    cb(null, "./public/img/users");
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + "-" + Date.now());
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
   },
 });
 var upload = multer({ storage: storage });

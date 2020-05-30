@@ -24,6 +24,7 @@ let usersController = {
     let user = {
       id: newId,
       ...req.body,
+      avatar: req.files[0].filename,
     };
 
     users.push(user);
