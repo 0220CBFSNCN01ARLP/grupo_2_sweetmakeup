@@ -38,12 +38,10 @@ let controller = {
     res.render("index", { ojos, labios, cejas, rostro });
   },
 
-  register: function (req, res, next) {
-    res.render("register");
-  },
   cart: function (req, res, next) {
     res.render("productCart");
   },
+
   ojos: function (req, res, next) {
     let products = getProducts();
     let productsOjos = products.filter((product) => {
@@ -56,6 +54,7 @@ let controller = {
       products: productsOjos,
     });
   },
+
   rostro: function (req, res, next) {
     let products = getProducts();
     let productsRostro = products.filter((product) => {
@@ -73,6 +72,7 @@ let controller = {
       products: productsRostro,
     });
   },
+
   cejas: function (req, res, next) {
     let products = getProducts();
     let productsCejas = products.filter((product) => {
@@ -85,6 +85,7 @@ let controller = {
       products: productsCejas,
     });
   },
+
   labios: function (req, res, next) {
     let products = getProducts();
     let productsLabios = products.filter((product) => {

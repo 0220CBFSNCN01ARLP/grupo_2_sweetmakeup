@@ -49,23 +49,28 @@
         </div>
 
         <div class="row form-2 col-12 col-md-6 col-lg-6">
-          <form class="container" action=" " method="GET ">
+          <form
+            class="container"
+            action="/users/register"
+            method="POST"
+            enctype="multipart/form-data"
+          >
             <h1>Registrarse</h1>
             <label for="nombre ">Nombre</label>
             <input
               class="form-control"
-              type="text "
-              id="nombre "
-              name="nombre "
+              type="text"
+              id="name"
+              name="name"
               required
             />
 
             <label for="apellido ">Apellido</label>
             <input
               class="form-control"
-              type="text "
-              id="apellido "
-              name="apellido "
+              type="text"
+              id="lastName"
+              name="lastName"
               required
             />
 
@@ -74,11 +79,17 @@
               type="email"
               class="form-control"
               id="email"
+              name="email"
               aria-describedby="emailHelp"
             />
 
             <label for="password">Contraseña</label>
-            <input type="password" class="form-control" id="password" />
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+            />
 
             <button class="btn btn-pink btn-block" type="submit">
               Registrarse
