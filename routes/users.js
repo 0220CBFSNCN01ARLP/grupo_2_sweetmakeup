@@ -4,24 +4,34 @@ var path = require("path");
 const usersController = require("../controllers/usersController");
 const multer = require("multer");
 
+let {
+    check,
+    validationResult,
+    body
+} = require('express-validator') // ver
+
+
 var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/img/users");
-  },
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    );
-  },
+    destination: function(req, file, cb) {
+        cb(null, "upLoads/avatar");
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.fieldname + "-" + Date.now());
+    },
 });
-var upload = multer({ storage: storage });
+var upload = multer({
+    storage: storage
+});
 
 // Creando un registro
+
+
 router.get("/register", usersController.showRegister);
 router.post("/register", upload.any(), usersController.register);
 
+
 // Log in
-router.post("/register", usersController.login);
+
+router.post("/login", upload.any(), usersController.login);
 
 module.exports = router;
