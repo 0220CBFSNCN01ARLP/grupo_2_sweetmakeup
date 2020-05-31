@@ -353,23 +353,12 @@
     "name": "Genaro",
     "lastName": "Malpeli",
     "email": "genamalpeli@gmail.com",
-    "password": "$2b$10$Zq2.qVO7mHJnYL9IFuMD3eFI3gdX.O82trcrztslpewyJp9Jujpmm"
+    "password": "$2b$10$1s.6nvHt0tIpKsR.X5bxU.3T2Wce4MU/gaEMdKyC2IZbMsjeBLBXC",
+    "avatar": "avatar-1590869678617.png"
 }, {
     "id": 52,
-    "name": "Fernando",
-    "lastName": "Toma",
-    "email": "hola2@hotmail.com",
-    "password": "$2b$10$IHOXdWQxmclzeeoP8xhpkOvPQV2/bsRpwHE0rY2a0jUtaJp1SMJMC"
-}, {
-    "id": 53,
-    "name": "Juan",
-    "lastName": "Roman",
-    "email": "roman@hotmail.com",
-    "password": "$2b$10$boXWoCcieWk04uemhWHvZ.ZpiZjSKZiYJbHvlZTM1xMi8HnXvLxjK"
-}, {
-    "id": 54,
-    "name": "Gustavo",
-    "lastName": "gomez",
-    "email": "gustavo@hotmail.com",
-    "password": "$2b$10$EePjVXQ2bEZagLBuvrI9P.5FL6PSci9wBWvoXWG3UsVdmJBw6nzFq"
+    "name": "Romina",
+    "lastName": "Renus",
+    "email": "romina@hotmail.com",
+    "password": "$2b$10$YRSUk024PuFGhP.fGx/zju6K57unipoJiMiMKOdbYJtB54oO2bT7a"
 }]
