@@ -55,6 +55,16 @@
           </form>
         </div>
         <div class="row form-2 col-12 col-md-6 col-lg-6">
+          <% if( typeof errors != 'undefined') { %>
+          <p style="color: red;">Error</p>
+          <ul>
+            <% for (let i=0; i<errors.length; i++) {%>
+            <li>
+              <%= errors[i].msg %>
+            </li>
+            <% } %>
+          </ul>
+          <% } %>
           <form
             class="container"
             action="/users/register"
