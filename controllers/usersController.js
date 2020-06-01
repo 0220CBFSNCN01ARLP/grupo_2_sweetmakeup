@@ -39,18 +39,18 @@ let usersController = {
   },
 
   login: (req, res, next) => {
-    const users = getUsers();
-    const user = users.find((e) => {
+     const users = getUsers();
+     const user = users.find((e) => {
       return (
         bcrypt.compareSync(req.body.loginPassword, e.password) &
         (e.email == req.body.loginEmail)
       );
     });
-    if (user == null) return res.redirect("register");
-    req.session = {
-      user: user,
-    };
-    console.log(req.session.user.email);
+    if (user == null)
+      return res.redirect("register");
+    req.session.user = user;
+    res.cookie("user", user, {maxAge: 300000});
+    console.log(req.cookies.user)
     res.redirect("/");
   },
 };

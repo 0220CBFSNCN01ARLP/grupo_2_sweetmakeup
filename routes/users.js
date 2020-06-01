@@ -3,6 +3,7 @@ var router = express.Router();
 var path = require("path");
 const usersController = require("../controllers/usersController");
 const multer = require("multer");
+const guestMiddleware = require("../middlewares/guestMiddleware");
 
 let { check, validationResult, body } = require("express-validator"); // ver
 
@@ -23,7 +24,7 @@ var upload = multer({
 
 // Creando un registro
 
-router.get("/register", usersController.showRegister);
+router.get("/register", guestMiddleware, usersController.showRegister);
 router.post("/register", upload.any(), usersController.register);
 
 // Log in
