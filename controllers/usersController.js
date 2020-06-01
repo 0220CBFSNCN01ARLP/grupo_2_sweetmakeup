@@ -6,36 +6,44 @@ var express = require("express");
 
 const { getUsers, usersFilePath } = require("../utils/users");
 
+let { check, validationResult, body } = require("express-validator");
+
 let usersController = {
   showRegister: (req, res) => {
     res.render("register");
   },
 
   register: (req, res, next) => {
-    const users = getUsers();
-    req.body.password = bcrypt.hashSync(req.body.password, 10);
+    let errors = validationResult(req);
 
-    const read = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
-    );
+    if (errors.isEmpty()) {
+      const users = getUsers();
+      req.body.password = bcrypt.hashSync(req.body.password, 10);
 
-    const maxId = Math.max(...users.map((o) => o.id), 0);
-    let newId = maxId + 1;
+      const read = JSON.parse(
+        fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
+      );
 
-    let user = {
-      id: newId,
-      ...req.body,
-      avatar: req.files[0].filename,
-    };
+      const maxId = Math.max(...users.map((o) => o.id), 0);
+      let newId = maxId + 1;
 
-    users.push(user);
+      let user = {
+        id: newId,
+        ...req.body,
+        avatar: req.files[0].filename,
+      };
 
-    fs.writeFileSync(
-      path.resolve(__dirname, "../data/users.json"),
-      JSON.stringify(users)
-    );
+      users.push(user);
 
-    res.redirect("/");
+      fs.writeFileSync(
+        path.resolve(__dirname, "../data/users.json"),
+        JSON.stringify(users)
+      );
+
+      res.redirect("/");
+    } else {
+      return res.render("register", { errors: errors.errors });
+    }
   },
 
   login: (req, res, next) => {
