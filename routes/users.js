@@ -24,11 +24,7 @@ var upload = multer({
 
 // Creando un registro
 
-<<<<<<< HEAD
 router.get("/register", guestMiddleware, usersController.showRegister);
-router.post("/register", upload.any(), usersController.register);
-=======
-router.get("/register", usersController.showRegister);
 router.post(
   "/register",
   upload.any(),
@@ -42,7 +38,6 @@ router.post(
   ],
   usersController.register
 );
->>>>>>> 8837b30bbd6a64dca820b8b5a1cc89d4bb58c962
 
 // Log in
 
