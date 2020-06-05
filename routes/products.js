@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+var path = require("path");
 const productController = require("../controllers/productController");
 const authMiddleware = require("../middlewares/authMiddleware");
 const multer = require("multer");
@@ -9,7 +10,10 @@ var storage = multer.diskStorage({
     cb(null, "./public/img/productos");
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + "-" + Date.now());
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
   },
 });
 var upload = multer({

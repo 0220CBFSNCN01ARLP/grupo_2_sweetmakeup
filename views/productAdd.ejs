@@ -17,10 +17,13 @@
       <div class="row">
         <div class="col-12 margin-menu">
           <nav class="nav">
-            <button type="button" class="btn btn-primary btn-sm">
+            <button type="button" class="btn btn-primary btn-sm mg-btn">
+              Inicio
+            </button>
+            <button type="button" class="btn btn-primary btn-sm mg-btn">
               Agregar
             </button>
-            <button type="button" class="btn btn-secondary btn-sm">
+            <button type="button" class="btn btn-primary btn-sm mg-btn">
               Mis Productos
             </button>
           </nav>
@@ -61,13 +64,13 @@
               />
             </div>
             <div class="col-12 col-sm-6 margin-col">
-              <label for="productPrice">Precio *</label>
+              <label for="price">Precio *</label>
               <input
                 type="number"
                 class="form-control"
                 placeholder="Precio"
-                name="productPrice"
-                id="productPrice"
+                name="price"
+                id="price"
                 required
               />
             </div>
@@ -85,8 +88,13 @@
             </div>
 
             <div class="col-12 col-sm-6 margin-col">
-              <label for="familia">Familia de Producto *</label>
-              <select required class="form-control" name="familia" id="familia">
+              <label for="thematic">Familia de Producto *</label>
+              <select
+                required
+                class="form-control"
+                name="thematic"
+                id="thematic"
+              >
                 <option value="rostro"></option>
                 <option value="rostro">Rostro</option>
                 <option value="labios">Labios</option>
@@ -95,7 +103,7 @@
             </div>
 
             <div class="col-12 col-sm-6 margin-col">
-              <label for="oferta"
+              <label for="discount"
                 >Oferta * <span class="descuento">(de 1 a 100)</span></label
               >
               <input
@@ -104,7 +112,8 @@
                 type="number"
                 min="1"
                 max="100"
-                id="oferta"
+                id="discount"
+                name="discount"
               />
             </div>
 
@@ -137,11 +146,11 @@
             </div>
 
             <div class="col-sm-6 none-cell margin-col">
-              <label for="descripcion">Descripcion del Producto</label><br />
+              <label for="description">Descripcion del Producto</label><br />
               <textarea
                 class="form-control"
-                name="descripcion"
-                id=""
+                name="description"
+                id="description"
                 cols="35"
                 rows="3"
                 maxlength="300"
@@ -150,11 +159,11 @@
             </div>
 
             <div class="col-sm-6 none-cell margin-col">
-              <label for="descripcion">Informacion de Pago</label><br />
+              <label for="payment">Informacion de Pago</label><br />
               <textarea
                 class="form-control"
-                name="descripcion"
-                id=""
+                name="payment"
+                id="payment"
                 cols="35"
                 rows="3"
                 maxlength="300"
@@ -163,11 +172,11 @@
             </div>
 
             <div class="col-sm-6 none-cell margin-col">
-              <label for="descripcion">Politicas de Devolucion</label><br />
+              <label for="politics">Politicas de Devolucion</label><br />
               <textarea
                 class="form-control"
-                name="descripcion"
-                id=""
+                name="politics"
+                id="politics"
                 cols="35"
                 rows="3"
                 maxlength="300"
@@ -176,11 +185,11 @@
             </div>
 
             <div class="col-sm-6 none-cell margin-col">
-              <label for="descripcion">Informacion de Envio</label><br />
+              <label for="deliver">Informacion de Envio</label><br />
               <textarea
                 class="form-control"
-                name="descripcion"
-                id=""
+                name="deliver"
+                id="deliver"
                 cols="35"
                 rows="3"
                 maxlength="300"
@@ -189,8 +198,8 @@
             </div>
 
             <div class="col-12 none-cell margin-col">
-              <label for="muestrario">Variantes del Producto:</label>
-              <input type="color" value="#e8b4b4" id="muestrario" />
+              <label for="color">Variantes del Producto:</label>
+              <input type="color" value="#e8b4b4" id="color" name="color" />
             </div>
 
             <div class="col-12 none-cell margin-col envios">
