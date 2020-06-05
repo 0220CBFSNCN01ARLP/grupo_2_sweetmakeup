@@ -793,5 +793,22 @@
     "peso": "",
     "dimensiones": ["", "", ""],
     "linkVideo": ""
+  },
+  {
+    "id": 52,
+    "productName": "Lapiz labial Super Estar",
+    "productPrice": "23000",
+    "familia": "labios",
+    "etiqueta": "nuevoLanzamiento",
+    "descripcion": [
+      "Increible. ",
+      "me lo pagas cuando puedas",
+      "no me lo podes devolver nunca",
+      "veni a buscarlo vos"
+    ],
+    "peso": "23",
+    "dimensiones": ["3", "4", "5"],
+    "linkVideo": "",
+    "avatar": "productImg-1591391804243"
   }
 ]
