@@ -1,7 +1,7 @@
 [
   {
     "id": 3,
-    "productName": "Lápiz de cejas",
+    "productName": "Lápiz de prueba",
     "description": "nulla integer pede justo lacinia eget tincidunt eget tempus vel pede",
     "payment": "pago en cuotas sin interes",
     "politics": "Unicamente aceptamos devolucion si esta cerrado",
@@ -11,9 +11,11 @@
     "price": 501.8,
     "discount": 3,
     "thematic": "cejas",
-    "peso": 4.18,
-    "dimensiones": [43, 45, 31],
-    "linkVideo": null
+    "peso": "4.18",
+    "dimensiones": ["43", "45", "31"],
+    "linkVideo": "",
+    "productImg": "quantum-computing-1920.jpg",
+    "color": "#e8b4b4"
   },
   {
     "id": 4,
