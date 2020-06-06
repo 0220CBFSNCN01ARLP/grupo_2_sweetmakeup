@@ -361,4 +361,10 @@
     "lastName": "Renus",
     "email": "romina@hotmail.com",
     "password": "$2b$10$YRSUk024PuFGhP.fGx/zju6K57unipoJiMiMKOdbYJtB54oO2bT7a"
+}, {
+    "id": 53,
+    "name": "Romina",
+    "lastName": "Renus",
+    "email": "romina@hotmail.com",
+    "password": "$2b$10$XCX0m.HB5Mo/BFyTFxPP..LeFHWMl81/SLCzPAALM99eIq5fHMTmK"
 }]

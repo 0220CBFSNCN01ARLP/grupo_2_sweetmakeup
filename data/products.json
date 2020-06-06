@@ -1,5 +1,4 @@
-[
-  {
+[{
     "id": 1,
     "productName": "Lápiz de cejas",
     "description": "lapiz de cejas",
@@ -15,8 +14,7 @@
     "peso": "4.9",
     "dimensiones": ["11", "15", "9"],
     "linkVideo": ""
-  },
-  {
+}, {
     "id": 3,
     "productName": "Lápiz de cejas",
     "description": "nulla integer pede justo lacinia eget tincidunt eget tempus vel pede",
@@ -31,8 +29,7 @@
     "peso": 4.18,
     "dimensiones": [43, 45, 31],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 4,
     "productName": "Barra de labios",
     "description": "volutpat eleifend donec ",
@@ -47,8 +44,7 @@
     "peso": 5.47,
     "dimensiones": [43, 4, 11],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 5,
     "productName": "Sombras de ojos",
     "description": "sagittis sapien cum sociis natoque",
@@ -63,8 +59,7 @@
     "peso": "7.13",
     "dimensiones": ["23", "27", "29"],
     "linkVideo": ""
-  },
-  {
+}, {
     "id": 6,
     "productName": "Peine para pestañas",
     "description": "volutpat erat quisque erat eros viverra eget",
@@ -79,8 +74,7 @@
     "peso": 3.27,
     "dimensiones": [27, 50, 41],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 7,
     "productName": "Lápiz de cejas",
     "description": "in congue etiam justo etiam pretium iaculis justo in",
@@ -95,8 +89,7 @@
     "peso": 9.7,
     "dimensiones": [5, 18, 34],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 8,
     "productName": "Paleta de sombras",
     "description": "maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas",
@@ -111,24 +104,22 @@
     "peso": 8.43,
     "dimensiones": [12, 37, 45],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 9,
-    "productName": "Rizador para pestañas",
-    "description": "pago en cuotas sin interes",
+    "productName": "boca juniors ",
+    "description": "pago en cuotas sin interes, obviamente",
     "payment": "pago en cuotas sin interes",
     "politics": "Unicamente aceptamos devolucion si esta cerrado",
     "deliver": "Envio gratis en la Ciudad de La Plata",
     "image": "product_9.jpg",
     "colour": ["Purple", "Pink", "Fuscia", "Green", "Khaki"],
-    "price": 100,
-    "discount": 3,
-    "thematic": "ojos",
-    "peso": "3.09",
-    "dimensiones": ["38", "1", "10"],
+    "price": 5,
+    "discount": 5,
+    "thematic": "labios",
+    "peso": "1.09",
+    "dimensiones": ["1", "11", "1"],
     "linkVideo": ""
-  },
-  {
+}, {
     "id": 10,
     "productName": "Delineador de labios",
     "description": "orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at",
@@ -143,8 +134,7 @@
     "peso": "7.03",
     "dimensiones": ["17", "42", "8"],
     "linkVideo": ""
-  },
-  {
+}, {
     "id": 11,
     "productName": "Brillo labial",
     "description": "semper sapien a libero nam dui proin leo odio",
@@ -159,8 +149,7 @@
     "peso": "2.8",
     "dimensiones": ["14", "39", "24"],
     "linkVideo": ""
-  },
-  {
+}, {
     "id": 12,
     "productName": "Barra de labios",
     "description": "adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis",
@@ -175,8 +164,7 @@
     "peso": "7.52",
     "dimensiones": ["8", "44", "19"],
     "linkVideo": ""
-  },
-  {
+}, {
     "id": 13,
     "productName": "Sombras de ojos",
     "description": "massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et",
@@ -191,8 +179,7 @@
     "peso": 9.39,
     "dimensiones": [2, 29, 7],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 14,
     "productName": "Paleta de sombras de ojos",
     "description": "orci pede venenatis non sodales sed tincidunt eu felis fusce posuere",
@@ -207,8 +194,7 @@
     "peso": 8.42,
     "dimensiones": [18, 9, 37],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 15,
     "productName": "Polvo traslúcido",
     "description": "a libero nam dui proin leo odio porttitor id",
@@ -223,8 +209,7 @@
     "peso": 1.95,
     "dimensiones": [30, 18, 34],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 16,
     "productName": "Lápiz de cejas",
     "description": "lacus curabitur at ipsum ac tellus semper",
@@ -239,8 +224,7 @@
     "peso": 4.89,
     "dimensiones": [8, 5, 47],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 17,
     "productName": "Rizador de pestañas",
     "description": "aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh",
@@ -255,8 +239,7 @@
     "peso": 4.02,
     "dimensiones": [25, 38, 41],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 18,
     "productName": "Corrector",
     "description": "integer tincidunt ante vel ipsum",
@@ -271,8 +254,7 @@
     "peso": 3.93,
     "dimensiones": [43, 7, 11],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 19,
     "productName": "Pestaña postiza",
     "description": "arcu libero rutrum ac lobortis vel dapibus at diam nam tristique tortor eu",
@@ -287,8 +269,7 @@
     "peso": 7.53,
     "dimensiones": [8, 37, 43],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 20,
     "productName": "Delineador de labios",
     "description": "nisl ut volutpat sapien arcu sed",
@@ -303,8 +284,7 @@
     "peso": 2.81,
     "dimensiones": [40, 49, 34],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 21,
     "productName": "Pestaña postiza",
     "description": "ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu",
@@ -319,8 +299,7 @@
     "peso": 1.03,
     "dimensiones": [13, 40, 9],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 22,
     "productName": "Pintalabios",
     "description": "placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris",
@@ -335,8 +314,7 @@
     "peso": 3.32,
     "dimensiones": [38, 44, 1],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 23,
     "productName": "Delineador de labios",
     "description": "dolor quis odio consequat varius integer ac leo",
@@ -351,8 +329,7 @@
     "peso": 5.19,
     "dimensiones": [5, 26, 6],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 24,
     "productName": "Cepillo de cejas",
     "description": "in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla",
@@ -367,8 +344,7 @@
     "peso": 3.53,
     "dimensiones": [23, 1, 24],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 25,
     "productName": "Lápiz de labios",
     "description": "elit proin interdum mauris non ligula pellentesque ultrices",
@@ -383,8 +359,7 @@
     "peso": 4.1,
     "dimensiones": [11, 2, 26],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 26,
     "productName": "Exfoliante de labios",
     "description": "eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus",
@@ -399,8 +374,7 @@
     "peso": 8.85,
     "dimensiones": [27, 9, 26],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 27,
     "productName": "Cepillo para ojos",
     "description": "urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo",
@@ -415,8 +389,7 @@
     "peso": 4.32,
     "dimensiones": [50, 33, 1],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 28,
     "productName": "Delineador de labios",
     "description": "leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui",
@@ -431,8 +404,7 @@
     "peso": 2.87,
     "dimensiones": [10, 37, 48],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 29,
     "productName": "Delineador de labios",
     "description": "risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci",
@@ -447,8 +419,7 @@
     "peso": 7.92,
     "dimensiones": [12, 37, 17],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 30,
     "productName": "Sombras de prueba",
     "description": "pago en cuotas sin interes",
@@ -463,8 +434,7 @@
     "peso": "9.03",
     "dimensiones": ["2", "10", "46"],
     "linkVideo": ""
-  },
-  {
+}, {
     "id": 31,
     "productName": "Pintalabios",
     "description": "lectus pellentesque eget nunc donec quis orci eget",
@@ -479,8 +449,7 @@
     "peso": 1.18,
     "dimensiones": [49, 19, 7],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 32,
     "productName": "Máscara de pestañas",
     "description": "augue quam sollicitudin vitae consectetuer eget rutrum",
@@ -495,8 +464,7 @@
     "peso": 8.23,
     "dimensiones": [28, 44, 47],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 33,
     "productName": "Corrector",
     "description": "sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et",
@@ -511,8 +479,7 @@
     "peso": 8.77,
     "dimensiones": [6, 2, 16],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 34,
     "productName": "Corrector",
     "description": "nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer",
@@ -527,8 +494,7 @@
     "peso": 4.55,
     "dimensiones": [32, 12, 40],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 35,
     "productName": "Exfoliante de labios",
     "description": "tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet",
@@ -543,8 +509,7 @@
     "peso": 9.82,
     "dimensiones": [20, 40, 19],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 36,
     "productName": "Rizador para pestañas",
     "description": "sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in",
@@ -559,8 +524,7 @@
     "peso": 5.49,
     "dimensiones": [33, 30, 33],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 37,
     "productName": "Polvo traslúcido",
     "description": "in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est",
@@ -575,8 +539,7 @@
     "peso": 9.76,
     "dimensiones": [17, 4, 40],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 38,
     "productName": "Lápiz de labios",
     "description": "mi nulla ac enim in tempor turpis nec euismod scelerisque",
@@ -591,8 +554,7 @@
     "peso": 1,
     "dimensiones": [18, 18, 49],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 39,
     "productName": "Lápiz de cejas",
     "description": "integer aliquet massa id lobortis convallis tortor risus dapibus augue",
@@ -607,8 +569,7 @@
     "peso": 6.97,
     "dimensiones": [8, 21, 1],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 40,
     "productName": "Exfoliante de labios",
     "description": "eleifend luctus ultricies eu nibh quisque id justo sit amet sapien",
@@ -623,8 +584,7 @@
     "peso": 7.67,
     "dimensiones": [36, 47, 34],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 41,
     "productName": "Polvo traslúcido",
     "description": "metus sapien ut nunc vestibulum ante ipsum primis",
@@ -639,8 +599,7 @@
     "peso": 7.39,
     "dimensiones": [12, 10, 47],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 42,
     "productName": "Pincel corrector",
     "description": "ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas",
@@ -655,8 +614,7 @@
     "peso": 3.62,
     "dimensiones": [16, 34, 14],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 43,
     "productName": "Polvo traslúcido",
     "description": "eu magna vulputate luctus cum",
@@ -671,8 +629,7 @@
     "peso": 4.92,
     "dimensiones": [38, 22, 27],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 44,
     "productName": "Sombras de ojos",
     "description": "maecenas tincidunt lacus at velit vivamus vel nulla eget eros",
@@ -687,8 +644,7 @@
     "peso": 1.33,
     "dimensiones": [2, 42, 6],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 45,
     "productName": "Paleta para pintar los labios",
     "description": "ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra",
@@ -703,8 +659,7 @@
     "peso": 1.82,
     "dimensiones": [2, 26, 10],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 46,
     "productName": "Pestaña postiza",
     "description": "viverra pede ac diam cras",
@@ -719,8 +674,7 @@
     "peso": 6.51,
     "dimensiones": [13, 19, 47],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 47,
     "productName": "Polvos traslúcidos",
     "description": "cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat",
@@ -735,8 +689,7 @@
     "peso": 5.1,
     "dimensiones": [31, 27, 36],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 48,
     "productName": "Paleta para pintar los labios",
     "description": "dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat",
@@ -751,8 +704,7 @@
     "peso": 3.61,
     "dimensiones": [25, 27, 22],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 49,
     "productName": "Paleta de sombras",
     "description": "tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante",
@@ -767,8 +719,7 @@
     "peso": 2.25,
     "dimensiones": [22, 3, 28],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 50,
     "productName": "Pincel corrector",
     "description": "imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet",
@@ -783,8 +734,7 @@
     "peso": 4.49,
     "dimensiones": [34, 22, 37],
     "linkVideo": null
-  },
-  {
+}, {
     "id": 51,
     "productName": ["Pepito Sombra de Ojos", "Pepito Labial"],
     "productPrice": ["654", "123"],
@@ -793,5 +743,4 @@
     "peso": "",
     "dimensiones": ["", "", ""],
     "linkVideo": ""
-  }
-]
+}]
