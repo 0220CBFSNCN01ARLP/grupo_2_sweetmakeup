@@ -18,10 +18,13 @@
         <div class="row">
             <div class="col-12 margin-menu">
                 <nav class="nav">
-                    <button type="button" class="btn btn-primary btn-sm">
+                    <button type="button" class="btn btn-primary btn-sm mg-btn">
+                        Inicio
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm mg-btn">
                         Agregar
                     </button>
-                    <button type="button" class="btn btn-secondary btn-sm">
+                    <button type="button" class="btn btn-primary btn-sm mg-btn">
                         Mis Productos
                     </button>
                 </nav>
@@ -58,8 +61,8 @@
 
                     <div class="col-12 margin-col">
                         <div class="form-group">
-                            <label for="subirImagen">Subir una Imagen *</label>
-                            <input type="file" class="form-control-file" id="subirImagen" accept="image/*," />
+                            <label for="productImg">Subir una Imagen *</label>
+                            <input type="file" class="form-control-file" id="productImg" name="productImg" required />
                         </div>
                     </div>
 
@@ -82,7 +85,7 @@
                     <div class="col-12 col-sm-6 margin-col">
                         <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
                         <input class="form-control" placeholder="Porcentaje" type="number" name="discount" id="discount"
-                            min="1" max="100" id="oferta" required value="<%= product.discount %>" />
+                            min="1" max="100" id="oferta" value="<%= product.discount %>" />
                     </div>
 
                     <div class="col-12 margin-col">
@@ -124,8 +127,8 @@
                     </div>
 
                     <div class="col-12 none-cell margin-col">
-                        <label for="muestrario">Variantes del Producto:</label>
-                        <input type="color" value="#e8b4b4" id="muestrario" />
+                        <label for="color">Variantes del Producto:</label>
+                        <input type="color" value="#e8b4b4" id="color" name="color" />
                     </div>
 
                     <div class="col-12 none-cell margin-col envios">
@@ -141,13 +144,13 @@
                             <p class="p-dimension">Dimensiones:</p>
 
                             <input type="number" class="form-control form-margin" placeholder="Alto (mm)"
-                                name="dimensiones" id="dimensiones" value="<%= product.dimensiones[0] %>" />
+                                name="dimensiones" id="alto" value="<%= product.dimensiones[0] %>" />
 
                             <input type="number" class="form-control form-margin" placeholder="Ancho (mm)"
-                                name="dimensiones" id="dimensiones" value="<%= product.dimensiones[1] %>" />
+                                name="dimensiones" id="ancho" value="<%= product.dimensiones[1] %>" />
 
                             <input type="number" class="form-control form-margin" placeholder="Largo (mm)"
-                                name="dimensiones" id="dimensiones" value="<%= product.dimensiones[2] %>" />
+                                name="dimensiones" id="largo" value="<%= product.dimensiones[2] %>" />
                         </div>
                     </div>
 
@@ -164,22 +167,16 @@
                         <button type="submit" class="btn btn-primary btn-sm button-margin">
                             Publicar
                         </button>
-                        <<<<<<< HEAD </form>
-                            <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
-                                <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
-                                    ¡Borrar!
-                                </button>
-                            </form>
-                            =======
+                    </div>
+                </div>
             </form>
-            <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
-                <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
-                    ¡Borrar!
-                </button>
-        </div>
-        >>>>>>> bed583150ae565d2ba55403cfaed5fe978d7b178
-        </div>
-        </form>
+            <div class="col-12 d-flex justify-content-end mg-button">
+                <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
+                    <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
+                        ¡Borrar!
+                    </button>
+                </form>
+            </div>
         </div>
         <!-- /Cargar Producto -->
     </main>

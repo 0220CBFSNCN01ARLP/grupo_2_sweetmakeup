@@ -1,20 +1,4 @@
 [{
-    "id": 1,
-    "productName": "Lápiz de cejas",
-    "description": "lapiz de cejas",
-    "payment": "pago en cuotas sin interes",
-    "politics": "Unicamente aceptamos devolucion si esta cerrado",
-    "deliver": "Envio gratis en la Ciudad de La Plata",
-    "image": "product_2.jpg",
-    "colour": ["Turquoise", "Khaki", "Pink", "Red", "Maroon"],
-    "price": 450,
-    "discount": 3,
-    "opcion": "descuento",
-    "thematic": "rostro",
-    "peso": "4.9",
-    "dimensiones": ["11", "15", "9"],
-    "linkVideo": ""
-}, {
     "id": 3,
     "productName": "Lápiz de cejas",
     "description": "nulla integer pede justo lacinia eget tincidunt eget tempus vel pede",
@@ -106,7 +90,7 @@
     "linkVideo": null
 }, {
     "id": 9,
-    "productName": "boca juniors ",
+    "productName": "boca ",
     "description": "pago en cuotas sin interes, obviamente",
     "payment": "pago en cuotas sin interes",
     "politics": "Unicamente aceptamos devolucion si esta cerrado",
@@ -118,7 +102,9 @@
     "thematic": "labios",
     "peso": "1.09",
     "dimensiones": ["1", "11", "1"],
-    "linkVideo": ""
+    "linkVideo": "",
+    "productImg": "Inkedb161dee8-d48a-49d8-a52a-b3d786b7e7ce_LI.jpg",
+    "color": "#e8b4b4"
 }, {
     "id": 10,
     "productName": "Delineador de labios",
@@ -743,4 +729,47 @@
     "peso": "",
     "dimensiones": ["", "", ""],
     "linkVideo": ""
+}, {
+    "id": 52,
+    "productName": "Lapiz labial Super Estar",
+    "productPrice": "23000",
+    "familia": "labios",
+    "etiqueta": "nuevoLanzamiento",
+    "descripcion": ["Increible. ", "me lo pagas cuando puedas", "no me lo podes devolver nunca", "veni a buscarlo vos"],
+    "peso": "23",
+    "dimensiones": ["3", "4", "5"],
+    "linkVideo": "",
+    "avatar": "productImg-1591391804243"
+}, {
+    "id": 53,
+    "productName": "vamos a ver",
+    "productPrice": "23333",
+    "familia": "rostro",
+    "oferta": "43",
+    "etiqueta": ["nuevoLanzamiento", "conDescuento"],
+    "descripcion": "prueba1",
+    "info-de-pago": "prueba 2",
+    "politicas-dev": "prueba 3",
+    "info-envo": "prueba 4",
+    "color": "#c83232",
+    "peso": "23",
+    "dimensiones": ["3", "4", "5"],
+    "linkVideo": "",
+    "avatar": "productImg-1591392203463"
+}, {
+    "id": 54,
+    "productName": "prueba 56333",
+    "productPrice": "3444",
+    "familia": "labios",
+    "oferta": "4",
+    "etiqueta": "conDescuento",
+    "descripcion": "avafafarerg",
+    "info-de-pago": "vadvarvaerv",
+    "politicas-dev": "arvaercceac",
+    "info-envio": "aecaecaw",
+    "color": "#2114e1",
+    "peso": "34",
+    "dimensiones": ["4", "3", "4"],
+    "linkVideo": "",
+    "avatar": "productImg-1591392504138.png"
 }]

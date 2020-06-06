@@ -1,68 +1,71 @@
 /* Navbar */
 
 .margin-menu {
-    margin-top: 20px;
-    margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
+.mg-btn {
+  margin: 10px;
+}
 
 /* /Navbar */
 
 .margin-col {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #title {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .title-p {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .p-datos {
-    font-size: 10px;
-    padding-top: 20px;
-    color: red;
+  font-size: 10px;
+  padding-top: 20px;
+  color: red;
 }
 
 .form-control:focus {
-    border-color: rgb(248, 142, 248);
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
+  border-color: rgb(248, 142, 248);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
 }
 
 .descuento {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 .envios {
-    padding-left: 0px;
+  padding-left: 0px;
 }
 
 .margin-dimension {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .p-dimension {
-    margin-bottom: 10px;
-    display: inline-block;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .form-margin {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .b-margin {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .button-margin {
-    margin: 3px;
+  margin: 3px;
 }
 
 .button-primary {
-    background-color: #e8b4b4;
-    border-color: #e8b4b4;
-    margin-right: 10px;
+  background-color: #e8b4b4;
+  border-color: #e8b4b4;
+  margin-right: 10px;
 }
