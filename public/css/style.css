@@ -28,6 +28,10 @@ header a {
     font-weight: bold;
 }
 
+.item-space {
+    margin-left: 10px;
+}
+
 .header-nav {
     flex-grow: 1;
 }

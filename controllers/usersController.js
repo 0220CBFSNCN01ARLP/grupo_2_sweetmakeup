@@ -4,62 +4,83 @@ const bcrypt = require("bcrypt");
 const multer = require("multer");
 var express = require("express");
 
-const { getUsers, usersFilePath } = require("../utils/users");
+const {
+    getUsers,
+    usersFilePath
+} = require("../utils/users");
 
-let { check, validationResult, body } = require("express-validator");
+let {
+    check,
+    validationResult,
+    body
+} = require("express-validator");
 
 let usersController = {
-  showRegister: (req, res) => {
-    res.render("register");
-  },
+    showRegister: (req, res) => {
+        res.render("register");
+    },
 
-  register: (req, res, next) => {
-    let errors = validationResult(req);
+    register: (req, res, next) => {
+        let errors = validationResult(req);
 
-    if (errors.isEmpty()) {
-      const users = getUsers();
-      req.body.password = bcrypt.hashSync(req.body.password, 10);
+        if (errors.isEmpty()) {
+            const users = getUsers();
+            req.body.password = bcrypt.hashSync(req.body.password, 10);
 
-      const read = JSON.parse(
-        fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
-      );
+            const read = JSON.parse(
+                fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
+            );
 
-      const maxId = Math.max(...users.map((o) => o.id), 0);
-      let newId = maxId + 1;
+            const maxId = Math.max(...users.map((o) => o.id), 0);
+            let newId = maxId + 1;
 
-      let user = {
-        id: newId,
-        ...req.body,
-        avatar: req.files[0].filename,
-      };
+            let user = {
+                id: newId,
+                ...req.body,
+                avatar: req.files[0].filename,
+            };
 
-      users.push(user);
+            users.push(user);
 
-      fs.writeFileSync(
-        path.resolve(__dirname, "../data/users.json"),
-        JSON.stringify(users)
-      );
+            fs.writeFileSync(
+                path.resolve(__dirname, "../data/users.json"),
+                JSON.stringify(users)
+            );
 
-      res.redirect("/");
-    } else {
-      return res.render("register", { errors: errors.errors });
+            res.redirect("/");
+        } else {
+            return res.render("register", {
+                errors: errors.errors
+            });
+        }
+    },
+
+    login: (req, res, next) => {
+        const users = getUsers();
+        const user = users.find((e) => {
+            return (
+                bcrypt.compareSync(req.body.loginPassword, e.password) &
+                (e.email == req.body.loginEmail)
+            );
+        });
+        if (user == null) return res.redirect("register");
+        req.session.user = user;
+        res.cookie("user", user, {
+            maxAge: 300000
+        });
+        console.log(req.cookies.user);
+        res.redirect("/");
+    },
+    logout: (req, res, next) => {
+        if (req.session.user != null) {
+            req.session.destroy();
+
+            res.redirect("/");
+        } else {
+            res.redirect("register")
+        }
+
     }
-  },
-
-  login: (req, res, next) => {
-    const users = getUsers();
-    const user = users.find((e) => {
-      return (
-        bcrypt.compareSync(req.body.loginPassword, e.password) &
-        (e.email == req.body.loginEmail)
-      );
-    });
-    if (user == null) return res.redirect("register");
-    req.session.user = user;
-    res.cookie("user", user, { maxAge: 300000 });
-    console.log(req.cookies.user);
-    res.redirect("/");
-  },
 };
 
 module.exports = usersController;

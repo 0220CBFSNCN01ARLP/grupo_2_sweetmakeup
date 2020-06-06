@@ -35,6 +35,10 @@ app.use(
     })
 );
 
+app.get('/logout', function(req, res) {
+    req.session.destroy();
+});
+
 // Routers 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
