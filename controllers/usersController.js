@@ -65,10 +65,9 @@ let usersController = {
         });
         if (user == null) return res.redirect("register");
         req.session.user = user;
-        res.cookie("user", user, {
-            maxAge: 300000
+        res.cookie("user", user.email, {
+            maxAge: 60000
         });
-        console.log(req.cookies.user);
         res.redirect("/");
     },
     logout: (req, res, next) => {

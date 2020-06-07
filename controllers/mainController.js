@@ -58,7 +58,7 @@ let controller = {
         let productsOjos = products.filter((product) => {
             return product.thematic == "ojos";
         });
-        console.log(productsOjos);
+        
         res.render("section", {
             title: "ojos",
             subsections: ["mascara", "delineador", "sombra"],
@@ -72,7 +72,7 @@ let controller = {
         let productsRostro = products.filter((product) => {
             return product.thematic == "rostro";
         });
-        console.log(productsRostro);
+        
         res.render("section", {
             title: "rostro",
             subsections: [
@@ -91,7 +91,7 @@ let controller = {
         let productsCejas = products.filter((product) => {
             return product.thematic == "cejas";
         });
-        console.log(productsCejas);
+        
         res.render("section", {
             title: "cejas",
             subsections: ["perfilador", "rellenador", "fijador", "cepillos"],
@@ -105,7 +105,7 @@ let controller = {
         let productsLabios = products.filter((product) => {
             return product.thematic == "labios";
         });
-        console.log(productsLabios);
+        
         res.render("section", {
             title: "labios",
             subsections: ["lápiz labial", "delineador", "brillo labial"],

@@ -6,6 +6,8 @@ const logger = require("morgan");
 const methodOverride = require("method-override");
 const session = require("express-session");
 
+const cookieAuthMiddleware = require("./middlewares/rememberLoginMiddleware")
+
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const productsRouter = require("./routes/products");
@@ -34,6 +36,7 @@ app.use(
         saveUninitialized: true,
     })
 );
+app.use(cookieAuthMiddleware);
 
 app.get('/logout', function(req, res) {
     req.session.destroy();
