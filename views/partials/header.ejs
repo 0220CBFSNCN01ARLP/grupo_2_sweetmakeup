@@ -36,7 +36,12 @@
                 <% } else { %>
                     <a class="item-space" href="/users/register"><i class="fa fa-user"></i></a>
                     <% } %>
-
         </div>
     </div>
+    <% if(typeof user != 'undefined') { %>
+        <div>
+            Bienvenido
+            <%= user.name %>
+        </div>
+        <% } %>
 </header>
