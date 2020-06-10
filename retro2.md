@@ -1,4 +1,4 @@
-# Retrospectiva Starfish 1
+# Retrospectiva Starfish 2
 
 ### Start Doing:
 - #### Tomarnos 15 minutos en las reuniones para que cada integrante muestre su pantalla
