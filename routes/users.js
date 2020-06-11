@@ -1,17 +1,17 @@
-var express = require("express");
-var router = express.Router();
-var path = require("path");
+const express = require("express");
+const router = express.Router();
+const path = require("path");
 const usersController = require("../controllers/usersController");
 const multer = require("multer");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 
-let {
+const {
     check,
     validationResult,
     body
 } = require("express-validator");
 
-var storage = multer.diskStorage({
+const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, "./public/img/users");
     },
@@ -22,9 +22,20 @@ var storage = multer.diskStorage({
         );
     },
 });
-var upload = multer({
+const upload = multer({
     storage: storage,
 });
+const { getUsers, usersFilePath } = require("../utils/users");
+function findUserByEmail(email){
+    const users = getUsers();
+    const user = users.find((e) => {
+      return (
+        e.email == email
+      );
+    });
+    return (users == null);
+};
+
 
 // Creando un registro
 
@@ -39,11 +50,12 @@ router.post(
             min: 0
         }),
         check("email").isEmail(),
+        check("email").custom(findUserByEmail).withMessage("Ya existe una cuenta con ese email"),
         check("password")
         .isLength({
             min: 8
         })
-        .withMessage("Colocar al menos 8 caracteres"),
+        .withMessage("La contraseña debe tener al menos 8 caracteres"),
     ],
     usersController.register
 );

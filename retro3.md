@@ -1,4 +1,5 @@
-# Retrospectiva Starfish 2
+# Retrospectiva Starfish 3
+11/06/2020
 
 ### Start Doing:
 - #### Usar la herramienta de control de calidad de GitHub
@@ -21,12 +22,15 @@
 
 - #### Reuniones programadas y focalizadas
     Consideramos muy productivas las reuniones periódicas, y resultó muy útil establecer un enfoque: La reunión de mitad de semana es para ver progreso y dividir tareas, y la del fin de semana para resolver problemas.
+
+- #### Compartir la pantalla 20 minutos cada uno durante las reuniones
+    Esta práctica simple ayudó mucho a que todos tengamos claro cuáles eran las tareas de los demás y a resolver problemas entre todos.
     
 
 ### Less of:
 
 - #### Subestimar una tarea o parte de una tarea y no dedicarle el tiempo necesario
-    En el sprint anterior, consideramos una de las tareas como sencilla y rápida, lo que nos llevó a empezar a trabajar en ella poco tiempo antes de la fecha de entrega. Se nos generó un error inesperado que demoró en ser resuelto y por eso llegamos apurados a la entrega.
+    En el sprint anterior, consideramos una de las tareas como sencilla y rápida, lo que nos llevó a empezar a trabajar en ella poco tiempo antes de la fecha de entrega. Se nos generó un error inesperado que demoró en ser resuelto y por eso llegamos apurados a la entrega. Es importante que seamos prudentes a la hora de asignar tiempos a cada parte del trabajo.
 
 
 

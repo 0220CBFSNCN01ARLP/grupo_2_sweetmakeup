@@ -97,6 +97,10 @@ h1 {
     padding-top: 15px;
 }
 
+.errors {
+    color: red;
+}
+
 @media (min-width: 768px) {
     .position {
         justify-content: space-around;
