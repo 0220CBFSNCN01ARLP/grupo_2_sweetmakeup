@@ -31,10 +31,18 @@
           <input type="email" class="form-control" name="loginEmail" id="loginEmail" aria-describedby="emailHelp" />
           <label for="loginPassword">Contraseña</label>
           <input type="password" class="form-control" id="loginPassword" name="loginPassword" />
-          
-          <div>
-            <input class="checkbox-inline" type="checkbox" id="remember" value="remember">
-            <label class="form-check-label" for="remember">Recordarme</label>
+
+          <div class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="remember"
+              name="remember"
+              value="remember"
+            />
+            <label class="custom-control-label" for="remember"
+              >Recordarme</label
+            >
           </div>
 
           <button class="btn btn-pink btn-block buttonMargin" type="submit ">

@@ -15,6 +15,7 @@
 
 - #### Agregar funcionalidades e ideas más allá de lo que piden las consignas
     Nos parece muy valioso que, una vez terminadas las funcionalidades mínimas que piden las consignas, agreguemos cosas al proyecto para ir dándole una forma más completa.
+    
 
 ### Keep Doing:
 
@@ -32,7 +33,7 @@
 ### Stop Doing:
 
 - #### Aceptar cambios en los conflictos de git sin consultar a los compañeros
-    Cuando se generan conflictos en git, muchas veces tendemos a aceptar los cambios entrantes a pesar de no estar seguros de qué efecto tienen esos cambios, sin consultar a la persona responsable de esos cambios. Creemos que se evitarían errores si, en caso de dudas, consultamos al que haya editado esa parte para asegurarnos de lo que estamos aceptando.
+    Cuando se generan conflictos en git, muchas veces tendemos a aceptar los cambios entrantes a pesar de no estar seguros de qué efecto tienen, sin consultar a la persona responsable de esos cambios. Creemos que se evitarían errores si, en caso de dudas, consultamos al que haya editado esa parte para asegurarnos de lo que estamos aceptando.
 
 
 

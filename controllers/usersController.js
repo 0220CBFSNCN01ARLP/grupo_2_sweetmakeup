@@ -58,7 +58,9 @@ let usersController = {
     });
     if (user == null) return res.redirect("register");
 
-    let cookieAge = 10000;
+    // Se guarda la cookie por 30 minutos, el usuario puede cerrar el navegador y volver al poco tiempo
+    let cookieAge = 1800000;
+    // Si selecciona recordar, la cookie dura un mes
     if (req.body.remember != undefined) {
       cookieAge = 2630000000;
     }
@@ -68,11 +70,13 @@ let usersController = {
     });
     res.redirect("/");
   },
+
   logout: (req, res, next) => {
     if (req.session.user != null) {
-      req.session.destroy();
-
-      res.redirect("/");
+      req.session.destroy(function (err) {
+        res.clearCookie("user");
+        res.redirect("/");
+      });
     } else {
       res.redirect("register");
     }
