@@ -13,7 +13,7 @@ CREATE TABLE brands (
 
 CREATE TABLE categories (
   id int(11) NOT NULL AUTO_INCREMENT,
-  name varchar(500) NOT NULL,
+  name varchar(100) NOT NULL,
   createdAt DATETIME,
   updatedAt DATETIME,
   PRIMARY KEY (id)
@@ -57,7 +57,7 @@ CREATE TABLE users (
 CREATE TABLE addresses (
   id int(11) NOT NULL AUTO_INCREMENT,
   street varchar(100) DEFAULT NULL,
-  number varchar(100) DEFAULT NULL,
+  number int(10) DEFAULT NULL,
   city varchar(100) DEFAULT NULL,
   province varchar(100) DEFAULT NULL,
   zipCode varchar(100) DEFAULT NULL,
@@ -65,12 +65,12 @@ CREATE TABLE addresses (
   apartment varchar(100) DEFAULT NULL,
   phone varchar(100) DEFAULT NULL,
   neighborhood varchar(100) DEFAULT NULL,
-  observations varchar(100) DEFAULT NULL,
+  observations text DEFAULT NULL,
   userId int(11) NOT NULL,
   createdAt DATETIME,
-   updatedAt DATETIME,
+  updatedAt DATETIME,
   PRIMARY KEY (id),
-  foreign key (userId) references users(id)  
+  foreign key (userId) references users (id)  
 ); 
 
 
@@ -80,7 +80,7 @@ CREATE TABLE products (
   description varchar(500) DEFAULT NULL,
   ingredients varchar(500) DEFAULT NULL,
   price decimal(10,2) NOT NULL,
-  dicount decimal(4,2) DEFAULT NULL,
+  discount decimal(4,2) DEFAULT NULL,
   weight decimal(10,2) DEFAULT NULL,
   height decimal(10,2) DEFAULT NULL,
   width decimal(10,2) DEFAULT NULL,
