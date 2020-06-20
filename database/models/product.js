@@ -9,8 +9,8 @@ module.exports = (sequelize, dataTypes) => {
     name: { type: dataTypes.STRING(500), allowNull: false },
     description: { type: dataTypes.STRING(500) },
     ingredients: { type: dataTypes.STRING(500) },
-    price: { type: dataTypes.DECIMAL(10, 2), allowNull: false }, // 666666,78
-    dicount: { type: dataTypes.DECIMAL(4, 2) },
+    price: { type: dataTypes.DECIMAL(10, 2), allowNull: false }, // 66666666,78
+    discount: { type: dataTypes.DECIMAL(4, 2) },
     weight: { type: dataTypes.DECIMAL(10, 2) },
     height: { type: dataTypes.DECIMAL(10, 2) },
     width: { type: dataTypes.DECIMAL(10, 2) },
