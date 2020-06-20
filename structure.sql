@@ -51,7 +51,7 @@ CREATE TABLE `users` (
   `createdAt` DATETIME,
    `updatedAt` DATETIME,
   PRIMARY KEY (`id`)
-) 
+)
 
 
 CREATE TABLE `addresses` (
