@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
       primaryKey: true,
       allowNull: false,
     },
-    name: { type: dataTypes.STRING(500), allowNull: true },
+    name: { type: dataTypes.STRING(500) },
   });
   return Brand;
 };

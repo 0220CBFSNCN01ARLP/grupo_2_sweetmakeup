@@ -6,11 +6,11 @@ module.exports = (sequelize, dataTypes) => {
       primaryKey: true,
       allowNull: false,
     },
-    firstName: { type: dataTypes.STRING(500), allowNull: true },
-    lastName: { type: STRING(500), allowNull: true },
-    email: { type: STRING(100), allowNull: true },
-    password: { type: STRING(100), allowNull: true },
-    avatar: { type: STRING(100), allowNull: true },
+    firstName: { type: dataTypes.STRING(500) },
+    lastName: { type: STRING(500) },
+    email: { type: STRING(100) },
+    password: { type: STRING(100) },
+    avatar: { type: STRING(100) },
   });
   return User;
 };

@@ -7,8 +7,8 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     route: { type: dataTypes.STRING(500), allowNull: false },
-    size: { type: dataTypes.STRING(500), allowNull: true },
-    fileType: { type: dataTypes.STRING(500), allowNull: true },
+    size: { type: dataTypes.STRING(500) },
+    fileType: { type: dataTypes.STRING(500) },
   });
   return Image;
 };
