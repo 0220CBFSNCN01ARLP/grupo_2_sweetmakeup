@@ -15,8 +15,6 @@ module.exports = (sequelize, dataTypes) => {
     height: { type: dataTypes.DECIMAL(10, 2), allowNull: true },
     width: { type: dataTypes.DECIMAL(10, 2), allowNull: true },
     length: { type: dataTypes.DECIMAL(10, 2), allowNull: true },
-    brandId: { type: dataTypes.INTEGER(11), allowNull: false },
-    categoryId: { type: dataTypes.INTEGER(11), allowNull: false },
   });
   return Product;
 };

@@ -16,7 +16,6 @@ module.exports = (sequelize, dataTypes) => {
     phone: { type: dataTypes.STRING(100), allowNull: true },
     neighborhood: { type: dataTypes.STRING(100), allowNull: true },
     observations: { type: dataTypes.STRING(100), allowNull: true },
-    userId: { type: dataTypes.INTEGER(11), allowNull: false }, // No se si tiene que ir
   });
   return Purchase;
 };

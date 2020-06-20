@@ -9,7 +9,6 @@ module.exports = (sequelize, dataTypes) => {
     route: { type: dataTypes.STRING(500), allowNull: false },
     size: { type: dataTypes.STRING(500), allowNull: true },
     fileType: { type: dataTypes.STRING(500), allowNull: true },
-    productId: { type: dataTypes.INTEGER(11), allowNull: false },
   });
   return Image;
 };
