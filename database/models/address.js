@@ -17,5 +17,14 @@ module.exports = (sequelize, dataTypes) => {
     neighborhood: { type: dataTypes.STRING(100) },
     observations: { type: dataTypes.STRING(100) },
   });
+
+
+Address.associate = function (models) {
+    Product.belongsTo(models.user, {
+      foreignKey: "userId",
+      as: "user",
+    });
+
+
   return Address;
 };

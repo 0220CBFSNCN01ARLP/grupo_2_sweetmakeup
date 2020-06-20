@@ -12,5 +12,13 @@ module.exports = (sequelize, dataTypes) => {
     password: { type: STRING(100) },
     avatar: { type: STRING(100) },
   });
+
+  User.associate = function (models) {
+    User.hasMany(models.address, {
+      foreignKey: "userId",
+      as: "address",
+    });
+  };
+
   return User;
 };

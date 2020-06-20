@@ -16,5 +16,18 @@ module.exports = (sequelize, dataTypes) => {
     width: { type: dataTypes.DECIMAL(10, 2) },
     length: { type: dataTypes.DECIMAL(10, 2) },
   });
+
+  Product.associate = function (models) {
+    Product.belongsTo(models.brand, {
+      foreignKey: "brandId",
+      as: "brand",
+    });
+
+    Product.belongsTo(models.category, {
+      foreignKey: "categoryId",
+      as: "category",
+    });
+  };
+
   return Product;
 };
