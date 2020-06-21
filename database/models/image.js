@@ -10,5 +10,13 @@ module.exports = (sequelize, dataTypes) => {
     size: { type: dataTypes.STRING(500) },
     fileType: { type: dataTypes.STRING(500) },
   });
+
+  Image.associate = function (models) {
+    Image.belongsTo(models.product, {
+      foreignKey: "productId",
+      as: "product",
+    });
+  };
+
   return Image;
 };

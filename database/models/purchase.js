@@ -17,5 +17,18 @@ module.exports = (sequelize, dataTypes) => {
     neighborhood: { type: dataTypes.STRING(100) },
     observations: { type: dataTypes.STRING(100) },
   });
+
+  Purchase.associate = function (models) {
+    Purchase.belongsTo(models.address, {
+      foreignKey: "addressId",
+      as: "address",
+    });
+
+    Purchase.belongsTo(models.user, {
+      foreignKey: "userId",
+      as: "user",
+    });
+  };
+
   return Purchase;
 };
