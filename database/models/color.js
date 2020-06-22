@@ -8,5 +8,15 @@ module.exports = (sequelize, dataTypes) => {
     },
     name: { type: dataTypes.STRING(500), allowNull: false },
   });
+
+  Color.associate = function (models) {
+    Color.belongsToMany(models.product, {
+      as: "product",
+      through: "color_product",
+      foreignKey: "colorId",
+      otherKey: "productId",
+      timestamps: false,
+    });
+  };
   return Color;
 };

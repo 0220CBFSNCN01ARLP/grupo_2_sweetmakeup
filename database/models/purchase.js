@@ -28,6 +28,19 @@ module.exports = (sequelize, dataTypes) => {
       foreignKey: "userId",
       as: "user",
     });
+
+    Purchase.belongsToMany(models.product, {
+      as: "product",
+      through: "product_purchase",
+      foreignKey: "purchaseId",
+      otherKey: "productId",
+      timestamps: false,
+    });
+
+    Purchase.hasMany(models.product_purchase, {
+      foreignKey: "purchaseId",
+      as: "product_purchase",
+    });
   };
 
   return Purchase;

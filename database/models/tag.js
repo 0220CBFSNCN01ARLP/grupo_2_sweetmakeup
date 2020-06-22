@@ -8,5 +8,16 @@ module.exports = (sequelize, dataTypes) => {
     },
     name: { type: dataTypes.STRING(500), allowNull: false },
   });
+
+  Tag.associate = function (models) {
+    Tag.belongsToMany(models.product, {
+      as: "product",
+      through: "product_tag",
+      foreignKey: "tagId",
+      otherKey: "productId",
+      timestamps: false,
+    });
+  };
+
   return Tag;
 };
