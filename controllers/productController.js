@@ -1,18 +1,21 @@
 const multer = require("multer");
 
-// CRUD: CREATE UPDATE, READ (*), DELETE
-// CREATE UPDATE:
-// READ:
-// DELETE:
+// CRUD:
+// CREATE UPDATE: Fer
+// READ: Agus
+// DELETE: Gena
 
 const { getProducts, productsFilePath } = require("../utils/products");
 
 let controller = {
+  // FER
   create: function (req, res, next) {
     res.render("productAdd", {
       user: req.session.user,
     });
   },
+
+  // FER
 
   store: function (req, res, next) {
     const products = getProducts();
@@ -30,6 +33,7 @@ let controller = {
     res.redirect("/");
   },
 
+  // FER
   edit: (req, res) => {
     //GET -> muestra el formulario
 
@@ -45,6 +49,9 @@ let controller = {
       user: req.session.user,
     });
   },
+
+  //FER
+
   //PUT /products/edit/12385
   update: (req, res, next) => {
     //PUT -> procesar el formulario y redireccionar(o renderizar)
@@ -77,6 +84,8 @@ let controller = {
     res.redirect("/products/" + product.id);
   },
 
+  //GENARO
+
   destroy: (req, res) => {
     const products = getProducts();
     const index = products.findIndex((e) => {
@@ -92,6 +101,7 @@ let controller = {
     res.redirect("/");
   },
 
+  //AGUS
   detail: function (req, res, next) {
     const products = getProducts();
     const product = products.find((e) => {
