@@ -19,27 +19,22 @@ module.exports = (sequelize, dataTypes) => {
   });
 
   Purchase.associate = function (models) {
-    Purchase.belongsTo(models.address, {
+    Purchase.belongsTo(models.Address, {
       foreignKey: "addressId",
       as: "address",
     });
 
-    Purchase.belongsTo(models.user, {
+    Purchase.belongsTo(models.User, {
       foreignKey: "userId",
       as: "user",
     });
 
-    Purchase.belongsToMany(models.product, {
+    Purchase.belongsToMany(models.Product, {
       as: "product",
       through: "product_purchase",
       foreignKey: "purchaseId",
       otherKey: "productId",
       timestamps: false,
-    });
-
-    Purchase.hasMany(models.product_purchase, {
-      foreignKey: "purchaseId",
-      as: "product_purchase",
     });
   };
 

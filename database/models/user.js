@@ -14,17 +14,17 @@ module.exports = (sequelize, dataTypes) => {
   });
 
   User.associate = function (models) {
-    User.hasMany(models.address, {
+    User.hasMany(models.Address, {
       foreignKey: "userId",
       as: "address",
     });
 
-    User.hasMany(models.purchase, {
+    User.hasMany(models.Purchase, {
       foreignKey: "userId",
       as: "purchase",
     });
 
-    User.belongsToMany(models.product, {
+    User.belongsToMany(models.Product, {
       as: "product",
       through: "user_product",
       foreignKey: "userId",

@@ -6,6 +6,7 @@ const multer = require("multer");
 // DELETE: Gena
 
 const { getProducts, productsFilePath } = require("../utils/products");
+const { Product } = require("../database/models");
 
 let controller = {
   // FER
@@ -102,25 +103,16 @@ let controller = {
   },
 
   //AGUS
-  detail: function (req, res, next) {
-    const products = getProducts();
-    const product = products.find((e) => {
-      return e.id == req.params.id;
-    });
-    if (product == null) {
-      return res.redirect("/");
-    }
-    let related = [];
-    for (let i = 0; i < 4; i++) {
-      var item = products[Math.floor(Math.random() * products.length)];
-      related.push(item);
-    }
+  detail: async function (req, res, next) {
+    let product = await Product.findByPk(req.params.id)
+    console.log(product);
+    res.send ("uwu");
 
-    res.render("productDetail", {
-      product,
-      related,
-      user: req.session.user,
-    });
+    //res.render("productDetail", {
+      //product,
+      //related,
+      //user: req.session.user,
+    //});
   },
 };
 

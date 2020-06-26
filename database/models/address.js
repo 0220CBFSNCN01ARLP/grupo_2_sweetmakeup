@@ -19,12 +19,12 @@ module.exports = (sequelize, dataTypes) => {
   });
 
   Address.associate = function (models) {
-    Address.belongsTo(models.user, {
+    Address.belongsTo(models.User, {
       foreignKey: "userId",
       as: "user",
     });
 
-    Address.hasMany(models.purchase, {
+    Address.hasMany(models.Purchase, {
       foreignKey: "addressId",
       as: "purchase",
     });

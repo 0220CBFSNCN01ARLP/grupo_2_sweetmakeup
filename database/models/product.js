@@ -18,22 +18,22 @@ module.exports = (sequelize, dataTypes) => {
   });
 
   Product.associate = function (models) {
-    Product.belongsTo(models.brand, {
+    Product.belongsTo(models.Brand, {
       foreignKey: "brandId",
       as: "brand",
     });
 
-    Product.belongsTo(models.category, {
+    Product.belongsTo(models.Category, {
       foreignKey: "categoryId",
       as: "category",
     });
 
-    Product.hasMany(models.image, {
+    Product.hasMany(models.Image, {
       foreignKey: "productId",
       as: "image",
     });
 
-    Product.belongsToMany(models.user, {
+    Product.belongsToMany(models.User, {
       as: "user",
       through: "user_product",
       foreignKey: "productId",
@@ -41,7 +41,7 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: false,
     });
 
-    Product.belongsToMany(models.purchase, {
+    Product.belongsToMany(models.Purchase, {
       as: "purchase",
       through: "product_purchase",
       foreignKey: "productId",
@@ -49,7 +49,7 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: false,
     });
 
-    Product.belongsToMany(models.tag, {
+    Product.belongsToMany(models.Tag, {
       as: "tag",
       through: "product_tag",
       foreignKey: "productId",
@@ -57,17 +57,12 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: false,
     });
 
-    Product.belongsToMany(models.color, {
+    Product.belongsToMany(models.Color, {
       as: "color",
       through: "color_product",
       foreignKey: "productId",
       otherKey: "colorId",
       timestamps: false,
-    });
-
-    Product.hasMany(models.product_purchase, {
-      foreignKey: "productId",
-      as: "product_purchase",
     });
   };
 

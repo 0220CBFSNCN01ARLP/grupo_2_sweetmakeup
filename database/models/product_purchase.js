@@ -11,12 +11,12 @@ module.exports = (sequelize, dataTypes) => {
   });
 
   Product_Purchase.associate = function (models) {
-    Product_Purchase.belongsTo(models.product, {
+    Product_Purchase.belongsTo(models.Product, {
       foreignKey: "productId",
       as: "product",
     });
 
-    Product_Purchase.belongsTo(models.purchase, {
+    Product_Purchase.belongsTo(models.Purchase, {
       foreignKey: "purchaseId",
       as: "purchase",
     });
