@@ -7,10 +7,10 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     firstName: { type: dataTypes.STRING(500) },
-    lastName: { type: STRING(500) },
-    email: { type: STRING(100) },
-    password: { type: STRING(100) },
-    avatar: { type: STRING(100) },
+    lastName: { type: dataTypes.STRING(500) },
+    email: { type: dataTypes.STRING(100) },
+    password: { type: dataTypes.STRING(100) },
+    avatar: { type: dataTypes.STRING(100) },
   });
 
   User.associate = function (models) {
