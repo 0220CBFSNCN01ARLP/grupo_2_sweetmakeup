@@ -104,15 +104,20 @@ let controller = {
 
   //AGUS
   detail: async function (req, res, next) {
-    let product = await Product.findByPk(req.params.id)
-    console.log(product);
-    res.send ("uwu");
+    let product = await Product.findByPk(req.params.id);
+    let related = [];
+    for (let i = 0; i < 4; i++) {
+      let relatedProduct = await Product.findOne({
+        where: { categoryId: product.categoryId },
+      });
+      related.push(relatedProduct)
+    };
 
-    //res.render("productDetail", {
-      //product,
-      //related,
-      //user: req.session.user,
-    //});
+    res.render("productDetail", {
+      product,
+      related,
+      user: req.session.user,
+    });
   },
 };
 

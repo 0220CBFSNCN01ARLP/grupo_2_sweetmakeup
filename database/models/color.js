@@ -15,7 +15,6 @@ module.exports = (sequelize, dataTypes) => {
       through: "color_product",
       foreignKey: "colorId",
       otherKey: "productId",
-      timestamps: false,
     });
   };
   return Color;

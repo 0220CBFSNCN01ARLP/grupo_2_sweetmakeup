@@ -38,7 +38,6 @@ module.exports = (sequelize, dataTypes) => {
       through: "user_product",
       foreignKey: "productId",
       otherKey: "userId",
-      timestamps: false,
     });
 
     Product.belongsToMany(models.Purchase, {
@@ -46,7 +45,6 @@ module.exports = (sequelize, dataTypes) => {
       through: "product_purchase",
       foreignKey: "productId",
       otherKey: "purchaseId",
-      timestamps: false,
     });
 
     Product.belongsToMany(models.Tag, {
@@ -54,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
       through: "product_tag",
       foreignKey: "productId",
       otherKey: "tagId",
-      timestamps: false,
+      timestamps: "false"
     });
 
     Product.belongsToMany(models.Color, {
@@ -62,7 +60,7 @@ module.exports = (sequelize, dataTypes) => {
       through: "color_product",
       foreignKey: "productId",
       otherKey: "colorId",
-      timestamps: false,
+      timestamps: "false"
     });
   };
 
