@@ -4,6 +4,7 @@ const {
     getProducts,
     productsFilePath
 } = require("../utils/products");
+const { Product, Category } = require("../database/models")
 
 let controller = {
     index: (req, res) => {
@@ -53,12 +54,8 @@ let controller = {
         })
     },
 
-    ojos: function(req, res, next) {
-        let products = getProducts();
-        let productsOjos = products.filter((product) => {
-            return product.thematic == "ojos";
-        });
-        
+    ojos: async function(req, res, next) {
+        let productsOjos = await Product.findAll( { include: {association: "category", where: {name: "ojos"}}})
         res.render("section", {
             title: "ojos",
             subsections: ["mascara", "delineador", "sombra"],
@@ -67,11 +64,8 @@ let controller = {
         });
     },
 
-    rostro: function(req, res, next) {
-        let products = getProducts();
-        let productsRostro = products.filter((product) => {
-            return product.thematic == "rostro";
-        });
+    rostro: async function(req, res, next) {
+        let productsRostro = await Product.findAll( { include: {association: "category", where: {name: "rostro"}}})
         
         res.render("section", {
             title: "rostro",
@@ -86,11 +80,8 @@ let controller = {
         });
     },
 
-    cejas: function(req, res, next) {
-        let products = getProducts();
-        let productsCejas = products.filter((product) => {
-            return product.thematic == "cejas";
-        });
+    cejas: async function(req, res, next) {
+        let productsCejas = await Product.findAll( { include: {association: "category", where: {name: "cejas"}}})
         
         res.render("section", {
             title: "cejas",
@@ -100,11 +91,8 @@ let controller = {
         });
     },
 
-    labios: function(req, res, next) {
-        let products = getProducts();
-        let productsLabios = products.filter((product) => {
-            return product.thematic == "labios";
-        });
+    labios: async function(req, res, next) {
+        let productsLabios = await Product.findAll( { include: {association: "category", where: {name: "labios"}}})
         
         res.render("section", {
             title: "labios",
