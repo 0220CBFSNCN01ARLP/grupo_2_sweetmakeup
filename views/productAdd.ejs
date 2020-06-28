@@ -1,110 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <%- include("partials/head") %>
-    <link rel="stylesheet" href="/css/productAdd.css" />
+        <link rel="stylesheet" href="/css/productAdd.css" />
 
-    <title>Make.u | Agregar Producto</title>
-  </head>
+        <title>Make.u | Agregar Producto</title>
+</head>
 
-  <body>
+<body>
     <!-- Header -->
     <%- include('partials/header') %>
-    <!-- /Header -->
+        <!-- /Header -->
 
-    <!-- Navbar -->
-    <div class="container">
-      <div class="row">
-        <div class="col-12 margin-menu">
-          <nav class="nav">
-            <button type="button" class="btn btn-primary btn-sm mg-btn">
+        <!-- Navbar -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 margin-menu">
+                    <nav class="nav">
+                        <button type="button" class="btn btn-primary btn-sm mg-btn">
               Inicio
             </button>
-            <button type="button" class="btn btn-primary btn-sm mg-btn">
+                        <button type="button" class="btn btn-primary btn-sm mg-btn">
               Agregar
             </button>
-            <button type="button" class="btn btn-primary btn-sm mg-btn">
+                        <button type="button" class="btn btn-primary btn-sm mg-btn">
               Mis Productos
             </button>
-          </nav>
+                    </nav>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- /Navbar -->
+        <!-- /Navbar -->
 
-    <main>
-      <!-- Cargar Producto -->
-      <div class="container">
-        <form
-          action="/products/create"
-          method="POST"
-          enctype="multipart/form-data"
-        >
-          <div class="row">
-            <div class="col-12 margin-col">
-              <h2 id="title">Agregar un producto</h2>
-              <p class="title-p none-tablet">
-                Agregue las caracteristicas esenciales del producto para subirlo
-                rapidamente a la pagina, y luego en el desktop, siga editandolo
-                con mas datos.
-              </p>
-              <p class="p-datos none-tablet">
-                * Campos obligatorios
-              </p>
-            </div>
-            <div class="col-12 col-sm-6 margin-col">
-              <label for="productName">Nombre del Producto *</label>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Nombre del Producto"
-                name="productName"
-                id="productName"
-                required
-              />
-            </div>
-            <div class="col-12 col-sm-6 margin-col">
-              <label for="price">Precio *</label>
-              <input
-                type="number"
-                class="form-control"
-                placeholder="Precio"
-                name="price"
-                id="price"
-                required
-              />
-            </div>
+        <main>
+            <!-- Cargar Producto -->
+            <div class="container">
+                <form action="/products/create" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-12 margin-col">
+                            <h2 id="title">Agregar un producto</h2>
+                            <p class="title-p none-tablet">
+                                Agregue las caracteristicas esenciales del producto para subirlo rapidamente a la pagina, y luego en el desktop, siga editandolo con mas datos.
+                            </p>
+                            <p class="p-datos none-tablet">
+                                * Campos obligatorios
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 margin-col">
+                            <label for="productName">Nombre del Producto *</label>
+                            <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName" id="productName" required />
+                        </div>
+                        <div class="col-12 col-sm-6 margin-col">
+                            <label for="price">Precio *</label>
+                            <input type="number" class="form-control" placeholder="Precio" name="price" id="price" required />
+                        </div>
 
-            <div class="col-12 margin-col">
-              <div class="form-group">
-                <label for="productImg">Subir una Imagen *</label>
-                <input
-                  type="file"
-                  class="form-control-file"
-                  id="productImg"
-                  name="productImg"
-                />
-              </div>
-            </div>
+                        <div class="col-12 margin-col">
+                            <div class="form-group">
+                                <label for="productImg">Subir una Imagen *</label>
+                                <input type="file" class="form-control-file" id="productImg" name="productImg" />
+                            </div>
+                        </div>
 
-            <div class="col-12 col-sm-6 margin-col">
-              <label for="thematic">Familia de Producto *</label>
-              <select
-                required
-                class="form-control"
-                name="thematic"
-                id="thematic"
-              >
-                <option value="rostro"></option>
-                <option value="rostro">Rostro</option>
-                <option value="labios">Labios</option>
-                <option value="ojos">Ojos</option>
-              </select>
-            </div>
+                        <div class="col-12 col-sm-6 margin-col">
+                            <label for="thematic">Familia de Producto *</label>
+                            <select required class="form-control" name="thematic" id="thematic">
+                <% for (let category of categories) { %>
+                <option value="<%= category.id %>"> <%= category.name %> </option>
+                <% } %>
+            </select>
+                        </div>
 
-            <div class="col-12 col-sm-6 margin-col">
-              <label for="discount"
-                >Oferta * <span class="descuento">(de 1 a 100)</span></label
+                        <div class="col-12 col-sm-6 margin-col">
+                            <label for="brand">Marcas *</label>
+                            <select required class="form-control" name="brand" id="brand">
+               <% for (let brand of brands) { %>
+                <option value="<%= brand.id %>"> <%= brand.name %> </option>
+                <% } %>
+            </select>
+                        </div>
+
+                        <div class="col-12 col-sm-6 margin-col">
+                            <label for="discount">Oferta * <span class="descuento">(de 1 a 100)</span></label
               >
               <input
                 class="form-control"
@@ -119,16 +97,9 @@
 
             <div class="col-12 margin-col">
               <label for="etiqueta">Etiqueta *</label>
-              <div class="custom-control custom-checkbox">
-                <input
-                  type="checkbox"
-                  class="custom-control-input"
-                  id="new"
-                  name="etiqueta"
-                  value="nuevoLanzamiento"
-                />
-                <label class="custom-control-label" for="new"
-                  >Nuevo Lanzamiento</label
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="new" name="etiqueta" value="nuevoLanzamiento" />
+                                <label class="custom-control-label" for="new">Nuevo Lanzamiento</label
                 >
               </div>
               <div class="custom-control custom-checkbox">
@@ -147,143 +118,73 @@
 
             <div class="col-sm-6 none-cell margin-col">
               <label for="description">Descripcion del Producto</label><br />
-              <textarea
-                class="form-control"
-                name="description"
-                id="description"
-                cols="35"
-                rows="3"
-                maxlength="300"
-                placeholder="300 caracteres maximo"
-              ></textarea>
-            </div>
+                                <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                            </div>
 
-            <div class="col-sm-6 none-cell margin-col">
-              <label for="payment">Informacion de Pago</label><br />
-              <textarea
-                class="form-control"
-                name="payment"
-                id="payment"
-                cols="35"
-                rows="3"
-                maxlength="300"
-                placeholder="300 caracteres maximo"
-              ></textarea>
-            </div>
+                            <div class="col-sm-6 none-cell margin-col">
+                                <label for="payment">Informacion de Pago</label><br />
+                                <textarea class="form-control" name="payment" id="payment" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                            </div>
 
-            <div class="col-sm-6 none-cell margin-col">
-              <label for="politics">Politicas de Devolucion</label><br />
-              <textarea
-                class="form-control"
-                name="politics"
-                id="politics"
-                cols="35"
-                rows="3"
-                maxlength="300"
-                placeholder="300 caracteres maximo"
-              ></textarea>
-            </div>
+                            <div class="col-sm-6 none-cell margin-col">
+                                <label for="politics">Politicas de Devolucion</label><br />
+                                <textarea class="form-control" name="politics" id="politics" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                            </div>
 
-            <div class="col-sm-6 none-cell margin-col">
-              <label for="deliver">Informacion de Envio</label><br />
-              <textarea
-                class="form-control"
-                name="deliver"
-                id="deliver"
-                cols="35"
-                rows="3"
-                maxlength="300"
-                placeholder="300 caracteres maximo"
-              ></textarea>
-            </div>
+                            <div class="col-sm-6 none-cell margin-col">
+                                <label for="deliver">Informacion de Envio</label><br />
+                                <textarea class="form-control" name="deliver" id="deliver" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"></textarea>
+                            </div>
 
-            <div class="col-12 none-cell margin-col">
-              <label for="color">Variantes del Producto:</label>
-              <input type="color" value="#e8b4b4" id="color" name="color" />
-            </div>
+                            <div class="col-12 none-cell margin-col">
+                                <label for="color">Variantes del Producto:</label>
+                                <input type="color" value="#e8b4b4" id="color" name="color" />
+                            </div>
 
-            <div class="col-12 none-cell margin-col envios">
-              <div class="col-12">
-                <h5><span>Envios</span></h5>
-              </div>
-              <div class="col-sm-6">
-                <label for="peso">Peso:</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  placeholder="kilogramos"
-                  name="peso"
-                  id="peso"
-                />
-              </div>
-              <div class="col-sm-6 margin-dimension">
-                <p class="p-dimension">Dimensiones:</p>
+                            <div class="col-12 none-cell margin-col envios">
+                                <div class="col-12">
+                                    <h5><span>Envios</span></h5>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="peso">Peso:</label>
+                                    <input type="number" class="form-control" placeholder="kilogramos" name="peso" id="peso" />
+                                </div>
+                                <div class="col-sm-6 margin-dimension">
+                                    <p class="p-dimension">Dimensiones:</p>
 
-                <input
-                  type="number"
-                  class="form-control form-margin"
-                  placeholder="Alto (mm)"
-                  name="dimensiones"
-                  id="alto"
-                />
+                                    <input type="number" class="form-control form-margin" placeholder="Alto (mm)" name="alto" id="alto" />
 
-                <input
-                  type="number"
-                  class="form-control form-margin"
-                  placeholder="Ancho (mm)"
-                  name="dimensiones"
-                  id="ancho"
-                />
+                                    <input type="number" class="form-control form-margin" placeholder="Ancho (mm)" name="ancho" id="ancho" />
 
-                <input
-                  type="number"
-                  class="form-control form-margin"
-                  placeholder="Largo (mm)"
-                  name="dimensiones"
-                  id="largo"
-                />
-              </div>
-            </div>
+                                    <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="largo" id="largo" />
+                                </div>
+                            </div>
 
-            <div class="col-12 none-cell margin-col">
-              <label for="linkVideo">Subir video de YouTube</label>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Pegar el Link"
-                name="linkVideo"
-                id="linkVideo"
-              />
-            </div>
+                            <div class="col-12 none-cell margin-col">
+                                <label for="linkVideo">Subir video de YouTube</label>
+                                <input type="text" class="form-control" placeholder="Pegar el Link" name="linkVideo" id="linkVideo" />
+                            </div>
 
-            <div class="col-12 d-flex justify-content-end mg-button">
-              <button
-                type="button"
-                class="btn btn-secondary btn-sm button-margin"
-              >
+                            <div class="col-12 d-flex justify-content-end mg-button">
+                                <button type="button" class="btn btn-secondary btn-sm button-margin">
                 Ver adelanto
               </button>
-              <button
-                type="button"
-                class="btn btn-secondary btn-sm button-margin"
-              >
+                                <button type="button" class="btn btn-secondary btn-sm button-margin">
                 Guardar Borrador
               </button>
-              <button
-                type="submit"
-                class="btn btn-primary btn-sm button-margin"
-              >
+                                <button type="submit" class="btn btn-primary btn-sm button-margin">
                 Publicar
               </button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- /Cargar Producto -->
-    </main>
+                            </div>
+                        </div>
+                </form>
+                </div>
+                <!-- /Cargar Producto -->
+        </main>
 
-    <!-- Footer -->
-    <%- include("partials/footer") %>
-    <!-- /Footer -->
-  </body>
+        <!-- Footer -->
+        <%- include("partials/footer") %>
+            <!-- /Footer -->
+</body>
+
 </html>
