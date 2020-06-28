@@ -161,16 +161,8 @@ let controller = {
 
     //AGUS
     detail: async function(req, res, next) {
-        let product = await Product.findByPk(req.params.id);
-        let related = [];
-        for (let i = 0; i < 4; i++) {
-            let relatedProduct = await Product.findOne({
-                where: {
-                    categoryId: product.categoryId
-                },
-            });
-            related.push(relatedProduct)
-        };
+        let product = await Product.findByPk(req.params.id, {include: {association: "category"}});
+        let related = await Product.findAll( { include: {association: "category", where: {name: product.category.name}}, limit: 4})
 
         res.render("productDetail", {
             product,
