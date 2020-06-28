@@ -7,37 +7,11 @@ const {
 const { Product, Category } = require("../database/models")
 
 let controller = {
-    index: (req, res) => {
-        const ojos = [];
-        const labios = [];
-        const cejas = [];
-        const rostro = [];
-        const products = getProducts();
-
-        function shuffleArray(products) {
-            for (var i = products.length - 1; i > 0; i--) {
-                var j = Math.floor(Math.random() * (i + 1));
-                var temp = products[i];
-                products[i] = products[j];
-                products[j] = temp;
-            }
-        }
-        shuffleArray(products);
-
-        products.forEach((element) => {
-            if (element.thematic == "ojos") {
-                ojos.push(element);
-            }
-            if (element.thematic == "labios") {
-                labios.push(element);
-            }
-            if (element.thematic == "cejas") {
-                cejas.push(element);
-            }
-            if (element.thematic == "rostro") {
-                rostro.push(element);
-            }
-        });
+    index: async function (req, res) {
+        ojos =await Product.findAll( { include: {association: "category", where: {name: "ojos"}}, limit: 4})
+        labios =await Product.findAll( { include: {association: "category", where: {name: "labios"}}, limit: 4})
+        cejas =await Product.findAll( { include: {association: "category", where: {name: "cejas"}}, limit: 4})
+        rostro =await Product.findAll( { include: {association: "category", where: {name: "rostro"}}, limit: 4})
 
         res.render("index", {
             ojos,
