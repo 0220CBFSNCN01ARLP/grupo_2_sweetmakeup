@@ -78,6 +78,19 @@
                         </div>
 
                         <div class="col-12 col-sm-6 margin-col">
+                            <label for="brand">Marcas *</label>
+                            <select required class="form-control" name="brand" id="brand">
+                <% for (let brand of brands) { %>
+                                <% if (brand.id == product.brandId) { %>
+                                    <option value="<%= brand.id %>" selected> <%= brand.name %> </option>
+                                <% } else {  %>
+                                    <option value="<%= brand.id %>"> <%= brand.name %> </option>
+                                <% } %>
+                             <% } %>
+            </select>
+                        </div>
+
+                        <div class="col-12 col-sm-6 margin-col">
                             <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
                             <input class="form-control" placeholder="Porcentaje" type="number" name="discount" id="discount" min="1" max="100" id="oferta" value="<%= product.discount %>" />
                         </div>
@@ -89,7 +102,7 @@
                                 <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta" value="conDescuento" />
+                                <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta" checked="<%= descuento %>" />
                                 <label class="custom-control-label" for="descuento">Con Descuento</label>
                             </div>
                         </div>
@@ -100,23 +113,23 @@
                         </div>
 
                         <div class="col-sm-6 none-cell margin-col">
-                            <label for="descripcion">Informacion de Pago</label><br />
-                            <textarea class="form-control" name="payment" id="payment" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.payment %></textarea>
+                            <label for="ingredients">Ingredientes</label><br />
+                            <textarea class="form-control" name="ingredients" id="ingredients" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.ingredients %></textarea>
                         </div>
 
                         <div class="col-sm-6 none-cell margin-col">
-                            <label for="descripcion">Politicas de Devolucion</label><br />
-                            <textarea class="form-control" name="politics" id="politics" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.politics %></textarea>
+                            <label for="returnPolitic">Politicas de Devolucion</label><br />
+                            <textarea class="form-control" name="returnPolitic" id="returnPolitic" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.returnPolitic %></textarea>
                         </div>
 
                         <div class="col-sm-6 none-cell margin-col">
-                            <label for="descripcion">Informacion de Envio</label><br />
-                            <textarea class="form-control" name="deliver" id="deliver" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.deliver %></textarea>
+                            <label for="shipping">Informacion de Envio</label><br />
+                            <textarea class="form-control" name="shipping" id="shipping" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.shipping %></textarea>
                         </div>
 
                         <div class="col-12 none-cell margin-col">
                             <label for="color">Variantes del Producto:</label>
-                            <input type="color" value="#e8b4b4" id="color" name="color" />
+                            <input type="color" value="<%= color %>" id="color" name="color" />
                         </div>
 
                         <div class="col-12 none-cell margin-col envios">
@@ -139,8 +152,8 @@
                         </div>
 
                         <div class="col-12 none-cell margin-col">
-                            <label for="linkVideo">Subir video de YouTube</label>
-                            <input type="text" class="form-control" placeholder="Pegar el Link" name="linkVideo" id="linkVideo" />
+                            <label for="link">Subir video de YouTube</label>
+                            <input type="text" class="form-control" placeholder="Pegar el Link" name="link" id="link" value="<%= product.link %>" />
                         </div>
 
                         <div class="col-12 d-flex justify-content-end mg-button">

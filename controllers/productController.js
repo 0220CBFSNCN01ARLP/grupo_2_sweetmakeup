@@ -31,7 +31,6 @@ let controller = {
     },
 
     // FER
-
     store: async function(req, res, next) {
         console.log("fer");
         console.log(req.body.thematic);
@@ -42,6 +41,10 @@ let controller = {
             categoryId: req.body.thematic,
             discount: req.body.discount,
             description: req.body.description,
+            ingredients: req.body.ingredients,
+            shipping: req.body.shipping,
+            returnPolitic: req.body.returnPolitic,
+            link: req.body.link,
             weight: req.body.peso,
             height: req.body.alto,
             width: req.body.ancho,
@@ -55,49 +58,41 @@ let controller = {
     edit: async function(req, res, next) {
         //GET -> muestra el formulario
         let pedidoProduct = await Product.findByPk(req.params.id);
+        if (pedidoProduct == null) return res.redirect("/");
 
         let pedidoCategories = await Category.findAll();
 
         let pedidoBrands = await Brand.findAll();
 
-        //Promise.all([pedidoProduct, pedidoCategories, pedidoBrands])
-        //    .then(function([product, categories]) {
+
+        let color = "#FFFFFF";
+        let descuento = true;
 
         res.render("productEdit", {
             product: pedidoProduct,
             categories: pedidoCategories,
             brands: pedidoBrands,
-            user: req.session.user
+            user: req.session.user,
+            color,
+            descuento
+
         });
-        // })
     },
 
-    //const products = getProducts();
-    // const product = products.find((e) => {
-    //  return e.id == req.params.id;
-    //});
-
-    //if (product == null) return res.redirect("/");
-
-    // res.render("productEdit", {
-    //   product,
-    //  user: req.session.user,
-    //});
-    //},
-
     //FER
-
     //PUT /products/edit/12385
-    update: (req, res, next) => {
-        //PUT -> procesar el formulario y redireccionar(o renderizar)
-
-        Product.update({
+    update: async(req, res, next) => {
+        await Product.update({
             name: req.body.productName,
             price: req.body.price,
             brandId: req.body.brand,
             categoryId: req.body.thematic,
             discount: req.body.discount,
             description: req.body.description,
+            shipping: req.body.shipping,
+            link: req.body.link,
+            ingredients: req.body.ingredients,
+            returnPolitic: req.body.returnPolitic,
             weight: req.body.peso,
             height: req.body.alto,
             width: req.body.ancho,
@@ -109,38 +104,6 @@ let controller = {
         });
 
         res.redirect("/products/" + req.params.id);
-
-
-
-
-
-        //const products = getProducts();
-        //let product = products.find((e) => {
-        //    return e.id == req.params.id;
-        //});
-
-        //if (product == null) return res.redirect("/");
-
-        //MODIFICAR EL PRODUCTO EN BASE A LO QUE VIENE DEL FORM y VERIFICAR SI LOS DATOS SON VALIDOS
-
-        //req.body.price = Number.parseFloat(req.body.price);
-        //req.body.discount = Number.parseFloat(req.body.discount);
-
-        //ACTUALIZAR LOS DATOS DEL PRODUCTO
-        // product = {
-        //    ...product,
-        //    ...req.body,
-        //};
-
-        //GUARDAR EL PRODUCTO EN LA DB
-        //const index = products.findIndex((product, index) => {
-        //    return product.id == req.params.id;
-        //});
-        //products.splice(index, 1, product);
-
-        //fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
-
-        //res.redirect("/products/" + product.id);
     },
 
     //GENARO
@@ -162,8 +125,20 @@ let controller = {
 
     //AGUS
     detail: async function(req, res, next) {
-        let product = await Product.findByPk(req.params.id, {include: {association: "category"}});
-        let related = await Product.findAll( { include: {association: "category", where: {name: product.category.name}}, limit: 4})
+        let product = await Product.findByPk(req.params.id, {
+            include: {
+                association: "category"
+            }
+        });
+        let related = await Product.findAll({
+            include: {
+                association: "category",
+                where: {
+                    name: product.category.name
+                }
+            },
+            limit: 4
+        })
 
         res.render("productDetail", {
             product,
