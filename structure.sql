@@ -285,4 +285,15 @@ CREATE TABLE brands
   FOREIGN KEY
                           (productId) REFERENCES products
                           (id)
-); 
+);
+
+                          USE `grupo_2_sweetmakeup`;
+
+                          ALTER TABLE Products  
+ADD link  varchar(300);
+
+                          ALTER TABLE Products  
+ADD shipping  varchar(300) ;
+
+                          ALTER TABLE Products  
+ADD returnPolitic  varchar(300);
