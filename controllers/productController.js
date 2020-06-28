@@ -14,6 +14,9 @@ const {
     Category,
     Brand
 } = require("../database/models");
+const {
+    promiseImpl
+} = require("ejs");
 
 let controller = {
     // FER
@@ -49,54 +52,94 @@ let controller = {
     },
 
     // FER
-    edit: (req, res) => {
+    edit: async function(req, res, next) {
         //GET -> muestra el formulario
+        let pedidoProduct = await Product.findByPk(req.params.id);
 
-        const products = getProducts();
-        const product = products.find((e) => {
-            return e.id == req.params.id;
-        });
+        let pedidoCategories = await Category.findAll();
 
-        if (product == null) return res.redirect("/");
+        let pedidoBrands = await Brand.findAll();
 
+        //Promise.all([pedidoProduct, pedidoCategories, pedidoBrands])
+        //    .then(function([product, categories]) {
         res.render("productEdit", {
-            product,
-            user: req.session.user,
+            product: pedidoProduct,
+            categories: pedidoCategories,
+            brands: pedidoBrands,
+            user: req.session.user
         });
+        // })
     },
+
+    //const products = getProducts();
+    // const product = products.find((e) => {
+    //  return e.id == req.params.id;
+    //});
+
+    //if (product == null) return res.redirect("/");
+
+    // res.render("productEdit", {
+    //   product,
+    //  user: req.session.user,
+    //});
+    //},
 
     //FER
 
     //PUT /products/edit/12385
     update: (req, res, next) => {
         //PUT -> procesar el formulario y redireccionar(o renderizar)
-        const products = getProducts();
-        let product = products.find((e) => {
-            return e.id == req.params.id;
+
+        Product.update({
+            name: req.body.productName,
+            price: req.body.price,
+            brandId: req.body.brand,
+            categoryId: req.body.thematic,
+            discount: req.body.discount,
+            description: req.body.description,
+            weight: req.body.peso,
+            height: req.body.alto,
+            width: req.body.ancho,
+            length: req.body.largo
+        }, {
+            where: {
+                id: req.params.id
+            }
         });
 
-        if (product == null) return res.redirect("/");
+        res.redirect("/products/" + req.params.id);
+
+
+
+
+
+        //const products = getProducts();
+        //let product = products.find((e) => {
+        //    return e.id == req.params.id;
+        //});
+
+        //if (product == null) return res.redirect("/");
 
         //MODIFICAR EL PRODUCTO EN BASE A LO QUE VIENE DEL FORM y VERIFICAR SI LOS DATOS SON VALIDOS
 
-        req.body.price = Number.parseFloat(req.body.price);
-        req.body.discount = Number.parseFloat(req.body.discount);
+        //req.body.price = Number.parseFloat(req.body.price);
+        //req.body.discount = Number.parseFloat(req.body.discount);
 
         //ACTUALIZAR LOS DATOS DEL PRODUCTO
-        product = {
-            ...product,
-            ...req.body,
-        };
+        // product = {
+        //    ...product,
+        //    ...req.body,
+        //};
 
         //GUARDAR EL PRODUCTO EN LA DB
-        const index = products.findIndex((product, index) => {
-            return product.id == req.params.id;
-        });
-        products.splice(index, 1, product);
+        //const index = products.findIndex((product, index) => {
+        //    return product.id == req.params.id;
+        //});
+        //products.splice(index, 1, product);
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
+        //fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
 
-        res.redirect("/products/" + product.id);
+        //res.redirect("/products/" + product.id);
     },
 
     //GENARO
