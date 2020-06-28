@@ -62,6 +62,7 @@ let controller = {
 
         //Promise.all([pedidoProduct, pedidoCategories, pedidoBrands])
         //    .then(function([product, categories]) {
+
         res.render("productEdit", {
             product: pedidoProduct,
             categories: pedidoCategories,
