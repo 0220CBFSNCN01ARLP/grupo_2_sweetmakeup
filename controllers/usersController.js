@@ -32,10 +32,13 @@ let usersController = {
   },
 
   login: async (req, res, next) => {
-    const user = await User.findOne({ where: { email: req.body.loginEmail } });
+    let user = await User.findOne({ where: { email: req.body.loginEmail } });
 
-    // bcrypt.compareSync(req.body.loginPassword, e.password) &&
-    // e.email == req.body.loginEmail
+    let correctPw = await bcrypt.compare(req.body.loginPassword, user.password);
+    if (!correctPw){
+        user = null;
+        console.log("Contraseña incorrecta")
+    };
 
     if (user == null) return res.redirect("register");
 
