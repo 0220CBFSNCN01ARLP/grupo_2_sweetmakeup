@@ -20,6 +20,7 @@ module.exports = (sequelize, dataTypes) => {
     });
 
     User.hasMany(models.Purchase, {
+      //user es parent, y purchase es el child = Parect.hasMany(models.Child)
       foreignKey: "userId",
       as: "purchase",
     });
