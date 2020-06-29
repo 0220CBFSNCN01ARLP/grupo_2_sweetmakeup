@@ -1,185 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <%- include("partials/head") %>
-        <link rel="stylesheet" href="/css/productEdit.css" />
+    <link rel="stylesheet" href="/css/productEdit.css" />
 
-        <title>Editar Producto</title>
-</head>
+    <title>Editar Producto</title>
+  </head>
 
-<body>
+  <body>
     <!-- Header -->
     <%- include('partials/header') %>
-        <!-- /Header -->
+    <!-- /Header -->
 
-        <!-- Navbar -->
-        <div class="container">
-            <div class="row">
-                <div class="col-12 margin-menu">
-                    <nav class="nav">
-                        <button type="button" class="btn btn-primary btn-sm mg-btn">
-                        Inicio
-                    </button>
-                        <button type="button" class="btn btn-primary btn-sm mg-btn">
-                        Agregar
-                    </button>
-                        <button type="button" class="btn btn-primary btn-sm mg-btn">
-                        Mis Productos
-                    </button>
-                    </nav>
-                </div>
-            </div>
+    <!-- Navbar -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 margin-menu">
+          <nav class="nav">
+            <a href="/users/admin"
+              ><button type="button" class="btn btn-primary btn-sm mg-btn">
+                Inicio
+              </button></a
+            >
+            <a href=""
+              ><button type="button" class="btn btn-primary btn-sm mg-btn">
+                Agregar
+              </button></a
+            >
+            <a href=""
+              ><button type="button" class="btn btn-primary btn-sm mg-btn">
+                Mis Productos
+              </button></a
+            >
+          </nav>
         </div>
-        <!-- /Navbar -->
+      </div>
+    </div>
+    <!-- /Navbar -->
 
-        <main>
-            <!-- Cargar Producto -->
-            <div class="container">
-                <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
-                    <div class="row">
-                        <div class="col-12 margin-col">
-                            <h2 id="title">Editar producto</h2>
-                            <p class="title-p none-tablet">
-                                Agregue las caracteristicas esenciales del producto para subirlo rapidamente a la pagina, y luego en el desktop, siga editandolo con mas datos.
-                            </p>
-                            <p class="p-datos none-tablet">
-                                * Campos obligatorios
-                            </p>
-                        </div>
-                        <div class="col-12 col-sm-6 margin-col">
-                            <label for="productName">Nombre del Producto *</label>
-                            <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName" id="productName" required value="<%= product.name %>" />
-                        </div>
-                        <div class="col-12 col-sm-6 margin-col">
-                            <label for="price">Precio *</label>
-                            <input type="number" class="form-control" placeholder="Precio" name="price" id="price" required step="any" value="<%= product.price %>" />
-                        </div>
-
-                        <div class="col-12 margin-col">
-                            <div class="form-group">
-                                <label for="productImg">Subir una Imagen *</label>
-                                <input type="file" class="form-control-file" id="productImg" name="productImg" required />
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-sm-6 margin-col">
-                            <label for="thematic">Familia de Producto *</label>
-                            <select required class="form-control" name="thematic" id="thematic">
-                                                    
-                             <% for (let category of categories) { %>
-                                <% if (category.id == product.categoryId) { %>
-                                    <option value="<%= category.id %>" selected> <%= category.name %> </option>
-                                <% } else {  %>
-                                    <option value="<%= category.id %>"> <%= category.name %> </option>
-                                <% } %>
-                             <% } %>
-                            </select>
-                        </div>
-
-                        <div class="col-12 col-sm-6 margin-col">
-                            <label for="brand">Marcas *</label>
-                            <select required class="form-control" name="brand" id="brand">
-                <% for (let brand of brands) { %>
-                                <% if (brand.id == product.brandId) { %>
-                                    <option value="<%= brand.id %>" selected> <%= brand.name %> </option>
-                                <% } else {  %>
-                                    <option value="<%= brand.id %>"> <%= brand.name %> </option>
-                                <% } %>
-                             <% } %>
-            </select>
-                        </div>
-
-                        <div class="col-12 col-sm-6 margin-col">
-                            <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
-                            <input class="form-control" placeholder="Porcentaje" type="number" name="discount" id="discount" min="1" max="100" id="oferta" value="<%= product.discount %>" />
-                        </div>
-
-                        <div class="col-12 margin-col">
-                            <label for="etiqueta">Etiqueta *</label>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="new" name="etiqueta" value="nuevoLanzamiento" />
-                                <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta" checked="<%= descuento %>" />
-                                <label class="custom-control-label" for="descuento">Con Descuento</label>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 none-cell margin-col">
-                            <label for="descripcion">Descripcion del Producto</label><br />
-                            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.description %></textarea>
-                        </div>
-
-                        <div class="col-sm-6 none-cell margin-col">
-                            <label for="ingredients">Ingredientes</label><br />
-                            <textarea class="form-control" name="ingredients" id="ingredients" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.ingredients %></textarea>
-                        </div>
-
-                        <div class="col-sm-6 none-cell margin-col">
-                            <label for="returnPolitic">Politicas de Devolucion</label><br />
-                            <textarea class="form-control" name="returnPolitic" id="returnPolitic" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.returnPolitic %></textarea>
-                        </div>
-
-                        <div class="col-sm-6 none-cell margin-col">
-                            <label for="shipping">Informacion de Envio</label><br />
-                            <textarea class="form-control" name="shipping" id="shipping" cols="35" rows="3" maxlength="300" placeholder="300 caracteres maximo"><%= product.shipping %></textarea>
-                        </div>
-
-                        <div class="col-12 none-cell margin-col">
-                            <label for="color">Variantes del Producto:</label>
-                            <input type="color" value="<%= color %>" id="color" name="color" />
-                        </div>
-
-                        <div class="col-12 none-cell margin-col envios">
-                            <div class="col-12">
-                                <h5><span>Envios</span></h5>
-                            </div>
-                            <div class="col-sm-6">
-                                <label for="peso">Peso:</label>
-                                <input type="number" class="form-control" placeholder="kilogramos" name="peso" id="peso" value="<%= product.weight %>" />
-                            </div>
-                            <div class="col-sm-6 margin-dimension">
-                                <p class="p-dimension">Dimensiones:</p>
-
-                                <input type="number" class="form-control form-margin" placeholder="Alto (mm)" name="dimensiones" id="alto" value="<%= product.height %>" />
-
-                                <input type="number" class="form-control form-margin" placeholder="Ancho (mm)" name="dimensiones" id="ancho" value="<%= product.width %>" />
-
-                                <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="dimensiones" id="largo" value="<%= product.length %>" />
-                            </div>
-                        </div>
-
-                        <div class="col-12 none-cell margin-col">
-                            <label for="link">Subir video de YouTube</label>
-                            <input type="text" class="form-control" placeholder="Pegar el Link" name="link" id="link" value="<%= product.link %>" />
-                        </div>
-
-                        <div class="col-12 d-flex justify-content-end mg-button">
-                            <button type="button" class="btn btn-secondary btn-sm button-margin">
-                            Guardar Borrador
-                        </button>
-                            <button type="submit" class="btn btn-primary btn-sm button-margin">
-                            Publicar
-                        </button>
-                        </div>
-                    </div>
-                </form>
-                <div class="col-12 d-flex justify-content-end mg-button">
-                    <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
-                        <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
-                        ¡Borrar!
-                    </button>
-                    </form>
-                </div>
+    <main>
+      <!-- Cargar Producto -->
+      <div class="container">
+        <form
+          action="/products/edit/<%= product.id %>?_method=PUT"
+          method="POST"
+        >
+          <div class="row">
+            <div class="col-12 margin-col">
+              <h2 id="title">Editar producto</h2>
+              <p class="title-p none-tablet">
+                Agregue las caracteristicas esenciales del producto para subirlo
+                rapidamente a la pagina, y luego en el desktop, siga editandolo
+                con mas datos.
+              </p>
+              <p class="p-datos none-tablet">
+                * Campos obligatorios
+              </p>
             </div>
-            <!-- /Cargar Producto -->
-        </main>
+            <div class="col-12 col-sm-6 margin-col">
+              <label for="productName">Nombre del Producto *</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Nombre del Producto"
+                name="productName"
+                id="productName"
+                required
+                value="<%= product.name %>"
+              />
+            </div>
+            <div class="col-12 col-sm-6 margin-col">
+              <label for="price">Precio *</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Precio"
+                name="price"
+                id="price"
+                required
+                step="any"
+                value="<%= product.price %>"
+              />
+            </div>
 
-        <!-- Footer -->
-        <%- include("partials/footer") %>
-            <!-- /Footer -->
-</body>
+            <div class="col-12 margin-col">
+              <div class="form-group">
+                <label for="productImg">Subir una Imagen *</label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  id="productImg"
+                  name="productImg"
+                  required
+                />
+              </div>
+            </div>
 
+            <div class="col-12 col-sm-6 margin-col">
+              <label for="thematic">Familia de Producto *</label>
+              <select
+                required
+                class="form-control"
+                name="thematic"
+                id="thematic"
+              >
+                <% for (let category of categories) { %> <% if (category.id ==
+                product.categoryId) { %>
+                <option value="<%= category.id %>" selected>
+                  <%= category.name %>
+                </option>
+                <% } else { %>
+                <option value="<%= category.id %>">
+                  <%= category.name %>
+                </option>
+                <% } %> <% } %>
+              </select>
+            </div>
+
+            <div class="col-12 col-sm-6 margin-col">
+              <label for="brand">Marcas *</label>
+              <select required class="form-control" name="brand" id="brand">
+                <% for (let brand of brands) { %> <% if (brand.id ==
+                product.brandId) { %>
+                <option value="<%= brand.id %>" selected>
+                  <%= brand.name %>
+                </option>
+                <% } else { %>
+                <option value="<%= brand.id %>"> <%= brand.name %> </option>
+                <% } %> <% } %>
+              </select>
+            </div>
+
+            <div class="col-12 col-sm-6 margin-col">
+              <label for="oferta"
+                >Oferta * <span class="descuento">(de 1 a 100)</span></label
+              >
+              <input
+                class="form-control"
+                placeholder="Porcentaje"
+                type="number"
+                name="discount"
+                id="discount"
+                min="1"
+                max="100"
+                id="oferta"
+                value="<%= product.discount %>"
+              />
+            </div>
+
+            <div class="col-12 margin-col">
+              <label for="etiqueta">Etiqueta *</label>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="new"
+                  name="etiqueta"
+                  value="nuevoLanzamiento"
+                />
+                <label class="custom-control-label" for="new"
+                  >Nuevo Lanzamiento</label
+                >
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="descuento"
+                  name="etiqueta"
+                  checked="<%= descuento %>"
+                />
+                <label class="custom-control-label" for="descuento"
+                  >Con Descuento</label
+                >
+              </div>
+            </div>
+
+            <div class="col-sm-6 none-cell margin-col">
+              <label for="descripcion">Descripcion del Producto</label><br />
+              <textarea
+                class="form-control"
+                name="description"
+                id="description"
+                cols="35"
+                rows="3"
+                maxlength="300"
+                placeholder="300 caracteres maximo"
+              >
+<%= product.description %></textarea
+              >
+            </div>
+
+            <div class="col-sm-6 none-cell margin-col">
+              <label for="ingredients">Ingredientes</label><br />
+              <textarea
+                class="form-control"
+                name="ingredients"
+                id="ingredients"
+                cols="35"
+                rows="3"
+                maxlength="300"
+                placeholder="300 caracteres maximo"
+              >
+<%= product.ingredients %></textarea
+              >
+            </div>
+
+            <div class="col-sm-6 none-cell margin-col">
+              <label for="returnPolitic">Politicas de Devolucion</label><br />
+              <textarea
+                class="form-control"
+                name="returnPolitic"
+                id="returnPolitic"
+                cols="35"
+                rows="3"
+                maxlength="300"
+                placeholder="300 caracteres maximo"
+              >
+<%= product.returnPolitic %></textarea
+              >
+            </div>
+
+            <div class="col-sm-6 none-cell margin-col">
+              <label for="shipping">Informacion de Envio</label><br />
+              <textarea
+                class="form-control"
+                name="shipping"
+                id="shipping"
+                cols="35"
+                rows="3"
+                maxlength="300"
+                placeholder="300 caracteres maximo"
+              >
+<%= product.shipping %></textarea
+              >
+            </div>
+
+            <div class="col-12 none-cell margin-col">
+              <label for="color">Variantes del Producto:</label>
+              <input
+                type="color"
+                value="<%= color %>"
+                id="color"
+                name="color"
+              />
+            </div>
+
+            <div class="col-12 none-cell margin-col envios">
+              <div class="col-12">
+                <h5><span>Envios</span></h5>
+              </div>
+              <div class="col-sm-6">
+                <label for="peso">Peso:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="kilogramos"
+                  name="peso"
+                  id="peso"
+                  value="<%= product.weight %>"
+                />
+              </div>
+              <div class="col-sm-6 margin-dimension">
+                <p class="p-dimension">Dimensiones:</p>
+
+                <input
+                  type="number"
+                  class="form-control form-margin"
+                  placeholder="Alto (mm)"
+                  name="dimensiones"
+                  id="alto"
+                  value="<%= product.height %>"
+                />
+
+                <input
+                  type="number"
+                  class="form-control form-margin"
+                  placeholder="Ancho (mm)"
+                  name="dimensiones"
+                  id="ancho"
+                  value="<%= product.width %>"
+                />
+
+                <input
+                  type="number"
+                  class="form-control form-margin"
+                  placeholder="Largo (mm)"
+                  name="dimensiones"
+                  id="largo"
+                  value="<%= product.length %>"
+                />
+              </div>
+            </div>
+
+            <div class="col-12 none-cell margin-col">
+              <label for="link">Subir video de YouTube</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Pegar el Link"
+                name="link"
+                id="link"
+                value="<%= product.link %>"
+              />
+            </div>
+
+            <div class="col-12 d-flex justify-content-end mg-button">
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm button-margin"
+              >
+                Guardar Borrador
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary btn-sm button-margin"
+              >
+                Publicar
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="col-12 d-flex justify-content-end mg-button">
+          <form
+            method="POST"
+            action="/products/delete/<%= product.id %>?_method=DELETE"
+          >
+            <button
+              type="submit"
+              class="btn btn-secondary btn-destroy btn-sm button-margin"
+            >
+              ¡Borrar!
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- /Cargar Producto -->
+    </main>
+
+    <!-- Footer -->
+    <%- include("partials/footer") %>
+    <!-- /Footer -->
+  </body>
 </html>
