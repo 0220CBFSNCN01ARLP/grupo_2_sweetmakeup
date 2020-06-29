@@ -4,9 +4,8 @@ const path = require("path");
 const usersController = require("../controllers/usersController");
 const multer = require("multer");
 const guestMiddleware = require("../middlewares/guestMiddleware");
-
+const { User } = require("../database/models");
 const { check, validationResult, body } = require("express-validator");
-
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "./public/img/users");
@@ -21,14 +20,16 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
 });
-const { getUsers, usersFilePath } = require("../utils/users");
-function findUserByEmail(email) {
-  const users = getUsers();
-  const user = users.find((e) => {
-    return e.email == email;
-  });
-  return users == null;
+
+async function checkRepeatEmail(email){
+  let emailCheck = await User.findOne({where: {email: email} });
+  if (emailCheck !== null) {
+    console.log("User Exists");
+    return Promise.reject("El email ya está en uso");
+  }
 }
+
+
 
 // Creando un registro
 
@@ -37,7 +38,7 @@ router.post(
   "/register",
   upload.any(),
   [
-    check("name").isLength({
+    check("firstName").isLength({
       min: 0,
     }),
     check("lastName").isLength({
@@ -45,7 +46,7 @@ router.post(
     }),
     check("email").isEmail(),
     check("email")
-      .custom(findUserByEmail)
+      .custom(checkRepeatEmail)
       .withMessage("Ya existe una cuenta con ese email"),
     check("password")
       .isLength({

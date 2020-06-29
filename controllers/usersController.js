@@ -5,6 +5,7 @@ const multer = require("multer");
 var express = require("express");
 
 const { getUsers, usersFilePath } = require("../utils/users");
+const { User } = require("../database/models");
 
 let { check, validationResult, body } = require("express-validator");
 
@@ -13,33 +14,15 @@ let usersController = {
     res.render("register");
   },
 
-  register: (req, res, next) => {
+  register: async (req, res, next) => {
     let errors = validationResult(req);
-
     if (errors.isEmpty()) {
-      const users = getUsers();
-      req.body.password = bcrypt.hashSync(req.body.password, 10);
-
-      const read = JSON.parse(
-        fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
-      );
-
-      const maxId = Math.max(...users.map((o) => o.id), 0);
-      let newId = maxId + 1;
-
-      let user = {
-        id: newId,
-        ...req.body,
-        avatar: req.files[0].filename,
-      };
-
-      users.push(user);
-
-      fs.writeFileSync(
-        path.resolve(__dirname, "../data/users.json"),
-        JSON.stringify(users)
-      );
-
+      await User.create({
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+      });
       res.redirect("/");
     } else {
       return res.render("register", {
@@ -48,14 +31,12 @@ let usersController = {
     }
   },
 
-  login: (req, res, next) => {
-    const users = getUsers();
-    const user = users.find((e) => {
-      return (
-        bcrypt.compareSync(req.body.loginPassword, e.password) &&
-        e.email == req.body.loginEmail
-      );
-    });
+  login: async (req, res, next) => {
+    const user = await User.findOne({ where: { email: req.body.loginEmail } });
+
+    // bcrypt.compareSync(req.body.loginPassword, e.password) &&
+    // e.email == req.body.loginEmail
+
     if (user == null) return res.redirect("register");
 
     // Se guarda la cookie por 30 minutos, el usuario puede cerrar el navegador y volver al poco tiempo
