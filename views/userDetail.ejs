@@ -18,9 +18,9 @@
                 Inicio
               </button></a
             >
-            <a href=""
+            <a href="/products/create"
               ><button type="button" class="btn btn-primary btn-sm mg-btn">
-                Agregar
+                Agregar producto
               </button></a
             >
             <a href=""
@@ -43,12 +43,25 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <ul>
-            <li>Nombre: <%= user.firstName %></li>
-            <li>Apellido:</li>
-            <li>Mail:</li>
-            <li>Contraseña:</li>
+          <ul class="ul-user">
+            <li class="mg-li-user">
+              <strong>Nombre:</strong> <%= user.firstName %>
+            </li>
+            <li class="mg-li-user">
+              <strong>Apellido:</strong> <%= user.lastName %>
+            </li>
+            <li class="mg-li-user"><strong>Mail:</strong> <%= user.email %></li>
+            <li class="mg-li-user">
+              <a href=""><button>Cambiar contraseña</button></a>
+            </li>
           </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <a href="" class="pd-button-edit"
+            ><button>Editar mis datos</button></a
+          >
         </div>
       </div>
     </div>

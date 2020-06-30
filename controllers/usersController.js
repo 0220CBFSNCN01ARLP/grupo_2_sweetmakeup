@@ -8,6 +8,7 @@ var express = require("express");
 const { User } = require("../database/models");
 
 let { check, validationResult, body } = require("express-validator");
+const session = require("express-session");
 
 let usersController = {
   showRegister: (req, res) => {
@@ -67,9 +68,7 @@ let usersController = {
   },
 
   userDetail: async (req, res) => {
-    const user = await User.findByPk(req.param.id);
-
-    res.render("userDetail", { user });
+    res.render("userDetail", { user: req.session.user });
   },
 };
 
