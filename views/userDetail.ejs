@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/css/userDetail.css" />
+
+    <title>Detalle de Usuario</title>
   </head>
   <body>
-    Hola mundo
+    <%- include('partials/header') %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 margin-menu">
+          <nav class="nav">
+            <a href="/users/admin"
+              ><button type="button" class="btn btn-primary btn-sm mg-btn">
+                Inicio
+              </button></a
+            >
+            <a href=""
+              ><button type="button" class="btn btn-primary btn-sm mg-btn">
+                Agregar
+              </button></a
+            >
+            <a href=""
+              ><button type="button" class="btn btn-primary btn-sm mg-btn">
+                Mis Productos
+              </button></a
+            >
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Mis datos</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <ul>
+            <li>Nombre: <%= user.firstName %></li>
+            <li>Apellido:</li>
+            <li>Mail:</li>
+            <li>Contraseña:</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <%- include("partials/footer") %>
   </body>
 </html>

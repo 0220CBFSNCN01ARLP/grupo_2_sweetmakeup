@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const multer = require("multer");
 var express = require("express");
 
-const { getUsers, usersFilePath } = require("../utils/users");
+//const { getUsers, usersFilePath } = require("../utils/users");
 const { User } = require("../database/models");
 
 let { check, validationResult, body } = require("express-validator");
@@ -35,10 +35,10 @@ let usersController = {
     let user = await User.findOne({ where: { email: req.body.loginEmail } });
 
     let correctPw = await bcrypt.compare(req.body.loginPassword, user.password);
-    if (!correctPw){
-        user = null;
-        console.log("Contraseña incorrecta")
-    };
+    if (!correctPw) {
+      user = null;
+      console.log("Contraseña incorrecta");
+    }
 
     if (user == null) return res.redirect("register");
 
@@ -66,8 +66,10 @@ let usersController = {
     }
   },
 
-  userDetail: (req, res) => {
-    res.render("userDetail");
+  userDetail: async (req, res) => {
+    const user = await User.findByPk(req.param.id);
+
+    res.render("userDetail", { user });
   },
 };
 

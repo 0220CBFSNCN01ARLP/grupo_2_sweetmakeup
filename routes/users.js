@@ -21,15 +21,13 @@ const upload = multer({
   storage: storage,
 });
 
-async function checkRepeatEmail(email){
-  let emailCheck = await User.findOne({where: {email: email} });
+async function checkRepeatEmail(email) {
+  let emailCheck = await User.findOne({ where: { email: email } });
   if (emailCheck !== null) {
     console.log("User Exists");
     return Promise.reject("El email ya está en uso");
   }
 }
-
-
 
 // Creando un registro
 
@@ -63,6 +61,8 @@ router.post("/login", upload.any(), usersController.login);
 
 // Log out
 router.get("/logout", usersController.logout);
+
+// Admin
 
 router.get("/admin", usersController.userDetail);
 
