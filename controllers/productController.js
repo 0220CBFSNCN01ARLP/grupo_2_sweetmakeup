@@ -5,18 +5,13 @@ const multer = require("multer");
 // READ: Agus
 // DELETE: Gena
 
-const {
-    getProducts,
-    productsFilePath
-} = require("../utils/products");
+
 const {
     Product,
     Category,
     Brand
 } = require("../database/models");
-const {
-    promiseImpl
-} = require("ejs");
+
 
 let controller = {
     // FER
