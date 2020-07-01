@@ -4,13 +4,14 @@ const path = require("path");
 const usersController = require("../controllers/usersController");
 const multer = require("multer");
 const guestMiddleware = require("../middlewares/guestMiddleware");
-
+const {
+    User
+} = require("../database/models");
 const {
     check,
     validationResult,
     body
 } = require("express-validator");
-
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, "./public/img/users");
@@ -25,17 +26,18 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: storage,
 });
-const { getUsers, usersFilePath } = require("../utils/users");
-function findUserByEmail(email){
-    const users = getUsers();
-    const user = users.find((e) => {
-      return (
-        e.email == email
-      );
-    });
-    return (users == null);
-};
 
+async function checkRepeatEmail(email) {
+    let emailCheck = await User.findOne({
+        where: {
+            email: email
+        }
+    });
+    if (emailCheck !== null) {
+        console.log("User Exists");
+        return Promise.reject("El email ya está en uso");
+    }
+}
 
 // Creando un registro
 
@@ -43,17 +45,19 @@ router.get("/register", guestMiddleware, usersController.showRegister);
 router.post(
     "/register",
     upload.any(), [
-        check("name").isLength({
-            min: 0
+        check("firstName").isLength({
+            min: 0,
         }),
         check("lastName").isLength({
-            min: 0
+            min: 0,
         }),
         check("email").isEmail(),
-        check("email").custom(findUserByEmail).withMessage("Ya existe una cuenta con ese email"),
+        check("email")
+        .custom(checkRepeatEmail)
+        .withMessage("Ya existe una cuenta con ese email"),
         check("password")
         .isLength({
-            min: 8
+            min: 8,
         })
         .withMessage("La contraseña debe tener al menos 8 caracteres"),
     ],
@@ -66,5 +70,14 @@ router.post("/login", upload.any(), usersController.login);
 
 // Log out
 router.get("/logout", usersController.logout);
+
+// Admin
+
+router.get("/admin", usersController.userDetail);
+
+//Edit 
+
+router.get("/edit", usersController.userEdit);
+router.put("/edit/:id", upload.any(), usersController.userUpdate);
 
 module.exports = router;

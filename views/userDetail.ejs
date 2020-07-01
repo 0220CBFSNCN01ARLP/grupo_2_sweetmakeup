@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/css/userDetail.css" />
+
+    <title>Detalle de Usuario</title>
+  </head>
+  <body>
+    <%- include('partials/header') %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 margin-menu">
+          <nav class="nav">
+            <a href="/users/admin"
+              ><button type="button" class="btn btn-primary btn-sm mg-btn">
+                Inicio
+              </button></a
+            >
+            <a href="/products/create"
+              ><button type="button" class="btn btn-primary btn-sm mg-btn">
+                Agregar producto
+              </button></a
+            >
+            <a href=""
+              ><button type="button" class="btn btn-primary btn-sm mg-btn">
+                Mis Productos
+              </button></a
+            >
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Mis datos</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <ul class="ul-user">
+            <li class="mg-li-user">
+              <strong>Nombre:</strong> <%= user.firstName %>
+            </li>
+            <li class="mg-li-user">
+              <strong>Apellido:</strong> <%= user.lastName %>
+            </li>
+            <li class="mg-li-user"><strong>Mail:</strong> <%= user.email %></li>
+            <li class="mg-li-user">
+              <a href=""><button>Cambiar contraseña</button></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <a href="" class="pd-button-edit"
+            ><button>Editar mis datos</button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <%- include("partials/footer") %>
+  </body>
+</html>

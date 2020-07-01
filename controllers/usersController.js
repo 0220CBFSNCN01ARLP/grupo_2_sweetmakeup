@@ -4,49 +4,32 @@ const bcrypt = require("bcrypt");
 const multer = require("multer");
 var express = require("express");
 
+//const { getUsers, usersFilePath } = require("../utils/users");
 const {
-    getUsers,
-    usersFilePath
-} = require("../utils/users");
+    User
+} = require("../database/models");
 
 let {
     check,
     validationResult,
     body
 } = require("express-validator");
+const session = require("express-session");
 
 let usersController = {
     showRegister: (req, res) => {
         res.render("register");
     },
 
-    register: (req, res, next) => {
+    register: async(req, res, next) => {
         let errors = validationResult(req);
-
         if (errors.isEmpty()) {
-            const users = getUsers();
-            req.body.password = bcrypt.hashSync(req.body.password, 10);
-
-            const read = JSON.parse(
-                fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
-            );
-
-            const maxId = Math.max(...users.map((o) => o.id), 0);
-            let newId = maxId + 1;
-
-            let user = {
-                id: newId,
-                ...req.body,
-                avatar: req.files[0].filename,
-            };
-
-            users.push(user);
-
-            fs.writeFileSync(
-                path.resolve(__dirname, "../data/users.json"),
-                JSON.stringify(users)
-            );
-
+            await User.create({
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+            });
             res.redirect("/");
         } else {
             return res.render("register", {
@@ -55,14 +38,19 @@ let usersController = {
         }
     },
 
-    login: (req, res, next) => {
-        const users = getUsers();
-        const user = users.find((e) => {
-            return (
-                bcrypt.compareSync(req.body.loginPassword, e.password) &&
-                e.email == req.body.loginEmail
-            );
+    login: async(req, res, next) => {
+        let user = await User.findOne({
+            where: {
+                email: req.body.loginEmail
+            }
         });
+
+        let correctPw = await bcrypt.compare(req.body.loginPassword, user.password);
+        if (!correctPw) {
+            user = null;
+            console.log("Contraseña incorrecta");
+        }
+
         if (user == null) return res.redirect("register");
 
         // Se guarda la cookie por 30 minutos, el usuario puede cerrar el navegador y volver al poco tiempo
@@ -88,6 +76,36 @@ let usersController = {
             res.redirect("register");
         }
     },
+
+    userDetail: async(req, res) => {
+        res.render("userDetail", {
+            user: req.session.user
+        });
+    },
+    userEdit: async(req, res, next) => {
+        res.render("userEdit", {
+            user: req.session.user
+        });
+    },
+
+    userUpdate: async(req, res, next) => {
+        await User.update({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10)
+        }, {
+            where: {
+                id: req.params.id,
+            },
+        });
+        req.session.user.firstName = req.body.firstName;
+        req.session.user.lastName = req.body.lastName;
+        req.session.user.email = req.body.email;
+        req.session.user.password = req.body.password;
+        res.redirect("/users/admin");
+
+    }
 };
 
 module.exports = usersController;

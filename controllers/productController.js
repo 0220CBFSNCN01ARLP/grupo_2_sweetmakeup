@@ -5,13 +5,20 @@ const multer = require("multer");
 // READ: Agus
 // DELETE: Gena
 
-
+const {
+    getProducts,
+    productsFilePath
+} = require("../utils/products");
 const {
     Product,
     Category,
-    Brand
+    Brand,
+    Color
 } = require("../database/models");
-
+const {
+    promiseImpl
+} = require("ejs");
+const products = require("../utils/products");
 
 let controller = {
     // FER
@@ -21,7 +28,7 @@ let controller = {
         res.render("productAdd", {
             categories,
             brands,
-            user: req.session.user
+            user: req.session.user,
         });
     },
 
@@ -40,10 +47,10 @@ let controller = {
             shipping: req.body.shipping,
             returnPolitic: req.body.returnPolitic,
             link: req.body.link,
-            weight: req.body.peso,
-            height: req.body.alto,
-            width: req.body.ancho,
-            length: req.body.largo
+            weight: req.body.weight,
+            height: req.body.height,
+            width: req.body.width,
+            length: req.body.length,
         });
         console.log(newProduct);
         res.redirect(`/products/${newProduct.id}`);
@@ -59,7 +66,6 @@ let controller = {
 
         let pedidoBrands = await Brand.findAll();
 
-
         let color = "#FFFFFF";
         let descuento = true;
 
@@ -69,8 +75,7 @@ let controller = {
             brands: pedidoBrands,
             user: req.session.user,
             color,
-            descuento
-
+            descuento,
         });
     },
 
@@ -88,14 +93,14 @@ let controller = {
             link: req.body.link,
             ingredients: req.body.ingredients,
             returnPolitic: req.body.returnPolitic,
-            weight: req.body.peso,
-            height: req.body.alto,
-            width: req.body.ancho,
-            length: req.body.largo
+            weight: req.body.weight,
+            height: req.body.height,
+            width: req.body.width,
+            length: req.body.length,
         }, {
             where: {
-                id: req.params.id
-            }
+                id: req.params.id,
+            },
         });
 
         res.redirect("/products/" + req.params.id);
@@ -103,17 +108,16 @@ let controller = {
 
     //GENARO
 
-    destroy: (req, res) => {
-        const products = getProducts();
-        const index = products.findIndex((e) => {
-            return e.id == req.params.id;
+    destroy: async(req, res) => {
+        const product = await Product.findByPk(req.params.id);
+
+        await color_product.destroy({
+            where: {
+                productId: product.id,
+            },
         });
 
-        if (index == -1) return res.redirect("/");
-
-        products.splice(index, 1);
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
+        await product.destroy();
 
         res.redirect("/");
     },
@@ -122,18 +126,18 @@ let controller = {
     detail: async function(req, res, next) {
         let product = await Product.findByPk(req.params.id, {
             include: {
-                association: "category"
-            }
+                association: "category",
+            },
         });
         let related = await Product.findAll({
             include: {
                 association: "category",
                 where: {
-                    name: product.category.name
-                }
+                    name: product.category.name,
+                },
             },
-            limit: 4
-        })
+            limit: 4,
+        });
 
         res.render("productDetail", {
             product,
