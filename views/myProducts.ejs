@@ -4,14 +4,11 @@
 <head>
     <%- include("partials/head") %>
     <link rel="stylesheet" href="/css/section.css" />
-    <title>Make.u | Mis Productos
-    </title>
+    <title>Make.u | Mis Productos</title>
 </head>
 
 <body>
     <%- include('partials/header') %>
-    <%= user.email %> 
-
     <main class="container mt-1">
         <div class="row vh-75">
             <% for( let i = 0; i < products.length; i++ ) { %>
@@ -19,7 +16,7 @@
             <% } %>
         </div>
     </main>
-
+    <%- include("partials/footer") %>
 </body>
 
 </html>
