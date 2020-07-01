@@ -74,6 +74,7 @@ router.get("/logout", usersController.logout);
 // Admin
 
 router.get("/admin", usersController.userDetail);
+router.get("/myProducts", usersController.myProducts);
 
 //Edit 
 
