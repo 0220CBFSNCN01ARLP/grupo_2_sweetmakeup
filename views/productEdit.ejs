@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <%- include("partials/head") %>
-    <link rel="stylesheet" href="/css/productEdit.css" />
+        <link rel="stylesheet" href="/css/productEdit.css" />
 
-    <title>Editar Producto</title>
-  </head>
+        <title>Editar Producto</title>
+</head>
 
-  <body>
+<body>
     <!-- Header -->
     <%- include('partials/header') %>
-    <!-- /Header -->
+        <!-- /Header -->
 
-    <!-- Navbar -->
-    <div class="container">
-      <div class="row">
-        <div class="col-12 margin-menu">
-          <nav class="nav">
-            <a href="/users/admin"
-              ><button type="button" class="btn btn-primary btn-sm mg-btn">
+        <!-- Navbar -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 margin-menu">
+                    <nav class="nav">
+                        <a href="/users/admin"><button type="button" class="btn btn-primary btn-sm mg-btn">
                 Inicio
               </button></a
             >
@@ -251,43 +251,43 @@
                 <h5><span>Envios</span></h5>
               </div>
               <div class="col-sm-6">
-                <label for="peso">Peso:</label>
+                <label for="weight">Peso:</label>
                 <input
                   type="number"
                   class="form-control"
                   placeholder="kilogramos"
-                  name="peso"
-                  id="peso"
+                  name="weight"
+                  id="weight"
                   value="<%= product.weight %>"
                 />
               </div>
               <div class="col-sm-6 margin-dimension">
                 <p class="p-dimension">Dimensiones:</p>
-
+                <label for="height"></label>
                 <input
                   type="number"
                   class="form-control form-margin"
                   placeholder="Alto (mm)"
-                  name="dimensiones"
-                  id="alto"
+                  name="height"
+                  id="height"
                   value="<%= product.height %>"
                 />
-
+                <label for="width"></label>
                 <input
                   type="number"
                   class="form-control form-margin"
                   placeholder="Ancho (mm)"
-                  name="dimensiones"
-                  id="ancho"
+                  name="width"
+                  id="width"
                   value="<%= product.width %>"
                 />
-
+                <label for="length"></label>
                 <input
                   type="number"
                   class="form-control form-margin"
                   placeholder="Largo (mm)"
-                  name="dimensiones"
-                  id="largo"
+                  name="length"
+                  id="length"
                   value="<%= product.length %>"
                 />
               </div>

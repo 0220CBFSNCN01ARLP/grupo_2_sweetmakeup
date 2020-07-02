@@ -2,38 +2,42 @@
 <html lang="en">
 
 <head>
-  <%- include("partials/head") %>
-  <link rel="stylesheet" href="/css/section.css" />
-  <title>Make.u | <%= title %></title>
+    <%- include("partials/head") %>
+        <link rel="stylesheet" href="/css/section.css" />
+        <title>Make.u |
+            <%= title %>
+        </title>
 </head>
 
 <body>
-  <%- include('partials/header') %>
+    <%- include('partials/header') %>
 
-  <img src="../IMG/<%= title %>Art.jpg" alt="Banner principal" class="banner w-100" />
+        <img src="../IMG/<%= title %>Art.jpg" alt="Banner principal" class="banner w-100" />
 
-  <nav class="nav-section">
-    <ul class="nav justify-content-center filtros">
-      <li class="nav-item"><a class="nav-link">best sellers</a></li>
-      <li class="nav-item"><a class="nav-link">lo nuevo</a></li>
-      <li class="nav-item"><a class="nav-link">precio</a></li>
-      <% for (subsection of subsections){ %>
-      <li class="nav-item">
-        <a class="nav-link">
-          <%= subsection %>
-        </a>
-      </li>
-      <% } %>
-    </ul>
-  </nav>
+        <nav class="nav-section">
+            <ul class="nav justify-content-center filtros">
+                <li class="nav-item"><a class="nav-link">best sellers</a></li>
+                <li class="nav-item"><a class="nav-link">lo nuevo</a></li>
+                <li class="nav-item"><a class="nav-link">precio</a></li>
+                <% for (subsection of subsections){ %>
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <%= subsection %>
+                        </a>
+                    </li>
+                    <% } %>
+            </ul>
+        </nav>
 
-  <main class="container mt-1">
-    <div class="row vh-75">
-      <% for( let i = 0; i < products.length; i++ ) { %> <%-
-        include("partials/productCard.ejs", {product: products[i]}) %> <% } %>
-    </div>
-  </main>
-  <%- include("partials/footer") %>
+        <main class="container mt-1">
+            <div class="row vh-75">
+                <% for( let i = 0; i < products.length; i++ ) { %>
+                    <%-
+        include("partials/productCard", {product: products[i]}) %>
+                        <% } %>
+            </div>
+        </main>
+        <%- include("partials/footer") %>
 </body>
 
 </html>

@@ -39,10 +39,10 @@ let controller = {
       shipping: req.body.shipping,
       returnPolitic: req.body.returnPolitic,
       link: req.body.link,
-      weight: req.body.peso,
-      height: req.body.alto,
-      width: req.body.ancho,
-      length: req.body.largo,
+      weight: req.body.weight,
+      height: req.body.height,
+      width: req.body.width,
+      length: req.body.length,
     });
     console.log(newProduct);
     res.redirect(`/products/${newProduct.id}`);
@@ -86,10 +86,10 @@ let controller = {
         link: req.body.link,
         ingredients: req.body.ingredients,
         returnPolitic: req.body.returnPolitic,
-        weight: req.body.peso,
-        height: req.body.alto,
-        width: req.body.ancho,
-        length: req.body.largo,
+        weight: req.body.weight,
+        height: req.body.height,
+        width: req.body.width,
+        length: req.body.length,
       },
       {
         where: {
@@ -106,17 +106,13 @@ let controller = {
   destroy: async (req, res) => {
     const product = await Product.findByPk(req.params.id);
 
-    await Color.destroy({
+    await color_product.destroy({
       where: {
         productId: product.id,
       },
     });
 
-    await Product.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
+    await product.destroy();
 
     res.redirect("/");
   },

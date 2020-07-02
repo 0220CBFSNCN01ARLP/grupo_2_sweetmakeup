@@ -5,7 +5,7 @@ const multer = require("multer");
 var express = require("express");
 
 //const { getUsers, usersFilePath } = require("../utils/users");
-const { User } = require("../database/models");
+const { User, Product } = require("../database/models");
 
 let { check, validationResult, body } = require("express-validator");
 const session = require("express-session");
@@ -33,7 +33,11 @@ let usersController = {
   },
 
   login: async (req, res, next) => {
-    let user = await User.findOne({ where: { email: req.body.loginEmail } });
+    let user = await User.findOne({
+      where: {
+        email: req.body.loginEmail,
+      },
+    });
 
     let correctPw = await bcrypt.compare(req.body.loginPassword, user.password);
     if (!correctPw) {
@@ -68,7 +72,45 @@ let usersController = {
   },
 
   userDetail: async (req, res) => {
-    res.render("userDetail", { user: req.session.user });
+    res.render("userDetail", {
+      user: req.session.user,
+    });
+  },
+  userEdit: async (req, res, next) => {
+    res.render("userEdit", {
+      user: req.session.user,
+    });
+  },
+
+  userUpdate: async (req, res, next) => {
+    await User.update(
+      {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    req.session.user.firstName = req.body.firstName;
+    req.session.user.lastName = req.body.lastName;
+    req.session.user.email = req.body.email;
+    req.session.user.password = req.body.password;
+    res.redirect("/users/admin");
+  },
+  myProducts: async (req, res, next) => {
+    let user = req.session.user;
+    if (!user) {
+      res.redirect("/users/register");
+    }
+    let products = await Product.findAll({
+      include: { association: "user", where: { id: user.id } },
+    });
+    res.render("myProducts", { products, user });
   },
 };
 
