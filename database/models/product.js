@@ -86,11 +86,11 @@ module.exports = (sequelize, dataTypes) => {
 
     Product.belongsToMany(models.Color, {
       as: "color",
-      //through: models.color_product,
       through: "color_product",
       foreignKey: "productId",
       otherKey: "colorId",
       timestamps: "false",
+      onDelete: "CASCADE",
     });
   };
 

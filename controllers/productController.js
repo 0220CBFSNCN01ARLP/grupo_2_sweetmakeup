@@ -9,6 +9,8 @@ const { getProducts, productsFilePath } = require("../utils/products");
 const { Product, Category, Brand, Color } = require("../database/models");
 const { promiseImpl } = require("ejs");
 const products = require("../utils/products");
+const color = require("../database/models/color");
+const product = require("../database/models/product");
 
 let controller = {
   // FER
@@ -104,13 +106,17 @@ let controller = {
   destroy: async (req, res) => {
     const product = await Product.findByPk(req.params.id);
 
-    await color_product.destroy({
+    await Color.destroy({
       where: {
         productId: product.id,
       },
     });
 
-    await product.destroy();
+    await Product.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
 
     res.redirect("/");
   },
