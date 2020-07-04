@@ -3,30 +3,23 @@
 
 <head>
     <%- include("partials/head") %>
-    <link rel="stylesheet" href="/css/section.css" />
+    <link rel="stylesheet" href="/css/productAdd.css" />
     <title>Make.u | Mis Productos</title>
 </head>
 
 <body>
     <%- include('partials/header') %>
 
-    <div class="row">
-        <div class="col-12 margin-menu">
-            <nav class="nav">
-                <a href="/users/admin"><button type="button" class="btn btn-primary btn-sm mg-btn">
-                        Inicio
-                    </button></a>
-                <a href="/products/create"><button type="button" class="btn btn-primary btn-sm mg-btn">
-                        Agregar producto
-                    </button></a>
-                <a href="/users/myProducts"><button type="button" class="btn btn-primary btn-sm mg-btn">
-                        Mis Productos
-                    </button></a>
-            </nav>
-        </div>
-    </div>
+    <%- include('partials/userNavbar') %>
 
     <main class="container mt-1">
+        <div>
+            <h2 id= "title">Mis Productos</h2>
+        <% if (products = []) { %>
+            <p>Aún no tenés ningún producto para vender. Hacé clic en "Crear Producto" para subir uno!</p>
+        <% } %>
+        </div>
+
         <div class="row vh-75">
             <% for( product of products ) { %>
             <div class="col-12 col-sm-6 col-md-4 h-100">
@@ -44,7 +37,7 @@
                         <p class="price">$<%= product.price %></p>
                         <a href="/products/edit/<%= product.id %> "><button class="btn btn-pink btn-block m-1">
                                 Editar
-                        </button></a>
+                            </button></a>
                     </div>
                 </article>
             </div>
