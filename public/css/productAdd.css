@@ -69,3 +69,8 @@
   border-color: #e8b4b4;
   margin-right: 10px;
 }
+
+.errorMsg {
+  color: red;
+  display: none;
+}
