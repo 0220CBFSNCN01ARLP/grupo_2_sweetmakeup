@@ -1,56 +1,60 @@
 /*Globales */
 
 * {
-    box-sizing: border-box;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .form-control:focus {
-    border-color: rgb(248, 142, 248);
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
+  border-color: rgb(248, 142, 248);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
 }
-
 
 /* Header */
 
 header {
-    background-color: #f2d7de;
+  background-color: #f2d7de;
 }
 
 header a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.user-navbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 .item-space {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .header-nav {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .dropdown-expanded {
-    display: none;
+  display: none;
 }
-
 
 /*button*/
 
 .btn-pink {
-    background-color: #f2d7de;
-    font-weight: bold;
+  background-color: #f2d7de;
+  font-weight: bold;
 }
 
 .btn-pink:hover {
-    background-color: #dc92a5;
-    color: white;
+  background-color: #dc92a5;
+  color: white;
 }
 
 .btn-pink:hover,
@@ -60,77 +64,79 @@ header a {
 .btn-pink.focus:active,
 .btn-pink:active:focus,
 .btn-pink:focus {
-    box-shadow: none;
-    background-color: #dc92a5;
-    color: white;
+  box-shadow: none;
+  background-color: #dc92a5;
+  color: white;
 }
-
 
 /**Footer*/
 
 .redes a {
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 1.8rem;
-    display: block;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.8rem;
+  display: block;
 }
 
 .redes a:hover {
-    color: pink;
+  color: pink;
 }
 
 .redes a:last-of-type {
-    margin: 0;
+  margin: 0;
 }
 
+.user-navbar {
+  background-color: #f2d7de;
+}
 .container-footer {
-    width: 95%;
-    max-width: 120rem;
-    margin: 0 auto;
-    padding: 3rem 0rem;
-    text-align: center;
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 3rem 0rem;
+  text-align: center;
 }
 
 .site-footer {
-    background-color: #9a8a8e;
-    margin: 0;
+  background-color: #9a8a8e;
+  margin: 0;
 }
 
 .site-footer nav {
-    display: none;
+  display: none;
 }
 
 .footer-derechos {
-    margin: 0;
-    color: white;
+  margin: 0;
+  color: white;
 }
 
 .footer-derechos {
-    margin: 0;
-    color: white;
-    padding-top: 8px;
+  margin: 0;
+  color: white;
+  padding-top: 8px;
 }
 
 @media (min-width: 768px) {
-    .dropdown {
-        display: none;
-    }
-    .dropdown-expanded {
-        display: flex;
-    }
-    .container-footer {
-        display: flex;
-        justify-content: space-between;
-    }
-    .site-footer nav {
-        display: block;
-    }
-    .redes a {
-        display: inline-block;
-        margin-right: 1.5rem;
-    }
-    .redes a:last-of-type {
-        margin: 0;
-    }
+  .dropdown {
+    display: none;
+  }
+  .dropdown-expanded {
+    display: flex;
+  }
+  .container-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .site-footer nav {
+    display: block;
+  }
+  .redes a {
+    display: inline-block;
+    margin-right: 1.5rem;
+  }
+  .redes a:last-of-type {
+    margin: 0;
+  }
 }

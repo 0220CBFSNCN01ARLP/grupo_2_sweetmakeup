@@ -10,7 +10,9 @@
   <body>
     <%- include('partials/header') %>
 
-    <%- include('partials/userNavbar') %>
+    <% if(typeof user != 'undefined') { %>
+      <%- include('partials/userNavbar') %>
+    <% } %>
 
     <div class="container">
       <div class="row">

@@ -1,17 +1,33 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12 margin-menu">
-            <nav class="nav">
-                <a href="/users/admin"><button type="button" class="btn btn-pink btn-sm mg-btn">
-                        Inicio
-                    </button></a>
-                <a href="/products/create"><button type="button" class="btn btn-pink btn-sm mg-btn">
-                        Agregar producto
-                    </button></a>
-                <a href="/users/myProducts"><button type="button" class="btn btn-pink btn-sm mg-btn">
-                        Mis Productos
-                    </button></a>
-            </nav>
-        </div>
+<div class="container-fluid user-navbar">
+    <div class="d-flex">
+        <nav class="nav">
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <%= user.firstName %> 
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item btn-pink" href="/products/create">Agregar Producto</a>
+                    <a class="dropdown-item btn-pink" href="/users/myProducts">Mis Productos</a>
+                    <a class="dropdown-item btn-pink" href="/users/admin">Mis Datos</a>
+
+                </div>
+            </div>
+
+            <div class="dropdown-expanded">
+                <a class="dropdown-item btn-pink" href="/products/create">Agregar Producto</a>
+                <a class="dropdown-item btn-pink" href="/users/myProducts">Mis Productos</a>
+                <a class="dropdown-item btn-pink" href="/users/admin">Mis Datos</a>
+            </div>
+            <div class="ml-auto">
+                <form action="/users/logout" method="GET">
+                    <button class="btn btn-pink btn-block" type="submit">
+                        Cerrar Sesión
+                    </button>
+                </form>
+            </div>
+
+        </nav>
     </div>
 </div>

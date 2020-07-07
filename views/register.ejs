@@ -9,6 +9,10 @@
 
 <body>
     <%- include('partials/header') %>
+    <% if(typeof user != 'undefined') { %>
+      <%- include('partials/userNavbar') %>
+    <% } %>
+
 
         <main class="container">
             <div class="row position">

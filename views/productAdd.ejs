@@ -13,7 +13,9 @@
   <%- include('partials/header') %>
   <!-- /Header -->
 
-  <%- include('partials/userNavbar') %>
+  <% if(typeof user != 'undefined') { %>
+    <%- include('partials/userNavbar') %>
+<% } %>
 
   <main>
     <!-- Cargar Producto -->

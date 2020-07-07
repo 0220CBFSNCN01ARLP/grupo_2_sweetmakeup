@@ -10,6 +10,9 @@
 <body>
   <!-- Barra de navegacion principal -->
   <%- include('partials/header') %>
+  <% if(typeof user != 'undefined') { %>
+    <%- include('partials/userNavbar') %>
+<% } %>
 
   <main class="container my-3">
     <div class="row">
