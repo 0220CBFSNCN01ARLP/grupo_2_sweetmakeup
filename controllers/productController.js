@@ -6,7 +6,7 @@ const multer = require("multer");
 // DELETE: Gena
 
 const { getProducts, productsFilePath } = require("../utils/products");
-const { Product, Category, Brand, Color } = require("../database/models");
+const { Product, Category, Brand, Color, User } = require("../database/models");
 const { promiseImpl } = require("ejs");
 const products = require("../utils/products");
 const color = require("../database/models/color");
@@ -120,9 +120,7 @@ let controller = {
   //AGUS
   detail: async function (req, res, next) {
     let product = await Product.findByPk(req.params.id, {
-      include: {
-        association: "category",
-      },
+      include: Category,
     });
     let related = await Product.findAll({
       include: {

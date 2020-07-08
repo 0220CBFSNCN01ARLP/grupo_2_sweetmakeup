@@ -1,3 +1,5 @@
+use `grupo_2_sweetmakeup`;
+
 /*USERS*/
 
 insert into users (id, firstName, lastName, email, password, avatar, createdAt, updatedAt) values (1, 'Diannne', 'Jorioz', 'djorioz0@jigsy.com', 'bbfeb8017c55c084fe31569e648f303a2847497c', null, '2020-05-02 02:04:24', '2019-10-21 11:37:41');

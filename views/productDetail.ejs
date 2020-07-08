@@ -45,8 +45,10 @@
         </p>
         <p>
           $<%= product.price %>
+          <%= product.user.name %>
         </p>
         <div class="row">
+          
           <div class="button-wrapper col-12 col-md-6 py-1">
             <a href="/cart"><button class="btn btn-pink btn-block">
                 Agregar al carrito
@@ -57,6 +59,7 @@
               Agregar a la wishlist
             </button>
           </div>
+
         </div>
       </div>
     </div>
@@ -69,7 +72,7 @@
       <% for(elem of related) { %>
       <div class="col-6 col-md-4 col-lg-3">
         <article class="product-card card my-2">
-          <a href="/products/<%= elem.id %> ">
+          <a href="/products/<%= elem.id %>">
             <img class="img-product w-100" src="../IMG/productos/<%= elem.image %> " alt="<%= elem.name %> " />
             <h3 class="card-title text-center"><%= elem.name %> </h3>
             <p class="price text-center"><%= elem.price %> </p>
