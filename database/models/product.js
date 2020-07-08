@@ -62,11 +62,9 @@ module.exports = (sequelize, dataTypes) => {
       as: "image",
     });
 
-    Product.belongsToMany(models.User, {
+    Product.belongsTo(models.User, {
       as: "user",
-      through: "user_product",
-      foreignKey: "productId",
-      otherKey: "userId",
+      foreignKey: "userId",
       timestamps: false,
     });
 

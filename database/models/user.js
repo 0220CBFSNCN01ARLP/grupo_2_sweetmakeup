@@ -25,12 +25,10 @@ module.exports = (sequelize, dataTypes) => {
       as: "purchase",
     });
 
-    User.belongsToMany(models.Product, {
+    User.hasMany(models.Product, {
       as: "product",
-      through: "user_product",
       foreignKey: "userId",
-      otherKey: "productId",
-      timestamps: false,
+      timestamps: false
     });
   };
 
