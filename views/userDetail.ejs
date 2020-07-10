@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("partials/head") %>
-    <link rel="stylesheet" href="/css/userDetail.css" />
-    <link rel="stylesheet" href="/css/productAdd.css">
 
-    <title>Detalle de Usuario</title>
-  </head>
-  <body>
+<head>
+    <%- include("partials/head") %>
+        <link rel="stylesheet" href="/css/userDetail.css" />
+        <link rel="stylesheet" href="/css/productAdd.css">
+        <link rel="stylesheet" href="/css/register.css" />
+        <title>Detalle de Usuario</title>
+</head>
+
+<body>
     <%- include('partials/header') %>
 
-    <% if(typeof user != 'undefined') { %>
-      <%- include('partials/userNavbar') %>
-    <% } %>
+        <% if(typeof user != 'undefined') { %>
+            <%- include('partials/userNavbar') %>
+                <% } %>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1>Mis datos</h1>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Mis datos</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="ul-user">
+                                    <li class="mg-li-user">
+                                        <strong>Nombre:</strong>
+                                        <%= user.firstName %>
+                                    </li>
+                                    <li class="mg-li-user">
+                                        <strong>Apellido:</strong>
+                                        <%= user.lastName %>
+                                    </li>
+                                    <li class="mg-li-user"><strong>Mail:</strong>
+                                        <%= user.email %>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="/users/editpassword" class="pd-button-edit"><button class= "btn btn-pink">Cambiar contraseña</button></a
+          >
         </div>
       </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <ul class="ul-user">
-            <li class="mg-li-user">
-              <strong>Nombre:</strong> <%= user.firstName %>
-            </li>
-            <li class="mg-li-user">
-              <strong>Apellido:</strong> <%= user.lastName %>
-            </li>
-            <li class="mg-li-user"><strong>Mail:</strong> <%= user.email %></li>
-            <li class="mg-li-user">
-              <a href=""><button class= "btn btn-pink">Cambiar contraseña</button></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <a href="" class="pd-button-edit"
-            ><button class= "btn btn-pink">Editar mis datos</button></a
+
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="/users/edit" class="pd-button-edit"><button class= "btn btn-pink">Editar mis datos</button></a
           >
         </div>
       </div>

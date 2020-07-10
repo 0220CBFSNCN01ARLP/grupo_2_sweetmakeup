@@ -1,26 +1,22 @@
-const form = document.getElementById("contact-form");
+const formPassword = document.getElementById("contact-form-password");
 
-const fields = ["firstName", "lastName", "email", "password", "rePassword", "avatar"];
+const fieldsPassword = ["password", "rePassword"];
 
-form.onsubmit = (evt) => {
+formPassword.onsubmit = (evt) => {
 
     evt.preventDefault();
     const errors = [];
 
-    for (let fieldName of fields) {
+    for (let fieldName of fieldsPassword) {
         clearErrors(fieldName);
         validateNotEmpty(fieldName, errors);
     }
 
-    validateEmail("email", errors);
     validateIsEquals("password", "rePassword", errors);
 
-
-    minCharacters("firstName", 2, errors);
-    minCharacters("lastName", 2, errors);
     minCharacters("password", 8, errors);
     if (errors.length == 0) {
-        form.submit();
+        formPassword.submit();
     } else {
         document.documentElement.scrollTop = 0;
     }
@@ -117,63 +113,3 @@ function getFieldAndInvalidFeedback(fieldId) {
         invalidFeedback
     };
 }
-
-////// Login
-
-const formLogin = document.getElementById("contact-form-login");
-
-const fieldsLogin = ["loginEmail", "loginPassword"];
-
-formLogin.onsubmit = (evt) => {
-    debugger;
-    evt.preventDefault();
-    const errors = [];
-
-    for (let fieldName of fieldsLogin) {
-        clearErrors(fieldName);
-        validateNotEmpty(fieldName, errors);
-    }
-
-    validateEmail("loginEmail", errors);
-    // validateIsEquals("loginPassword", errors);
-
-
-
-    if (errors.length == 0) {
-        formLogin.submit();
-    } else {
-        document.documentElement.scrollTop = 0;
-    }
-    return false;
-
-};
-
-////// Edit
-
-const formEdit = document.getElementById("contact-form-edit");
-
-const fieldsEdit = ["firstName", "lastName", "email", "avatar"];
-
-formEdit.onsubmit = (evt) => {
-    debugger;
-    evt.preventDefault();
-    const errors = [];
-
-    for (let fieldName of fieldsEdit) {
-        clearErrors(fieldName);
-        validateNotEmpty(fieldName, errors);
-    }
-
-    validateEmail("email", errors);
-    // validateIsEquals("loginPassword", errors);
-    minCharacters("firstName", 2, errors);
-    minCharacters("lastName", 2, errors);
-
-    if (errors.length == 0) {
-        formEdit.submit();
-    } else {
-        document.documentElement.scrollTop = 0;
-    }
-    return false;
-
-};
