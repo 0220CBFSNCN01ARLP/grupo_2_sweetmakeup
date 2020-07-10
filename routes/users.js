@@ -81,6 +81,6 @@ router.get("/myProducts", usersController.myProducts);
 router.get("/edit", usersController.userEdit);
 router.get("/editpassword", usersController.userEditPassword);
 router.put("/edit/:id", upload.any(), usersController.userUpdate);
-router.put("/edit/:id", upload.any(), usersController.userUpdatePassword);
+router.put("/editpassword/:id", upload.any(), usersController.userUpdatePassword);
 
 module.exports = router;

@@ -58,32 +58,6 @@ function validateNotEmpty(fieldId, errors) {
     }
 }
 
-function validateEmail(fieldId, errors) {
-    const {
-        field,
-        invalidFeedback
-    } = getFieldAndInvalidFeedback(fieldId);
-    const isEmailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!isEmailFormat.test(field.value)) {
-        field.classList.add("is-invalid");
-        const msg = "debe ser un email valido";
-        displayInvalidFeedback(fieldId, msg, invalidFeedback, errors);
-    }
-}
-
-function validateIsNumeric(fieldId, errors) {
-    const {
-        field,
-        invalidFeedback
-    } = getFieldAndInvalidFeedback(fieldId);
-    const isNumericField = /^\d+$/;
-    if (!isNumericField.test(field.value)) {
-        field.classList.add("is-invalid");
-        const msg = "debe ser un numero valido";
-        displayInvalidFeedback(fieldId, msg, invalidFeedback, errors);
-    }
-}
-
 function validateIsEquals(fieldAId, fieldBId, errors) {
     const fieldA = getFieldAndInvalidFeedback(fieldAId);
     const fieldB = getFieldAndInvalidFeedback(fieldBId);
