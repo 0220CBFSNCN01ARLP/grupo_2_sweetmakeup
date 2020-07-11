@@ -31,8 +31,8 @@ router.post(
     check("productName").isLength({
       min: 4,
     }),
-    check("price").isLength({
-      min: 4,
+    check("price").isNumeric({
+      no_symbols: true,
     }),
     check("productName").isLength({
       min: 4,
