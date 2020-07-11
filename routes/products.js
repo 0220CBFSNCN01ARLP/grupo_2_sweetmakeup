@@ -22,6 +22,26 @@ var upload = multer({
   storage: storage,
 });
 
+app.use(
+  expressValidator({
+    customValidators: {
+      isImage: function (value, filename) {
+        var extension = path.extname(filename).toLowerCase();
+        switch (extension) {
+          case ".jpg":
+            return ".jpg";
+          case ".jpeg":
+            return ".jpeg";
+          case ".png":
+            return ".png";
+          default:
+            return false;
+        }
+      },
+    },
+  })
+);
+
 // Creando desde cero un producto
 router.get("/create", authMiddleware, productController.create);
 router.post(
@@ -31,8 +51,8 @@ router.post(
     check("productName").isLength({
       min: 4,
     }),
-    check("price").isLength({
-      min: 4,
+    check("price").isNumeric({
+      no_symbols: true,
     }),
     check("productName").isLength({
       min: 4,
