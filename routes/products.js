@@ -22,8 +22,6 @@ var upload = multer({
   storage: storage,
 });
 
-
-
 // Creando desde cero un producto
 router.get("/create", authMiddleware, productController.create);
 router.post(
@@ -36,15 +34,31 @@ router.post(
     check("price").isNumeric({
       no_symbols: true,
     }),
-    check("productName").isLength({
-      min: 4,
+    check("discount").isInt({
+      min: 1,
+      max: 100,
     }),
-    check("productName").isLength({
-      min: 4,
+    check("description").isLength({
+      min: 20,
+      max: 300,
     }),
-    check("productName").isLength({
-      min: 4,
+    check("ingredients").isLength({
+      min: 20,
+      max: 300,
     }),
+    check("returnPolitic").isLength({
+      min: 20,
+      max: 300,
+    }),
+    check("shipping").isLength({
+      min: 20,
+      max: 300,
+    }),
+    check("weight").isNumeric({ max: 10000 }),
+    check("height").isNumeric({ max: 10000 }),
+    check("width").isNumeric({ max: 10000 }),
+    check("length").isNumeric({ max: 10000 }),
+    check("link").isURL(),
   ],
   productController.store
 );
