@@ -5,7 +5,7 @@ const multer = require("multer");
 var express = require("express");
 
 //const { getUsers, usersFilePath } = require("../utils/users");
-const { User, Product } = require("../database/models");
+const { User, Product, Image } = require("../database/models");
 
 let { check, validationResult, body } = require("express-validator");
 const session = require("express-session");
@@ -131,6 +131,7 @@ let usersController = {
       where: {
         userId: user.id,
       },
+      include: "images"
     });
     res.render("myProducts", {
       products,
