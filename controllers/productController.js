@@ -59,12 +59,11 @@ let controller = {
         const newImage = await Image.create({
             productId: newProduct.id,
             size: req.files[0].size,
-            fileType: req.file[0].mimetype,
+            fileType: req.files[0].mimetype,
             route: "img/products/" + req.files[0].filename,
         });
         // const newColor = await Color.create({
         //     productId: newProduct.id,
-
         // });
         console.log(newProduct);
         res.redirect(`/products/${newProduct.id}`);
