@@ -28,37 +28,51 @@ router.post(
   "/create",
   upload.any(),
   [
-    check("productName").isLength({
-      min: 4,
-    }),
-    check("price").isNumeric({
-      no_symbols: true,
-    }),
-    check("discount").isInt({
-      min: 1,
-      max: 100,
-    }),
-    check("description").isLength({
-      min: 20,
-      max: 300,
-    }),
-    check("ingredients").isLength({
-      min: 20,
-      max: 300,
-    }),
-    check("returnPolitic").isLength({
-      min: 20,
-      max: 300,
-    }),
-    check("shipping").isLength({
-      min: 20,
-      max: 300,
-    }),
+    check("productName")
+      .isLength({
+        min: 4,
+      })
+      .withMessage("El nombre del producto debe tener minimo 4 caracteres"),
+    check("price")
+      .isNumeric({
+        no_symbols: true,
+      })
+      .withMessage("Colocar un numero valido"),
+    check("discount")
+      .isInt({
+        min: 1,
+        max: 100,
+      })
+      .withMessage("Coloque un numero entero del 1 al 100"),
+    check("description")
+      .isLength({
+        min: 20,
+        max: 300,
+      })
+      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+    check("ingredients")
+      .isLength({
+        min: 20,
+        max: 300,
+      })
+      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+    check("returnPolitic")
+      .isLength({
+        min: 20,
+        max: 300,
+      })
+      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+    check("shipping")
+      .isLength({
+        min: 20,
+        max: 300,
+      })
+      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
     check("weight").isNumeric({ max: 10000 }),
     check("height").isNumeric({ max: 10000 }),
     check("width").isNumeric({ max: 10000 }),
     check("length").isNumeric({ max: 10000 }),
-    check("link").isURL(),
+    check("link").isURL().withMessage("Coloque un URL valida"),
   ],
   productController.store
 );
