@@ -44,10 +44,19 @@
           <div class="col-12 margin-col">
             <h2 id="title">Editar producto</h2>
             <p class="title-p none-tablet">
-              Agregue las caracteristicas esenciales del producto para subirlo
-              rapidamente a la pagina, y luego en el desktop, siga editandolo
-              con mas datos.
+              Agregue las caracteristicas de su producto. Podra editarlo las
+              veces creas necesario.
             </p>
+            <% if( typeof errors != 'undefined') { %>
+            <p class="errors">Error</p>
+            <ul>
+              <% for (let i=0; i<errors.length; i++) {%>
+              <li>
+                <%= errors[i].msg %>
+              </li>
+              <% } %>
+            </ul>
+            <% } %>
             <p class="p-datos none-tablet">
               * Campos obligatorios
             </p>

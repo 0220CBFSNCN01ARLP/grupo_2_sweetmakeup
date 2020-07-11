@@ -6,6 +6,9 @@ const multer = require("multer");
 // DELETE: Gena
 
 const { getProducts, productsFilePath } = require("../utils/products");
+
+const { check, validationResult, body } = require("express-validator");
+
 const {
   Product,
   Category,
@@ -75,24 +78,39 @@ let controller = {
   // FER
   edit: async function (req, res, next) {
     //GET -> muestra el formulario
-    let pedidoProduct = await Product.findByPk(req.params.id);
-    if (pedidoProduct == null) return res.redirect("/");
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      let pedidoProduct = await Product.findByPk(req.params.id);
+      if (pedidoProduct == null) return res.redirect("/");
 
-    let pedidoCategories = await Category.findAll();
+      let pedidoCategories = await Category.findAll();
 
-    let pedidoBrands = await Brand.findAll();
+      let pedidoBrands = await Brand.findAll();
 
-    let color = "#FFFFFF";
-    let descuento = true;
+      let color = "#FFFFFF";
+      let descuento = true;
 
-    res.render("productEdit", {
-      product: pedidoProduct,
-      categories: pedidoCategories,
-      brands: pedidoBrands,
-      user: req.session.user,
-      color,
-      descuento,
-    });
+      res.render("productEdit", {
+        product: pedidoProduct,
+        categories: pedidoCategories,
+        brands: pedidoBrands,
+        user: req.session.user,
+        color,
+        descuento,
+      });
+    } else {
+      let pedidoCategories = await Category.findAll();
+      let pedidoBrands = await Brand.findAll();
+      return res.render("productEdit", {
+        errors: errors.errors,
+        product: pedidoProduct,
+        categories: pedidoCategories,
+        brands: pedidoBrands,
+        user: req.session.user,
+        color,
+        descuento,
+      });
+    }
   },
 
   //FER
