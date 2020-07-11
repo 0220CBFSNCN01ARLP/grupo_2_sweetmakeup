@@ -104,15 +104,16 @@ let controller = {
   //GENARO
 
   destroy: async (req, res) => {
-    const product = await Product.findByPk(req.params.id);
+    // ASI LO HACE PABLO
+    // const product = await Product.findByPk(req.params.id);
+    // await product.destroy();
 
-    await color_product.destroy({
+    // MAS EFICIENTE PORQUE HACE SOLO UNA CONSULTA
+    await Product.destroy({
       where: {
-        productId: product.id,
+        id: req.params.id,
       },
     });
-
-    await product.destroy();
 
     res.redirect("/");
   },
@@ -120,8 +121,8 @@ let controller = {
   //AGUS
   detail: async function (req, res, next) {
     let product = await Product.findByPk(req.params.id, {
-      include: {association: "category"}
-    },);
+      include: { association: "category" },
+    });
     let related = await Product.findAll({
       include: {
         association: "category",

@@ -1,50 +1,56 @@
 module.exports = (sequelize, dataTypes) => {
-  const Product = sequelize.define("Product", {
-    id: {
-      type: dataTypes.INTEGER(11),
-      autoIncrement: true,
-      primaryKey: true,
-      allowNull: false,
+  const Product = sequelize.define(
+    "Product",
+    {
+      id: {
+        type: dataTypes.INTEGER(11),
+        autoIncrement: true,
+        primaryKey: true,
+        allowNull: false,
+      },
+      name: {
+        type: dataTypes.STRING(500),
+        allowNull: false,
+      },
+      description: {
+        type: dataTypes.STRING(500),
+      },
+      ingredients: {
+        type: dataTypes.STRING(500),
+      },
+      link: {
+        type: dataTypes.STRING(300),
+      },
+      shipping: {
+        type: dataTypes.STRING(300),
+      },
+      returnPolitic: {
+        type: dataTypes.STRING(300),
+      },
+      price: {
+        type: dataTypes.DECIMAL(10, 2),
+        allowNull: false,
+      }, // 0123456789,11
+      discount: {
+        type: dataTypes.DECIMAL(4, 2),
+      },
+      weight: {
+        type: dataTypes.DECIMAL(10, 2),
+      },
+      height: {
+        type: dataTypes.DECIMAL(10, 2),
+      },
+      width: {
+        type: dataTypes.DECIMAL(10, 2),
+      },
+      length: {
+        type: dataTypes.DECIMAL(10, 2),
+      },
     },
-    name: {
-      type: dataTypes.STRING(500),
-      allowNull: false,
-    },
-    description: {
-      type: dataTypes.STRING(500),
-    },
-    ingredients: {
-      type: dataTypes.STRING(500),
-    },
-    link: {
-      type: dataTypes.STRING(300),
-    },
-    shipping: {
-      type: dataTypes.STRING(300),
-    },
-    returnPolitic: {
-      type: dataTypes.STRING(300),
-    },
-    price: {
-      type: dataTypes.DECIMAL(10, 2),
-      allowNull: false,
-    }, // 0123456789,11
-    discount: {
-      type: dataTypes.DECIMAL(4, 2),
-    },
-    weight: {
-      type: dataTypes.DECIMAL(10, 2),
-    },
-    height: {
-      type: dataTypes.DECIMAL(10, 2),
-    },
-    width: {
-      type: dataTypes.DECIMAL(10, 2),
-    },
-    length: {
-      type: dataTypes.DECIMAL(10, 2),
-    },
-  });
+    {
+      paranoid: true,
+    }
+  );
 
   Product.associate = function (models) {
     Product.belongsTo(models.Brand, {
@@ -89,7 +95,6 @@ module.exports = (sequelize, dataTypes) => {
       foreignKey: "productId",
       otherKey: "colorId",
       timestamps: "false",
-      onDelete: "CASCADE",
     });
   };
 
