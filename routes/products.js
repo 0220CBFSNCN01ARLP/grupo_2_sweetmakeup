@@ -9,7 +9,7 @@ const { check, validationResult, body } = require("express-validator");
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./public/img/productos");
+    cb(null, "./public/img/products");
   },
   filename: function (req, file, cb) {
     cb(
@@ -22,25 +22,7 @@ var upload = multer({
   storage: storage,
 });
 
-app.use(
-  expressValidator({
-    customValidators: {
-      isImage: function (value, filename) {
-        var extension = path.extname(filename).toLowerCase();
-        switch (extension) {
-          case ".jpg":
-            return ".jpg";
-          case ".jpeg":
-            return ".jpeg";
-          case ".png":
-            return ".png";
-          default:
-            return false;
-        }
-      },
-    },
-  })
-);
+
 
 // Creando desde cero un producto
 router.get("/create", authMiddleware, productController.create);
