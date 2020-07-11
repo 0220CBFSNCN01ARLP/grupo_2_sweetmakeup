@@ -50,8 +50,9 @@ let controller = {
       height: req.body.height,
       width: req.body.width,
       length: req.body.length,
+      userId: req.session.user.id,
     });
-    const newImage = await Image.create({
+    let newImage = await Image.create({
       productId: newProduct.id,
       size: req.files[0].size,
       fileType: req.files[0].mimetype,
@@ -104,12 +105,19 @@ let controller = {
         width: req.body.width,
         length: req.body.length,
       },
+
       {
         where: {
           id: req.params.id,
         },
       }
     );
+    let newImage = await Image.create({
+      productId: newProduct.id,
+      size: req.files[0].size,
+      fileType: req.files[0].mimetype,
+      route: req.files[0].filename,
+    });
 
     res.redirect("/products/" + req.params.id);
   },

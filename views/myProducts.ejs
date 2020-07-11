@@ -11,15 +11,15 @@
     <%- include('partials/header') %>
 
     <% if(typeof user != 'undefined') { %>
-        <%- include('partials/userNavbar') %>
+    <%- include('partials/userNavbar') %>
     <% } %>
 
     <main class="container mt-1">
         <div>
-            <h2 id= "title">Mis Productos</h2>
-        <% if (products = []) { %>
+            <h2 id="title">Mis Productos</h2>
+            <% if (products == []) { %>
             <p>Aún no tenés ningún producto para vender. Hacé clic en "Crear Producto" para subir uno!</p>
-        <% } %>
+            <% } %>
         </div>
 
         <div class="row vh-75">
@@ -29,8 +29,9 @@
                     <a href="/products/<%= product.id %>">
                         <h4 class="card-title"><%= product.name %></h4>
                     </a>
-                    <a href="/products/<%= product.id %>"><img class="imgMain card-img-top img-fluid"
-                            src="../img/products/<%= product.images[0].route %> " alt="<%= product.name %> " /></a>
+                    <a href="/products/<%= product.id %>"><img class="imgMain card-img-top img-fluid" src="../img/products/
+                                <%= product.images[0].route %> " alt="<%= product.name %>
+                            " /></a>
 
                     <div class="card-body h-30">
                         <p class="description">
