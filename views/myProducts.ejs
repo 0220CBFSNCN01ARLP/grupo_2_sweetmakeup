@@ -28,10 +28,12 @@
                 <article class="productCard card mt-2">
                     <a href="/products/<%= product.id %>">
                         <h4 class="card-title"><%= product.name %></h4>
+                        <% if (product.images) { %>
+                         <h3>HAY IMAGENES <%= product.images[0]%> 
+                         </h3>
+                        <% } %>
                     </a>
-                    <a href="/products/<%= product.id %>"><img class="imgMain card-img-top img-fluid" src="/img/products/
-                            <%= product.images[0].route %> 
-                        " 
+                    <a href="/products/<%= product.id %>"><img class="imgMain card-img-top img-fluid" src="#" 
                         alt="<%= product.name %>
                             " /></a>
 
