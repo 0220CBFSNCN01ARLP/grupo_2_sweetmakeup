@@ -5,6 +5,8 @@ const productController = require("../controllers/productController");
 const authMiddleware = require("../middlewares/authMiddleware");
 const multer = require("multer");
 
+const { check, validationResult, body } = require("express-validator");
+
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "./public/img/productos");
@@ -22,7 +24,28 @@ var upload = multer({
 
 // Creando desde cero un producto
 router.get("/create", authMiddleware, productController.create);
-router.post("/create", upload.any(), productController.store);
+router.post(
+  "/create",
+  upload.any(),
+  [
+    check("productName").isLength({
+      min: 4,
+    }),
+    check("price").isLength({
+      min: 4,
+    }),
+    check("productName").isLength({
+      min: 4,
+    }),
+    check("productName").isLength({
+      min: 4,
+    }),
+    check("productName").isLength({
+      min: 4,
+    }),
+  ],
+  productController.store
+);
 
 /*** EDIT ONE PRODUCT ***/
 router.get(
@@ -33,6 +56,7 @@ router.get(
 router.put(
   "/edit/:id",
   upload.any(),
+  [],
   productController.update
 ); /* PUT - Update in DB */
 
