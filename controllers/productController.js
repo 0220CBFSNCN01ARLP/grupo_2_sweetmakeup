@@ -121,7 +121,7 @@ let controller = {
   //AGUS
   detail: async function (req, res, next) {
     let product = await Product.findByPk(req.params.id, {
-      include: { association: "category" },
+      include: ["category", "images"],
     });
     let related = await Product.findAll({
       include: {
@@ -132,7 +132,7 @@ let controller = {
       },
       limit: 4,
     });
-
+    
     res.render("productDetail", {
       product,
       related,
