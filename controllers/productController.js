@@ -123,12 +123,14 @@ let controller = {
         },
       }
     );
-    let newImage = await Image.create({
-      productId: newProduct.id,
-      size: req.files[0].size,
-      fileType: req.files[0].mimetype,
-      route: req.files[0].filename,
-    });
+    if (req.files) {
+      let newImage = await Image.create({
+        productId: newProduct.id,
+        size: req.files[0].size,
+        fileType: req.files[0].mimetype,
+        route: req.files[0].filename,
+      });
+    }
 
     res.redirect("/products/" + req.params.id);
   },
