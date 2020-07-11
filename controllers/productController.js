@@ -78,26 +78,68 @@ let controller = {
   // FER
   edit: async function (req, res, next) {
     //GET -> muestra el formulario
+    let pedidoProduct = await Product.findByPk(req.params.id);
+    if (pedidoProduct == null) return res.redirect("/");
+
+    let pedidoCategories = await Category.findAll();
+
+    let pedidoBrands = await Brand.findAll();
+
+    let color = "#FFFFFF";
+    let descuento = true;
+
+    res.render("productEdit", {
+      product: pedidoProduct,
+      categories: pedidoCategories,
+      brands: pedidoBrands,
+      user: req.session.user,
+      color,
+      descuento,
+    });
+  },
+
+  //FER
+  //PUT /products/edit/12385
+  update: async (req, res, next) => {
     let errors = validationResult(req);
+    let pedidoProduct = await Product.findByPk(req.params.id);
+    let color = "#FFFFFF";
+    let descuento = true;
+
     if (errors.isEmpty()) {
-      let pedidoProduct = await Product.findByPk(req.params.id);
-      if (pedidoProduct == null) return res.redirect("/");
+      await Product.update(
+        {
+          name: req.body.productName,
+          price: req.body.price,
+          brandId: req.body.brand,
+          categoryId: req.body.thematic,
+          discount: req.body.discount,
+          description: req.body.description,
+          shipping: req.body.shipping,
+          link: req.body.link,
+          ingredients: req.body.ingredients,
+          returnPolitic: req.body.returnPolitic,
+          weight: req.body.weight,
+          height: req.body.height,
+          width: req.body.width,
+          length: req.body.length,
+        },
 
-      let pedidoCategories = await Category.findAll();
-
-      let pedidoBrands = await Brand.findAll();
-
-      let color = "#FFFFFF";
-      let descuento = true;
-
-      res.render("productEdit", {
-        product: pedidoProduct,
-        categories: pedidoCategories,
-        brands: pedidoBrands,
-        user: req.session.user,
-        color,
-        descuento,
-      });
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      );
+      if (req.files) {
+        let newImage = await Image.create({
+          productId: newProduct.id,
+          size: req.files[0].size,
+          fileType: req.files[0].mimetype,
+          route: req.files[0].filename,
+        });
+      }
+      res.redirect("/products/" + req.params.id);
     } else {
       let pedidoCategories = await Category.findAll();
       let pedidoBrands = await Brand.findAll();
@@ -111,45 +153,6 @@ let controller = {
         descuento,
       });
     }
-  },
-
-  //FER
-  //PUT /products/edit/12385
-  update: async (req, res, next) => {
-    await Product.update(
-      {
-        name: req.body.productName,
-        price: req.body.price,
-        brandId: req.body.brand,
-        categoryId: req.body.thematic,
-        discount: req.body.discount,
-        description: req.body.description,
-        shipping: req.body.shipping,
-        link: req.body.link,
-        ingredients: req.body.ingredients,
-        returnPolitic: req.body.returnPolitic,
-        weight: req.body.weight,
-        height: req.body.height,
-        width: req.body.width,
-        length: req.body.length,
-      },
-
-      {
-        where: {
-          id: req.params.id,
-        },
-      }
-    );
-    if (req.files) {
-      let newImage = await Image.create({
-        productId: newProduct.id,
-        size: req.files[0].size,
-        fileType: req.files[0].mimetype,
-        route: req.files[0].filename,
-      });
-    }
-
-    res.redirect("/products/" + req.params.id);
   },
 
   //GENARO
