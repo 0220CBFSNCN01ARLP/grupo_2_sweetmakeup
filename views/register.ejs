@@ -42,58 +42,57 @@
 
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="remember" name="remember" value="remember" />
-                                        <label class="custom-control-label" for="remember">Recordarme</label
-            >
-          </div>
+                                        <label class="custom-control-label" for="remember">Recordarme</label>
+                                    </div>
 
-          <button class="btn btn-pink btn-block buttonMargin" type="submit ">
+                                    <button class="btn btn-pink btn-block buttonMargin" type="submit ">
             Ingresar
           </button>
-        </form>
-      </div>
+                                </form>
+                            </div>
 
-      <div class="row form-2 col-12 col-md-6 col-lg-6" id="container">
-        <% if( typeof errors != 'undefined') { %>
-        <p class= "errors">Error</p>
-        <ul>
-          <% for (let i=0; i<errors.length; i++) {%>
-          <li>
-            <%= errors[i].msg %>
-          </li>
-          <% } %>
-        </ul>
-        <% } %>
-        <form id="contact-form" class="container" action="/users/register" method="POST" enctype="multipart/form-data">
-          <h1>Registrarse</h1>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="avatar" name="avatar" lang="es"  />
-            <label class="custom-file-label" for="avatar">Subi tu foto de perfil</label>
-                                        <div class="avatar invalid-feedback"></div>
-                                    </div>
-                                    <label for="firstName">Nombre</label>
-                                    <input class="form-control" type="text" id="firstName" name="firstName" />
-                                    <div class="firstName invalid-feedback"></div>
+                            <div class="row form-2 col-12 col-md-6 col-lg-6" id="container">
+                                <% if( typeof errors != 'undefined') { %>
+                                    <p class="errors">Error</p>
+                                    <ul>
+                                        <% for (let i=0; i<errors.length; i++) {%>
+                                            <li>
+                                                <%= errors[i].msg %>
+                                            </li>
+                                            <% } %>
+                                    </ul>
+                                    <% } %>
+                                        <form id="contact-form" class="container" action="/users/register" method="POST" enctype="multipart/form-data">
+                                            <h1>Registrarse</h1>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="avatar" name="avatar" lang="es" />
+                                                <label class="custom-file-label" for="avatar">Subi tu foto de perfil</label>
+                                                <div class="avatar invalid-feedback"></div>
+                                            </div>
+                                            <label for="firstName">Nombre</label>
+                                            <input class="form-control" type="text" id="firstName" name="firstName" />
+                                            <div class="firstName invalid-feedback"></div>
 
-                                    <label for="lastName">Apellido</label>
-                                    <input class="form-control" type="text" id="lastName" name="lastName" />
-                                    <div class="lastName invalid-feedback"></div>
+                                            <label for="lastName">Apellido</label>
+                                            <input class="form-control" type="text" id="lastName" name="lastName" />
+                                            <div class="lastName invalid-feedback"></div>
 
-                                    <label for="email">Direccion de correo electronico</label>
-                                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" />
-                                    <div class="email invalid-feedback"></div>
+                                            <label for="email">Direccion de correo electronico</label>
+                                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" />
+                                            <div class="email invalid-feedback"></div>
 
-                                    <label for="password">Contraseña</label>
-                                    <input type="password" class="form-control" id="password" name="password" />
-                                    <div class="password invalid-feedback"></div>
+                                            <label for="password">Contraseña</label>
+                                            <input type="password" class="form-control" id="password" name="password" />
+                                            <div class="password invalid-feedback"></div>
 
-                                    <label for="rePassword">Confirmar Contraseña</label>
-                                    <input type="password" class="form-control" id="rePassword" name="rePassword" />
-                                    <div class="rePassword invalid-feedback"></div>
+                                            <label for="rePassword">Confirmar Contraseña</label>
+                                            <input type="password" class="form-control" id="rePassword" name="rePassword" />
+                                            <div class="rePassword invalid-feedback"></div>
 
-                                    <button class="btn btn-pink btn-block" type="submit">
+                                            <button class="btn btn-pink btn-block" type="submit">
             Registrarse
           </button>
-                                </form>
+                                        </form>
                             </div>
                         </div>
                     </main>

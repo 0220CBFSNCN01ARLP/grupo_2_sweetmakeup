@@ -6,18 +6,18 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const multer = require("multer");
 
 var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/img/productos");
-  },
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    );
-  },
+    destination: function(req, file, cb) {
+        cb(null, "./public/img/products");
+    },
+    filename: function(req, file, cb) {
+        cb(
+            null,
+            file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+        );
+    },
 });
 var upload = multer({
-  storage: storage,
+    storage: storage,
 });
 
 // Creando desde cero un producto
@@ -26,14 +26,14 @@ router.post("/create", upload.any(), productController.store);
 
 /*** EDIT ONE PRODUCT ***/
 router.get(
-  "/edit/:id",
-  authMiddleware,
-  productController.edit
+    "/edit/:id",
+    authMiddleware,
+    productController.edit
 ); /* GET - Form to create */
 router.put(
-  "/edit/:id",
-  upload.any(),
-  productController.update
+    "/edit/:id",
+    upload.any(),
+    productController.update
 ); /* PUT - Update in DB */
 
 // Borrando un producto
