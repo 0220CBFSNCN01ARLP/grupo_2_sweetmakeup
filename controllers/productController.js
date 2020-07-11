@@ -6,6 +6,7 @@ const multer = require("multer");
 // DELETE: Gena
 
 const { getProducts, productsFilePath } = require("../utils/products");
+let { check, validationResult, body } = require("express-validator");
 const {
   Product,
   Category,
@@ -22,8 +23,8 @@ const product = require("../database/models/product");
 let controller = {
   // FER
   create: async function (req, res, next) {
-    const categories = await Category.findAll();
-    const brands = await Brand.findAll();
+    let categories = await Category.findAll();
+    let brands = await Brand.findAll();
     res.render("productAdd", {
       categories,
       brands,
@@ -33,33 +34,43 @@ let controller = {
 
   // FER
   store: async function (req, res, next) {
-    console.log("fer");
-    console.log(req.body.thematic);
-    const newProduct = await Product.create({
-      name: req.body.productName,
-      price: req.body.price,
-      brandId: req.body.brand,
-      categoryId: req.body.thematic,
-      discount: req.body.discount,
-      description: req.body.description,
-      ingredients: req.body.ingredients,
-      shipping: req.body.shipping,
-      returnPolitic: req.body.returnPolitic,
-      link: req.body.link,
-      weight: req.body.weight,
-      height: req.body.height,
-      width: req.body.width,
-      length: req.body.length,
-      userId: req.session.user.id,
-    });
-    let newImage = await Image.create({
-      productId: newProduct.id,
-      size: req.files[0].size,
-      fileType: req.files[0].mimetype,
-      route: req.files[0].filename,
-    });
-    console.log(newProduct);
-    res.redirect(`/products/${newProduct.id}`);
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      console.log(req.body.thematic);
+      const newProduct = await Product.create({
+        name: req.body.productName,
+        price: req.body.price,
+        brandId: req.body.brand,
+        categoryId: req.body.thematic,
+        discount: req.body.discount,
+        description: req.body.description,
+        ingredients: req.body.ingredients,
+        shipping: req.body.shipping,
+        returnPolitic: req.body.returnPolitic,
+        link: req.body.link,
+        weight: req.body.weight,
+        height: req.body.height,
+        width: req.body.width,
+        length: req.body.length,
+      });
+      const newImage = await Image.create({
+        productId: newProduct.id,
+        size: req.files[0].size,
+        fileType: req.files[0].mimetype,
+        route: req.files[0].filename,
+      });
+      console.log(newProduct);
+      res.redirect(`/products/${newProduct.id}`);
+    } else {
+      let categories = await Category.findAll();
+      let brands = await Brand.findAll();
+      return res.render("productAdd", {
+        errors: errors.errors,
+        categories,
+        brands,
+        user: req.session.user,
+      });
+    }
   },
 
   // FER
