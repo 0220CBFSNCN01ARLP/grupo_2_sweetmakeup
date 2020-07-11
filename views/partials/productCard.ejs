@@ -3,12 +3,13 @@
     <a href="/products/<%= product.id %>">
       <h4 class="card-title"><%= product.name %></h4>
     </a>
-    <a href="/products/<%= product.id %>"
-      ><img
-        class="imgMain card-img-top img-fluid"
-        src="/img/products/<%= product.images[0].route %>"
-        alt="<%= product.name %> "
-    /></a>
+    <a href="/products/<%= product.id %>">
+      <% if (product.images.length > 0) { %>
+      <img class="imgMain card-img-top img-fluid" src="/img/products/<%= product.images[0].route%>"
+        alt="<%= product.name %>" />
+      <% } else { %>
+      <img class="imgMain card-img-top img-fluid" src="https://place-hold.it/500x500" alt="">
+      <% } %></a>
 
     <div class="card-body h-30">
       <p class="description">
