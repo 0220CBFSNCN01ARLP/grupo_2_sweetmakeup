@@ -24,6 +24,14 @@
                         </div>
                     </div>
 
+                    <div>
+                        <% if (user.avatar != 0) { %>
+                            <img class="card-img-top mh-50" src="/img/users/<%=user.avatar%>" alt="<%= user.avatar %>" />
+                            <% } else { %>
+                                <img class="card-img-top mh-50" src="https://place-hold.it/500x500" alt="">
+                                <% } %>
+                    </div>
+
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
@@ -45,19 +53,19 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <a href="/users/editpassword" class="pd-button-edit"><button class= "btn btn-pink">Cambiar contraseña</button></a
-          >
-        </div>
-      </div>
+                                <a href="/users/editpassword" class="pd-button-edit"><button class="btn btn-pink">Cambiar
+                        contraseña</button></a>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-12">
-                                <a href="/users/edit" class="pd-button-edit"><button class= "btn btn-pink">Editar mis datos</button></a
-          >
-        </div>
-      </div>
-    </div>
+                                <a href="/users/edit" class="pd-button-edit"><button class="btn btn-pink">Editar mis datos</button></a>
+                            </div>
+                        </div>
+                    </div>
 
-    <%- include("partials/footer") %>
-  </body>
+                    <%- include("partials/footer") %>
+</body>
+
 </html>
