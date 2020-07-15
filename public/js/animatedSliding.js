@@ -1,5 +1,5 @@
 var marker = document.querySelector("#marker");
-var item = document.querySelectorAll("nav a");
+var item = document.querySelectorAll("#pepe");
 
 function indicator(e) {
   marker.style.left = e.offsetLeft + "px";
