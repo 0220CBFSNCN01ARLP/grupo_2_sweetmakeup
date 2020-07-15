@@ -4,9 +4,9 @@
 <head>
     <%- include("partials/head") %>
         <link rel="stylesheet" href="/css/index.css" />
-        <link rel="stylesheet" href="/css/userDetail.css" />
         <link rel="stylesheet" href="/css/productAdd.css">
         <link rel="stylesheet" href="/css/register.css" />
+        <link rel="stylesheet" href="/css/userDetail.css" />
         <title>Detalle de Usuario</title>
 </head>
 
@@ -25,20 +25,20 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row container-datos">
                         <div class="col-12 row">
-                            <div class="col-3 d-flex justify-content-center">
-                                <article class="article-odd">
+                            <div class="col-12 col-md-3 col-lg-3 d-flex justify-content-center">
+                                <div class="article-odd">
 
                                     <% if (user.avatar != 0) { %>
-                                        <img class="img-product d-flex align-items-center justify-content-center" src="/img/users/<%=user.avatar%>" alt="<%= user.avatar %>" />
+                                        <img class="img-product d-flex justify-content-center img-avatar" src="/img/users/<%=user.avatar%>" alt="<%= user.avatar %>" />
                                         <% } else { %>
                                             <img class="img-product d-flex align-items-center justify-content-center" src="https://place-hold.it/500x500" alt="">
                                             <% } %>
-                                </article>
+                                </div>
                             </div>
 
-                            <div class="container col-9">
+                            <div class="col-10 col-md-9 col-lg-9">
                                 <div class="row">
                                     <div class="col-12">
                                         <ul class="ul-user">
