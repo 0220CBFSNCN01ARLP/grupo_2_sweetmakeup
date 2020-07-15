@@ -13,6 +13,7 @@
 /* banner prueba */
 
 .banner-pd {
+  position: relative;
   padding: 0;
 }
 
@@ -20,13 +21,16 @@
   width: 100%;
   height: 110vh;
   object-fit: cover;
+}
+
+.pepe-div {
   position: relative;
 }
 
 .title-banner-prueba {
   position: absolute;
-  bottom: 270px;
-  left: 750px;
+  bottom: 110px;
+  left: 500px;
   background-color: #0d2821;
   width: 400px;
   opacity: 0.6;
@@ -34,8 +38,8 @@
 
 .title-banner-prueba2 {
   position: absolute;
-  bottom: 270px;
-  left: 750px;
+  bottom: 110px;
+  left: 500px;
   background-color: coral;
   width: 400px;
   opacity: 0.8;

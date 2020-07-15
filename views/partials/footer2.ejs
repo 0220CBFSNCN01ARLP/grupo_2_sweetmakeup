@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-4">
-                <div class="d-flex justify-content-center">
-                    <img src="/img/logo3.png" alt="" />
+                <div class="d-flex justify-content-center ">
+                    <img src="/img/logo3.png" class="logo-display" alt="" />
                 </div>
                 <div class="text-center">
                     <p class="p-footer">
@@ -25,7 +25,7 @@
             </div>
             <div class="col-8">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3 user-display">
                         <h5 class="text-center h5-footer">Usuario</h5>
                         <ul class="text-center ul-footer">
                             <% if(typeof user == 'undefined') { %>
@@ -46,7 +46,7 @@
                             <% } %>
                         </ul>
                     </div>
-                    <div class="col-4">
+                    <div class="col-3 business-display">
                         <h5 class="text-center h5-footer">Marcas</h5>
                         <ul class="text-center ul-footer">
                             <% if(typeof user == 'undefined') { %>
@@ -73,9 +73,9 @@
                             <% } %>
                         </ul>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
                         <h5 class="text-center h5-footer h5-redes">Redes Sociales</h5>
-                        <nav class="redes">
+                        <nav class="redes d-flex justify-content-center">
                             <a href="https://www.facebook.com/ "><i class="fab fa-facebook-f"></i></a>
                             <a href="https://www.instagram.com/ "><i class="fab fa-twitter"></i></a>
                             <a href="# "><i class="fab fa-pinterest"></i></a>
@@ -90,7 +90,7 @@
     <div class="container-fluid d-flex justify-content-center align-items-center">
         <div class="row">
             <div class="col-12">
-                <h6>
+                <h6 class="copyright-style">
                     <i class="far fa-copyright"></i> 2020 - Todos los derechos reservados
                 </h6>
             </div>

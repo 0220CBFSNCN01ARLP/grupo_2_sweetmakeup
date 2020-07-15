@@ -25,6 +25,15 @@ header {
   display: inline-block;
 }
 
+.hello-user-display {
+  display: none;
+}
+
+.pd-user-nav {
+  padding: 0px;
+  display: inline;
+}
+
 .item-space {
   margin-left: 10px;
 }
@@ -78,6 +87,15 @@ nav #marker {
 
 .pd-left {
   padding-left: 0;
+}
+
+.section-display {
+  display: none;
+}
+
+.pd-section-nav {
+  padding-left: 0px;
+  display: none;
 }
 
 /*button*/
@@ -162,6 +180,7 @@ li {
 
 .p-footer {
   color: white;
+  display: none;
 }
 
 .h5-footer {
@@ -188,6 +207,27 @@ li {
   color: white;
 }
 
+.copyright-style {
+  color: white;
+  font-size: 15px;
+}
+
+.user-display {
+  display: none;
+}
+
+.business-display {
+  display: none;
+}
+
+.logo-display {
+  display: none;
+}
+
+nav i {
+  margin: 10px;
+}
+
 @media (min-width: 768px) {
   .visible-nav {
     display: block;
@@ -204,7 +244,35 @@ li {
     display: inline-block;
     margin-right: 1.5rem;
   }
+
   .redes a:last-of-type {
     margin: 0;
+  }
+
+  .p-footer {
+    display: inline;
+  }
+
+  .user-display {
+    display: inline;
+  }
+
+  .business-display {
+    display: inline;
+  }
+
+  .logo-display {
+    display: inline;
+  }
+  nav i {
+    margin: 0;
+  }
+
+  .section-display {
+    display: inline;
+  }
+
+  .hello-user-display {
+    display: inline;
   }
 }

@@ -1,23 +1,23 @@
 <header class="container-fuid">
     <div class="row">
-        <div class="col-3 d-flex justify-content-center">
+        <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
             <a href="/"><img src="/img/logo3.png" alt="Logotipo de Make.u" /></a>
         </div>
-        <div class="col-4 d-flex justify-content-start d-flex align-items-center">
+        <div class="d-flex justify-content-start d-flex align-items-center pd-section-nav">
             <nav id="nav-section">
-                <div id="marker"></div>
-                <a id="a-section" href="/rostro">Rostro</a>
-                <a id="a-section" href=" /labios">Labios</a>
-                <a id="a-section" href=" /ojos">Ojos</a>
-                <a id="a-section" href=" /cejas">Cejas</a>
+                <div class="section-display" id="marker"></div>
+                <a class="section-display" id="a-section" href="/rostro">Rostro</a>
+                <a class="section-display" id="a-section" href=" /labios">Labios</a>
+                <a class="section-display" id="a-section" href=" /ojos">Ojos</a>
+                <a class="section-display" id="a-section" href=" /cejas">Cejas</a>
             </nav>
         </div>
         <% if(typeof user != 'undefined') { %>
-        <div class="col-3 d-flex justify-content-end d-flex align-items-center">
+        <div class="col-6 col-sm-3 col-md-3 d-flex justify-content-end d-flex align-items-center pd-user-nav">
             <div class="dropdown inline-user">
                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    Hola, <%= user.firstName %> <svg width="1em" height="1em" viewBox="0 0 16 16"
+                    <%= user.firstName %> <svg width="1em" height="1em" viewBox="0 0 16 16"
                         class="bi bi-emoji-smile-upside-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                             d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0-1a8 8 0 1 1 0 16A8 8 0 0 1 8 0z" />
@@ -42,10 +42,10 @@
             </div>
         </div>
         <% } else { %>
-        <div class="col-3 d-flex justify-content-end d-flex align-items-center">
+        <div class="col-6 col-sm-3 col-md-2 d-flex justify-content-end d-flex align-items-center">
         </div>
         <% } %>
-        <div class="col-2 d-flex justify-content-start d-flex align-items-center pd-left">
+        <div class="col-6 col-sm-3 col-md-1 d-flex justify-content-start d-flex align-items-center pd-left">
             <% if(typeof user == 'undefined') { %>
             <a class="item-space" href="/users/register"><i class="fa fa-user user-login"></i></a>
             <% } %>
