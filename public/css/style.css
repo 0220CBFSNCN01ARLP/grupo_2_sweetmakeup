@@ -21,28 +21,63 @@ header {
   background-color: #f2d7de;
 }
 
-header a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
-.user-navbar a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
+.inline-user {
+  display: inline-block;
 }
 
 .item-space {
   margin-left: 10px;
 }
 
+.cart-size {
+  font-size: 1.5em;
+  color: tomato;
+}
+
+.cart-size:hover {
+  color: #f8a27c;
+}
+
 .header-nav {
   flex-grow: 1;
 }
 
-.dropdown-expanded {
-  display: none;
+#nav-section {
+  position: relative;
+  display: flex;
+}
+
+#a-section {
+  position: relative;
+  margin: 0 20px;
+  font-size: 1.2em;
+  color: #dc92a5;
+  text-decoration: none;
+}
+
+nav #marker {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: #dc92a5;
+  bottom: -8px;
+  transition: 0.5s;
+  border-radius: 4px;
+}
+
+.user-login {
+  font-size: 1.5em;
+  color: tomato;
+  padding-right: 10px;
+}
+
+.user-login:hover {
+  color: #f8a27c;
+}
+
+.pd-left {
+  padding-left: 0;
 }
 
 /*button*/
@@ -87,24 +122,27 @@ header a {
   margin: 0;
 }
 
-.user-navbar {
-  background-color: #f2d7de;
-}
-.container-footer {
+/* .container-footer {
   width: 95%;
   max-width: 120rem;
   margin: 0 auto;
   padding: 3rem 0rem;
   text-align: center;
-}
+} */
 
 .site-footer {
-  background-color: #9a8a8e;
+  /* background-color: #9a8a8e; */
+  background-color: #0d2821;
   margin: 0;
+  padding-top: 40px;
 }
 
 .site-footer nav {
   display: none;
+}
+
+.btn:hover {
+  color: #dc92a5;
 }
 
 .footer-derechos {
@@ -118,13 +156,43 @@ header a {
   padding-top: 8px;
 }
 
+li {
+  list-style: none;
+}
+
+.p-footer {
+  color: white;
+}
+
+.h5-footer {
+  color: white;
+}
+
+.h5-redes {
+  margin-bottom: 30px;
+}
+
+.ul-footer {
+  color: white;
+}
+
+.a-footer:link {
+  text-decoration: none;
+}
+
+.a-footer:hover {
+  color: pink;
+}
+
+.a-footer {
+  color: white;
+}
+
 @media (min-width: 768px) {
-  .dropdown {
-    display: none;
+  .visible-nav {
+    display: block;
   }
-  .dropdown-expanded {
-    display: flex;
-  }
+
   .container-footer {
     display: flex;
     justify-content: space-between;

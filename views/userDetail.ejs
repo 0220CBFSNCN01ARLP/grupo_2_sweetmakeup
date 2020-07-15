@@ -13,15 +13,63 @@
 <body>
     <%- include('partials/header') %>
 
-        <% if(typeof user != 'undefined') { %>
-            <%- include('partials/userNavbar') %>
-                <% } %>
+        <!-- Navbar -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 margin-menu">
+                    <nav class="nav">
+                        <a href="/products/create"><button type="button" class="btn btn-primary btn-sm mg-btn">
+                            Agregar producto
+                        </button></a>
+                        <a href="/users/myProducts"><button type="button" class="btn btn-primary btn-sm mg-btn">
+                            Mis Productos
+                        </button></a>
+                        <a href="/users/admin"><button type="button" class="btn btn-primary btn-sm mg-btn">
+                            Mis Datos
+                        </button></a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- /Navbar -->
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <h1>Mis datos</h1>
-                            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-start">
+                    <h1>Mis datos</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 row">
+                <div class="col-3 d-flex justify-content-center">
+                    <article class="article-odd">
+
+                        <% if (user.avatar != 0) { %>
+                            <img class="img-product d-flex align-items-center justify-content-center" src="/img/users/<%=user.avatar%>" alt="<%= user.avatar %>" />
+                            <% } else { %>
+                                <img class="img-product d-flex align-items-center justify-content-center" src="https://place-hold.it/500x500" alt="">
+                                <% } %>
+                    </article>
+                </div>
+
+                <div class="container col-9">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="ul-user">
+                                <li class="mg-li-user">
+                                    <strong>Nombre:</strong>
+                                    <%= user.firstName %>
+                                </li>
+                                <li class="mg-li-user">
+                                    <strong>Apellido:</strong>
+                                    <%= user.lastName %>
+                                </li>
+                                <li class="mg-li-user"><strong>Mail:</strong>
+                                    <%= user.email %>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -59,15 +107,16 @@
 
                                 <div class="row">
                                     <div class="col-12">
-                                        <a href="/users/editpassword" class="pd-button-edit"><button class="btn btn-pink">Cambiar
-                                contraseña</button></a>
+                                        <a href="/users/editpassword" class="pd-button-edit"><button
+                                            class="btn btn-pink">Cambiar
+                                            contraseña</button></a>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-12">
                                         <a href="/users/edit" class="pd-button-edit"><button class="btn btn-pink">Editar mis
-                                datos</button></a>
+                                            datos</button></a>
                                     </div>
                                 </div>
                             </div>

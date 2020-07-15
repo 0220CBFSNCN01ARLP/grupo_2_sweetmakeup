@@ -1,0 +1,99 @@
+<footer class="site-footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <div class="d-flex justify-content-center">
+                    <img src="/img/logo3.png" alt="" />
+                </div>
+                <div class="text-center">
+                    <p class="p-footer">
+                        Ayudamos a los fabricantes independientes de MakeUp a que puedan llegar a todas las personas
+                        interesadas en sus productos. Tambien te ayudamos a vos, a tener mayor variedad al momento de
+                        elegir un producto de maquillaje. Porque alla afuera, hay muchas gente haciendo productos
+                        verdaderamente marivilloso. Y no queremos que re lo pierdas <svg width="1em" height="1em"
+                            viewBox="0 0 16 16" class="bi bi-emoji-smile" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path fill-rule="evenodd"
+                                d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683z" />
+                            <path
+                                d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+                        </svg>
+                    </p>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-4">
+                        <h5 class="text-center h5-footer">Usuario</h5>
+                        <ul class="text-center ul-footer">
+                            <% if(typeof user == 'undefined') { %>
+                            <a class="a-footer" href="/users/register">
+                                <li>Registarse</li>
+                            </a>
+                            <a class="a-footer" href="/users/register">
+                                <li>Iniciar Sesion</li>
+                            </a>
+                            <% } %>
+                            <% if(typeof user != 'undefined') { %>
+                            <a class="a-footer" href="#">
+                                <li>Mis compras</li>
+                            </a>
+                            <a class="a-footer" href="#">
+                                <li>Mis favoritos</li>
+                            </a>
+                            <% } %>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <h5 class="text-center h5-footer">Marcas</h5>
+                        <ul class="text-center ul-footer">
+                            <% if(typeof user == 'undefined') { %>
+                            <a class="a-footer" href="/users/register">
+                                <li>Registarse</li>
+                            </a>
+                            <a class="a-footer" href="/users/register">
+                                <li>Iniciar Sesion</li>
+                            </a>
+                            <% } %>
+                            <% if(typeof user != 'undefined') { %>
+                            <a class="a-footer" href="/products/create">
+                                <li>Vender</li>
+                            </a>
+                            <a class="a-footer" href="/users/myProducts">
+                                <li>Mis productos</li>
+                            </a>
+                            <a class="a-footer" href="/users/myProducts">
+                                <li>Editar producto</li>
+                            </a>
+                            <a class="a-footer" href="/users/admin">
+                                <li>Mis datos</li>
+                            </a>
+                            <% } %>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <h5 class="text-center h5-footer h5-redes">Redes Sociales</h5>
+                        <nav class="redes">
+                            <a href="https://www.facebook.com/ "><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/ "><i class="fab fa-twitter"></i></a>
+                            <a href="# "><i class="fab fa-pinterest"></i></a>
+                            <a href="# "><i class="fab fa-youtube"></i></a>
+                            <a href="# "><i class="fab fa-instagram"></i></a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-12">
+                <h6>
+                    <i class="far fa-copyright"></i> 2020 - Todos los derechos reservados
+                </h6>
+            </div>
+        </div>
+    </div>
+</footer>

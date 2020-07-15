@@ -4,64 +4,65 @@ const path = require("path");
 const usersController = require("../controllers/usersController");
 const multer = require("multer");
 const guestMiddleware = require("../middlewares/guestMiddleware");
-const {
-    User
-} = require("../database/models");
-const {
-    check,
-    validationResult,
-    body
-} = require("express-validator");
+const { User } = require("../database/models");
+const { check, validationResult, body } = require("express-validator");
 const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, "./public/img/users");
-    },
-    filename: function(req, file, cb) {
-        cb(
-            null,
-            file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-        );
-    },
+  destination: function (req, file, cb) {
+    cb(null, "./public/img/users");
+  },
+  filename: function (req, file, cb) {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
+  },
 });
 const upload = multer({
-    storage: storage,
+  storage,
+  fileFilter: (req, file, cb) => {
+    if (["image/jpeg", "image/png"].includes(file.mimetype)) {
+      return cb(null, true);
+    }
+    return cb(null, false);
+  },
 });
 
 async function checkRepeatEmail(email) {
-    let emailCheck = await User.findOne({
-        where: {
-            email: email
-        }
-    });
-    if (emailCheck !== null) {
-        console.log("User Exists");
-        return Promise.reject("El email ya está en uso");
-    }
+  let emailCheck = await User.findOne({
+    where: {
+      email: email,
+    },
+  });
+  if (emailCheck !== null) {
+    console.log("User Exists");
+    return Promise.reject("El email ya está en uso");
+  }
 }
 
 // Creando un registro
 
 router.get("/register", guestMiddleware, usersController.showRegister);
 router.post(
-    "/register",
-    upload.any(), [
-        check("firstName").isLength({
-            min: 0,
-        }),
-        check("lastName").isLength({
-            min: 0,
-        }),
-        check("email").isEmail(),
-        check("email")
-        .custom(checkRepeatEmail)
-        .withMessage("Ya existe una cuenta con ese email"),
-        check("password")
-        .isLength({
-            min: 8,
-        })
-        .withMessage("La contraseña debe tener al menos 8 caracteres"),
-    ],
-    usersController.register
+  "/register",
+  upload.any(),
+  [
+    check("firstName").isLength({
+      min: 0,
+    }),
+    check("lastName").isLength({
+      min: 0,
+    }),
+    check("email").isEmail(),
+    check("email")
+      .custom(checkRepeatEmail)
+      .withMessage("Ya existe una cuenta con ese email"),
+    check("password")
+      .isLength({
+        min: 8,
+      })
+      .withMessage("La contraseña debe tener al menos 8 caracteres"),
+  ],
+  usersController.register
 );
 
 // Log in
@@ -76,11 +77,15 @@ router.get("/logout", usersController.logout);
 router.get("/admin", usersController.userDetail);
 router.get("/myProducts", usersController.myProducts);
 
-//Edit 
+//Edit
 
 router.get("/edit", usersController.userEdit);
 router.get("/editpassword", usersController.userEditPassword);
 router.put("/edit/:id", upload.any(), usersController.userUpdate);
-router.put("/editpassword/:id", upload.any(), usersController.userUpdatePassword);
+router.put(
+  "/editpassword/:id",
+  upload.any(),
+  usersController.userUpdatePassword
+);
 
 module.exports = router;

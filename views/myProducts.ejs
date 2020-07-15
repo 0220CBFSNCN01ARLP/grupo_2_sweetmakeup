@@ -10,9 +10,25 @@
 <body>
     <%- include('partials/header') %>
 
-    <% if(typeof user != 'undefined') { %>
-    <%- include('partials/userNavbar') %>
-    <% } %>
+    <!-- Navbar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 margin-menu">
+                <nav class="nav">
+                    <a href="/products/create"><button type="button" class="btn btn-primary btn-sm mg-btn">
+                            Agregar producto
+                        </button></a>
+                    <a href="/users/myProducts"><button type="button" class="btn btn-primary btn-sm mg-btn">
+                            Mis Productos
+                        </button></a>
+                    <a href="/users/admin"><button type="button" class="btn btn-primary btn-sm mg-btn">
+                            Mis Datos
+                        </button></a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
 
     <main class="container mt-1">
         <div>
@@ -32,9 +48,9 @@
                     <a href="/products/<%= product.id %>">
                         <% if (product.images.length > 0) { %>
                         <img class="imgMain card-img-top img-fluid" src="/img/products/<%= product.images[0].route%>"
-                            alt="<%= product.name %>"/>
+                            alt="<%= product.name %>" />
                         <% } else { %>
-                            <img class="imgMain card-img-top img-fluid" src="https://place-hold.it/500x500" alt="">
+                        <img class="imgMain card-img-top img-fluid" src="https://place-hold.it/500x500" alt="">
                         <% } %>
                     </a>
 
