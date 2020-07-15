@@ -122,17 +122,19 @@ nav #marker {
   margin: 0;
 }
 
-.container-footer {
+/* .container-footer {
   width: 95%;
   max-width: 120rem;
   margin: 0 auto;
   padding: 3rem 0rem;
   text-align: center;
-}
+} */
 
 .site-footer {
-  background-color: #9a8a8e;
+  /* background-color: #9a8a8e; */
+  background-color: #0d2821;
   margin: 0;
+  padding-top: 40px;
 }
 
 .site-footer nav {
@@ -152,6 +154,34 @@ nav #marker {
   margin: 0;
   color: white;
   padding-top: 8px;
+}
+
+li {
+  list-style: none;
+}
+
+.p-footer {
+  color: white;
+}
+
+.h5-footer {
+  color: white;
+}
+
+.ul-footer {
+  color: white;
+}
+
+.a-footer:link {
+  text-decoration: none;
+}
+
+.a-footer:hover {
+  color: pink;
+}
+
+.a-footer {
+  color: white;
 }
 
 @media (min-width: 768px) {

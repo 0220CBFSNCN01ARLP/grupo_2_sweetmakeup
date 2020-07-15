@@ -13,6 +13,26 @@
   <%- include('partials/header') %>
   <!-- /Header -->
 
+  <!-- Navbar -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12 margin-menu">
+        <nav class="nav">
+          <a href="/products/create"><button type="button" class="btn btn-primary btn-sm mg-btn">
+              Agregar producto
+            </button></a>
+          <a href="/users/myProducts"><button type="button" class="btn btn-primary btn-sm mg-btn">
+              Mis Productos
+            </button></a>
+          <a href="/users/admin"><button type="button" class="btn btn-primary btn-sm mg-btn">
+              Mis Datos
+            </button></a>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- /Navbar -->
+
   <main>
     <!-- Cargar Producto -->
     <div class="container">
@@ -172,17 +192,10 @@
             <input type="text" class="form-control" placeholder="Pegar el Link" name="link" id="link" />
           </div>
 
-          <div class="col-12 d-flex justify-content-end mg-button">
-            <!-- <button
-                class="btn btn-secondary btn-sm button-margin"
-              >
-                Ver adelanto
-              </button>
-              <button
-                class="btn btn-secondary btn-sm button-margin"
-              >
-                Guardar Borrador
-              </button> -->
+          <div class="col-12 d-flex justify-content-end mg-button div-buttons">
+            <button type="button" class="btn btn-secondary btn-sm button-margin">
+              Guardar Borrador
+            </button>
             <button id="submitBtn" type="submit" class="btn btn-primary btn-sm button-margin">
               Publicar
             </button>

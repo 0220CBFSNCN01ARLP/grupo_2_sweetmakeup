@@ -16,7 +16,7 @@
 }
 
 #title {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .title-p {
@@ -85,4 +85,8 @@
   color: red;
   display: none;
   font-size: 0.8rem;
+}
+
+.div-buttons {
+  padding-bottom: 15px;
 }
