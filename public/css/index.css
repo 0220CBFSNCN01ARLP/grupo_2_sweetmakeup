@@ -43,14 +43,14 @@
 
 .padding-category {
   padding-top: 15px;
-  padding-left: 40px;
+  padding-left: 80px;
   padding-right: 0px;
   padding-bottom: 10px;
   align-content: center;
 }
 
 .category {
-  color: white;
+  color: #716669;
   text-align: left;
   display: inline;
 }
@@ -61,7 +61,7 @@
 
 .ver-todos {
   display: initial;
-  color: white;
+  color: #716669;
   padding-left: 20px;
   display: inline;
 }
