@@ -73,6 +73,7 @@
 
           <div class="col-12 margin-col">
             <div>
+              <% if (!images) %>
               <p>Imagenes del producto</p>
               <div class="col-3 card d-flex align-items-center justify-content-center" style="width: 10rem;">
                 <% for (let i = 0; i < product.images.length; i++) { %>
