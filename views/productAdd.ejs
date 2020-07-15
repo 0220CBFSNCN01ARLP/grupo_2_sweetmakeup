@@ -13,9 +13,6 @@
   <%- include('partials/header') %>
   <!-- /Header -->
 
-  <% if(typeof user != 'undefined') { %> <%- include('partials/userNavbar') %>
-  <% } %>
-
   <main>
     <!-- Cargar Producto -->
     <div class="container">
@@ -44,138 +41,139 @@
             <% } %>
           </div>
 
-        </div>
-        <div class="col-12 col-sm-6 margin-col">
-          <label for="productName">Nombre del Producto *</label>
-          <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName"
-            id="productName" />
-          <p class="errorMsg" id="nameEmptyMsg">
-            El nombre del producto no puede estar vacío
-          </p>
-          <p class="errorMsg" id="nameShortMsg">
-            El nombre debe tener al menos 3 caracteres
-          </p>
-        </div>
-        <div class="col-12 col-sm-6 margin-col">
-          <label for="price">Precio *</label>
-          <input type="number" class="form-control" placeholder="Precio" name="price" id="price" />
-          <p class="errorMsg" id="priceEmptyMsg">Debe ingresar un precio</p>
-        </div>
 
-        <div class="col-12 margin-col">
-          <div class="form-group">
-            <label for="productImg">Subir una Imagen *</label>
-            <input type="file" class="form-control-file" id="productImg" name="productImg" />
+          <div class="col-12 col-sm-6 margin-col">
+            <label for="productName">Nombre del Producto *</label>
+            <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName"
+              id="productName" />
+            <p class="errorMsg" id="nameEmptyMsg">
+              El nombre del producto no puede estar vacío
+            </p>
+            <p class="errorMsg" id="nameShortMsg">
+              El nombre debe tener al menos 3 caracteres
+            </p>
           </div>
-        </div>
-
-        <div class="col-12 col-sm-6 margin-col">
-          <label for="thematic">Familia de Producto *</label>
-          <select class="form-control" name="thematic" id="thematic">
-            <option value="default" selected disabled hidden>Seleccioná la categoría del producto</option>
-            <% for (let category of categories) { %>
-            <option value="<%= category.id %>">
-              <%= category.name %>
-            </option>
-            <% } %>
-          </select>
-          <p class="errorMsg" id="thematicEmptyMsg">
-            Debes seleccionar una categoría
-          </p>
-        </div>
-
-        <div class="col-12 col-sm-6 margin-col">
-          <label for="brand">Marcas *</label>
-          <select class="form-control" name="brand" id="brand">
-            <option value="default" selected disabled hidden>Seleccioná la marca</option>
-            <% for (let brand of brands) { %>
-            <option value="<%= brand.id %>"> <%= brand.name %> </option>
-            <% } %>
-          </select>
-          <p class="errorMsg" id="brandEmptyMsg">
-            Debe seleccionar una marca
-          </p>
-        </div>
-
-        <div class="col-12 col-sm-6 margin-col">
-          <label for="discount">Oferta<span class="descuento">(de 1 a 100)</span></label>
-          <input class="form-control" placeholder="Porcentaje" type="number" min="1" max="100" id="discount"
-            name="discount" />
-        </div>
-
-        <div class="col-12 margin-col">
-          <label for="etiqueta">Etiqueta</label>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="new" name="etiqueta" value="nuevoLanzamiento" />
-            <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
+          <div class="col-12 col-sm-6 margin-col">
+            <label for="price">Precio *</label>
+            <input type="number" class="form-control" placeholder="Precio" name="price" id="price" />
+            <p class="errorMsg" id="priceEmptyMsg">Debe ingresar un precio</p>
           </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta" value="conDescuento" />
-            <label class="custom-control-label" for="descuento">Con Descuento</label>
+
+          <div class="col-12 margin-col">
+            <div class="form-group">
+              <label for="productImg">Subir una Imagen *</label>
+              <input type="file" class="form-control-file" id="productImg" name="productImg" />
+            </div>
           </div>
-        </div>
 
-        <div class="col-sm-6 none-cell margin-col">
-          <label for="description">Descripcion del Producto</label><br />
-          <p class="errorMsg" id="descriptionEmptyMsg">
-            Debe ingresar una descripción del producto
-          </p>
-          <p class="errorMsg" id="descriptionShortMsg">
-            La descripción debe tener al menos 20 caracteres
-          </p>
-          <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300"
-            placeholder="300 caracteres maximo"></textarea>
-        </div>
-
-        <div class="col-sm-6 none-cell margin-col">
-          <label for="ingredients">Informacion de Pago</label><br />
-          <textarea class="form-control" name="ingredients" id="ingredients" cols="35" rows="3" maxlength="300"
-            placeholder="300 caracteres maximo"></textarea>
-        </div>
-
-        <div class="col-sm-6 none-cell margin-col">
-          <label for="returnPolitic">Politicas de Devolucion</label><br />
-          <textarea class="form-control" name="returnPolitic" id="returnPolitic" cols="35" rows="3" maxlength="300"
-            placeholder="300 caracteres maximo"></textarea>
-        </div>
-
-        <div class="col-sm-6 none-cell margin-col">
-          <label for="shipping">Informacion de Envio</label><br />
-          <textarea class="form-control" name="shipping" id="shipping" cols="35" rows="3" maxlength="300"
-            placeholder="300 caracteres maximo"></textarea>
-        </div>
-
-        <div class="col-12 none-cell margin-col">
-          <label for="color">Variantes del Producto:</label>
-          <input type="color" value="#e8b4b4" id="color" name="color" />
-        </div>
-
-        <div class="col-12 none-cell margin-col envios">
-          <div class="col-12">
-            <h5><span>Envios</span></h5>
+          <div class="col-12 col-sm-6 margin-col">
+            <label for="thematic">Familia de Producto *</label>
+            <select class="form-control" name="thematic" id="thematic">
+              <option value="default" selected disabled hidden>Seleccioná la categoría del producto</option>
+              <% for (let category of categories) { %>
+              <option value="<%= category.id %>">
+                <%= category.name %>
+              </option>
+              <% } %>
+            </select>
+            <p class="errorMsg" id="thematicEmptyMsg">
+              Debes seleccionar una categoría
+            </p>
           </div>
-          <div class="col-sm-6">
-            <label for="weight">Peso:</label>
-            <input type="number" class="form-control" placeholder="kilogramos" name="weight" id="weight" />
-          </div>
-          <div class="col-sm-6 margin-dimension">
-            <p class="p-dimension">Dimensiones:</p>
-            <label for="height"></label>
-            <input type="number" class="form-control form-margin" placeholder="Alto (mm)" name="height" id="height" />
-            <label for="width"></label>
-            <input type="number" class="form-control form-margin" placeholder="Ancho (mm)" name="width" id="width" />
-            <label for="length"></label>
-            <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="length" id="length" />
-          </div>
-        </div>
 
-        <div class="col-12 none-cell margin-col">
-          <label for="link">Subir video de YouTube</label>
-          <input type="text" class="form-control" placeholder="Pegar el Link" name="link" id="link" />
-        </div>
+          <div class="col-12 col-sm-6 margin-col">
+            <label for="brand">Marcas *</label>
+            <select class="form-control" name="brand" id="brand">
+              <option value="default" selected disabled hidden>Seleccioná la marca</option>
+              <% for (let brand of brands) { %>
+              <option value="<%= brand.id %>"> <%= brand.name %> </option>
+              <% } %>
+            </select>
+            <p class="errorMsg" id="brandEmptyMsg">
+              Debe seleccionar una marca
+            </p>
+          </div>
 
-        <div class="col-12 d-flex justify-content-end mg-button">
-          <!-- <button
+          <div class="col-12 col-sm-6 margin-col">
+            <label for="discount">Oferta<span class="descuento">(de 1 a 100)</span></label>
+            <input class="form-control" placeholder="Porcentaje" type="number" min="1" max="100" id="discount"
+              name="discount" />
+          </div>
+
+          <div class="col-12 margin-col">
+            <label for="etiqueta">Etiqueta</label>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="new" name="etiqueta" value="nuevoLanzamiento" />
+              <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta" value="conDescuento" />
+              <label class="custom-control-label" for="descuento">Con Descuento</label>
+            </div>
+          </div>
+
+          <div class="col-sm-6 none-cell margin-col">
+            <label for="description">Descripcion del Producto</label><br />
+            <p class="errorMsg" id="descriptionEmptyMsg">
+              Debe ingresar una descripción del producto
+            </p>
+            <p class="errorMsg" id="descriptionShortMsg">
+              La descripción debe tener al menos 20 caracteres
+            </p>
+            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300"
+              placeholder="300 caracteres maximo"></textarea>
+          </div>
+
+          <div class="col-sm-6 none-cell margin-col">
+            <label for="ingredients">Informacion de Pago</label><br />
+            <textarea class="form-control" name="ingredients" id="ingredients" cols="35" rows="3" maxlength="300"
+              placeholder="300 caracteres maximo"></textarea>
+          </div>
+
+          <div class="col-sm-6 none-cell margin-col">
+            <label for="returnPolitic">Politicas de Devolucion</label><br />
+            <textarea class="form-control" name="returnPolitic" id="returnPolitic" cols="35" rows="3" maxlength="300"
+              placeholder="300 caracteres maximo"></textarea>
+          </div>
+
+          <div class="col-sm-6 none-cell margin-col">
+            <label for="shipping">Informacion de Envio</label><br />
+            <textarea class="form-control" name="shipping" id="shipping" cols="35" rows="3" maxlength="300"
+              placeholder="300 caracteres maximo"></textarea>
+          </div>
+
+          <div class="col-12 none-cell margin-col">
+            <label for="color">Variantes del Producto:</label>
+            <input type="color" value="#e8b4b4" id="color" name="color" />
+          </div>
+
+          <div class="col-12 none-cell margin-col envios">
+            <div class="col-12">
+              <h5><span>Envios</span></h5>
+            </div>
+            <div class="col-sm-6">
+              <label for="weight">Peso:</label>
+              <input type="number" class="form-control" placeholder="kilogramos" name="weight" id="weight" />
+            </div>
+            <div class="col-sm-6 margin-dimension">
+              <p class="p-dimension">Dimensiones:</p>
+              <label for="height"></label>
+              <input type="number" class="form-control form-margin" placeholder="Alto (mm)" name="height" id="height" />
+              <label for="width"></label>
+              <input type="number" class="form-control form-margin" placeholder="Ancho (mm)" name="width" id="width" />
+              <label for="length"></label>
+              <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="length"
+                id="length" />
+            </div>
+          </div>
+
+          <div class="col-12 none-cell margin-col">
+            <label for="link">Subir video de YouTube</label>
+            <input type="text" class="form-control" placeholder="Pegar el Link" name="link" id="link" />
+          </div>
+
+          <div class="col-12 d-flex justify-content-end mg-button">
+            <!-- <button
                 class="btn btn-secondary btn-sm button-margin"
               >
                 Ver adelanto
@@ -185,12 +183,12 @@
               >
                 Guardar Borrador
               </button> -->
-          <button id="submitBtn" type="submit" class="btn btn-primary btn-sm button-margin">
-            Publicar
-          </button>
+            <button id="submitBtn" type="submit" class="btn btn-primary btn-sm button-margin">
+              Publicar
+            </button>
+          </div>
         </div>
-    </div>
-    </form>
+      </form>
     </div>
     <!-- /Cargar Producto -->
   </main>

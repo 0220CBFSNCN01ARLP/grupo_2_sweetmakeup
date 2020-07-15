@@ -42,12 +42,12 @@ header {
   flex-grow: 1;
 }
 
-nav {
+#nav-section {
   position: relative;
   display: flex;
 }
 
-nav a {
+#a-section {
   position: relative;
   margin: 0 20px;
   font-size: 1.2em;
