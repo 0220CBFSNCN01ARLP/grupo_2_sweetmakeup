@@ -78,7 +78,10 @@ let controller = {
   // FER
   edit: async function (req, res, next) {
     //GET -> muestra el formulario
-    let pedidoProduct = await Product.findByPk(req.params.id);
+    let pedidoProduct = await Product.findByPk(req.params.id, {
+      include: ["images"],
+    });
+
     if (pedidoProduct == null) return res.redirect("/");
 
     let pedidoCategories = await Category.findAll();

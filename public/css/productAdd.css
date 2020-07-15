@@ -29,6 +29,17 @@
   color: red;
 }
 
+.errors {
+  margin-bottom: 15px;
+  background-color: #e8b4b4;
+}
+
+.error-msg {
+  size: 17px;
+  font-weight: 700;
+  padding-top: 10px;
+}
+
 .form-control:focus {
   border-color: rgb(248, 142, 248);
   outline: 0;

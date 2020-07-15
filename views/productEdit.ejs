@@ -12,9 +12,6 @@
   <!-- Header -->
   <%- include('partials/header') %>
   <!-- /Header -->
-  <% if(typeof user != 'undefined') { %>
-  <%- include('partials/userNavbar') %>
-  <% } %>
 
   <!-- Navbar -->
   <div class="container">
@@ -45,10 +42,15 @@
             <h2 id="title">Editar producto</h2>
             <p class="title-p none-tablet">
               Agregue las caracteristicas de su producto. Podra editarlo las
-              veces creas necesario.
+              veces que sean necesario.
             </p>
+            <p class="p-datos none-tablet">
+              * Campos obligatorios
+            </p>
+          </div>
+          <div class="col-12 errors">
             <% if( typeof errors != 'undefined') { %>
-            <p class="errors">Error</p>
+            <p class="error-msg">Errores que hemos detectado al momento de llenar el formulario:</p>
             <ul>
               <% for (let i=0; i<errors.length; i++) {%>
               <li>
@@ -57,9 +59,6 @@
               <% } %>
             </ul>
             <% } %>
-            <p class="p-datos none-tablet">
-              * Campos obligatorios
-            </p>
           </div>
           <div class="col-12 col-sm-6 margin-col">
             <label for="productName">Nombre del Producto *</label>
@@ -73,9 +72,24 @@
           </div>
 
           <div class="col-12 margin-col">
-            <div class="form-group">
-              <label for="productImg">Subir una Imagen</label>
-              <input type="file" class="form-control-file" id="productImg" name="productImg"/>
+            <div>
+              <p>Imagenes del producto</p>
+              <div class="col-3 card d-flex align-items-center justify-content-center" style="width: 10rem;">
+                <% for (let i = 0; i < product.images.length; i++) { %>
+                <img class="img-product-edit" src="/img/products/<%= product.images[i].route%>" alt="">
+                <% } %>
+                <div class="card-body">
+                  <form method="POST" action="">
+                    <a href="#" class="delete-image">
+                      <button type="button" class="btn btn-danger">Eliminar</button>
+                    </a>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="form-group up-images">
+              <label for="productImg">Subir una nueva imagen</label>
+              <input type="file" class="form-control-file" id="productImg" name="productImg" />
             </div>
           </div>
 

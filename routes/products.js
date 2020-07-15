@@ -18,8 +18,12 @@ var storage = multer.diskStorage({
     );
   },
 });
+
 var upload = multer({
   storage: storage,
+  fileFilter: (req, file) => {
+    file.mimetype === "image/jpeg";
+  },
 });
 
 // Creando desde cero un producto
@@ -32,42 +36,46 @@ router.post(
       .isLength({
         min: 4,
       })
-      .withMessage("El nombre del producto debe tener minimo 4 caracteres"),
-    check("price")
-      .isNumeric({
-        no_symbols: true,
-      })
-      .withMessage("Colocar un numero valido"),
+      .withMessage("Nombre del Producto: Debe tener al menos 4 caracteres"),
+    check("price").isNumeric().withMessage("Precio: Colocar un numero valido"),
     check("discount")
       .isInt({
         min: 1,
         max: 100,
       })
-      .withMessage("Coloque un numero entero del 1 al 100"),
+      .withMessage("Oferta: Coloque un numero entero del 1 al 100 sin comas"),
     check("description")
       .isLength({
         min: 20,
         max: 300,
       })
-      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+      .withMessage(
+        "Descripcion: Minimo: 20 caracteres, Maximo: 300 caracteres"
+      ),
     check("ingredients")
       .isLength({
         min: 20,
         max: 300,
       })
-      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+      .withMessage(
+        "Ingredientes: Minimo: 20 caracteres, Maximo: 300 caracteres"
+      ),
     check("returnPolitic")
       .isLength({
         min: 20,
         max: 300,
       })
-      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+      .withMessage(
+        "Politicas de Devolucion: Minimo: 20 caracteres, Maximo: 300 caracteres"
+      ),
     check("shipping")
       .isLength({
         min: 20,
         max: 300,
       })
-      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+      .withMessage(
+        "Informacion de Envio: Minimo: 20 caracteres, Maximo: 300 caracteres"
+      ),
     check("weight").isNumeric({ max: 10000 }),
     check("height").isNumeric({ max: 10000 }),
     check("width").isNumeric({ max: 10000 }),
@@ -91,42 +99,46 @@ router.put(
       .isLength({
         min: 4,
       })
-      .withMessage("El nombre del producto debe tener minimo 4 caracteres"),
-    check("price")
-      .isNumeric({
-        no_symbols: true,
-      })
-      .withMessage("Colocar un numero valido"),
+      .withMessage("Nombre del Producto: Debe tener al menos 4 caracteres"),
+    check("price").isNumeric().withMessage("Precio: Colocar un numero valido"),
     check("discount")
       .isInt({
         min: 1,
         max: 100,
       })
-      .withMessage("Coloque un numero entero del 1 al 100"),
+      .withMessage("Oferta: Coloque un numero entero del 1 al 100 sin comas"),
     check("description")
       .isLength({
         min: 20,
         max: 300,
       })
-      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+      .withMessage(
+        "Descripcion: Minimo: 20 caracteres, Maximo: 300 caracteres"
+      ),
     check("ingredients")
       .isLength({
         min: 20,
         max: 300,
       })
-      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+      .withMessage(
+        "Ingredientes: Minimo: 20 caracteres, Maximo: 300 caracteres"
+      ),
     check("returnPolitic")
       .isLength({
         min: 20,
         max: 300,
       })
-      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+      .withMessage(
+        "Politicas de Devolucion: Minimo: 20 caracteres, Maximo: 300 caracteres"
+      ),
     check("shipping")
       .isLength({
         min: 20,
         max: 300,
       })
-      .withMessage("Minimo: 20 caracteres, Maximo: 300 caracteres"),
+      .withMessage(
+        "Informacion de Envio: Minimo: 20 caracteres, Maximo: 300 caracteres"
+      ),
     check("weight").isNumeric({ max: 10000 }),
     check("height").isNumeric({ max: 10000 }),
     check("width").isNumeric({ max: 10000 }),

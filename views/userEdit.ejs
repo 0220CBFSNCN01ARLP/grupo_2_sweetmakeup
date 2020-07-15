@@ -3,61 +3,60 @@
 
 <head>
     <%- include("partials/head") %>
-        <link rel="stylesheet" href="/css/userDetail.css" />
-        <link rel="stylesheet" href="/css/register.css" />
-        <link rel="stylesheet" href="/css/userEdit.css" />
-        <script defer src="/js/userEditValidator.js"></script>
-        <title>Detalle de Usuario</title>
+    <link rel="stylesheet" href="/css/userDetail.css" />
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/userEdit.css" />
+    <script defer src="/js/userEditValidator.js"></script>
+    <title>Detalle de Usuario</title>
 </head>
 
 <body>
     <%- include('partials/header') %>
-        <% if(typeof user != 'undefined') { %>
-            <%- include('partials/userNavbar') %>
-                <% } %>
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <h1>Editar Mis Datos</h1>
-                            </div>
-                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Editar Mis Datos</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 containter">
+                <form id="contact-form-edit" method="POST" action="/users/edit/<%= user.id %>?_method=PUT">
+                    <label for="firstName">Nombre</label>
+                    <input class="form-control" type="text" id="firstName" name="firstName"
+                        value="<%= user.firstName %>" />
+                    <div class="firstName invalid-feedback"></div>
+
+                    <label for="lastName">Apellido</label>
+                    <input class="form-control" type="text" id="lastName" name="lastName"
+                        value="<%= user.lastName %>" />
+                    <div class="lastName invalid-feedback"></div>
+
+                    <label for="email">Direccion de correo electronico</label>
+                    <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" />
+                    <div class="email invalid-feedback"></div>
+
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input form-control" id="avatar" name="avatar" lang="es" />
+                        <label class="custom-file-label" for="avatar">Cambiar foto de perfil</label>
+                        <div class="avatar invalid-feedback"></div>
                     </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12 containter">
-                                <form id="contact-form-edit" method="POST" action="/users/edit/<%= user.id %>?_method=PUT">
-                                    <label for="firstName">Nombre</label>
-                                    <input class="form-control" type="text" id="firstName" name="firstName" value="<%= user.firstName %>" />
-                                    <div class="firstName invalid-feedback"></div>
-
-                                    <label for="lastName">Apellido</label>
-                                    <input class="form-control" type="text" id="lastName" name="lastName" value="<%= user.lastName %>" />
-                                    <div class="lastName invalid-feedback"></div>
-
-                                    <label for="email">Direccion de correo electronico</label>
-                                    <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" />
-                                    <div class="email invalid-feedback"></div>
-
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input form-control" id="avatar" name="avatar" lang="es" />
-                                        <label class="custom-file-label" for="avatar">Cambiar foto de perfil</label>
-                                        <div class="avatar invalid-feedback"></div>
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <button type="submit" class="btn btn-pink btn-block">
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-pink btn-block">
                         ¡Grabar!
                     </button>
 
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
-                    <%- include("partials/footer") %>
+    <%- include("partials/footer") %>
 </body>
 
 </html>
