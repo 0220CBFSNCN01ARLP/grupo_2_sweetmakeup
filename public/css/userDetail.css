@@ -34,3 +34,10 @@ input {
 button {
     margin-bottom: 25px;
 }
+
+.a img {
+    float: left;
+    width: 20%;
+    border-radius: 50%;
+    margin-left: 20px;
+}
