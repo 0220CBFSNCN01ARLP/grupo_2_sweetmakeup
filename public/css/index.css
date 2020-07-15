@@ -10,6 +10,44 @@
   object-fit: cover;
 }
 
+/* banner prueba */
+
+.banner-pd {
+  padding: 0;
+}
+
+.banner-img-prueba {
+  width: 100%;
+  height: 110vh;
+  object-fit: cover;
+  position: relative;
+}
+
+.title-banner-prueba {
+  position: absolute;
+  bottom: 270px;
+  left: 750px;
+  background-color: #0d2821;
+  width: 400px;
+  opacity: 0.6;
+}
+
+.title-banner-prueba2 {
+  position: absolute;
+  bottom: 270px;
+  left: 750px;
+  background-color: coral;
+  width: 400px;
+  opacity: 0.8;
+}
+
+.title-banner-main-prueba {
+  font-size: 35px;
+  line-height: 45px;
+  text-align: right;
+  color: white;
+}
+
 .title-banner {
   position: absolute;
   bottom: 30%;
