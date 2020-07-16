@@ -49,6 +49,7 @@ let controller = {
         height: req.body.height,
         width: req.body.width,
         length: req.body.length,
+        userId: req.session.user.id,
       });
       const newImage = await Image.create({
         productId: newProduct.id,

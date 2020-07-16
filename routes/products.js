@@ -149,7 +149,6 @@ router.put(
     check("height").isNumeric({ max: 10000 }),
     check("width").isNumeric({ max: 10000 }),
     check("length").isNumeric({ max: 10000 }),
-    check("link").isURL().withMessage("Coloque un URL valida"),
   ],
   productController.update
 ); /* PUT - Update in DB */
