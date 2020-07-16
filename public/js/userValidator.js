@@ -95,10 +95,8 @@ function validateIsEquals(fieldAId, fieldBId, errors) {
     if (fieldA.field.value != fieldB.field.value) {
         fieldA.field.classList.add("is-invalid");
         fieldB.field.classList.add("is-invalid");
-        const msgA = `debe ser el mismo valor que ${fieldBId}`;
-        const msgB = `debe ser el mismo valor que ${fieldAId}`;
+        const msgA = `Las contraseñas no coinciden`;
         displayInvalidFeedback(fieldAId, msgA, fieldA.invalidFeedback, errors);
-        displayInvalidFeedback(fieldBId, msgB, fieldB.invalidFeedback, errors);
     }
 }
 
@@ -165,7 +163,6 @@ formEdit.onsubmit = (evt) => {
     }
 
     validateEmail("email", errors);
-    // validateIsEquals("loginPassword", errors);
     minCharacters("firstName", 2, errors);
     minCharacters("lastName", 2, errors);
 
