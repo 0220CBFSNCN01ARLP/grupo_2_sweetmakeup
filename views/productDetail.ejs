@@ -72,7 +72,12 @@
       <div class="col-6 col-md-4 col-lg-3">
         <article class="product-card card my-2">
           <a href="/products/<%= elem.id %>">
-            <img class="img-product w-100" src="../IMG/productos/<%= elem.image %> " alt="<%= elem.name %> " />
+
+            <% if (elem.images.length > 0) { %>
+              <img class="img-product w-100" src="/img/products/<%= elem.images[0].route%>" alt="<%= product.name %>" />
+              <% } else { %>
+              <img class="img-product w-100" src="https://place-hold.it/500x500" alt="">
+              <% } %>
             <h3 class="card-title text-center"><%= elem.name %> </h3>
             <p class="price text-center"><%= elem.price %> </p>
           </a>

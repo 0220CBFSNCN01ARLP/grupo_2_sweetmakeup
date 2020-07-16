@@ -75,12 +75,6 @@
   margin: 3px;
 }
 
-.button-primary {
-  background-color: #e8b4b4;
-  border-color: #e8b4b4;
-  margin-right: 10px;
-}
-
 .errorMsg {
   color: red;
   display: none;
