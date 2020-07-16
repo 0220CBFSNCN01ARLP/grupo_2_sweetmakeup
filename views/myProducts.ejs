@@ -4,6 +4,7 @@
 <head>
     <%- include("partials/head") %>
     <link rel="stylesheet" href="/css/productAdd.css" />
+    <link rel="stylesheet" href="/css/myProducts.css">
     <title>Make.u | Mis Productos</title>
 </head>
 
@@ -26,7 +27,7 @@
             <% for( product of products ) { %>
             <div class="col-12 col-sm-6 col-md-4 h-100">
                 <article class="productCard card mt-2">
-                    <a href="/products/<%= product.id %>">
+                    <a class = "no-underline" href="/products/<%= product.id %>">
                         <h4 class="card-title"><%= product.name %></h4>
                     </a>
                     <a href="/products/<%= product.id %>">
@@ -43,7 +44,7 @@
                             <%= product.description %>
                         </p>
                         <p class="price">$<%= product.price %></p>
-                        <a href="/products/edit/<%= product.id %> "><button class="btn btn-pink btn-block m-1">
+                        <a class = "no-underline" href="/products/edit/<%= product.id %> "><button class="btn btn-pink btn-block m-1">
                                 Editar
                             </button></a>
                     </div>
