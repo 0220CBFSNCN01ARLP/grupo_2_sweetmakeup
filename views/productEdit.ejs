@@ -4,7 +4,7 @@
 <head>
   <%- include("partials/head") %>
   <link rel="stylesheet" href="/css/productEdit.css" />
-  <script defer src="/js/productEditValidator.js"></script>
+  <script defer src="/js/productValidator.js"></script>
   <title>Editar Producto</title>
 </head>
 
@@ -20,7 +20,11 @@
   <main>
     <!-- Cargar Producto -->
     <div class="container">
-      <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+
+      <form id="editForm" action="/products/edit/<%= product.id %>?_method=PUT" method="POST"></form>
+      <form id="deleteFormImage" method="POST" action=""></form>
+      <form id="deleteFormProduct" method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
+
         <div class="row">
           <div class="col-12 margin-col">
             <h2 id="title">Editar producto</h2>
@@ -44,22 +48,23 @@
             </ul>
             <% } %>
           </div>
+
           <div class="col-12 col-sm-6 margin-col">
             <label for="productName">Nombre del Producto *</label>
-            <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName"
+            <input form="editForm" type="text" class="form-control" placeholder="Nombre del Producto" name="productName"
               id="productName" required value="<%= product.name %>" />
-              <p class="errorMsg" id="nameEmptyMsg">
-                El nombre del producto no puede estar vacío
-              </p>
-              <p class="errorMsg" id="nameShortMsg">
-                El nombre debe tener al menos 3 caracteres
-              </p>
+            <p class="errorMsg" id="nameEmptyMsg">
+              El nombre del producto no puede estar vacío
+            </p>
+            <p class="errorMsg" id="nameShortMsg">
+              El nombre debe tener al menos 3 caracteres
+            </p>
           </div>
           <div class="col-12 col-sm-6 margin-col">
             <label for="price">Precio *</label>
-            <input type="number" class="form-control" placeholder="Precio" name="price" id="price" required step="any"
-              value="<%= product.price %>" />
-              <p class="errorMsg" id="priceEmptyMsg">Debe ingresar un precio</p>
+            <input form="editForm" type="number" class="form-control" placeholder="Precio" name="price" id="price"
+              required step="any" value="<%= product.price %>" />
+            <p class="errorMsg" id="priceEmptyMsg">Debe ingresar un precio</p>
           </div>
 
           <div class="col-12 margin-col">
@@ -70,25 +75,23 @@
                 <img class="img-product-edit" src="/img/products/<%= product.images[i].route%>" alt="">
                 <% } %>
                 <div class="card-body">
-                  <form method="POST" action="">
-                    <a href="#" class="delete-image">
-                      <button type="button" class="btn btn-danger">Eliminar</button>
-                    </a>
-                  </form>
+                  <a href="#" class="delete-image">
+                    <button form="deleteFormImage" type="submit" class="btn btn-danger">Eliminar</button>
+                  </a>
                 </div>
               </div>
             </div>
             <div class="form-group up-images">
               <label for="productImg">Subir una nueva imagen</label>
-              <input type="file" class="form-control-file" id="productImg" name="productImg" />
+              <input form="editForm" type="file" class="form-control-file" id="productImg" name="productImg" />
             </div>
           </div>
 
           <div class="col-12 col-sm-6 margin-col">
             <label for="thematic">Familia de Producto *</label>
-            <select required class="form-control" name="thematic" id="thematic">
+            <select form="editForm" required class="form-control" name="thematic" id="thematic">
               <% for (let category of categories) { %> <% if (category.id ==
-                product.categoryId) { %>
+              product.categoryId) { %>
               <option value="<%= category.id %>" selected>
                 <%= category.name %>
               </option>
@@ -105,9 +108,9 @@
 
           <div class="col-12 col-sm-6 margin-col">
             <label for="brand">Marcas *</label>
-            <select required class="form-control" name="brand" id="brand">
+            <select form="editForm" required class="form-control" name="brand" id="brand">
               <% for (let brand of brands) { %> <% if (brand.id ==
-                product.brandId) { %>
+              product.brandId) { %>
               <option value="<%= brand.id %>" selected>
                 <%= brand.name %>
               </option>
@@ -122,18 +125,19 @@
 
           <div class="col-12 col-sm-6 margin-col">
             <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
-            <input class="form-control" placeholder="Porcentaje" type="number" name="discount" id="discount" min="1"
-              max="100" id="oferta" value="<%= product.discount %>" />
+            <input form="editForm" class="form-control" placeholder="Porcentaje" type="number" name="discount"
+              id="discount" min="1" max="100" id="oferta" value="<%= product.discount %>" />
           </div>
 
           <div class="col-12 margin-col">
             <label for="etiqueta">Etiqueta *</label>
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="new" name="etiqueta" value="nuevoLanzamiento" />
+              <input form="editForm" type="checkbox" class="custom-control-input" id="new" name="etiqueta"
+                value="nuevoLanzamiento" />
               <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
             </div>
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta"
+              <input form="editForm" type="checkbox" class="custom-control-input" id="descuento" name="etiqueta"
                 checked="<%= descuento %>" />
               <label class="custom-control-label" for="descuento">Con Descuento</label>
             </div>
@@ -147,9 +151,9 @@
             <p class="errorMsg" id="descriptionShortMsg">
               La descripción debe tener al menos 20 caracteres
             </p>
-            <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300"
-              placeholder="300 caracteres maximo">
-<%= product.description %></textarea>
+            <textarea form="editForm" class="form-control" name="description" id="description" cols="35" rows="3"
+              maxlength="300" placeholder="300 caracteres maximo">
+            <%= product.description %></textarea>
           </div>
 
           <div class="col-sm-6 none-cell margin-col">
@@ -160,9 +164,9 @@
             <p class="errorMsg" id="ingredientsShortMsg">
               Ingrese al menos 20 caracteres
             </p>
-            <textarea class="form-control" name="ingredients" id="ingredients" cols="35" rows="3" maxlength="300"
-              placeholder="300 caracteres maximo">
-<%= product.ingredients %></textarea>
+            <textarea form="editForm" class="form-control" name="ingredients" id="ingredients" cols="35" rows="3"
+              maxlength="300" placeholder="300 caracteres maximo">
+            <%= product.ingredients %></textarea>
           </div>
 
           <div class="col-sm-6 none-cell margin-col">
@@ -173,27 +177,27 @@
             <p class="errorMsg" id="returnPolShortMsg">
               Ingrese al menos 20 caracteres
             </p>
-            <textarea class="form-control" name="returnPolitic" id="returnPolitic" cols="35" rows="3" maxlength="300"
-              placeholder="300 caracteres maximo">
-<%= product.returnPolitic %></textarea>
+            <textarea form="editForm" class="form-control" name="returnPolitic" id="returnPolitic" cols="35" rows="3"
+              maxlength="300" placeholder="300 caracteres maximo">
+            <%= product.returnPolitic %></textarea>
           </div>
 
           <div class="col-sm-6 none-cell margin-col">
             <label for="shipping">Informacion de Envio</label><br />
-            <p class="errorMsg" id="returnPolEmptyMsg">
+            <p class="errorMsg" id="shippingEmptyMsg">
               Este campo no puede estar vacío
             </p>
-            <p class="errorMsg" id="returnPolShortMsg">
+            <p class="errorMsg" id="shippingShortMsg">
               Ingrese al menos 20 caracteres
             </p>
-            <textarea class="form-control" name="shipping" id="shipping" cols="35" rows="3" maxlength="300"
-              placeholder="300 caracteres maximo">
-<%= product.shipping %></textarea>
+            <textarea form="editForm" class="form-control" name="shipping" id="shipping" cols="35" rows="3"
+              maxlength="300" placeholder="300 caracteres maximo">
+            <%= product.shipping %></textarea>
           </div>
 
           <div class="col-12 none-cell margin-col">
             <label for="color">Variantes del Producto:</label>
-            <input type="color" value="<%= color %>" id="color" name="color" />
+            <input form="editForm" type="color" value="<%= color %>" id="color" name="color" />
           </div>
 
           <div class="col-12 none-cell margin-col envios">
@@ -202,46 +206,41 @@
             </div>
             <div class="col-sm-6">
               <label for="weight">Peso:</label>
-              <input type="number" class="form-control" placeholder="kilogramos" name="weight" id="weight"
-                value="<%= product.weight %>" />
+              <input form="editForm" type="number" class="form-control" placeholder="kilogramos" name="weight"
+                id="weight" value="<%= product.weight %>" />
             </div>
             <div class="col-sm-6 margin-dimension">
               <p class="p-dimension">Dimensiones:</p>
               <label for="height"></label>
-              <input type="number" class="form-control form-margin" placeholder="Alto (mm)" name="height" id="height"
-                value="<%= product.height %>" />
+              <input form="editForm" type="number" class="form-control form-margin" placeholder="Alto (mm)"
+                name="height" id="height" value="<%= product.height %>" />
               <label for="width"></label>
-              <input type="number" class="form-control form-margin" placeholder="Ancho (mm)" name="width" id="width"
-                value="<%= product.width %>" />
+              <input form="editForm" type="number" class="form-control form-margin" placeholder="Ancho (mm)"
+                name="width" id="width" value="<%= product.width %>" />
               <label for="length"></label>
-              <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="length" id="length"
-                value="<%= product.length %>" />
+              <input form="editForm" type="number" class="form-control form-margin" placeholder="Largo (mm)"
+                name="length" id="length" value="<%= product.length %>" />
             </div>
           </div>
 
           <div class="col-12 none-cell margin-col">
             <label for="link">Subir video de YouTube</label>
-            <input type="text" class="form-control" placeholder="Pegar el Link" name="link" id="link"
+            <input form="editForm" type="text" class="form-control" placeholder="Pegar el Link" name="link" id="link"
               value="<%= product.link %>" />
           </div>
 
-          <div class="col-12 d-flex justify-content-end mg-button">
+          <div class="col-12 d-flex justify-content-end mg-button div-buttons">
             <button type="button" class="btn btn-secondary btn-sm button-margin">
               Guardar Borrador
             </button>
-            <button type="submit" class="btn btn-primary btn-sm button-margin">
+            <button form="editForm" type="submit" class="btn btn-primary btn-sm button-margin">
               Publicar
+            </button>
+            <button form="deleteFormProduct" type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
+              ¡Borrar!
             </button>
           </div>
         </div>
-      </form>
-      <div class="col-12 d-flex justify-content-end mg-button">
-        <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
-          <button type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
-            ¡Borrar!
-          </button>
-        </form>
-      </div>
     </div>
     <!-- /Cargar Producto -->
   </main>

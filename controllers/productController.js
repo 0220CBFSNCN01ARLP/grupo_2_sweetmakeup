@@ -86,7 +86,7 @@ let controller = {
     let color = "#FFFFFF";
     let descuento = true;
 
-    res.render("productEdit2", {
+    res.render("productEdit", {
       product: pedidoProduct,
       categories: pedidoCategories,
       brands: pedidoBrands,
