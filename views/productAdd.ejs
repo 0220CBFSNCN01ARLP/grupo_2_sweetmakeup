@@ -26,7 +26,7 @@
             <h2 id="title">Agregar un producto</h2>
             <p class="title-p display-md-none">
               Agregue las caracteristicas de su producto. Podra editarlo las
-              veces que sean necesario.
+              veces que sea necesario.
             </p>
             <p class="p-datos">
               * Campos obligatorios
@@ -129,19 +129,37 @@
           </div>
 
           <div class="col-sm-6 none-cell margin-col">
-            <label for="ingredients">Informacion de Pago</label><br />
+            <label for="ingredients">Ingredientes</label><br />
+            <p class="errorMsg" id="ingredientsEmptyMsg">
+              Este campo no puede estar vacío
+            </p>
+            <p class="errorMsg" id="ingredientsShortMsg">
+              Ingrese al menos 20 caracteres
+            </p>
             <textarea class="form-control" name="ingredients" id="ingredients" cols="35" rows="3" maxlength="300"
               placeholder="300 caracteres maximo"></textarea>
           </div>
 
           <div class="col-sm-6 none-cell margin-col">
             <label for="returnPolitic">Politicas de Devolucion</label><br />
+            <p class="errorMsg" id="returnPolEmptyMsg">
+              Este campo no puede estar vacío
+            </p>
+            <p class="errorMsg" id="returnPolShortMsg">
+              Ingrese al menos 20 caracteres
+            </p>
             <textarea class="form-control" name="returnPolitic" id="returnPolitic" cols="35" rows="3" maxlength="300"
               placeholder="300 caracteres maximo"></textarea>
           </div>
 
           <div class="col-sm-6 none-cell margin-col">
             <label for="shipping">Informacion de Envio</label><br />
+            <p class="errorMsg" id="shippingEmptyMsg">
+              Este campo no puede estar vacío
+            </p>
+            <p class="errorMsg" id="shippingShortMsg">
+              Ingrese al menos 20 caracteres
+            </p>
             <textarea class="form-control" name="shipping" id="shipping" cols="35" rows="3" maxlength="300"
               placeholder="300 caracteres maximo"></textarea>
           </div>
