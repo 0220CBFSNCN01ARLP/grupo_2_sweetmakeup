@@ -4,6 +4,7 @@ var path = require("path");
 const productController = require("../controllers/productController");
 const authMiddleware = require("../middlewares/authMiddleware");
 const multer = require("multer");
+const productEditMiddleware = require("../middlewares/productEditMiddleware")
 
 const { check, validationResult, body } = require("express-validator");
 
@@ -91,9 +92,11 @@ router.post(
 /*** EDIT ONE PRODUCT ***/
 router.get(
   "/edit/:id",
-  authMiddleware,
+  productEditMiddleware,
   productController.edit
-); /* GET - Form to create */
+); 
+
+/* GET - Form to create */
 router.put(
   "/edit/:id",
   upload.any(),

@@ -1,4 +1,3 @@
-
 let form = document.getElementById("createForm");
 
 function notEmpty(fieldId, errorMsgId, errors) {
