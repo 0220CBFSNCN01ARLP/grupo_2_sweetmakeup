@@ -174,12 +174,15 @@ let controller = {
       include: ["category", "images"],
     });
     let related = await Product.findAll({
-      include: {
-        association: "category",
-        where: {
-          name: product.category.name,
+      include: [
+        {
+          association: "category",
+          where: {
+            name: product.category.name,
+          },
         },
-      },
+        "images",
+      ],
       limit: 4,
     });
 
