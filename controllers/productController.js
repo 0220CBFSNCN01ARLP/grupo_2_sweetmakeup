@@ -1,10 +1,5 @@
 const multer = require("multer");
 
-// CRUD:
-// CREATE UPDATE: Fer
-// READ: Agus
-// DELETE: Gena
-
 const { getProducts, productsFilePath } = require("../utils/products");
 
 const { check, validationResult, body } = require("express-validator");
@@ -137,12 +132,14 @@ let controller = {
         }
       );
       if (req.files) {
-        let newImage = await Image.create({
-          productId: newProduct.id,
-          size: req.files[0].size,
-          fileType: req.files[0].mimetype,
-          route: req.files[0].filename,
-        });
+        for (let i = 0; i < req.files.length; i++) {
+          let newImage = await Image.create({
+            productId: newProduct.id,
+            size: req.files[0].size,
+            fileType: req.files[0].mimetype,
+            route: req.files[0].filename,
+          });
+        }
       }
       res.redirect("/products/" + req.params.id);
     } else {
@@ -163,11 +160,6 @@ let controller = {
   //GENARO
 
   destroy: async (req, res) => {
-    // ASI LO HACE PABLO
-    // const product = await Product.findByPk(req.params.id);
-    // await product.destroy();
-
-    // MAS EFICIENTE PORQUE HACE SOLO UNA CONSULTA
     await Product.destroy({
       where: {
         id: req.params.id,
@@ -176,8 +168,6 @@ let controller = {
 
     res.redirect("/");
   },
-
-  //AGUS
 
   detail: async function (req, res, next) {
     let product = await Product.findByPk(req.params.id, {

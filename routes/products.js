@@ -156,7 +156,6 @@ router.put(
 
 // Borrando un producto
 router.delete("/delete/:id", authMiddleware, productController.destroy);
-
 router.get("/:id", productController.detail);
 
 module.exports = router;

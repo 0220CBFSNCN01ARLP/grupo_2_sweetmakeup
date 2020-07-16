@@ -44,15 +44,19 @@ form.addEventListener("submit", function (e) {
   notEmpty("price", "priceEmptyMsg", errors);
   notEmpty("description", "descriptionEmptyMsg", errors);
   notEmpty("ingredients", "ingredientsEmptyMsg", errors);
-  notEmpty("returnPol", "returnPolEmptyMsg", errors);
+  notEmpty("returnPolitic", "returnPolEmptyMsg", errors);
   notEmpty("shipping", "shippingEmptyMsg", errors);
+  notEmpty("weight", "weightEmptyMsg", errors);
+  notEmpty("height", "heightEmptyMsg", errors);
+  notEmpty("width", "widthEmptyMsg", errors);
+  notEmpty("length", "lengthEmptyMsg", errors);
   selectNotEmpty("brand", "brandEmptyMsg", errors);
   selectNotEmpty("thematic", "thematicEmptyMsg", errors);
   minCharacters("productName", 3, "nameShortMsg", errors);
   minCharacters("description", 20, "descriptionShortMsg", errors);
   minCharacters("ingredients", 20, "ingredientsShortMsg", errors);
-  minCharacters("returnPol", 20, "returnPolShortMsg", errors);
-  minCharacters("shipping", 20, "shippingShortMsg", errors)
+  minCharacters("returnPolitic", 20, "returnPolShortMsg", errors);
+  minCharacters("shipping", 20, "shippingShortMsg", errors);
   console.log(errors)
 
   if (errors.length == 0){
