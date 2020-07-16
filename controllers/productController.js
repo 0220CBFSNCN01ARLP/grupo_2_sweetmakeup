@@ -105,7 +105,9 @@ let controller = {
   //PUT /products/edit/12385
   update: async (req, res, next) => {
     let errors = validationResult(req);
-    let pedidoProduct = await Product.findByPk(req.params.id);
+    let pedidoProduct = await Product.findByPk(req.params.id, {
+      include: ["category", "images"],
+    });
     let color = "#FFFFFF";
     let descuento = true;
 

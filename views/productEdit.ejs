@@ -4,7 +4,6 @@
 <head>
   <%- include("partials/head") %>
   <link rel="stylesheet" href="/css/productEdit.css" />
-
   <title>Editar Producto</title>
 </head>
 
@@ -48,11 +47,18 @@
             <label for="productName">Nombre del Producto *</label>
             <input type="text" class="form-control" placeholder="Nombre del Producto" name="productName"
               id="productName" required value="<%= product.name %>" />
+              <p class="errorMsg" id="nameEmptyMsg">
+                El nombre del producto no puede estar vacío
+              </p>
+              <p class="errorMsg" id="nameShortMsg">
+                El nombre debe tener al menos 3 caracteres
+              </p>
           </div>
           <div class="col-12 col-sm-6 margin-col">
             <label for="price">Precio *</label>
             <input type="number" class="form-control" placeholder="Precio" name="price" id="price" required step="any"
               value="<%= product.price %>" />
+              <p class="errorMsg" id="priceEmptyMsg">Debe ingresar un precio</p>
           </div>
 
           <div class="col-12 margin-col">
@@ -91,6 +97,9 @@
               </option>
               <% } %> <% } %>
             </select>
+            <p class="errorMsg" id="thematicEmptyMsg">
+              Debes seleccionar una categoría
+            </p>
           </div>
 
           <div class="col-12 col-sm-6 margin-col">
@@ -105,6 +114,9 @@
               <option value="<%= brand.id %>"> <%= brand.name %> </option>
               <% } %> <% } %>
             </select>
+            <p class="errorMsg" id="brandEmptyMsg">
+              Debe seleccionar una marca
+            </p>
           </div>
 
           <div class="col-12 col-sm-6 margin-col">
@@ -128,6 +140,12 @@
 
           <div class="col-sm-6 none-cell margin-col">
             <label for="descripcion">Descripcion del Producto</label><br />
+            <p class="errorMsg" id="descriptionEmptyMsg">
+              Debe ingresar una descripción del producto
+            </p>
+            <p class="errorMsg" id="descriptionShortMsg">
+              La descripción debe tener al menos 20 caracteres
+            </p>
             <textarea class="form-control" name="description" id="description" cols="35" rows="3" maxlength="300"
               placeholder="300 caracteres maximo">
 <%= product.description %></textarea>
@@ -135,6 +153,12 @@
 
           <div class="col-sm-6 none-cell margin-col">
             <label for="ingredients">Ingredientes</label><br />
+            <p class="errorMsg" id="ingredientsEmptyMsg">
+              Este campo no puede estar vacío
+            </p>
+            <p class="errorMsg" id="ingredientsShortMsg">
+              Ingrese al menos 20 caracteres
+            </p>
             <textarea class="form-control" name="ingredients" id="ingredients" cols="35" rows="3" maxlength="300"
               placeholder="300 caracteres maximo">
 <%= product.ingredients %></textarea>
@@ -142,6 +166,12 @@
 
           <div class="col-sm-6 none-cell margin-col">
             <label for="returnPolitic">Politicas de Devolucion</label><br />
+            <p class="errorMsg" id="returnPolEmptyMsg">
+              Este campo no puede estar vacío
+            </p>
+            <p class="errorMsg" id="returnPolShortMsg">
+              Ingrese al menos 20 caracteres
+            </p>
             <textarea class="form-control" name="returnPolitic" id="returnPolitic" cols="35" rows="3" maxlength="300"
               placeholder="300 caracteres maximo">
 <%= product.returnPolitic %></textarea>
@@ -149,6 +179,12 @@
 
           <div class="col-sm-6 none-cell margin-col">
             <label for="shipping">Informacion de Envio</label><br />
+            <p class="errorMsg" id="returnPolEmptyMsg">
+              Este campo no puede estar vacío
+            </p>
+            <p class="errorMsg" id="returnPolShortMsg">
+              Ingrese al menos 20 caracteres
+            </p>
             <textarea class="form-control" name="shipping" id="shipping" cols="35" rows="3" maxlength="300"
               placeholder="300 caracteres maximo">
 <%= product.shipping %></textarea>
