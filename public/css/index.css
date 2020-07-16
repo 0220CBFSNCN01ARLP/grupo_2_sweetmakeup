@@ -77,9 +77,9 @@
 
 /* Submenu secciones iconos */
 
-.img-icon {
+/* .img-icon {
   width: 85%;
-}
+} */
 
 .sub-menu-index {
   display: none;
@@ -225,7 +225,7 @@
 
 @media (min-width: 426px) {
   .img-icon {
-    width: 50%;
+    width: 40%;
   }
   .arrow {
     display: none;
@@ -234,8 +234,9 @@
 
 @media (min-width: 769px) {
   .img-icon {
-    width: 30%;
+    width: 25%;
   }
+
   .title-banner {
     bottom: 15%;
     width: 400px;
