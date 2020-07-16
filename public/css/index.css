@@ -105,13 +105,9 @@
   display: inline;
 }
 
-<<<<<<< HEAD
-.btn-todos {
+.btn-todos,
+.btn-todos:hover {
   text-decoration: none;
-=======
-.btn-todos, .btn-todos:hover {
-    text-decoration: none;
->>>>>>> 7b41b62bd428fc3b41fb5d45ab2da3a7f3a9ce47
 }
 
 .ver-todos {
