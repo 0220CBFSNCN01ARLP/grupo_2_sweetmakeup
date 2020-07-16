@@ -52,7 +52,7 @@
           <div class="col-12 col-sm-6 margin-col">
             <label for="productName">Nombre del Producto *</label>
             <input form="editForm" type="text" class="form-control" placeholder="Nombre del Producto" name="productName"
-              id="productName" required value="<%= product.name %>" />
+              id="productName" value="<%= product.name %>" />
             <p class="errorMsg" id="nameEmptyMsg">
               El nombre del producto no puede estar vacío
             </p>
@@ -63,7 +63,7 @@
           <div class="col-12 col-sm-6 margin-col">
             <label for="price">Precio *</label>
             <input form="editForm" type="number" class="form-control" placeholder="Precio" name="price" id="price"
-              required step="any" value="<%= product.price %>" />
+              step="any" value="<%= product.price %>" />
             <p class="errorMsg" id="priceEmptyMsg">Debe ingresar un precio</p>
           </div>
 
@@ -89,7 +89,7 @@
 
           <div class="col-12 col-sm-6 margin-col">
             <label for="thematic">Familia de Producto *</label>
-            <select form="editForm" required class="form-control" name="thematic" id="thematic">
+            <select form="editForm" class="form-control" name="thematic" id="thematic">
               <% for (let category of categories) { %> <% if (category.id ==
               product.categoryId) { %>
               <option value="<%= category.id %>" selected>
@@ -108,7 +108,7 @@
 
           <div class="col-12 col-sm-6 margin-col">
             <label for="brand">Marcas *</label>
-            <select form="editForm" required class="form-control" name="brand" id="brand">
+            <select form="editForm" class="form-control" name="brand" id="brand">
               <% for (let brand of brands) { %> <% if (brand.id ==
               product.brandId) { %>
               <option value="<%= brand.id %>" selected>
@@ -126,7 +126,7 @@
           <div class="col-12 col-sm-6 margin-col">
             <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
             <input form="editForm" class="form-control" placeholder="Porcentaje" type="number" name="discount"
-              id="discount" min="1" max="100" id="oferta" value="<%= product.discount %>" />
+              id="discount" min="0" max="100" id="oferta" value="<%= product.discount %>" />
           </div>
 
           <div class="col-12 margin-col">

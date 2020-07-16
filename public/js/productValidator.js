@@ -1,4 +1,4 @@
-let form = document.getElementById("createForm");
+let form = document.getElementById("createForm") ? document.getElementById("createForm") : document.getElementById("editForm")
 
 function notEmpty(fieldId, errorMsgId, errors) {
   let field = document.getElementById(fieldId);
