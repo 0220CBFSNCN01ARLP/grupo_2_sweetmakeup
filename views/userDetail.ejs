@@ -3,86 +3,84 @@
 
 <head>
     <%- include("partials/head") %>
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/css/productAdd.css">
-    <link rel="stylesheet" href="/css/register.css" />
-    <link rel="stylesheet" href="/css/userDetail.css" />
-    <title>Detalle de Usuario</title>
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/productAdd.css">
+        <link rel="stylesheet" href="/css/register.css" />
+        <link rel="stylesheet" href="/css/userDetail.css" />
+        <title>Detalle de Usuario</title>
 </head>
 
 <body>
     <%- include('partials/header') %>
 
-    <!-- Navbar -->
-    <%- include('partials/nav-user') %>
-    <!-- /Navbar -->
+        <!-- Navbar -->
+        <%- include('partials/nav-user') %>
+            <!-- /Navbar -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-start">
-                <h1>Mis datos</h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="row container-datos">
-        <div class="col-12 row">
-            <div class="col-12 col-md-3 col-lg-3 d-flex justify-content-center">
-                <div class="article-odd">
-
-                    <% if (user.avatar != 0) { %>
-                    <img class="img-product d-flex justify-content-center img-avatar" src="/img/users/<%=user.avatar%>"
-                        alt="<%= user.avatar %>" />
-                    <% } else { %>
-                    <img class="img-product d-flex align-items-center justify-content-center"
-                        src="https://place-hold.it/500x500" alt="">
-                    <% } %>
-                </div>
-            </div>
-
-            <div class="col-10 col-md-9 col-lg-9">
+            <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <ul class="ul-user">
-                            <li class="mg-li-user">
-                                <strong>Nombre:</strong>
-                                <%= user.firstName %>
-                            </li>
-                            <li class="mg-li-user">
-                                <strong>Apellido:</strong>
-                                <%= user.lastName %>
-                            </li>
-                            <li class="mg-li-user"><strong>Mail:</strong>
-                                <%= user.email %>
-                            </li>
-                        </ul>
+                    <div class="col-12 d-flex justify-content-start">
+                        <h1>Mis datos</h1>
                     </div>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <a href="/users/editpassword" class="pd-button-edit"><button class="btn btn-pink">Cambiar
+            <div class="row container-datos">
+                <div class="col-12 row">
+                    <div class="col-12 col-md-3 col-lg-3 d-flex justify-content-center">
+                        <div class="article-odd">
+
+                            <% if (user.avatar != 0) { %>
+                                <img class="img-product d-flex justify-content-center img-avatar" src="/img/users/<%=user.avatar%>" alt="<%= user.avatar %>" />
+                                <% } else { %>
+                                    <img class="img-product d-flex align-items-center justify-content-center" src="https://place-hold.it/500x500" alt="">
+                                    <% } %>
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-md-9 col-lg-9">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="ul-user">
+                                    <li class="mg-li-user">
+                                        <strong>Nombre:</strong>
+                                        <%= user.firstName %>
+                                    </li>
+                                    <li class="mg-li-user">
+                                        <strong>Apellido:</strong>
+                                        <%= user.lastName %>
+                                    </li>
+                                    <li class="mg-li-user"><strong>Mail:</strong>
+                                        <%= user.email %>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="/users/editpassword" class="pd-button-edit"><button class="btn btn-pink">Cambiar
                                 contraseña</button></a>
-                    </div>
-                </div>
+                            </div>
+                        </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <a href="/users/edit" class="pd-button-edit"><button class="btn btn-pink">Editar mis
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="/users/edit" class="pd-button-edit"><button class="btn btn-pink">Editar mis
                                 datos</button></a>
+                            </div>
+                        </div>
                     </div>
+
+
                 </div>
             </div>
 
 
-        </div>
-    </div>
 
 
 
-
-
-    <%- include("partials/footer") %>
+            <%- include("partials/footer") %>
 </body>
 
 </html>
