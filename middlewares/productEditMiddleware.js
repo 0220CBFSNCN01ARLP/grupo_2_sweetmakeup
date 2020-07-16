@@ -14,7 +14,7 @@ let middleware = async function (req, res, next) {
         include: "user"
     });
 
-    if(false){
+    if(user.id == product.user.id){
         return next()
     }
     res.redirect("/")
