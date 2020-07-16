@@ -1,162 +1,165 @@
 /* Banner principal */
 
 .banner {
-    position: relative;
-    padding: 0;
+  position: relative;
+  padding: 0;
 }
 
 .banner-img {
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
 }
-
 
 /* banner prueba */
 
 .banner-pd {
-    position: relative;
-    padding: 0;
+  position: relative;
+  padding: 0;
 }
 
 .banner-img-prueba {
-    width: 100%;
-    height: 110vh;
-    object-fit: cover;
+  width: 100%;
+  height: 110vh;
+  object-fit: cover;
 }
 
 .pepe-div {
-    position: relative;
+  position: relative;
 }
 
 .title-banner-prueba {
-    position: absolute;
-    bottom: 110px;
-    left: 500px;
-    background-color: #0d2821;
-    width: 400px;
-    opacity: 0.6;
+  position: absolute;
+  bottom: 110px;
+  left: 500px;
+  background-color: #0d2821;
+  width: 400px;
+  opacity: 0.6;
 }
 
 .title-banner-prueba2 {
-    position: absolute;
-    bottom: 110px;
-    left: 500px;
-    background-color: coral;
-    width: 400px;
-    opacity: 0.8;
+  position: absolute;
+  bottom: 110px;
+  left: 500px;
+  background-color: coral;
+  width: 400px;
+  opacity: 0.8;
 }
 
 .title-banner-main-prueba {
-    font-size: 35px;
-    line-height: 45px;
-    text-align: right;
-    color: white;
+  font-size: 35px;
+  line-height: 45px;
+  text-align: right;
+  color: white;
 }
 
 .title-banner {
-    position: absolute;
-    bottom: 30%;
-    background-color: coral;
-    width: 300px;
-    opacity: 0.6;
+  position: absolute;
+  bottom: 30%;
+  background-color: coral;
+  width: 300px;
+  opacity: 0.6;
 }
 
 .title {
-    font-size: 35px;
-    line-height: 45px;
-    text-align: right;
-    color: white;
+  font-size: 35px;
+  line-height: 45px;
+  text-align: right;
+  color: white;
 }
 
 .title-main {
-    display: block;
-    margin-right: 10px;
+  display: block;
+  margin-right: 10px;
 }
 
-
 /* /Banner principal  */
-
 
 /* Submenu secciones iconos */
 
 .img-icon {
-    width: 85%;
+  width: 85%;
 }
 
+.sub-menu-index {
+  display: none;
+}
 
 /* /Submenu secciones iconos */
 
 .section-odd {
-    background-color: rgb(241, 216, 220);
+  background-color: rgb(241, 216, 220);
 }
 
 .padding-category {
-    padding-top: 15px;
-    padding-left: 80px;
-    padding-right: 0px;
-    padding-bottom: 10px;
-    align-content: center;
+  padding-top: 15px;
+  padding-left: 80px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  align-content: center;
 }
 
 .category {
-    color: #716669;
-    text-align: left;
-    display: inline;
+  color: #716669;
+  text-align: left;
+  display: inline;
 }
 
+<<<<<<< HEAD
+.btn-todos {
+  text-decoration: none;
+=======
 .btn-todos, .btn-todos:hover {
     text-decoration: none;
+>>>>>>> 7b41b62bd428fc3b41fb5d45ab2da3a7f3a9ce47
 }
 
 .ver-todos {
-    display: initial;
-    color: #716669;
-    padding-left: 20px;
-    display: inline;
+  display: initial;
+  color: #716669;
+  padding-left: 20px;
+  display: inline;
 }
 
 .margin-row {
-    margin: 0;
-    padding-bottom: 30px;
+  margin: 0;
+  padding-bottom: 30px;
 }
 
 .article-odd {
-    width: 230px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-color: white;
-    border-radius: 10px;
+  width: 230px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .hover-odd:hover {
-    background-color: #fff0f5;
+  background-color: #fff0f5;
 }
 
 .img-product {
-    width: 75%;
-    margin: auto;
-    margin-top: 7px;
+  width: 75%;
+  margin: auto;
+  margin-top: 7px;
 }
 
 .name-product {
-    color: #716669;
-    margin-bottom: 0px;
-    padding-top: 10px;
-    text-decoration: none;
+  color: #716669;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  text-decoration: none;
 }
 
 .price-product {
-    color: #716669;
-    margin-bottom: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-decoration: none;
+  color: #716669;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
 }
 
-
 /* Agregar icono */
-
 
 /* .award-icon {
   color: #009975;
@@ -170,80 +173,83 @@
 } */
 
 .section-even {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 .category-even {
-    color: #4b4445;
-    text-align: left;
-    display: inline;
+  color: #4b4445;
+  text-align: left;
+  display: inline;
 }
 
 .ver-todos-even {
-    color: #4b4445;
-    padding-left: 20px;
-    display: inline;
+  color: #4b4445;
+  padding-left: 20px;
+  display: inline;
 }
 
 .article-even {
-    width: 230px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-color: rgb(241, 216, 220);
-    border-radius: 10px;
+  width: 230px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: rgb(241, 216, 220);
+  border-radius: 10px;
 }
 
 .hover-even:hover {
-    background-color: white;
+  background-color: white;
 }
-
 
 /* Seccion Informacion */
 
 .p-info {
-    padding: 40px;
+  padding: 40px;
 }
 
 .padding-info {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 .info-align {
-    text-align: center;
+  text-align: center;
 }
 
 .icon {
-    font-size: 25px;
-    color: #f7adad;
+  font-size: 25px;
+  color: #f7adad;
 }
 
 .info-h3 {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .info-p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 @media (min-width: 426px) {
-    .img-icon {
-        width: 50%;
-    }
-    .arrow {
-        display: none;
-    }
+  .img-icon {
+    width: 50%;
+  }
+  .arrow {
+    display: none;
+  }
 }
 
 @media (min-width: 769px) {
-    .img-icon {
-        width: 30%;
-    }
-    .title-banner {
-        bottom: 15%;
-        width: 400px;
-    }
-    .title {
-        font-size: 55px;
-        line-height: 60px;
-    }
+  .img-icon {
+    width: 30%;
+  }
+  .title-banner {
+    bottom: 15%;
+    width: 400px;
+  }
+  .title {
+    font-size: 55px;
+    line-height: 60px;
+  }
+
+  .sub-menu-index {
+    display: inline;
+  }
 }
