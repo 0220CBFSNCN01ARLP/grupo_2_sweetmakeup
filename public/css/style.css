@@ -102,6 +102,10 @@ nav #marker {
   background-color: white;
 }
 
+.img-icon {
+  width: 85%;
+}
+
 /*button*/
 
 .btn-pink {
@@ -230,6 +234,12 @@ li {
 
 nav i {
   margin: 10px;
+}
+
+@media (min-width: 426px) {
+  .img-icon {
+    width: 50%;
+  }
 }
 
 @media (min-width: 768px) {

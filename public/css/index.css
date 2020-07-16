@@ -224,9 +224,9 @@
 }
 
 @media (min-width: 426px) {
-  .img-icon {
+  /* .img-icon {
     width: 40%;
-  }
+  } */
   .arrow {
     display: none;
   }
