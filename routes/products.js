@@ -84,7 +84,6 @@ router.post(
     check("height").isNumeric({ max: 10000 }),
     check("width").isNumeric({ max: 10000 }),
     check("length").isNumeric({ max: 10000 }),
-    check("link").isURL().withMessage("Coloque un URL valida"), // custom checkear si no esta vacio.
   ],
   productController.store
 );
