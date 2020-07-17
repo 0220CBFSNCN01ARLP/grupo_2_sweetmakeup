@@ -82,11 +82,11 @@ module.exports = (sequelize, dataTypes) => {
     });
 
     Product.belongsToMany(models.Tag, {
-      as: "tag",
+      as: "tags",
       through: "product_tag",
       foreignKey: "productId",
       otherKey: "tagId",
-      timestamps: "false",
+      timestamps: false
     });
   };
 

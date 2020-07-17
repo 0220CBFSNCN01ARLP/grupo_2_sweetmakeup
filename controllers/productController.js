@@ -1,7 +1,5 @@
 const multer = require("multer");
 
-const { getProducts, productsFilePath } = require("../utils/products");
-
 const { check, validationResult, body } = require("express-validator");
 
 const {
