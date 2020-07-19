@@ -15,6 +15,6 @@ router.get("/rostro", mainController.rostro);
 router.get("/cejas", mainController.cejas);
 
 /*ver buscador*/
-router.post("/labios", mainController.buscador);
+router.post("/labios", mainController.search);
 
 module.exports = router;

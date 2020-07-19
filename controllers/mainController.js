@@ -154,25 +154,24 @@ let controller = {
     },
 
 
-    buscador: async function(req, res, next) {
-        console.log("fer");
-        console.log(req.body.buscador);
-        let productoBuscado = await Product.findAll({
+    search: async function(req, res, next) {
+
+        let productSearch = await Product.findAll({
 
             include: ["category", "images"],
 
             where: {
                 // name: new RegExp(req.body.buscador, "i")
                 // name: /^req.body.buscador/
-                name: req.body.buscador,
+                name: req.body.search,
             },
 
         });
-        console.log(productoBuscado);
+        console.log(productSearch);
         res.render("section", {
             title: "labios",
             subsections: ["lápiz labial", "delineador", "brillo labial"],
-            products: productoBuscado,
+            products: productSearch,
             user: req.session.user
         });
     }
