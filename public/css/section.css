@@ -43,3 +43,15 @@ rosa claro {
     background-color: #dc92a5;
     border-color: black;
 }
+
+.busqueda-incorrecta {
+    padding-top: 110px;
+    padding-bottom: 110px;
+    width: 100%;
+    color: #716669;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+}
