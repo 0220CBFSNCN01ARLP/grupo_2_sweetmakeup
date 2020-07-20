@@ -171,7 +171,7 @@ let controller = {
 
   detail: async function (req, res, next) {
     let product = await Product.findByPk(req.params.id, {
-      include: ["category", "images"],
+      include: ["category", "images", "user"],
     });
     let related = await Product.findAll({
       include: [
@@ -181,7 +181,7 @@ let controller = {
             name: product.category.name,
           },
         },
-        "images",
+        "images"
       ],
       limit: 4,
     });
