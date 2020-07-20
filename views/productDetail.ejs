@@ -21,12 +21,10 @@
           <img class="card-img-top mh-50" src="https://place-hold.it/500x500" alt="">
           <% } %>
           <div class="row p-1 m-0">
-            <img class="col-3 img-fluid img-thumbnail" src="/img/products/productoLabios1.png"
-              alt="Imagen del producto 1" />
-            <img class="col-3 img-fluid img-thumbnail" src="/img/products/productoLabios2.png"
-              alt="Imagen del producto 2" />
-            <img class="col-3 img-fluid img-thumbnail" src="/img/products/productoLabios3.png"
-              alt="Imagen del producto 3" />
+            <% for( let image of product.images ) { %>
+              <img class="col-3 img-fluid img-thumbnail" src="/img/products/<%= image.route %> "
+              alt="Imagen del producto" />
+            <% } %>
           </div>
           <div class="justify-content-center d-flex border-top">
             <h4 class="card-title"><%= product.name%></h4>
