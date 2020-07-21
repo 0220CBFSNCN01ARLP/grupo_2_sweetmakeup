@@ -1,7 +1,5 @@
 const multer = require("multer");
 
-const { getProducts, productsFilePath } = require("../utils/products");
-
 const { check, validationResult, body } = require("express-validator");
 
 const {
@@ -13,25 +11,24 @@ const {
   User,
 } = require("../database/models");
 const { promiseImpl } = require("ejs");
-const products = require("../utils/products");
-const color = require("../database/models/color");
-const product = require("../database/models/product");
 
 let controller = {
   // FER
   create: async function (req, res, next) {
-    let categories = await Category.findAll();
+    try {let categories = await Category.findAll();
     let brands = await Brand.findAll();
     res.render("productAdd", {
       categories,
       brands,
       user: req.session.user,
-    });
+    });} catch(e) {
+      console.log("Error al obtener información de la base de datos" + e)
+    }
   },
 
   // FER
   store: async function (req, res, next) {
-    let errors = validationResult(req);
+    try {let errors = validationResult(req);
     if (errors.isEmpty()) {
       console.log(req.body.thematic);
       const newProduct = await Product.create({
@@ -68,6 +65,8 @@ let controller = {
         brands,
         user: req.session.user,
       });
+    }} catch(e) {
+      console.log("Error al escribir en la base de datos" + e)
     }
   },
 
@@ -172,7 +171,7 @@ let controller = {
 
   detail: async function (req, res, next) {
     let product = await Product.findByPk(req.params.id, {
-      include: ["category", "images"],
+      include: ["category", "images", "user"],
     });
     let related = await Product.findAll({
       include: [
@@ -182,7 +181,7 @@ let controller = {
             name: product.category.name,
           },
         },
-        "images",
+        "images"
       ],
       limit: 4,
     });

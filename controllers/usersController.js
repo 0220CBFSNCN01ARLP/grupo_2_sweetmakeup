@@ -40,15 +40,27 @@ let usersController = {
         email: req.body.loginEmail,
       },
     });
+<<<<<<< HEAD
 
+=======
+    if (!user) {
+        return res.redirect("register");
+      }
+>>>>>>> 78df1ade10dbe94ccf3b5075d71cb714cb2eadbd
     let correctPw = await bcrypt.compare(req.body.loginPassword, user.password);
     if (!correctPw) {
       user = null;
       console.log("Contraseña incorrecta");
+<<<<<<< HEAD
     }
 
     if (user == null) return res.redirect("register");
 
+=======
+      return res.redirect("register");
+    }
+
+>>>>>>> 78df1ade10dbe94ccf3b5075d71cb714cb2eadbd
     // Se guarda la cookie por 30 minutos, el usuario puede cerrar el navegador y volver al poco tiempo
     let cookieAge = 1800000;
     // Si selecciona recordar, la cookie dura un mes
@@ -96,8 +108,12 @@ let usersController = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
+<<<<<<< HEAD
         avatar: req.file.filename,
 
+=======
+        avatar: req.files[0].filename,
+>>>>>>> 78df1ade10dbe94ccf3b5075d71cb714cb2eadbd
         //  password: bcrypt.hashSync(req.body.password, 10),
       },
       {
@@ -107,8 +123,11 @@ let usersController = {
       }
     );
 
+<<<<<<< HEAD
     console.log(avatar);
 
+=======
+>>>>>>> 78df1ade10dbe94ccf3b5075d71cb714cb2eadbd
     req.session.user.firstName = req.body.firstName;
     req.session.user.lastName = req.body.lastName;
     req.session.user.email = req.body.email;

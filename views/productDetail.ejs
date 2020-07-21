@@ -4,6 +4,7 @@
 <head>
   <%- include("partials/head") %>
   <link rel="stylesheet" href="/css/productDetail.css" />
+  <script defer src="/js/thumbnailGallery.js"></script>
   <title>Make.u | <%= product.name%></title>
 </head>
 
@@ -16,17 +17,15 @@
       <div class="col-12 col-md-6">
         <article class="product-card card">
           <% if (product.images.length > 0) { %>
-          <img class="card-img-top mh-50" src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
+          <img id="mainImg" class="card-img-top mh-50" src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
           <% } else { %>
           <img class="card-img-top mh-50" src="https://place-hold.it/500x500" alt="">
           <% } %>
           <div class="row p-1 m-0">
-            <img class="col-3 img-fluid img-thumbnail" src="/img/products/productoLabios1.png"
-              alt="Imagen del producto 1" />
-            <img class="col-3 img-fluid img-thumbnail" src="/img/products/productoLabios2.png"
-              alt="Imagen del producto 2" />
-            <img class="col-3 img-fluid img-thumbnail" src="/img/products/productoLabios3.png"
-              alt="Imagen del producto 3" />
+            <% for( let image of product.images ) { %>
+            <img class="col-3 img-fluid img-thumbnail thumbnail" src="/img/products/<%= image.route %> "
+              alt="Imagen del producto" />
+            <% } %>
           </div>
           <div class="justify-content-center d-flex border-top">
             <h4 class="card-title"><%= product.name%></h4>
@@ -47,7 +46,13 @@
           $<%= product.price %>
         </p>
         <div class="row">
-
+          <% if (product.user.id == user.id) { %>
+          <div class="button-wrapper col-12 col-md-6 py-1">
+            <a href="/products/edit/<%= product.id %> "><button class="btn btn-pink btn-block">
+                Editar producto
+              </button></a>
+          </div>
+          <% } else { %>
           <div class="button-wrapper col-12 col-md-6 py-1">
             <a href="/cart"><button class="btn btn-pink btn-block">
                 Agregar al carrito
@@ -58,7 +63,7 @@
               Agregar a la wishlist
             </button>
           </div>
-
+          <% } %>
         </div>
       </div>
     </div>
@@ -74,10 +79,10 @@
           <a href="/products/<%= elem.id %>">
 
             <% if (elem.images.length > 0) { %>
-              <img class="img-product w-100" src="/img/products/<%= elem.images[0].route%>" alt="<%= product.name %>" />
-              <% } else { %>
-              <img class="img-product w-100" src="https://place-hold.it/500x500" alt="">
-              <% } %>
+            <img class="img-product w-100" src="/img/products/<%= elem.images[0].route%>" alt="<%= product.name %>" />
+            <% } else { %>
+            <img class="img-product w-100" src="https://place-hold.it/500x500" alt="">
+            <% } %>
             <h3 class="card-title text-center"><%= elem.name %> </h3>
             <p class="price text-center"><%= elem.price %> </p>
           </a>
