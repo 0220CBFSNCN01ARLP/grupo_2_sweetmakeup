@@ -40,7 +40,6 @@ let usersController = {
         email: req.body.loginEmail,
       },
     });
-
     if (!user) {
         return res.redirect("register");
       }
@@ -48,11 +47,6 @@ let usersController = {
     if (!correctPw) {
       user = null;
       console.log("Contraseña incorrecta");
-    }
-
-    if (user == null) return res.redirect("register");
-
-
       return res.redirect("register");
     }
 
@@ -103,8 +97,6 @@ let usersController = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        avatar: req.file.filename,
-
         avatar: req.files[0].filename,
         //  password: bcrypt.hashSync(req.body.password, 10),
       },
@@ -114,8 +106,6 @@ let usersController = {
         },
       }
     );
-
-    console.log(avatar);
 
     req.session.user.firstName = req.body.firstName;
     req.session.user.lastName = req.body.lastName;
