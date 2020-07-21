@@ -5,7 +5,7 @@ const formEdit = document.getElementById("contact-form-edit");
 const fieldsEdit = ["firstName", "lastName", "email", "avatar"];
 
 formEdit.onsubmit = (evt) => {
-    debugger;
+
     evt.preventDefault();
     const errors = [];
 

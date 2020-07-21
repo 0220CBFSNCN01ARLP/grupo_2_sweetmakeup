@@ -25,6 +25,7 @@ let usersController = {
 
     register: async(req, res, next) => {
         let errors = validationResult(req);
+
         if (errors.isEmpty()) {
             await User.create({
                 email: req.body.email,
@@ -104,8 +105,8 @@ let usersController = {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            avatar: req.files[0].filename
-                //  password: bcrypt.hashSync(req.body.password, 10),
+            //avatar: req.files[0].filename
+            //  password: bcrypt.hashSync(req.body.password, 10),
         }, {
             where: {
                 id: req.params.id,

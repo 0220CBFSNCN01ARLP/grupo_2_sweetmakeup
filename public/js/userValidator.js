@@ -1,6 +1,14 @@
+const {
+    userUpdatePassword
+} = require("../../controllers/usersController");
+
 const form = document.getElementById("contact-form");
 
+
+
 const fields = ["firstName", "lastName", "email", "password", "rePassword", "avatar"];
+
+
 
 form.onsubmit = (evt) => {
 
