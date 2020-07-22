@@ -52,12 +52,15 @@ let controller = {
           userId: req.session.user.id,
         });
         if (req.files.length > 0) {
-          const newImage = await Image.create({
-            productId: newProduct.id,
-            size: req.files[0].size,
-            fileType: req.files[0].mimetype,
-            route: req.files[0].filename,
-          });
+          for (let i = 0; i < req.files.length; i++) {
+            const newImage = await Image.create({
+              productId: newProduct.id,
+              size: req.files[i].size,
+              fileType: req.files[i].mimetype,
+              route: req.files[i].filename,
+            });
+          }
+          
         }
         console.log(newProduct);
         res.redirect(`/products/${newProduct.id}`);
