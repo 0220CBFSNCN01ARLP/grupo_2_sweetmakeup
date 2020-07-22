@@ -1,4 +1,3 @@
-alert("uwu")
 let thumbnails = document.querySelectorAll(".thumbnail")
 for (const img of thumbnails) {
     img.addEventListener("click", changeImg)

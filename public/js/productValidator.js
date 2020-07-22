@@ -39,7 +39,6 @@ function minCharacters (fieldId, min, errorMsgId, errors) {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   let errors = [];
-  console.log("hola")
   notEmpty("productName", "nameEmptyMsg", errors);
   notEmpty("price", "priceEmptyMsg", errors);
   notEmpty("description", "descriptionEmptyMsg", errors);

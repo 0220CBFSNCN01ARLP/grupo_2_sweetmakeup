@@ -60,7 +60,6 @@ let controller = {
               route: req.files[i].filename,
             });
           }
-          
         }
         console.log(newProduct);
         res.redirect(`/products/${newProduct.id}`);
@@ -140,13 +139,13 @@ let controller = {
           },
         }
       );
-      if (req.files) {
+      if (req.files.length > 0) {
         for (let i = 0; i < req.files.length; i++) {
-          let newImage = await Image.create({
+          const newImage = await Image.create({
             productId: newProduct.id,
-            size: req.files[0].size,
-            fileType: req.files[0].mimetype,
-            route: req.files[0].filename,
+            size: req.files[i].size,
+            fileType: req.files[i].mimetype,
+            route: req.files[i].filename,
           });
         }
       }
