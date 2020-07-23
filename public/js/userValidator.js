@@ -34,7 +34,7 @@ function minCharacters(fieldId, min, errors) {
         invalidFeedback
     } = getFieldAndInvalidFeedback(fieldId);
 
-    if (field.value != "" && field.value.length < min) {
+    if (field.value.trim() != "" && field.value.trim().length < min) {
         field.classList.add("is-invalid");
         const msg = `${fieldId} tiene menos de ${min} caracteres`;
         displayInvalidFeedback(fieldId, msg, invalidFeedback, errors);
@@ -55,7 +55,7 @@ function validateNotEmpty(fieldId, errors) {
         field,
         invalidFeedback
     } = getFieldAndInvalidFeedback(fieldId);
-    if (field.value == "") {
+    if (field.value.trim() == "") {
         field.classList.add("is-invalid");
         const msg = "no puede estar vacio";
         displayInvalidFeedback(fieldId, msg, invalidFeedback, errors);
