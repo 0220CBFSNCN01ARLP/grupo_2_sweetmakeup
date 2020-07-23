@@ -62,7 +62,7 @@ let controller = {
         user: req.session.user,
       });
     } catch (e){
-      console.log("Error al obtener datos de la base de datos" + e);
+      console.log("Error al obtener datos de la base de datos " + e);
     }
   },
 
@@ -91,8 +91,8 @@ let controller = {
         products: productsOjos,
         user: req.session.user,
       });
-    } catch {
-      console.log("Error al obtener datos de la base de datos");
+    } catch(e) {
+      console.log("Error al obtener datos de la base de datos " + e);
     }
   },
 
@@ -145,8 +145,8 @@ let controller = {
         products: productsCejas,
         user: req.session.user,
       });
-    } catch {
-      console.log("Error al obtener datos de la base de datos");
+    } catch (e){
+      console.log("Error al obtener datos de la base de datos " + e);
     }
   },
 
@@ -170,8 +170,8 @@ let controller = {
         products: productsLabios,
         user: req.session.user,
       });
-    } catch {
-      console.log("Error al obtener datos de la base de datos");
+    } catch(e) {
+      console.log("Error al obtener datos de la base de datos " + e);
     }
   },
 

@@ -17,7 +17,8 @@
       <div class="col-12 col-md-6">
         <article class="product-card card">
           <% if (product.images.length > 0) { %>
-          <img id="mainImg" class="card-img-top mh-50" src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
+          <img id="mainImg" class="card-img-top mh-50" src="/img/products/<%= product.images[0].route%>"
+            alt="<%= product.name %>" />
           <% } else { %>
           <img class="card-img-top mh-50" src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
           <% } %>
@@ -46,12 +47,25 @@
           $<%= product.price %>
         </p>
         <div class="row">
+          <% if (user) { %>
           <% if (product.user.id == user.id) { %>
           <div class="button-wrapper col-12 col-md-6 py-1">
             <a href="/products/edit/<%= product.id %> "><button class="btn btn-pink btn-block">
                 Editar producto
               </button></a>
           </div>
+          <% } else { %>
+          <div class="button-wrapper col-12 col-md-6 py-1">
+            <a href="/cart"><button class="btn btn-pink btn-block">
+                Agregar al carrito
+              </button></a>
+          </div>
+          <div class="button-wrapper col-12 col-md-6 py-1">
+            <button class="btn btn-pink btn-block">
+              Agregar a la wishlist
+            </button>
+          </div>
+          <% } %>
           <% } else { %>
           <div class="button-wrapper col-12 col-md-6 py-1">
             <a href="/cart"><button class="btn btn-pink btn-block">

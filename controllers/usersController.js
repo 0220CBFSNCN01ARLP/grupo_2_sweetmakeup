@@ -9,6 +9,7 @@ const { User, Product, Image } = require("../database/models");
 
 let { check, validationResult, body } = require("express-validator");
 const session = require("express-session");
+const { log } = require("console");
 
 let usersController = {
   showRegister: (req, res) => {
@@ -16,7 +17,8 @@ let usersController = {
   },
 
   register: async (req, res, next) => {
-    let errors = validationResult(req);
+    try {
+      let errors = validationResult(req);
     if (errors.isEmpty()) {
       await User.create({
         email: req.body.email,
@@ -32,35 +34,39 @@ let usersController = {
         errors: errors.errors,
       });
     }
+    } catch (e) {
+      console.log("Error al escribir en la base de datos " + e)
+    }
   },
 
   login: async (req, res, next) => {
-    let user = await User.findOne({
-      where: {
-        email: req.body.loginEmail,
-      },
-    });
-    if (!user) {
+    try {
+      let user = await User.findOne({
+        where: {
+          email: req.body.loginEmail,
+        },
+      });
+      if (!user) {
+          return res.redirect("register");
+        }
+      let correctPw = await bcrypt.compare(req.body.loginPassword, user.password);
+      if (!correctPw) {
+        user = null;
+        console.log("Contraseña incorrecta");
         return res.redirect("register");
       }
-    let correctPw = await bcrypt.compare(req.body.loginPassword, user.password);
-    if (!correctPw) {
-      user = null;
-      console.log("Contraseña incorrecta");
-      return res.redirect("register");
+      let cookieAge = 1800000;
+      if (req.body.remember != undefined) {
+        cookieAge = 1000*3600*24*30;
+      }
+      req.session.user = user;
+      res.cookie("user", user.email, {
+        maxAge: cookieAge,
+      });
+      res.redirect("/");
+    } catch (e) {
+      console.log("Error al iniciar sesión " + e)
     }
-
-    // Se guarda la cookie por 30 minutos, el usuario puede cerrar el navegador y volver al poco tiempo
-    let cookieAge = 1800000;
-    // Si selecciona recordar, la cookie dura un mes
-    if (req.body.remember != undefined) {
-      cookieAge = 2630000000;
-    }
-    req.session.user = user;
-    res.cookie("user", user.email, {
-      maxAge: cookieAge,
-    });
-    res.redirect("/");
   },
 
   logout: (req, res, next) => {
@@ -75,23 +81,28 @@ let usersController = {
   },
 
   userDetail: async (req, res) => {
-    res.render("userDetail", {
-      user: req.session.user,
-    });
+    try {
+      res.render("userDetail", {
+        user: req.session.user,
+      });
+    } catch (e) {
+      console.log("Error al recuperar datos de la base de datos " + e)
+    }
   },
-  userEdit: async (req, res, next) => {
+  userEdit: (req, res, next) => {
     res.render("userEdit", {
       user: req.session.user,
     });
   },
-  userEditPassword: async (req, res, next) => {
+  userEditPassword: (req, res, next) => {
     res.render("userEditPassword", {
       user: req.session.user,
     });
   },
 
   userUpdate: async (req, res, next) => {
-    console.log(req.files);
+    try {
+      console.log(req.files);
     await User.update(
       {
         firstName: req.body.firstName,
@@ -112,37 +123,49 @@ let usersController = {
     req.session.user.email = req.body.email;
     // req.session.user.password = req.body.password;
     res.redirect("/users/admin");
+    } catch (e) {
+      console.log("Error al actualizar la base de datos " + e)
+    }
   },
 
   userUpdatePassword: async (req, res, next) => {
-    await User.update(
-      {
-        password: bcrypt.hashSync(req.body.password, 10),
-      },
-      {
-        where: {
-          id: req.params.id,
+    try {
+      await User.update(
+        {
+          password: bcrypt.hashSync(req.body.password, 10),
         },
-      }
-    );
-    req.session.user.password = req.body.password;
-    res.redirect("/users/admin");
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      );
+      req.session.user.password = req.body.password;
+      res.redirect("/users/admin");
+    } catch (e) {
+      console.log("Error al actualizar la base de datos " + e)
+    }
   },
   myProducts: async (req, res, next) => {
-    let user = req.session.user;
-    if (!user) {
-      res.redirect("/users/register");
+    try {
+      let user = req.session.user;
+      if (!user) {
+        res.redirect("/users/register");
+      }
+      let products = await Product.findAll({
+        where: {
+          userId: user.id,
+        },
+        include: "images",
+      });
+      res.render("myProducts", {
+        products,
+        user,
+      }); 
+    } catch (e) {
+      console.log("Error al recuperar datos de la base de datos " + e)
     }
-    let products = await Product.findAll({
-      where: {
-        userId: user.id,
-      },
-      include: "images",
-    });
-    res.render("myProducts", {
-      products,
-      user,
-    });
+    
   },
 };
 
