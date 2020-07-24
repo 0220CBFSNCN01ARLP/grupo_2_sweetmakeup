@@ -10,6 +10,7 @@ export default function LastProduct() {
       </div>
       <div className="card-body">
         <div className="text-center">
+          f
           <img
             className="img-fluid px-3 px-sm-4 mt-3 mb-4"
             style="width: 25rem;"
