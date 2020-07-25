@@ -1,27 +1,36 @@
 <div class="col-12 col-sm-6 col-md-4 h-100">
-  <article class="productCard card mt-2">
-    <a href="/products/<%= product.id %>">
-      <h4 class="card-title"><%= product.name %></h4>
-    </a>
-    <a href="/products/<%= product.id %>">
-      <% if (product.images.length > 0) { %>
-      <img class="imgMain card-img-top img-fluid" src="/img/products/<%= product.images[0].route%>"
-        alt="<%= product.name %>" />
-      <% } else { %>
-      <img class="imgMain card-img-top img-fluid" src="https://place-hold.it/500x500" alt="">
-      <% } %></a>
+    <article class="productCard card mt-2">
+        <a href="/products/<%= product.id %>">
+            <h4 class="card-title">
+                <%= product.name %>
+            </h4>
+        </a>
+        <a href="/products/<%= product.id %>">
+            <% if (product.images.length > 0) { %>
+                <img class="imgMain card-img-top img-fluid" src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
+                <% } else { %>
+                    <img class="imgMain card-img-top img-fluid" src="https://place-hold.it/500x500" alt="">
+                    <% } %>
+        </a>
 
-    <div class="card-body h-30">
-      <p class="description">
-        <%= product.description %>
-      </p>
-      <p class="price">$<%= product.price %></p>
-      <button class="btn btn-pink btn-block m-1">
+        <div class="card-body h-30">
+            <p class="description">
+                <%= product.description %>
+            </p>
+            <p class="price">$
+                <%= product.price %>
+            </p>
+            <button class="btn btn-pink btn-block m-1">
         Agregar a la wishlist
       </button>
-      <button class="btn btn-pink btn-block m-1">
-        Agregar al carrito
-      </button>
-    </div>
-  </article>
+
+            <form action="/productCart" method="POST">
+                <input name="id" id="id" hidden value="<%= product.id %>">
+                <button class="btn btn-pink btn-block m-1">
+
+          Agregar al carrito
+        </button>
+            </form>
+        </div>
+    </article>
 </div>

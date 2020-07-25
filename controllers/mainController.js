@@ -66,8 +66,10 @@ let controller = {
     },
 
     cart: function(req, res, next) {
+        console.log(req.session.product);
         res.render("productCart", {
             user: req.session.user,
+            product: req.session.product
         });
     },
 
@@ -173,6 +175,21 @@ let controller = {
             subsections: ["lápiz labial", "delineador", "brillo labial"],
             products: productSearch,
             user: req.session.user
+        });
+    },
+    buyCart: async function(req, res, next) {
+
+        console.log(req.params);
+        console.log(req.body);
+        let product = await Product.findOne({
+            where: {
+                id: req.body.id,
+            },
+        });
+        req.session.product = product;
+        res.render("productCart", {
+            user: req.session.user,
+            product: req.session.product
         });
     }
 };

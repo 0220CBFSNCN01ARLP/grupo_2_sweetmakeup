@@ -3,42 +3,46 @@
 
 <head>
     <%- include("partials/head")  %>
-    <link rel="stylesheet" href="/css/productCart.css">
-    <title>Make.u | Carrito de Compras</title>
+        <link rel="stylesheet" href="/css/productCart.css">
+        <title>Make.u | Carrito de Compras</title>
 </head>
 
 <body>
     <%- include('partials/header') %>
 
-    <main class="row position main-center">
+        <main class="row position main-center">
 
-        <div class="container-1 col-12 col-md-6 col-lg-6">
-            <h1 class="h-1">Carrito de Compras</h1>
-            <div class="row position product-header">
-                <div class="center col-3">
-                    <p>Producto</p>
-                </div>
-                <div class="center col-4">
-                    <p>Cantidad</p>
-                </div>
-                <div class="center col-2">
-                    <p>Precio</p>
-                </div>
-                <div class="center col-1">
-                    <p>Elim.</p>
-                </div>
+            <div class="container-1 col-12 col-md-6 col-lg-6">
+                <h1 class="h-1">Carrito de Compras</h1>
+                <div class="row position product-header">
+                    <div class="center col-3">
+                        <p>Producto</p>
+                    </div>
+                    <div class="center col-4">
+                        <p>Cantidad</p>
+                    </div>
+                    <div class="center col-2">
+                        <p>Precio</p>
+                    </div>
+                    <div class="center col-1">
+                        <p>Elim.</p>
+                    </div>
 
-            </div>
-            <div class="row position product">
-
-                <div class="center col-3 block"><img src="img/productos/productoLabios4.png" alt="imagen producto">
                 </div>
+                <div class="row position product">
+                    <% if (product == null || product == undefined) { %>
+                        <p>Aún no tenés ningún producto para vender. Hacé clic en "Crear Producto" para subir uno!</p>
+                        <% } else { %>
 
-                <div class="center col-4">
-                    <form>
-                        <div class="col-auto my-1">
+                            <div class="center col-3 block"><img src="img/productos/productoLabios4.png" alt="imagen producto">
+                                <%= product.name%>
+                            </div>
 
-                            <select class="custom-select form-control" id="inlineFormCustomSelect">
+                            <div class="center col-4">
+                                <form>
+                                    <div class="col-auto my-1">
+
+                                        <select class="custom-select form-control" id="inlineFormCustomSelect">
                                 <option value="1" selected>1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -50,70 +54,77 @@
                                 <option value="9">9</option>
                                 <option value="10">10</option>
                             </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="center col-2">
-                    <p>$80</p>
-                </div>
-                <div class="center col-1">
-                    <button type="button" class="close" aria-label="Close" onclick="eliminarProducto(this)">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="center col-2">
+                                <p>
+                                    <%= product.price %>
+                                </p>
+                            </div>
+                            <div class="center col-1">
+                                <button type="button" class="close" aria-label="Close" onclick="eliminarProducto(this)">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
+                            </div>
+                            <% } %>
 
-            </div>
-            <button class="btn btn-pink btn-block add-product" onclick="agregarProducto()">+ Agregar nuevo
+                </div>
+                <button class="btn btn-pink btn-block add-product" onclick="agregarProducto()">+ Agregar nuevo
                 producto</button>
-        </div>
-
-        <div class="container-2 col-12 col-md-4 col-lg-4">
-            <h2 class="h-2">Resumen de pedido</h2>
-            <div class="row position">
-
-                <div class="col-6">
-                    <p class="start">Subtotal</p>
-                </div>
-                <div class="col-6">
-                    <p class="end">$80.00</p>
-                </div>
-                <div class="col-6">
-                    <p class="start">Costo de envío</p>
-                </div>
-                <div class="col-6">
-                    <p class="end">$00.00</p>
-                </div>
-                <div class="col-6">
-                    <p class="start">Impuestos</p>
-                </div>
-                <div class="col-6">
-                    <p class="end">$15.00</p>
-                </div>
-                <div class="col-6">
-                    <p class="start">Descuento</p>
-                </div>
-                <div class="col-6">
-                    <p class="end">$00.00</p>
-                </div>
-
-                <p class="line"></p>
-                <div class="col-6">
-                    <p class="start-f">Total</p>
-                </div>
-                <div class="col-6">
-                    <p class="end-f">$95.00</p>
-                </div>
-
-                <button class="btn btn-pink btn-block" type="submit "><i class="fas fa-lock"></i></i>Comprar</button>
-
             </div>
 
+            <div class="container-2 col-12 col-md-4 col-lg-4">
+                <h2 class="h-2">Resumen de pedido</h2>
+                <div class="row position">
 
-    </main>
+                    <div class="col-6">
+                        <p class="start">Subtotal</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="end">$
+                            <%= product.price %>
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <p class="start">Costo de envío</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="end">$00.00</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="start">Impuestos</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="end">$15.00</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="start">Descuento</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="end">$00.00</p>
+                    </div>
+
+                    <p class="line"></p>
+                    <div class="col-6">
+                        <p class="start-f">Total</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="end-f">$
+                            <%= product.price %>
+                        </p>
+                    </div>
+
+                    <button class="btn btn-pink btn-block" type="submit "><i class="fas fa-lock"></i></i>Comprar</button>
+
+                </div>
+
+
+        </main>
 
 
 
-    <%- include("partials/footer")  %>
+        <%- include("partials/footer")  %>
 </body>
 
 </html>
