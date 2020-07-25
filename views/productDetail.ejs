@@ -4,6 +4,7 @@
 <head>
     <%- include("partials/head") %>
         <link rel="stylesheet" href="/css/productDetail.css" />
+        <script defer src="/js/thumbnailGallery.js"></script>
         <title>Make.u |
             <%= product.name%>
         </title>
@@ -14,22 +15,21 @@
     <%- include('partials/header') %>
 
         <main class="container my-3">
-
             <div class="row">
                 <div class="col-12 col-md-6">
                     <article class="product-card card">
                         <% if (product.images.length > 0) { %>
-                            <img class="card-img-top mh-50" src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
+                            <img id="mainImg" class="card-img-top mh-50" src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
                             <% } else { %>
-                                <img class="card-img-top mh-50" src="https://place-hold.it/500x500" alt="">
+                                <img class="card-img-top mh-50" src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
                                 <% } %>
                                     <div class="row p-1 m-0">
-                                        <img class="col-3 img-fluid img-thumbnail" src="/img/products/productoLabios1.png" alt="Imagen del producto 1" />
-                                        <img class="col-3 img-fluid img-thumbnail" src="/img/products/productoLabios2.png" alt="Imagen del producto 2" />
-                                        <img class="col-3 img-fluid img-thumbnail" src="/img/products/productoLabios3.png" alt="Imagen del producto 3" />
+                                        <% for( let image of product.images ) { %>
+                                            <img class="col-3 img-fluid img-thumbnail thumbnail" src="/img/products/<%= image.route %> " alt="Imagen del producto" />
+                                            <% } %>
                                     </div>
                                     <div class="justify-content-center d-flex border-top">
-                                        <h4 class="card-title" name="productName" id="productName" form="addCart">
+                                        <h4 class="card-title">
                                             <%= product.name%>
                                         </h4>
                                     </div>
@@ -39,50 +39,60 @@
                 <div class="col-2" style="display: none;"></div>
                 <div class="productDetails col p-2">
 
+                    <p class="description">
+                        <%= product.description%>
+                    </p>
+                    <p class="ingredients">
+                        <%= product.ingredients %>
+                    </p>
+                    <p>
+                        $
+                        <%= product.price %>
+                    </p>
+                    <div class="row">
+                        <% if (user) { %>
+                            <% if (product.user.id == user.id) { %>
+                                <div class="button-wrapper col-12 col-md-6 py-1">
+                                    <a href="/products/edit/<%= product.id %> "><button class="btn btn-pink btn-block">
+                Editar producto
+              </button></a>
+                                </div>
+                                <% } else { %>
+                                    <form action="/productCart" method="POST">
 
-                    <form action="/productCart" method="POST">
+                                        <input name="id" id="id" hidden value="<%= product.id %>">
+                                        <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+                                            <a href="/cart"><button class="btn btn-pink btn-block">
+                  Agregar al carrito
+                </button></a>
+                                        </div>
+                                        <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+                                            <button class="btn btn-pink btn-block">
+                Agregar a la wishlist
+              </button>
+                                    </form>
 
-                        <input name="id" id="id" hidden value="<%= product.id %>">
-                        <p class="description">
-                            <%= product.description %>
-                        </p>
-                        <p class="ingredients">
-                            <%= product.ingredients %>
-                        </p>
-                        <p>
-                            $
-                            <%= product.price %>
-                        </p>
-
-                        <div class="row"></div>
-                        <div class="button-wrapper col-12 col-md-6 py-1">
-                            <a><button class="btn btn-pink btn-block" type="submit">
+                                    </div>
+                                    <% } %>
+                                        <% } else { %>
+                                            <form action="/productCart" method="POST">
+                                                <input name="id" id="id" hidden value="<%= product.id %>">
+                                                <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+                                                    <a href="/cart"><button class="btn btn-pink btn-block">
                 Agregar al carrito
               </button></a>
-                        </div>
+                                                </div>
+                                                <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+                                                    <button class="btn btn-pink btn-block">
+              Agregar a la wishlist
+            </button>
+                                                </div>
+                                            </form>
 
-
-
-
-
-                    </form>
-
-                    <div class="button-wrapper col-12 col-md-6 py-1">
-                        <button class="btn btn-pink btn-block">
-            Agregar a la wishlist
-          </button>
+                                            <% } %>
                     </div>
-
                 </div>
-
-
-
-
-
             </div>
-            </div>
-            </div>
-
         </main>
 
         <div class="related container-fluid vh-50 py-3">

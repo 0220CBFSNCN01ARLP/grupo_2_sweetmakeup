@@ -46,12 +46,12 @@ router.post(
   "/register",
   upload.any(),
   [
-    check("firstName").isLength({
-      min: 0,
-    }),
-    check("lastName").isLength({
-      min: 0,
-    }),
+    check("firstName").trim().isLength({
+      min: 2,
+    }).withMessage("El nombre debe tener al menos 2 caracteres"),
+    check("lastName").trim().isLength({
+      min: 2,
+    }).withMessage("El apellido debe tener al menos 2 caracteres"),
     check("email").isEmail(),
     check("email")
       .custom(checkRepeatEmail)
