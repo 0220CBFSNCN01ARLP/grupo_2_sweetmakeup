@@ -34,10 +34,10 @@
                     <% if (product == null || product == "undefined") { %>
                         <p>Aún no tenés seleccionado ningun Producto en tu carrito de Compras</p>
                         <% } else { %>
-                            <% for( prod of product ) { %>
-                                <div class="center col-3 block"><img class="height-img" src="/img/products/<%= prod.images[0].route%>" alt="<%= prod.name %>">
+                            <% for (let i= 0; i<product.length; i++) { %>
+                                <div class="center col-3 block"><img class="height-img" src="/img/products/<%= product[i].images[0].route%>" alt="<%= product.name %>">
                                     <p>
-                                        <%= prod.name%>
+                                        <%= product[i].name%>
                                     </p>
                                 </div>
 
@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="center col-2 price-margin">
                                     <p>
-                                        <%= prod.price %>
+                                        <%= product[i].price %>
                                     </p>
                                 </div>
                                 <div class="center col-1">
@@ -73,11 +73,8 @@
                                 <% } %>
 
                 </div>
-                <a href="/" style="text-decoration: none;"><button class="btn btn-pink btn-block add-product"
-                    onclick="agregarProducto()">+
-                    Agregar nuevo
-                    producto</button></a>
-
+                <button class="btn btn-pink btn-block add-product" onclick="agregarProducto()">+ Agregar nuevo
+                producto</button>
 
             </div>
 
@@ -90,7 +87,7 @@
                     </div>
                     <div class="col-6">
                         <p class="end">$
-                            <%= subtotal %>
+                            <%= product[i].price %>
                         </p>
                     </div>
                     <div class="col-6">

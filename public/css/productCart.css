@@ -105,6 +105,18 @@ body {
     padding-right: 6px;
 }
 
+.height-img {
+    height: 62px;
+}
+
+.select-margin {
+    margin-top: 20px;
+}
+
+.price-margin {
+    margin-top: 25px;
+}
+
 @media (min-width: 768px) {
     main {
         height: 80vh;

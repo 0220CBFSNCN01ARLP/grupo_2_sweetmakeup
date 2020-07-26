@@ -7,7 +7,7 @@
         </a>
         <a href="/products/<%= product.id %>">
             <% if (product.images.length > 0) { %>
-                <img class="imgMain card-img-top img-fluid" src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
+                <img class="imgMain card-img-top img-fluid img " src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
                 <% } else { %>
                     <img class="imgMain card-img-top img-fluid" src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
                     <% } %>
@@ -21,15 +21,15 @@
                 <%= product.price %>
             </p>
             <button class="btn btn-pink btn-block m-1">
-        Agregar a la wishlist
-      </button>
+                Agregar a la wishlist
+            </button>
 
             <form action="/productCart" method="POST">
                 <input name="id" id="id" hidden value="<%= product.id %>">
                 <button class="btn btn-pink btn-block m-1">
 
-          Agregar al carrito
-        </button>
+                    Agregar al carrito
+                </button>
             </form>
         </div>
     </article>
