@@ -31,7 +31,7 @@
                 </div>
                 <div class="row position product">
 
-                    <% if (product == null || product == "undefined") { %>
+                    <% if (product == null || product == "undefined" || product == undefined) { %>
                         <p>Aún no tenés seleccionado ningun Producto en tu carrito de Compras</p>
                         <% } else { %>
                             <% for( prod of product ) { %>
@@ -71,10 +71,10 @@
                     </button>
                                 </div>
                                 <% } %>
+                                    <% } %>
 
                 </div>
-                <a href="/" style="text-decoration: none;"><button class="btn btn-pink btn-block add-product"
-                    onclick="agregarProducto()">+
+                <a href="/" style="text-decoration: none;"><button class="btn btn-pink btn-block add-product">+
                     Agregar nuevo
                     producto</button></a>
 
@@ -127,7 +127,7 @@
                     <button class="btn btn-pink btn-block" type="submit "><i class="fas fa-lock"></i></i>Comprar</button>
 
                 </div>
-                <% } %>
+
 
         </main>
 

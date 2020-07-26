@@ -71,16 +71,24 @@ let controller = {
     cart: function(req, res, next) {
         let subtotal = 0;
         let discount = 0;
-        for (prod of req.session.product) {
-            subtotal += Number(prod.price),
-                discount += Number(prod.discount)
+        let discountDecimal = 0;
+        let totalDecimal = 0;
+        let total = 0;
+        if (req.session.product == null || req.session.product == "undefined" || req.session.product == undefined) {
+
+        } else {
+
+            for (prod of req.session.product) {
+                subtotal += Number(prod.price),
+                    discount += Number(prod.discount)
+
+            }
+            subtotal = subtotal.toFixed(2);
+            discountReal = discount * subtotal / 100;
+            discountDecimal = discountReal.toFixed(2);
+            total = subtotal - discountDecimal;
+            totalDecimal = total.toFixed(2);
         }
-        subtotal = subtotal.toFixed(2);
-        console.log(discount);
-        let discountReal = discount * subtotal / 100;
-        let discountDecimal = discountReal.toFixed(2);
-        let total = subtotal - discountDecimal;
-        let totalDecimal = total.toFixed(2);
 
         res.render("productCart", {
             user: req.session.user,
@@ -88,7 +96,6 @@ let controller = {
             discountDecimal,
             totalDecimal,
             subtotal
-
         });
     },
 
@@ -207,7 +214,6 @@ let controller = {
             req.session.product = [];
         }
         req.session.product.push(product);
-
         let subtotal = 0;
         let discount = 0;
         for (prod of req.session.product) {
@@ -215,7 +221,6 @@ let controller = {
                 discount += Number(prod.discount)
         }
         subtotal = subtotal.toFixed(2);
-        console.log(discount);
         let discountReal = discount * subtotal / 100;
         let discountDecimal = discountReal.toFixed(2);
         let total = subtotal - discountDecimal;
@@ -227,7 +232,6 @@ let controller = {
             discountDecimal,
             totalDecimal,
             subtotal
-
         });
     }
 };
