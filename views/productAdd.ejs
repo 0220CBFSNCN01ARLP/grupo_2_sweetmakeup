@@ -63,8 +63,8 @@
 
           <div class="col-12 margin-col">
             <div class="form-group">
-              <label for="productImg">Subir Imágenes</label>
-              <input type="file" class="form-control-file" id="productImg" name="productImg" multiple/>
+              <label for="productImg">Subir Imágenes *</label>
+              <input type="file" class="form-control-file" id="productImg" name="productImg" multiple />
             </div>
           </div>
 
@@ -97,8 +97,8 @@
           </div>
 
           <div class="col-12 col-sm-6 margin-col">
-            <label for="discount">Oferta<span class="descuento">(de 1 a 100)</span></label>
-            <input class="form-control" placeholder="Porcentaje" type="number" min="1" max="100" id="discount"
+            <label for="discount">Oferta<span class="descuento">(de 0 a 100)</span></label>
+            <input class="form-control" placeholder="Porcentaje" value="0" type="number" min="0" max="100" id="discount"
               name="discount" />
           </div>
 
@@ -115,7 +115,7 @@
           </div>
 
           <div class="col-sm-6 none-cell margin-col">
-            <label for="description">Descripcion del Producto</label><br />
+            <label for="description">Descripcion del Producto *</label><br />
             <p class="errorMsg" id="descriptionEmptyMsg">
               Debe ingresar una descripción del producto
             </p>
@@ -191,7 +191,8 @@
                 Este campo no puede estar vacío
               </p>
               <label for="length"></label>
-              <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="length" id="length" />
+              <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="length"
+                id="length" />
               <p class="errorMsg" id="lengthEmptyMsg">
                 Este campo no puede estar vacío
               </p>

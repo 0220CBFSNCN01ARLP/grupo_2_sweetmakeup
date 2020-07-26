@@ -82,8 +82,8 @@
               </div>
             </div>
             <div class="form-group up-images">
-              <label for="productImg">Subir nuevas imágenes</label>
-              <input form="editForm" type="file" class="form-control-file" id="productImg" name="productImg" multiple/>
+              <label for="productImg">Subir nuevas imágenes *</label>
+              <input form="editForm" type="file" class="form-control-file" id="productImg" name="productImg" multiple />
             </div>
           </div>
 
@@ -124,7 +124,7 @@
           </div>
 
           <div class="col-12 col-sm-6 margin-col">
-            <label for="oferta">Oferta * <span class="descuento">(de 1 a 100)</span></label>
+            <label for="oferta">Oferta * <span class="descuento">(de 0 a 100)</span></label>
             <input form="editForm" class="form-control" placeholder="Porcentaje" type="number" name="discount"
               id="discount" min="0" max="100" id="oferta" value="<%= product.discount %>" />
           </div>
@@ -144,7 +144,7 @@
           </div>
 
           <div class="col-sm-6 none-cell margin-col">
-            <label for="descripcion">Descripcion del Producto</label><br />
+            <label for="descripcion">Descripcion del Producto *</label><br />
             <p class="errorMsg" id="descriptionEmptyMsg">
               Debe ingresar una descripción del producto
             </p>
@@ -222,32 +222,33 @@
                 Este campo no puede estar vacío
               </p>
               <label for="length"></label>
-              <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="length" id="length" />
+              <input type="number" class="form-control form-margin" placeholder="Largo (mm)" name="length"
+                id="length" />
               <p class="errorMsg" id="lengthEmptyMsg">
                 Este campo no puede estar vacío
               </p>
             </div>
 
-          <div class="col-12 none-cell margin-col">
-            <label for="link">Subir video de YouTube</label>
-            <input form="editForm" type="text" class="form-control" placeholder="Pegar el Link" name="link" id="link"
-              value="<%= product.link %>" />
-          </div>
+            <div class="col-12 none-cell margin-col">
+              <label for="link">Subir video de YouTube</label>
+              <input form="editForm" type="text" class="form-control" placeholder="Pegar el Link" name="link" id="link"
+                value="<%= product.link %>" />
+            </div>
 
-          <div class="col-12 d-flex justify-content-end mg-button div-buttons">
-            <button type="button" class="btn btn-secondary btn-sm button-margin">
-              Guardar Borrador
-            </button>
-            <button form="editForm" type="submit" class="btn btn-primary btn-sm button-margin">
-              Publicar
-            </button>
-            <button form="deleteFormProduct" type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
-              ¡Borrar!
-            </button>
+            <div class="col-12 d-flex justify-content-end mg-button div-buttons">
+              <button type="button" class="btn btn-secondary btn-sm button-margin">
+                Guardar Borrador
+              </button>
+              <button form="editForm" type="submit" class="btn btn-primary btn-sm button-margin">
+                Publicar
+              </button>
+              <button form="deleteFormProduct" type="submit" class="btn btn-secondary btn-destroy btn-sm button-margin">
+                ¡Borrar!
+              </button>
+            </div>
           </div>
         </div>
-    </div>
-    <!-- /Cargar Producto -->
+        <!-- /Cargar Producto -->
   </main>
 
   <!-- Footer -->
