@@ -4,21 +4,26 @@ import ProductData from "./ProductData";
 import ProductAmount from "./ProductAmount";
 import UsersQuantity from "./UsersQuantity";
 import LastProduct from "./LastProduct";
+import Categories from "./Categories";
+import Footer from "./Footer";
 
 export default function Dashboard() {
   return (
     <div className="container-fluid">
       <Title />
-      <div class="row">
+      <div className="row">
         <ProductData />
         <ProductAmount />
         <UsersQuantity />
       </div>
-      <div class="row">
-        <div class="col-lg-6 mb-4">
+      <div className="row">
+        <div className="col-lg-6 mb-4">
           <LastProduct />
         </div>
+        <Categories />
       </div>
+      
     </div>
+    
   );
 }
