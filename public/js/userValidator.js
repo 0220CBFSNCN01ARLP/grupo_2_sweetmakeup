@@ -1,17 +1,13 @@
-const {
-    userUpdatePassword
-} = require("../../controllers/usersController");
+// const {
+//    userUpdatePassword
+// } = require("../../controllers/usersController");
 
 const form = document.getElementById("contact-form");
 
-
-
 const fields = ["firstName", "lastName", "email", "password", "rePassword", "avatar"];
 
-
-
 form.onsubmit = (evt) => {
-
+    debugger;
     evt.preventDefault();
     const errors = [];
 
@@ -20,13 +16,18 @@ form.onsubmit = (evt) => {
         validateNotEmpty(fieldName, errors);
     }
 
-    validateEmail("email", errors);
-    validateIsEquals("password", "rePassword", errors);
+    validateEmail("email",
+        errors);
+
+
+    validateIsEquals("password", "rePassword",
+        errors);
 
 
     minCharacters("firstName", 2, errors);
     minCharacters("lastName", 2, errors);
     minCharacters("password", 8, errors);
+
     if (errors.length == 0) {
         form.submit();
     } else {
@@ -131,7 +132,7 @@ const formLogin = document.getElementById("contact-form-login");
 const fieldsLogin = ["loginEmail", "loginPassword"];
 
 formLogin.onsubmit = (evt) => {
-    debugger;
+
     evt.preventDefault();
     const errors = [];
 
@@ -144,38 +145,8 @@ formLogin.onsubmit = (evt) => {
     // validateIsEquals("loginPassword", errors);
 
 
-
     if (errors.length == 0) {
         formLogin.submit();
-    } else {
-        document.documentElement.scrollTop = 0;
-    }
-    return false;
-
-};
-
-////// Edit
-
-const formEdit = document.getElementById("contact-form-edit");
-
-const fieldsEdit = ["firstName", "lastName", "email", "avatar"];
-
-formEdit.onsubmit = (evt) => {
-    debugger;
-    evt.preventDefault();
-    const errors = [];
-
-    for (let fieldName of fieldsEdit) {
-        clearErrors(fieldName);
-        validateNotEmpty(fieldName, errors);
-    }
-
-    validateEmail("email", errors);
-    minCharacters("firstName", 2, errors);
-    minCharacters("lastName", 2, errors);
-
-    if (errors.length == 0) {
-        formEdit.submit();
     } else {
         document.documentElement.scrollTop = 0;
     }

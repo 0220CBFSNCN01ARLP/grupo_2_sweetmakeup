@@ -3,6 +3,7 @@ import "./App.css";
 import Sidenav from "./components/Sidenav/Sidenav";
 import Header from "./components/Headers/Header";
 import Dashboard from "./components/Content/Dashboard";
+import Footer from "./components/Content/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Header />
           <Dashboard />
         </div>
+        <Footer />
       </div>
     </div>
   );
