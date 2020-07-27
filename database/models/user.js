@@ -30,6 +30,11 @@ module.exports = (sequelize, dataTypes) => {
       foreignKey: "userId",
       timestamps: false
     });
+
+    User.belongsTo(models.Role, {
+      as: "role",
+      foreignKey: "roleId",
+    })
   };
 
   return User;
