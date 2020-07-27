@@ -6,16 +6,10 @@ module.exports = (sequelize, dataTypes) => {
       primaryKey: true,
       allowNull: false,
     },
-    street: { type: dataTypes.STRING(100) },
-    number: { type: dataTypes.STRING(100) },
-    city: { type: dataTypes.STRING(100) },
-    province: { type: dataTypes.STRING(100) },
-    zipCode: { type: dataTypes.STRING(100) },
-    floor: { type: dataTypes.STRING(100) },
-    apartment: { type: dataTypes.STRING(100) },
-    phone: { type: dataTypes.STRING(100) },
-    neighborhood: { type: dataTypes.STRING(100) },
-    observations: { type: dataTypes.STRING(100) },
+    date: { type: dataTypes.DATE() },
+    total: { type: dataTypes.DECIMAL(6, 2) },
+    payment: { type: dataTypes.STRING(100) },
+    invoice: { type: dataTypes.STRING(100) },
   });
 
   Purchase.associate = function (models) {
