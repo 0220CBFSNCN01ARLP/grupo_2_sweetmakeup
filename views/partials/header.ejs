@@ -27,8 +27,10 @@
                     </svg>
                 </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/products/create">Agregar Producto</a>
-                        <a class="dropdown-item" href="/users/myProducts">Mis Productos</a>
+                        <% if (user.roleId == 2 || user.roleId == 3) { %>
+                            <a class="dropdown-item" href="/products/create">Agregar Producto</a>
+                            <a class="dropdown-item" href="/users/myProducts">Mis Productos</a>
+                        <% } %>
                         <a class="dropdown-item" href="/users/admin">Mis Datos</a>
                         <div class="inline-user">
                             <form action="/users/logout" method="GET">

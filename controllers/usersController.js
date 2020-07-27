@@ -36,6 +36,7 @@ let usersController = {
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
                     avatar: req.files[0].filename,
+                    roleId: 1
                 });
 
                 res.redirect("/");
