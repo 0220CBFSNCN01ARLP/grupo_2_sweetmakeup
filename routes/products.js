@@ -49,6 +49,7 @@ router.post(
       })
       .withMessage("Oferta: Coloque un numero entero del 1 al 100 sin comas"),
     check("description")
+      .trim()
       .isLength({
         min: 20,
         max: 300,
@@ -56,7 +57,9 @@ router.post(
       .withMessage(
         "Descripcion: Minimo: 20 caracteres, Maximo: 300 caracteres"
       ),
+
     check("ingredients")
+      .trim()
       .isLength({
         min: 20,
         max: 300,
@@ -64,7 +67,14 @@ router.post(
       .withMessage(
         "Ingredientes: Minimo: 20 caracteres, Maximo: 300 caracteres"
       ),
+
+    /*
+      check("ingredients").isEmpty({ ignore_whitespace:true }),
+
+      }),*/
+
     check("returnPolitic")
+      .trim()
       .isLength({
         min: 20,
         max: 300,
@@ -73,6 +83,7 @@ router.post(
         "Politicas de Devolucion: Minimo: 20 caracteres, Maximo: 300 caracteres"
       ),
     check("shipping")
+      .trim()
       .isLength({
         min: 20,
         max: 300,
