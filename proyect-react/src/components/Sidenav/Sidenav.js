@@ -3,9 +3,6 @@ import SidenavBrand from "./SidenavBrand";
 import SidenavDivider from "./SidenavDivider";
 import SidenavLink from "./SidenavLink";
 import SidenavTitle from "./SidenavTitle";
-import SidenavLinkPages from "./SidenavLinkPages";
-import SidenavLinkCharts from "./SidenavLinkCharts";
-import SidenavLinkTables from "./SidenavLinkTables";
 
 export default function Sidenav() {
     return (
@@ -15,12 +12,17 @@ export default function Sidenav() {
         >
             <SidenavBrand />
             <SidenavDivider />
-            <SidenavLink label="Dashboard" active icon="fa-tachometer-alt" />
+            <SidenavLink
+                active
+                label="Dashboard"
+                icon="fa-tachometer-alt"
+                link="/dashboard"
+            />
             <SidenavDivider />
             <SidenavTitle label="Actions" />
-            <SidenavLinkPages label="Pages" active icon="fa-folder" />
-            <SidenavLinkCharts label="Charts" active icon="fa-chart-area" />
-            <SidenavLinkTables label="Tables" active icon="fa-table" />
+            <SidenavLink label="Pages" icon="fa-folder" link="/pages" />
+            <SidenavLink label="Charts" icon="fa-chart-area" link="/charts" />
+            <SidenavLink label="Tables" icon="fa-table" link="/tables" />
             <SidenavDivider />
         </ul>
     );

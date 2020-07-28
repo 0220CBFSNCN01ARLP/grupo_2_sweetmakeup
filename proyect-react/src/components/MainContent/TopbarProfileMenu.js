@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function Profile() {
+import dummyAvatarPic from "../../assets/images/dummy-avatar.jpg";
+
+const TopbarProfileMenu = () => {
   return (
     <li className="nav-item dropdown no-arrow">
       <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
@@ -9,11 +11,12 @@ export default function Profile() {
         </span>
         <img
           className="img-profile rounded-circle"
-          src="assets/images/dummy-avatar.jpg"
+          src={dummyAvatarPic}
           width="60"
-          alt=""
         />
       </a>
     </li>
   );
-}
+};
+
+export default TopbarProfileMenu;
