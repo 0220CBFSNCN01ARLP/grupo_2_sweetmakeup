@@ -36,8 +36,9 @@ let usersController = {
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
                     avatar: req.files[0].filename,
+                    roleId: req.body.role,
                 });
-
+                console.log(req.body.role + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
                 res.redirect("/");
             } else {
                 return res.render("register", {
