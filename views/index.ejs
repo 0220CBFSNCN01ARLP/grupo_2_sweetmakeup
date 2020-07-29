@@ -85,15 +85,15 @@
       <div class="row margin-row">
         <% for (let i= 0; i<4; i++) { %>
         <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center pepito">
-          <article class="article-odd">
-            <a href="/products/<%= ojos[i].id %>" class="btn hover-odd">
+          <article class="article-odd hover-odd">
+            <a href="/products/<%= ojos[i].id %>" class="btn">
               <img class="img-product d-flex align-items-center justify-content-center"
                 src="/img/products/<%= ojos[i].images[0].route%>" alt="" />
               <h5 class="d-flex justify-content-center name-product">
                 <%= ojos[i].name %>
               </h5>
               <p class="d-flex justify-content-center price-product">
-                <%= ojos[i].price %>
+                <span class="price-symbol"><%= ojos[i].price %></span>
               </p>
             </a>
           </article>
@@ -117,15 +117,15 @@
       <div class="row margin-row">
         <% for (let i= 0; i<4; i++) { %>
         <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-          <article class="article-even">
-            <a href="/products/<%= labios[i].id %>" class="btn hover-even">
+          <article class="article-even hover-odd">
+            <a href="/products/<%= labios[i].id %>" class="btn">
               <img class="img-product d-flex align-items-center justify-content-center"
                 src="/img/products/<%= labios[i].images[0].route %>" alt="" />
               <h5 class="d-flex justify-content-center name-product">
                 <%= labios[i].name %>
               </h5>
               <p class="d-flex justify-content-center price-product">
-                <%= labios[i].price %>
+                <span class="price-symbol"><%= labios[i].price %></span>
               </p>
             </a>
           </article>
@@ -149,15 +149,15 @@
       <div class="row margin-row">
         <% for (let i= 0; i<4; i++) { %>
         <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-          <article class="article-odd">
-            <a href="/products/<%= cejas[i].id %>" class="btn hover-odd">
+          <article class="article-odd hover-odd">
+            <a href="/products/<%= cejas[i].id %>" class="btn">
               <img class="img-product d-flex align-items-center justify-content-center"
                 src="/img/products/<%= cejas[i].images[0].route %>" alt="" />
               <h5 class="d-flex justify-content-center name-product">
                 <%= cejas[i].name %>
               </h5>
               <p class="d-flex justify-content-center price-product">
-                <%= cejas[i].price %>
+                <span class="price-symbol"><%= cejas[i].price %></span>
               </p>
             </a>
           </article>
@@ -181,7 +181,7 @@
       <div class="row margin-row">
         <% for (let i= 0; i<4; i++) { %>
         <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-          <article class="article-even">
+          <article class="article-even hover-odd">
             <a href="/products/<%= rostro[i].id %>" class="btn hover-even">
               <img class="img-product d-flex align-items-center justify-content-center"
                 src="/img/products/<%= rostro[i].images[0].route %>" alt="" />
@@ -189,7 +189,7 @@
                 <%= rostro[i].name %>
               </h5>
               <p class="d-flex justify-content-center price-product">
-                <%= rostro[i].price %>
+                <span class="price-symbol"><%= rostro[i].price %></span>
               </p>
             </a>
           </article>

@@ -162,6 +162,10 @@
   text-decoration: none;
 }
 
+.price-symbol::before {
+  content: "$";
+}
+
 /* Agregar icono */
 
 /* .award-icon {
@@ -197,10 +201,6 @@
   margin-bottom: 15px;
   background-color: rgb(241, 216, 220);
   border-radius: 10px;
-}
-
-.hover-even:hover {
-  background-color: white;
 }
 
 /* Seccion Informacion */
