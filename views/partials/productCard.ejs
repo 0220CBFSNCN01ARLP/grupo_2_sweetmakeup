@@ -1,21 +1,20 @@
 <div class="col-12 col-sm-6 col-md-4 h-100">
     <article class="productCard card mt-2">
-        <a href="/products/<%= product.id %>" class="anchor-title-section">
-            <h4 class="card-title">
+        <a href="/products/<%= product.id %>" class="anchor-title-section titulo-efecto">
+            <h4 class="card-title titulo-efecto">
                 <%= product.name %>
             </h4>
         </a>
         <a href="/products/<%= product.id %>" class="d-flex justify-content-center">
             <% if (product.images.length > 0) { %>
-            <img class="imgMain card-img-top img-fluid img " src="/img/products/<%= product.images[0].route%>"
-                alt="<%= product.name %>" />
-            <% } else { %>
-            <img class="imgMain card-img-top img-fluid" src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
-            <% } %>
+                <img class="imgMain card-img-top img-fluid img " src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
+                <% } else { %>
+                    <img class="imgMain card-img-top img-fluid" src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
+                    <% } %>
         </a>
 
         <div class="card-body h-30">
-            <p class="description">
+            <p class="description ajuste-descripcion">
                 <%= product.description %>
             </p>
             <p class="price">$
