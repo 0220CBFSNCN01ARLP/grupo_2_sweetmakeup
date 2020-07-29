@@ -7,6 +7,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     name: { type: dataTypes.STRING(500), allowNull: false },
+    hexCode: { type: dataTypes.STRING(500), allowNull: false },
   });
 
   Color.associate = function (models) {

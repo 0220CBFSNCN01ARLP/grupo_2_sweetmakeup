@@ -40,19 +40,15 @@
                             <input type="checkbox" class="custom-control-input" id="remember" name="remember" value="remember" />
                             <label class="custom-control-label" for="remember">Recordarme</label>
                         </div>
+                        <% if( typeof mensaje != 'undefined') { %>
+                            <p class="errors"><%= mensaje %></p>
+                        <% } %>
+                        <% if( typeof mensaje2 != 'undefined') { %>
+                        <p class="errors"><%= mensaje2 %></p>
+                        <% } %>
 
-                        <% if( typeof mensaje != 'undefined' ) { %>
-                            <p class="errors">
-                                <%= mensaje %>
-                            </p>
-                            <% } %>
-                                <% if( typeof mensaje2 != 'undefined' ) { %>
-                                    <p class="errors">
-                                        <%= mensaje2 %>
-                                    </p>
-                                    <% } %>
 
-                                        <button class="btn btn-pink btn-block buttonMargin" type="submit ">
+                    <button class="btn btn-pink btn-block buttonMargin" type="submit ">
                         Ingresar
                     </button>
                     </form>
@@ -69,7 +65,6 @@
                                 <% } %>
                         </ul>
                         <% } %>
-
                             <form class="form-padding" id="contact-form" class="container" action="/users/register" method="POST" enctype="multipart/form-data">
                                 <h1>Registrarse</h1>
                                 <div class="custom-file">
@@ -96,6 +91,20 @@
                                 <label for="rePassword">Confirmar Contraseña</label>
                                 <input type="password" class="form-control" id="rePassword" name="rePassword" />
                                 <div class="rePassword invalid-feedback"></div>
+
+                                <label for="role">Seleccione el tipo de cuenta que desea crear:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="role" id="role1" value=1 checked>
+                                    <label class="form-check-label" for="role1">
+                            Cliente
+                        </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="role" id="role2" value=2>
+                                    <label class="form-check-label" for="role2">
+                            Vendedor
+                        </label>
+                                </div>
 
                                 <button class="btn btn-pink btn-block" type="submit">
                         Registrarse
