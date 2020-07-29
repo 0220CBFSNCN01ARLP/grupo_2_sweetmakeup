@@ -18,6 +18,17 @@
                 <form class="form-padding" id="contact-form-login" class="container" action="/users/login"
                     method="POST">
                     <h1>Iniciar sesión</h1>
+                    <nav>
+                        <div class="connect-1 buttonMargin">
+                            <i class="fab fa-facebook-f"></i>
+                            <a href="https://en-gb.facebook.com/login/ ">Continuar con Facebook</a>
+                        </div>
+                        <div class="connect-2 buttonMargin">
+                            <i class="fab fa-twitter"></i>
+                            <a href="https://twitter.com/login?lang=es ">Continuar con Twitter</a>
+                        </div>
+                    </nav>
+
                     <label for="loginEmail">Direccion de correo electronico</label>
                     <input type="email" class="form-control" name="loginEmail" id="loginEmail"
                         aria-describedby="emailHelp" />
@@ -32,6 +43,13 @@
                             value="remember" />
                         <label class="custom-control-label" for="remember">Recordarme</label>
                     </div>
+                    <% if( typeof mensaje != 'undefined') { %>
+                    <p class="errors"><%= mensaje %></p>
+                    <% } %>
+                    <% if( typeof mensaje2 != 'undefined') { %>
+                    <p class="errors"><%= mensaje2 %></p>
+                    <% } %>
+
 
                     <button class="btn btn-pink btn-block buttonMargin" type="submit ">
                         Ingresar
@@ -78,7 +96,7 @@
                     <input type="password" class="form-control" id="rePassword" name="rePassword" />
                     <div class="rePassword invalid-feedback"></div>
 
-                    <label for="role">Seleccione el tipo de cuenta que desea crear</label>
+                    <label for="role">Seleccione el tipo de cuenta que desea crear:</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="role" id="role1" value=1 checked>
                         <label class="form-check-label" for="role1">

@@ -52,19 +52,29 @@ let usersController = {
 
     login: async(req, res, next) => {
         try {
+
             let user = await User.findOne({
                 where: {
                     email: req.body.loginEmail,
                 },
             });
+
             if (!user) {
-                return res.redirect("register");
+                return res.render("register", {
+                    mensaje: "Usuario incorrecto"
+                });
             }
+
+
             let correctPw = await bcrypt.compare(req.body.loginPassword, user.password);
             if (!correctPw) {
                 user = null;
                 console.log("Contraseña incorrecta");
-                return res.redirect("register");
+
+
+                return res.render("register", {
+                    mensaje2: "Contraseña incorrecta"
+                });
             }
             let cookieAge = 1800000;
             if (req.body.remember != undefined) {
