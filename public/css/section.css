@@ -6,9 +6,23 @@ rosa claro {
   background-color: #f2d7de;
 } */
 
+.section-banner-title {
+  position: relative;
+}
+
 .banner {
-  height: 25vh;
+  height: 38vh;
   object-fit: cover;
+}
+
+.upper-title-section {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 80px;
+  left: 50px;
+  font-size: 75px;
+  font-family: "Roboto", sans-serif;
+  color: white;
 }
 
 .img {
