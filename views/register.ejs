@@ -41,7 +41,18 @@
                             <label class="custom-control-label" for="remember">Recordarme</label>
                         </div>
 
-                        <button class="btn btn-pink btn-block buttonMargin" type="submit ">
+                        <% if( typeof mensaje != 'undefined' ) { %>
+                            <p class="errors">
+                                <%= mensaje %>
+                            </p>
+                            <% } %>
+                                <% if( typeof mensaje2 != 'undefined' ) { %>
+                                    <p class="errors">
+                                        <%= mensaje2 %>
+                                    </p>
+                                    <% } %>
+
+                                        <button class="btn btn-pink btn-block buttonMargin" type="submit ">
                         Ingresar
                     </button>
                     </form>
@@ -58,6 +69,7 @@
                                 <% } %>
                         </ul>
                         <% } %>
+
                             <form class="form-padding" id="contact-form" class="container" action="/users/register" method="POST" enctype="multipart/form-data">
                                 <h1>Registrarse</h1>
                                 <div class="custom-file">
