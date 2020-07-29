@@ -1,12 +1,20 @@
 .related {
-    background-color: #716669;
+  background-color: #716669;
 }
 
 .product-card a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .button-wrapper a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.img-detail-product {
+  width: 80%;
+}
+
+.padding-title-detail {
+  padding: 15px;
 }

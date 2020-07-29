@@ -3,127 +3,134 @@
 
 <head>
     <%- include("partials/head") %>
-        <link rel="stylesheet" href="/css/productDetail.css" />
-        <script defer src="/js/thumbnailGallery.js"></script>
-        <title>Make.u |
-            <%= product.name%>
-        </title>
+    <link rel="stylesheet" href="/css/productDetail.css" />
+    <script defer src="/js/thumbnailGallery.js"></script>
+    <title>Make.u |
+        <%= product.name%>
+    </title>
 </head>
 
 <body>
     <!-- Barra de navegacion principal -->
     <%- include('partials/header') %>
 
-        <main class="container my-3">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <article class="product-card card">
-                        <% if (product.images.length > 0) { %>
-                            <img id="mainImg" class="card-img-top mh-50" src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
-                            <% } else { %>
-                                <img class="card-img-top mh-50" src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
-                                <% } %>
-                                    <div class="row p-1 m-0">
-                                        <% for( let image of product.images ) { %>
-                                            <img class="col-3 img-fluid img-thumbnail thumbnail" src="/img/products/<%= image.route %> " alt="Imagen del producto" />
-                                            <% } %>
-                                    </div>
-                                    <div class="justify-content-center d-flex border-top">
-                                        <h4 class="card-title">
-                                            <%= product.name%>
-                                        </h4>
-                                    </div>
-                    </article>
-                </div>
-
-                <div class="col-2" style="display: none;"></div>
-                <div class="productDetails col p-2">
-
-                    <p class="description">
-                        <%= product.description%>
-                    </p>
-                    <p class="ingredients">
-                        <%= product.ingredients %>
-                    </p>
-                    <p>
-                        $
-                        <%= product.price %>
-                    </p>
-                    <div class="row">
-                        <% if (user) { %>
-                            <% if (product.user.id == user.id) { %>
-                                <div class="button-wrapper col-12 col-md-6 py-1">
-                                    <a href="/products/edit/<%= product.id %> "><button class="btn btn-pink btn-block">
-                Editar producto
-              </button></a>
-                                </div>
-                                <% } else { %>
-                                    <form action="/productCart" method="POST">
-
-                                        <input name="id" id="id" hidden value="<%= product.id %>">
-                                        <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                                            <a href="/cart"><button class="btn btn-pink btn-block">
-                  Agregar al carrito
-                </button></a>
-                                        </div>
-                                        <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                                            <button class="btn btn-pink btn-block">
-                Agregar a la wishlist
-              </button>
-                                    </form>
-
-                                    </div>
-                                    <% } %>
-                                        <% } else { %>
-                                            <form action="/productCart" method="POST">
-                                                <input name="id" id="id" hidden value="<%= product.id %>">
-                                                <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                                                    <a href="/cart"><button class="btn btn-pink btn-block">
-                Agregar al carrito
-              </button></a>
-                                                </div>
-                                                <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                                                    <button class="btn btn-pink btn-block">
-              Agregar a la wishlist
-            </button>
-                                                </div>
-                                            </form>
-
-                                            <% } %>
+    <main class="container my-3">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <article class="product-card card">
+                    <div class="justify-content-center d-flex border-top padding-title-detail">
+                        <h4 class="card-title">
+                            <%= product.name%>
+                        </h4>
                     </div>
-                </div>
+                    <% if (product.images.length > 0) { %>
+                    <div class="d-flex justify-content-center">
+                        <img id="mainImg" class="card-img-top mh-50 img-detail-product"
+                            src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
+                        <% } else { %>
+                        <img class="card-img-top mh-50" src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
+                        <% } %>
+                    </div>
+
+                    <div class="row p-1 m-0">
+                        <% for( let image of product.images ) { %>
+                        <img class="col-3 img-fluid img-thumbnail thumbnail" src="/img/products/<%= image.route %> "
+                            alt="Imagen del producto" />
+                        <% } %>
+                    </div>
+
+                </article>
             </div>
-        </main>
 
-        <div class="related container-fluid vh-50 py-3">
-            <h3 class="text-center">Productos relacionados</h3>
-            <div class="row m-0">
+            <div class="col-2" style="display: none;"></div>
+            <div class="productDetails col p-2">
 
-                <% for(elem of related) { %>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <article class="product-card card my-2">
-                            <a href="/products/<%= elem.id %>">
-
-                                <% if (elem.images.length > 0) { %>
-                                    <img class="img-product w-100" src="/img/products/<%= elem.images[0].route%>" alt="<%= product.name %>" />
-                                    <% } else { %>
-                                        <img class="img-product w-100" src="https://place-hold.it/500x500" alt="">
-                                        <% } %>
-                                            <h3 class="card-title text-center">
-                                                <%= elem.name %>
-                                            </h3>
-                                            <p class="price text-center">
-                                                <%= elem.price %>
-                                            </p>
-                            </a>
-                        </article>
+                <p class="description">
+                    <%= product.description%>
+                </p>
+                <p class="ingredients">
+                    <%= product.ingredients %>
+                </p>
+                <p>
+                    $
+                    <%= product.price %>
+                </p>
+                <div class="row">
+                    <% if (user) { %>
+                    <% if (product.user.id == user.id) { %>
+                    <div class="button-wrapper col-12 col-md-6 py-1">
+                        <a href="/products/edit/<%= product.id %> "><button class="btn btn-pink btn-block">
+                                Editar producto
+                            </button></a>
                     </div>
-                    <% } %>
+                    <% } else { %>
+                    <form action="/productCart" method="POST">
 
+                        <input name="id" id="id" hidden value="<%= product.id %>">
+                        <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+                            <a href="/cart"><button class="btn btn-pink btn-block">
+                                    Agregar al carrito
+                                </button></a>
+                        </div>
+                        <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+                            <button class="btn btn-pink btn-block">
+                                Agregar a la wishlist
+                            </button>
+                    </form>
+
+                </div>
+                <% } %>
+                <% } else { %>
+                <form action="/productCart" method="POST">
+                    <input name="id" id="id" hidden value="<%= product.id %>">
+                    <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+                        <a href="/cart"><button class="btn btn-pink btn-block">
+                                Agregar al carrito
+                            </button></a>
+                    </div>
+                    <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+                        <button class="btn btn-pink btn-block">
+                            Agregar a la wishlist
+                        </button>
+                    </div>
+                </form>
+
+                <% } %>
             </div>
         </div>
+        </div>
+    </main>
 
-        <%- include("partials/footer") %>
+    <div class="related container-fluid vh-50 py-3">
+        <h3 class="text-center">Productos relacionados</h3>
+        <div class="row m-0">
+
+            <% for(elem of related) { %>
+            <div class="col-6 col-md-4 col-lg-3">
+                <article class="product-card card my-2">
+                    <a href="/products/<%= elem.id %>">
+
+                        <% if (elem.images.length > 0) { %>
+                        <img class="img-product w-100" src="/img/products/<%= elem.images[0].route%>"
+                            alt="<%= product.name %>" />
+                        <% } else { %>
+                        <img class="img-product w-100" src="https://place-hold.it/500x500" alt="">
+                        <% } %>
+                        <h3 class="card-title text-center">
+                            <%= elem.name %>
+                        </h3>
+                        <p class="price text-center">
+                            <%= elem.price %>
+                        </p>
+                    </a>
+                </article>
+            </div>
+            <% } %>
+
+        </div>
+    </div>
+
+    <%- include("partials/footer") %>
 </body>
 
 </html>
