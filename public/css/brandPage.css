@@ -1,0 +1,89 @@
+.brand-banner-title {
+  position: relative;
+}
+
+.banner-img {
+  height: 38vh;
+  filter: blur(3px);
+  object-fit: cover;
+}
+
+.upper-title-section {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 80px;
+  left: 50px;
+  font-size: 55px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.p-subtitle-section {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 130px;
+  left: 50px;
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.img {
+  width: auto;
+  height: 30vh;
+}
+
+.anchor-title-section {
+  padding: 15px;
+}
+
+.nav-section {
+  background-color: #f2d7de;
+}
+
+.nav-item {
+  text-transform: capitalize;
+}
+
+.nav-item :hover {
+  background-color: #dc92a5;
+}
+
+.card-title {
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #f2d7de;
+  border-color: black;
+  color: black;
+}
+
+.hover-product-card-section:hover {
+  -webkit-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #dc92a5;
+  border-color: black;
+}
+
+.search-incorrect {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  width: 100%;
+  color: #716669;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  background-color: whitesmoke;
+}

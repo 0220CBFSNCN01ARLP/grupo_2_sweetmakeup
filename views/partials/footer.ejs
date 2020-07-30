@@ -26,30 +26,31 @@
             <div class="col-8">
                 <div class="row">
                     <div class="col-3 user-display">
-                        <h5 class="text-center h5-footer">Usuario</h5>
-                        <ul class="text-center ul-footer">
-                            <% if(typeof user == 'undefined') { %>
-                            <a class="a-footer" href="/users/register">
-                                <li>Registarse</li>
-                            </a>
-                            <a class="a-footer" href="/users/register">
-                                <li>Iniciar Sesion</li>
-                            </a>
-                            <% } %>
-                            <% if(typeof user != 'undefined') { %>
-                            <a class="a-footer" href="#">
-                                <li>Mis compras</li>
-                            </a>
-                            <a class="a-footer" href="#">
-                                <li>Mis favoritos</li>
-                            </a>
-                            <% } %>
+                        <% if(typeof user == 'undefined') { %>
+                        <h5 class="text-center h5-footer">¿Queres comprar?</h5>
+                        <ul class="text-center ul-footer"></ul>
+                        <a class="a-footer" href="/users/register">
+                            <li>Registarse</li>
+                        </a>
+                        <a class="a-footer" href="/users/register">
+                            <li>Iniciar Sesion</li>
+                        </a>
+                        <% } %>
+                        <% if(typeof user != 'undefined') { %>
+                        <h5 class="text-center h5-footer">Bienvenido!</h5>
+                        <a class="a-footer" href="#">
+                            <li>Mis compras</li>
+                        </a>
+                        <a class="a-footer" href="#">
+                            <li>Mis favoritos</li>
+                        </a>
+                        <% } %>
                         </ul>
                     </div>
                     <div class="col-3 business-display">
-                        <h5 class="text-center h5-footer">Vendedor</h5>
+                        <% if(typeof user == 'undefined') { %>
+                        <h5 class="text-center h5-footer">¿Queres vender?</h5>
                         <ul class="text-center ul-footer">
-                            <% if(typeof user == 'undefined') { %>
                             <a class="a-footer" href="/users/register">
                                 <li>Registarse</li>
                             </a>
@@ -58,6 +59,7 @@
                             </a>
                             <% } %>
                             <% if(typeof user != 'undefined') { %>
+                            <h5 class="text-center h5-footer">Vendedor</h5>
                             <a class="a-footer" href="/products/create">
                                 <li>Vender</li>
                             </a>

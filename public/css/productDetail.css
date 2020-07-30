@@ -18,3 +18,65 @@
 .padding-title-detail {
   padding: 15px;
 }
+
+.padding-row-detail {
+  padding: 20px;
+  padding-left: 100px;
+}
+
+.price-style {
+  font-size: 28px;
+  color: #fe452a;
+}
+
+.inline-block-detail {
+  display: block;
+  padding: 6px;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.inline-block-detail a {
+  text-decoration: none;
+}
+
+.subtitle-detail {
+  font-size: 20px;
+  color: #dc92a5;
+}
+
+.plus-icon {
+  /* padding-left: 350px; */
+  color: #dc92a5;
+}
+
+.padding-button-detail {
+  padding-top: 35px;
+}
+
+.icon-arrow {
+  margin-right: 5px;
+  color: #dc92a5;
+}
+
+.pd-arrow {
+  padding-left: 5px;
+}
+
+.upper-first-letter {
+  text-transform: lowercase;
+}
+
+.upper-first-letter::first-letter {
+  text-transform: uppercase;
+}
+
+.container-color-detail {
+  background-color: #ededed;
+  margin: 0;
+  padding-bottom: 140px;
+}
+
+.article-border {
+  border-radius: 15px;
+  width: 70%;
+}

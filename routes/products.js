@@ -179,4 +179,8 @@ router.put(
 router.delete("/delete/:id", authMiddleware, productController.destroy);
 router.get("/:id", productController.detail);
 
+// Brand Detail
+
+router.get("/brand/:id", productController.brandDetail);
+
 module.exports = router;

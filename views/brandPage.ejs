@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head") %>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/brandPage.css" />
+    <title>Make.u |
+        <%= brand.name %>
+    </title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+    <div class="brand-banner-title">
+        <img src="/img/bannerBrand2.jpg" alt="Banner principal" class=" banner-img w-100 " />
+        <p class="p-subtitle-section">Estas viendo productos de</p>
+        <h1 class="upper-title-section"><%= brand.name %></h1>
+    </div>
+
+    <main class="container mt-1">
+        <div class="row vh-75">
+            <div class="col-12 col-sm-6 col-md-4 h-100">
+                <article class="productCard card mt-2 hover-product-card-section">
+                    <a href="/products/<%= brand.products.id %>" class="anchor-title-section titulo-efecto">
+                        <h4 class="card-title titulo-efecto">
+                            <%= brand.products.name %>
+                        </h4>
+                    </a>
+                    <a href="/products/<%= brand.products.id %>" class="d-flex justify-content-center">
+                        <img class="imgMain card-img-top img-fluid"
+                            src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
+                    </a>
+
+                    <div class="card-body h-30">
+                        <p class="description ajuste-descripcion">
+                            <%= brand.products.description %>
+                        </p>
+                        <p class="price">$
+                            <%= brand.products.price %>
+                        </p>
+                        <button class="btn btn-pink btn-block m-1">
+                            Agregar a la wishlist
+                        </button>
+
+                        <form action="/productCart" method="POST">
+                            <input name="id" id="id" hidden value="<%= brand.products.id %>">
+                            <button class="btn btn-pink btn-block m-1">
+
+                                Agregar al carrito
+                            </button>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+
+    </main>
+    <%- include("partials/footer") %>
+</body>
+
+</html>

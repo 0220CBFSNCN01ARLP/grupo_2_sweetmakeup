@@ -14,15 +14,15 @@
     <!-- Barra de navegacion principal -->
     <%- include('partials/header') %>
 
-    <main class="container my-3">
+    <main class="container-fluid container-color-detail">
         <div class="row">
-            <div class="col-12 col-md-6">
-                <article class="product-card card">
-                    <div class="justify-content-center d-flex border-top padding-title-detail">
-                        <h4 class="card-title">
-                            <%= product.name%>
-                        </h4>
-                    </div>
+            <div class="col-12 padding-row-detail">
+                <a href="/<%= product.category.name %>"><i class="fas fa-long-arrow-alt-left icon-arrow"><span
+                            class="pd-arrow">Volver a</span><span class="upper-first-letter">
+                            <%= product.category.name %></span></i></a>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-start">
+                <article class="product-card card article-border">
                     <% if (product.images.length > 0) { %>
                     <div class="d-flex justify-content-center">
                         <img id="mainImg" class="card-img-top mh-50 img-detail-product"
@@ -32,7 +32,7 @@
                         <% } %>
                     </div>
 
-                    <div class="row p-1 m-0">
+                    <div class="row p-1 m-0 d-flex justify-content-center">
                         <% for( let image of product.images ) { %>
                         <img class="col-3 img-fluid img-thumbnail thumbnail" src="/img/products/<%= image.route %> "
                             alt="Imagen del producto" />
@@ -44,18 +44,70 @@
 
             <div class="col-2" style="display: none;"></div>
             <div class="productDetails col p-2">
-
-                <p class="description">
-                    <%= product.description%>
-                </p>
-                <p class="ingredients">
-                    <%= product.ingredients %>
-                </p>
-                <p>
+                <p> <%= product.tags.name %> </p>
+                <h1 class="card-title">
+                    <%= product.name%>
+                </h1>
+                <p class="price-style">
                     $
                     <%= product.price %>
                 </p>
-                <div class="row">
+                <p>
+                    $
+                    <%= product.discount %>
+                </p>
+                <h2 class="subtitle-detail">Marca</h2>
+                <a href="/products/brand/<%= product.brand.id %>">
+                    <p><%= product.brand.name %></p>
+                </a>
+
+
+                <a class="inline-block-detail" data-toggle="collapse" href="#collapseDescription" role="button"
+                    aria-expanded="false" aria-controls="collapseDescription">
+                    <span class="subtitle-detail">Descripcion</span>
+                    <i class="fas fa-plus plus-icon"></i>
+                </a>
+                <div class="collapse" id="collapseDescription">
+                    <div class="card card-body">
+                        <%= product.description%>
+                    </div>
+                </div>
+
+                <a class="inline-block-detail" data-toggle="collapse" href="#collapseIngredients" role="button"
+                    aria-expanded="false" aria-controls="collapseIngredients">
+                    <span class="subtitle-detail">Ingredientes</span>
+                    <i class="fas fa-plus plus-icon"></i>
+                </a>
+                <div class="collapse" id="collapseIngredients">
+                    <div class="card card-body">
+                        <%= product.ingredients %>
+                    </div>
+                </div>
+
+                <a class="inline-block-detail" data-toggle="collapse" href="#collapseShipping" role="button"
+                    aria-expanded="false" aria-controls="collapseShipping">
+                    <span class="subtitle-detail">Envios</span>
+                    <i class="fas fa-plus plus-icon"></i>
+                </a>
+                <div class="collapse" id="collapseShipping">
+                    <div class="card card-body">
+                        <%= product.shipping %>
+                    </div>
+                </div>
+
+                <a class="inline-block-detail" data-toggle="collapse" href="#collapsePolitic" role="button"
+                    aria-expanded="false" aria-controls="collapsePolitic">
+                    <span class="subtitle-detail">Politicas de Devolucion</span>
+                    <i class="fas fa-plus plus-icon"></i>
+                </a>
+                <div class="collapse" id="collapsePolitic">
+                    <div class="card card-body">
+                        <%= product.returnPolitic %>
+                    </div>
+                </div>
+
+
+                <div class="row padding-button-detail d-flex justify-content-center">
                     <% if (user) { %>
                     <% if (product.user.id == user.id) { %>
                     <div class="button-wrapper col-12 col-md-6 py-1">
@@ -65,15 +117,16 @@
                     </div>
                     <% } else { %>
                     <form action="/productCart" method="POST">
-
                         <input name="id" id="id" hidden value="<%= product.id %>">
                         <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                            <a href="/cart"><button class="btn btn-pink btn-block">
+                            <a href="/cart">
+                                <button class="btn btn-pink btn-block">
                                     Agregar al carrito
-                                </button></a>
+                                </button>
+                            </a>
                         </div>
-                        <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                            <button class="btn btn-pink btn-block">
+                        <div class="button-wrapper col-12 col-md-6 py-1">
+                            <button class="btn btn-pink btn-block pepe">
                                 Agregar a la wishlist
                             </button>
                     </form>
@@ -88,13 +141,12 @@
                                 Agregar al carrito
                             </button></a>
                     </div>
-                    <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                        <button class="btn btn-pink btn-block">
-                            Agregar a la wishlist
-                        </button>
-                    </div>
                 </form>
-
+                <div class="button-wrapper col-12 col-md-6 py-1">
+                    <button class="btn btn-pink btn-block">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
                 <% } %>
             </div>
         </div>

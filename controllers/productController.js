@@ -191,7 +191,7 @@ let controller = {
   detail: async function (req, res, next) {
     try {
       let product = await Product.findByPk(req.params.id, {
-        include: ["category", "images", "user"],
+        include: ["category", "images", "user", "brand", "tags"],
       });
       let related = await Product.findAll({
         include: [
@@ -208,6 +208,21 @@ let controller = {
       res.render("productDetail", {
         product,
         related,
+        user: req.session.user,
+      });
+    } catch (e) {
+      console.log("Error al obtener información de la base de datos " + e);
+    }
+  },
+
+  brandDetail: async (req, res) => {
+    try {
+      let brand = await Brand.findByPk(req.params.id, {
+        include: ["products"],
+      });
+
+      res.render("brandPage", {
+        brand,
         user: req.session.user,
       });
     } catch (e) {
