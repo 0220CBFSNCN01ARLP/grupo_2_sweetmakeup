@@ -16,17 +16,17 @@ module.exports = (sequelize, dataTypes) => {
   User.associate = function (models) {
     User.hasMany(models.Address, {
       foreignKey: "userId",
-      as: "address",
+      as: "addresses",
     });
 
     User.hasMany(models.Purchase, {
       //user es parent, y purchase es el child = Parect.hasMany(models.Child)
       foreignKey: "userId",
-      as: "purchase",
+      as: "purchases",
     });
 
     User.hasMany(models.Product, {
-      as: "product",
+      as: "products",
       foreignKey: "userId",
       timestamps: false
     });
