@@ -205,9 +205,13 @@ let controller = {
         ],
         limit: 4,
       });
+      let brand = await Brand.findByPk(req.params.id, {
+        include: ["products"],
+      });
       res.render("productDetail", {
         product,
         related,
+        brand,
         user: req.session.user,
       });
     } catch (e) {

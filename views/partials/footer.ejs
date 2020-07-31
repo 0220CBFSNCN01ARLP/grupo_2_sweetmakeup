@@ -36,15 +36,6 @@
                             <li>Iniciar Sesion</li>
                         </a>
                         <% } %>
-                        <% if(typeof user != 'undefined') { %>
-                        <h5 class="text-center h5-footer">Bienvenido!</h5>
-                        <a class="a-footer" href="#">
-                            <li>Mis compras</li>
-                        </a>
-                        <a class="a-footer" href="#">
-                            <li>Mis favoritos</li>
-                        </a>
-                        <% } %>
                         </ul>
                     </div>
                     <div class="col-3 business-display">
@@ -56,21 +47,6 @@
                             </a>
                             <a class="a-footer" href="/users/register">
                                 <li>Iniciar Sesion</li>
-                            </a>
-                            <% } %>
-                            <% if(typeof user != 'undefined') { %>
-                            <h5 class="text-center h5-footer">Vendedor</h5>
-                            <a class="a-footer" href="/products/create">
-                                <li>Vender</li>
-                            </a>
-                            <a class="a-footer" href="/users/myProducts">
-                                <li>Mis productos</li>
-                            </a>
-                            <a class="a-footer" href="/users/myProducts">
-                                <li>Editar producto</li>
-                            </a>
-                            <a class="a-footer" href="/users/admin">
-                                <li>Mis datos</li>
                             </a>
                             <% } %>
                         </ul>
