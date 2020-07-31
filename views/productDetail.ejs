@@ -151,36 +151,145 @@
             </div>
         </div>
         </div>
-    </main>
 
-    <div class="related container-fluid vh-50 py-3">
-        <h3 class="text-center">Productos relacionados</h3>
-        <div class="row m-0">
+        <div class="container pd-container-video">
+            <div class="row">
+                <h2 class="title-detail-video">Algunos consejos</h2>
+                <div class="col-12 d-flex justify-content-center">
+                    <iframe width="700" height="415" src="https://www.youtube.com/embed/efh3AEDMqXg" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
 
-            <% for(elem of related) { %>
-            <div class="col-6 col-md-4 col-lg-3">
-                <article class="product-card card my-2">
-                    <a href="/products/<%= elem.id %>">
-
-                        <% if (elem.images.length > 0) { %>
-                        <img class="img-product w-100" src="/img/products/<%= elem.images[0].route%>"
-                            alt="<%= product.name %>" />
-                        <% } else { %>
-                        <img class="img-product w-100" src="https://place-hold.it/500x500" alt="">
-                        <% } %>
-                        <h3 class="card-title text-center">
-                            <%= elem.name %>
-                        </h3>
-                        <p class="price text-center">
-                            <%= elem.price %>
-                        </p>
-                    </a>
-                </article>
+                </div>
             </div>
-            <% } %>
+        </div>
+
+
+        <div class="related container-fluid vh-50 py-3">
+            <h3 class="text-center">Tu match ideal!</h3>
+            <div class="row m-0">
+
+                <% for(elem of related) { %>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <article class="product-card card my-2">
+                        <a href="/products/<%= elem.id %>">
+
+                            <% if (elem.images.length > 0) { %>
+                            <img class="img-product w-100" src="/img/products/<%= elem.images[0].route%>"
+                                alt="<%= product.name %>" />
+                            <% } else { %>
+                            <img class="img-product w-100" src="https://place-hold.it/500x500" alt="">
+                            <% } %>
+                            <h3 class="card-title text-center">
+                                <%= elem.name %>
+                            </h3>
+                            <p class="price text-center">
+                                <%= elem.price %>
+                            </p>
+                        </a>
+                    </article>
+                </div>
+                <% } %>
+
+            </div>
+        </div>
+
+
+        <div class="related container-fluid vh-50 py-3">
+            <h3 class="text-center">Mas productos de <%= product.brand.name %></h3>
+            <div class="row m-0">
+
+                <% for(elem of related) { %>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <article class="product-card card my-2">
+                        <a href="/products/<%= elem.id %>">
+
+                            <% if (elem.images.length > 0) { %>
+                            <img class="img-product w-100" src="/img/products/<%= elem.images[0].route%>"
+                                alt="<%= product.name %>" />
+                            <% } else { %>
+                            <img class="img-product w-100" src="https://place-hold.it/500x500" alt="">
+                            <% } %>
+                            <h3 class="card-title text-center">
+                                <%= elem.name %>
+                            </h3>
+                            <p class="price text-center">
+                                <%= elem.price %>
+                            </p>
+                        </a>
+                    </article>
+                </div>
+                <% } %>
+
+            </div>
+        </div>
+
+        <div class="containerfluid">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center">Mas de <%= product.category.name %> </h3>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
+                    <% for(elem of related) { %>
+                    <article>
+                        <a href="/products/<%= elem.id %>" class="btn">
+                            <% if (elem.images.length > 0) { %>
+                            <img src="/img/products/<%= elem.images[0].route%>" alt="<%= product.name %>" />
+                            <% } else { %>
+                            <img src="https://place-hold.it/500x500" alt="">
+                            <% } %>
+                            <h5>
+                                <%= elem.name %>
+                            </h5>
+                            <p>
+                                <%= elem.price %>
+                            </p>
+                        </a>
+
+                    </article>
+                    <% } %>
+
+                </div>
+            </div>
 
         </div>
-    </div>
+
+
+
+
+
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center">Mas de <%= product.category.name %> </h3>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <% for(elem of related) { %>
+                    <article class="article-odd hover-odd">
+                        <a href="/products/<%= elem.id %>" class="btn">
+                            <% if (elem.images.length > 0) { %>
+                            <img class="img-product d-flex align-items-center justify-content-center"
+                                src="/img/products/<%= elem.images[0].route%>" alt="<%= product.name %>" />
+                            <% } else { %>
+                            <img class="img-product d-flex align-items-center justify-content-center"
+                                src="https://place-hold.it/500x500" alt="">
+                            <% } %>
+                            <h5 class="d-flex justify-content-center name-product">
+                                <%= elem.name %>
+                            </h5>
+                            <p class="d-flex justify-content-center price-product">
+                                <span class="price-symbol"><%= elem.price %></span>
+                            </p>
+                        </a>
+                    </article>
+                </div>
+                <% } %>
+            </div>
+        </div>
+
+    </main>
 
     <%- include("partials/footer") %>
 </body>
