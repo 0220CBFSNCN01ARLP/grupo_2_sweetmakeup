@@ -22,7 +22,7 @@
                             <%= product.category.name %></span></i></a>
             </div>
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-start">
-                <article class="product-card card article-border">
+                <article class="product-card-principal card">
                     <% if (product.images.length > 0) { %>
                     <div class="d-flex justify-content-center">
                         <img id="mainImg" class="card-img-top mh-50 img-detail-product"
@@ -38,11 +38,9 @@
                             alt="Imagen del producto" />
                         <% } %>
                     </div>
-
                 </article>
             </div>
 
-            <div class="col-2" style="display: none;"></div>
             <div class="productDetails col p-2">
                 <p> <%= product.tags.name %> </p>
                 <h1 class="card-title">
@@ -130,7 +128,6 @@
                                 Agregar a la wishlist
                             </button>
                     </form>
-
                 </div>
                 <% } %>
                 <% } else { %>
@@ -154,11 +151,14 @@
 
         <div class="container-fluid pd-container-video">
             <div class="row">
-                <h2 class="title-post-detail color-title">Algunos consejos para el <%= product.name %></h2>
+                <h2 class="title-post-detail color-title">Algunos consejos para el
+                    "<%= product.name %>"</h2>
                 <div class="col-12 d-flex justify-content-center">
+                    <iframe width="700" height="415" src="<%= product.link %>" frameborder="0"></iframe>
+                    <!-- 
                     <iframe width="700" height="415" src="https://www.youtube.com/embed/efh3AEDMqXg" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                        allowfullscreen></iframe> -->
 
                 </div>
             </div>
@@ -166,7 +166,7 @@
 
 
         <div class="container-fluid vh-50 py-3">
-            <h3 class="title-post-detail">Tu match ideal!</h3>
+            <h3 class="title-post-detail">Tu match ideal!<span style='font-size:30px;'>&#128526;</span></h3>
             <div class="row m-0">
                 <% for(elem of related) { %>
                 <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center div-pd-art">
@@ -184,7 +184,11 @@
                             <p class="text-center">
                                 <span class="price-symbol"><%= elem.price %></span>
                             </p>
-                            <p class="text-center color-style upper-category"><%= product.category.name %></p>
+                            <div class="d-flex justify-content-center">
+                                <p class="text-center  color-style upper-category">
+                                    <%= product.category.name %></p>
+                            </div>
+
                         </a>
                     </article>
                 </div>
@@ -213,13 +217,17 @@
                             <p class="text-center">
                                 <span class="price-symbol"><%= elem.price %></span>
                             </p>
-                            <p class="text-center color-style upper-category"><%= product.category.name %></p>
+                            <div class="d-flex justify-content-center">
+                                <p class="text-center color-style upper-category"><%= product.category.name %></p>
+                            </div>
                         </a>
                     </article>
                 </div>
                 <% } %>
             </div>
         </div>
+
+
 
         <div class="related container-fluid vh-50 py-3">
             <h3 class="title-post-detail">Mas de <a href="/<%= product.category.name %>"><span
@@ -248,10 +256,6 @@
                 <% } %>
             </div>
         </div>
-
-
-
-
     </main>
 
     <%- include("partials/footer") %>
