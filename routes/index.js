@@ -42,7 +42,7 @@ router.get("/cejas", mainController.cejas);
 /*ver buscador*/
 router.post("/labios", mainController.search);
 
-router.post("/productCart", mainController.addToCart);
+router.post("/productCart", mainController.buyCart);
 
 
 

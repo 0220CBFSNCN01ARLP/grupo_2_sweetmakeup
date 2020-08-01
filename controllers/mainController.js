@@ -70,7 +70,7 @@ let controller = {
         });
     },
 
-    cart: async function(req, res, next) {
+    cart: async function (req, res, next) {
         let subtotal = 0;
         let discount = 0;
         let discountDecimal = 0;
@@ -78,12 +78,11 @@ let controller = {
         let total = 0;
         const realProducts = []
         if (req.session.product == null || req.session.product == "undefined" || req.session.product == undefined) {
-
         } else {
             for (let sessionProduct of req.session.product) {
-                const realProduct = await Product.findByPk(sessionProduct.id,{include:["images"]});
+                const realProduct = await Product.findByPk(sessionProduct.id, { include: ["images"] });
                 realProducts.push(realProduct);
-                subtotal += Number(realProduct.price*sessionProduct.count);
+                subtotal += Number(realProduct.price * sessionProduct.count);
                 discount += Number(realProduct.discount);
             }
             subtotal = subtotal.toFixed(2);
@@ -92,7 +91,6 @@ let controller = {
             total = subtotal - discountDecimal;
             totalDecimal = total.toFixed(2);
         }
-
         res.render("productCart", {
             user: req.session.user,
             product: realProducts,
@@ -101,6 +99,7 @@ let controller = {
             subtotal
         });
     },
+    
 
     ojos: async function(req, res, next) {
         let productsOjos = await Product.findAll({
@@ -192,6 +191,8 @@ let controller = {
             include: ["category", "images"],
 
             where: {
+                // name: new RegExp(req.body.buscador, "i")
+                // name: /^req.body.buscador/
                 name: req.body.search,
             },
 
@@ -204,7 +205,7 @@ let controller = {
             user: req.session.user
         });
     },
-    addToCart: async function(req, res, next) {
+    buyCart: async function(req, res, next) {
         let product = await Product.findOne({
             include: ["category", "images", "user"],
             where: {
@@ -214,15 +215,15 @@ let controller = {
         if (!req.session.product) {
             req.session.product = [];
         }
-        const prod = req.session.product.find((e)=>{
+        const prod = req.session.product.find((e) => {
             return e.id == product.id
         })
-        if (!prod){
+        if (!prod) {
             req.session.product.push({
                 id: product.id,
                 count: 1
             });
-        }else{
+        } else {
             prod.count++;
         }
         res.redirect("/productCart");
