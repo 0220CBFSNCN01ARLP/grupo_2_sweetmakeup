@@ -27,7 +27,7 @@
       <form id="deleteFormProduct" method="POST" action="/products/delete/<%= product.id %>?_method=DELETE"></form>
       <% if (product.images.length > 0) { %>
       <% for( let i = 0; i < product.images.length; i++ ) { %>
-      <form class= "imgDeleteForm" id="imgDeleteForm<%= i %>"
+      <form class="imgDeleteForm" id="imgDeleteForm<%= i %>"
         action="/products/imgDelete/<%= product.images[i].id %>?_method=DELETE" method="POST"></form>
       <% } %>
       <% } %>
@@ -81,7 +81,8 @@
           <% if (product.images.length > 0) { %>
           <div class="row">
             <% for (let i = 0; i < product.images.length; i++) { %>
-            <div class="imgCard col-3 card d-flex align-items-center justify-content-center" id="imgCard<%= i %>" style="width: 10rem;">
+            <div class="imgCard col-3 card d-flex align-items-center justify-content-center" id="imgCard<%= i %>"
+              style="width: 10rem;">
               <img class="img-product-edit card-img-top w-100" src="/img/products/<%= product.images[i].route%>" alt="">
               <div class="card-body">
                 <a href="#" class="delete-image">
@@ -205,11 +206,6 @@
           </p>
           <textarea form="editForm" class="form-control" name="shipping" id="shipping" cols="35" rows="3"
             maxlength="300" placeholder="300 caracteres maximo"><%= product.shipping %></textarea>
-        </div>
-
-        <div class="col-12 none-cell margin-col">
-          <label for="color">Variantes del Producto:</label>
-          <input form="editForm" type="color" value="<%= color %>" id="color" name="color" />
         </div>
 
         <div class="col-12 none-cell margin-col envios">
