@@ -57,7 +57,6 @@ router.post(
       .withMessage(
         "Descripcion: Minimo: 20 caracteres, Maximo: 300 caracteres"
       ),
-
     check("ingredients")
       .trim()
       .isLength({
@@ -67,12 +66,6 @@ router.post(
       .withMessage(
         "Ingredientes: Minimo: 20 caracteres, Maximo: 300 caracteres"
       ),
-
-    /*
-      check("ingredients").isEmpty({ ignore_whitespace:true }),
-
-      }),*/
-
     check("returnPolitic")
       .trim()
       .isLength({
@@ -122,11 +115,11 @@ router.put(
       .withMessage("Nombre del Producto: Debe tener al menos 4 caracteres"),
     check("price").isNumeric().withMessage("Precio: Colocar un numero valido"),
     check("discount")
-      .isInt({
+      .isNumeric({
         min: 0,
         max: 100,
       })
-      .withMessage("Oferta: Coloque un numero entero del 1 al 100 sin comas"),
+      .withMessage("Oferta: Coloque un numero del 1 al 100"),
     check("description")
       .isLength({
         min: 20,

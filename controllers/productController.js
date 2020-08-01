@@ -78,9 +78,7 @@ let controller = {
     }
   },
 
-  // FER
   edit: async function (req, res, next) {
-    //GET -> muestra el formulario
     try {
       let pedidoProduct = await Product.findByPk(req.params.id, {
         include: ["category", "images", "user"],
@@ -108,8 +106,6 @@ let controller = {
     }
   },
 
-  //FER
-  //PUT /products/edit/12385
   update: async (req, res, next) => {
     try {
       let errors = validationResult(req);
@@ -147,7 +143,7 @@ let controller = {
         if (req.files.length > 0) {
           for (let i = 0; i < req.files.length; i++) {
             const newImage = await Image.create({
-              productId: newProduct.id,
+              productId: req.params.id,
               size: req.files[i].size,
               fileType: req.files[i].mimetype,
               route: req.files[i].filename,
@@ -160,20 +156,16 @@ let controller = {
         let pedidoBrands = await Brand.findAll();
         return res.render("productEdit", {
           errors: errors.errors,
-          product: pedidoProduct,
-          categories: pedidoCategories,
-          brands: pedidoBrands,
+          ...req.body,
           user: req.session.user,
           color,
           descuento,
         });
       }
     } catch (e) {
-      console.log("Error al escribir en la base de datos " + e);
+      console.error(e);
     }
   },
-
-  //GENARO
 
   destroy: async (req, res) => {
     try {

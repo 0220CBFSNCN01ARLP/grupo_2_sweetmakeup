@@ -57,7 +57,7 @@ form.addEventListener("submit", function (e) {
   minCharacters("returnPolitic", 20, "returnPolShortMsg", errors);
   minCharacters("shipping", 20, "shippingShortMsg", errors);
   console.log(errors)
-
+  
   if (errors.length == 0){
     form.submit();
   } else {
