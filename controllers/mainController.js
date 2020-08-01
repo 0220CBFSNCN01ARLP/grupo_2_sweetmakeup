@@ -7,8 +7,10 @@ const {
 const {
     Product,
     Category,
-    Image
+    Image,
+    Sequelize
 } = require("../database/models");
+const Op = Sequelize.Op;
 const {
     promiseImpl
 } = require("ejs");
@@ -68,21 +70,21 @@ let controller = {
         });
     },
 
-
-    cart: function(req, res, next) {
+    cart: async function(req, res, next) {
         let subtotal = 0;
         let discount = 0;
         let discountDecimal = 0;
         let totalDecimal = 0;
         let total = 0;
-        if (req.session.product == null || req.session.product == undefined) {
+        const realProducts = []
+        if (req.session.product == null || req.session.product == "undefined" || req.session.product == undefined) {
 
         } else {
-
-            for (prod of req.session.product) {
-                subtotal += Number(prod.price),
-                    discount += Number(prod.discount)
-
+            for (let sessionProduct of req.session.product) {
+                const realProduct = await Product.findByPk(sessionProduct.id,{include:["images"]});
+                realProducts.push(realProduct);
+                subtotal += Number(realProduct.price*sessionProduct.count);
+                discount += Number(realProduct.discount);
             }
             subtotal = subtotal.toFixed(2);
             discountReal = discount * subtotal / 100;
@@ -93,7 +95,7 @@ let controller = {
 
         res.render("productCart", {
             user: req.session.user,
-            product: req.session.product,
+            product: realProducts,
             discountDecimal,
             totalDecimal,
             subtotal
@@ -190,8 +192,6 @@ let controller = {
             include: ["category", "images"],
 
             where: {
-                // name: new RegExp(req.body.buscador, "i")
-                // name: /^req.body.buscador/
                 name: req.body.search,
             },
 
@@ -211,28 +211,21 @@ let controller = {
                 id: req.body.id,
             },
         });
-        if (req.session.product == null || req.session.product == undefined) {
+        if (!req.session.product) {
             req.session.product = [];
         }
-        req.session.product.push(product);
-
-    },
-
-    buyCart: async function(req, res, next) {
-        let product = await Product.findOne({
-            include: ["category", "images", "user"],
-            where: {
-                id: req.body.id,
-            },
-        });
-        if (req.session.product == null || req.session.product == undefined) {
-            req.session.product = [];
+        const prod = req.session.product.find((e)=>{
+            return e.id == product.id
+        })
+        if (!prod){
+            req.session.product.push({
+                id: product.id,
+                count: 1
+            });
+        }else{
+            prod.count++;
         }
-        req.session.product.push(product);
-        res.redirect("/buyCart+")
-
-
-        
+        res.redirect("/productCart");
     }
 };
 
