@@ -205,13 +205,22 @@ let controller = {
         ],
         limit: 4,
       });
-      let brand = await Brand.findByPk(req.params.id, {
-        include: ["products"],
+      let sameBrand = await Product.findAll({
+        include: [
+          {
+            association: "brand",
+            where: {
+              name: product.brand.name,
+            },
+          },
+          "images",
+        ],
+        limit: 4,
       });
       res.render("productDetail", {
         product,
         related,
-        brand,
+        sameBrand,
         user: req.session.user,
       });
     } catch (e) {
@@ -224,9 +233,20 @@ let controller = {
       let brand = await Brand.findByPk(req.params.id, {
         include: ["products"],
       });
-
+      let brandProducts = await Product.findAll({
+        include: [
+          {
+            association: "brand",
+            where: {
+              id: req.params.id
+            },
+          },
+          "images",
+        ],
+      });
       res.render("brandPage", {
         brand,
+        brandProducts,
         user: req.session.user,
       });
     } catch (e) {

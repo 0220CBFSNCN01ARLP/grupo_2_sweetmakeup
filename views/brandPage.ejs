@@ -24,39 +24,14 @@
 
     <main class="container mt-1">
         <div class="row vh-75">
-            <div class="col-12 col-sm-6 col-md-4 h-100">
-                <article class="productCard card mt-2 hover-product-card-section">
-                    <a href="/products/<%= brand.products.id %>" class="anchor-title-section titulo-efecto">
-                        <h4 class="card-title titulo-efecto">
-                            <%= brand.products.name %>
-                        </h4>
-                    </a>
-                    <a href="/products/<%= brand.products.id %>" class="d-flex justify-content-center">
-                        <img class="imgMain card-img-top img-fluid"
-                            src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
-                    </a>
+            <% if (brandProducts.length > 0) { %>
+            <% for( let i = 0; i < brandProducts.length; i++ ) { %>
+            <%- include("partials/productCard", {product: brandProducts[i]})  %>
+            <% } %>
+            <% } else { %>
+            <p>Todavía no existen productos para esta marca</p>
+            <% } %>
 
-                    <div class="card-body h-30">
-                        <p class="description ajuste-descripcion">
-                            <%= brand.products.description %>
-                        </p>
-                        <p class="price">$
-                            <%= brand.products.price %>
-                        </p>
-                        <button class="btn btn-pink btn-block m-1">
-                            Agregar a la wishlist
-                        </button>
-
-                        <form action="/productCart" method="POST">
-                            <input name="id" id="id" hidden value="<%= brand.products.id %>">
-                            <button class="btn btn-pink btn-block m-1">
-
-                                Agregar al carrito
-                            </button>
-                        </form>
-                    </div>
-                </article>
-            </div>
         </div>
 
 

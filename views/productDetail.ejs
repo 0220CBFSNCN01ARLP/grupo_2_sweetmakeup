@@ -200,7 +200,7 @@
             <h3 class="title-post-detail">Mas productos de <a href="/products/brand/<%= product.brand.id %>"><span
                         class="hover-btn-anchor"><%= product.brand.name %></span></a></h3>
             <div class=" row m-0">
-                <% for(elem of related) { %>
+                <% for(elem of sameBrand) { %>
                 <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center div-pd-art">
                     <article class="product-card card my-2">
                         <a href="/products/<%= elem.id %>">
