@@ -22,7 +22,6 @@
     <div class="container">
 
       <form id="editForm" action="/products/edit/<%= product.id %>?_method=PUT" method="POST"></form>
-      <form id="deleteFormImage" method="POST" action=""></form>
       <form id="deleteFormProduct" method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
 
         <div class="row">
@@ -68,18 +67,22 @@
           </div>
 
           <div class="col-12 margin-col">
-            <div>
-              <p>Imagenes del producto</p>
-              <div class="col-3 card d-flex align-items-center justify-content-center" style="width: 10rem;">
-                <% for (let i = 0; i < product.images.length; i++) { %>
-                <img class="img-product-edit" src="/img/products/<%= product.images[i].route%>" alt="">
-                <% } %>
-                <div class="card-body">
-                  <a href="#" class="delete-image">
-                    <button form="deleteFormImage" type="submit" class="btn btn-danger">Eliminar</button>
-                  </a>
-                </div>
+            
+            <p>Imagenes del producto</p>
+            <div class="col-3 card d-flex align-items-center justify-content-center" style="width: 10rem;">
+              <% if (product.images.length > 0) { %>
+              <% for (let i = 0; i < product.images.length; i++) { %>
+              <img class="img-product-edit" src="/img/products/<%= product.images[i].route%>" alt="">
+              <div class="card-body">
+                <a href="#" class="delete-image">
+                  <button form="deleteFormImage" type="submit" class="btn btn-danger">Eliminar</button>
+                </a>
               </div>
+              <% } %>
+              <% } else { %>
+                <p>El producto aún no tiene ninguna imagen</p>
+              <% } %> 
+              
             </div>
             <div class="form-group up-images">
               <label for="productImg">Subir nuevas imágenes *</label>
