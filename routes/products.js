@@ -30,7 +30,6 @@ const upload = multer({
   },
 });
 
-// Creando desde cero un producto
 router.get("/create", authMiddleware, productController.create);
 router.post(
   "/create",
@@ -100,10 +99,8 @@ router.post(
   productController.store
 );
 
-/*** EDIT ONE PRODUCT ***/
-router.get("/edit/:id", productEditMiddleware, productController.edit);
 
-/* GET - Form to create */
+router.get("/edit/:id", productEditMiddleware, productController.edit);
 router.put(
   "/edit/:id",
   upload.any(),
@@ -172,7 +169,7 @@ router.put(
 router.delete("/delete/:id", authMiddleware, productController.destroy);
 router.get("/:id", productController.detail);
 
-// Brand Detail
+router.delete("/imgDelete/:id", productController.imgDestroy)
 
 router.get("/brand/:id", productController.brandDetail);
 

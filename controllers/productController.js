@@ -109,9 +109,9 @@ let controller = {
   update: async (req, res, next) => {
     try {
       let errors = validationResult(req);
-      let pedidoProduct = await Product.findByPk(req.params.id, {
-        include: ["category", "images"],
-      });
+      // let pedidoProduct = await Product.findByPk(req.params.id, {
+      //   include: ["category", "images"],
+      // });
       let color = "#FFFFFF";
       let descuento = true;
 
@@ -133,7 +133,6 @@ let controller = {
             width: req.body.width,
             length: req.body.length,
           },
-
           {
             where: {
               id: req.params.id,
@@ -149,7 +148,7 @@ let controller = {
               route: req.files[i].filename,
             });
           }
-        }
+        };
         res.redirect("/products/" + req.params.id);
       } else {
         let pedidoCategories = await Category.findAll();
@@ -175,6 +174,18 @@ let controller = {
         },
       });
       res.redirect("/users/myProducts");
+    } catch (e) {
+      console.log("Error al eliminar el producto de la base de datos " + e);
+    }
+  },
+
+  imgDestroy: async (req, res) => {
+    try {
+      await Image.destroy({
+        where: {
+          id: req.params.id,
+        },
+      })
     } catch (e) {
       console.log("Error al eliminar el producto de la base de datos " + e);
     }
@@ -216,7 +227,7 @@ let controller = {
         user: req.session.user,
       });
     } catch (e) {
-      console.log("Error al obtener información de la base de datos " + e);
+      console.error(e);
     }
   },
 
@@ -242,7 +253,7 @@ let controller = {
         user: req.session.user,
       });
     } catch (e) {
-      console.log("Error al obtener información de la base de datos " + e);
+      console.error(e);
     }
   },
 };
