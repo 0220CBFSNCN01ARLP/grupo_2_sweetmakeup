@@ -1,6 +1,6 @@
 <header class="container-fuid">
     <div class="row m-0">
-        <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3 d-flex justify-content-center">
             <a href="/"><img src="/img/logo3.png" alt="Logotipo de Make.u" /></a>
         </div>
         <div class="d-flex justify-content-start d-flex align-items-center pd-section-nav">
@@ -13,7 +13,7 @@
             </nav>
         </div>
         <% if(typeof user != 'undefined') { %>
-            <div class="col-6 col-sm-3 col-md-3 d-flex justify-content-end d-flex align-items-center pd-user-nav">
+            <div class="col-6 col-sm-3 col-md-3 col-lg-3 d-flex justify-content-end d-flex align-items-center pd-user-nav">
                 <div class="dropdown inline-user">
                     <button class="btn dropdown-toggle button-style-user" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%= user.firstName %> <svg width="1em" height="1em" viewBox="0 0 16 16"
@@ -30,38 +30,40 @@
                         <% if (user.roleId == 2 || user.roleId == 3) { %>
                             <a class="dropdown-item" href="/products/create">Agregar Producto</a>
                             <a class="dropdown-item" href="/users/myProducts">Mis Productos</a>
-                        <% } %>
-                        <a class="dropdown-item" href="/users/admin">Mis Datos</a>
-                        <div class="inline-user">
-                            <form action="/users/logout" method="GET">
-                                <button class="btn" type="submit">
+                            <% } %>
+                                <a class="dropdown-item" href="/users/admin">Mis Datos</a>
+                                <div class="inline-user">
+                                    <form action="/users/logout" method="GET">
+                                        <button class="btn" type="submit">
                                 Cerrar Sesión
                             </button>
-                            </form>
-                        </div>
+                                    </form>
+                                </div>
                     </div>
                 </div>
             </div>
             <% } else { %>
-                <div class="col-6 col-sm-3 col-md-2 d-flex justify-content-end d-flex align-items-center">
+                <div class="col-6 col-sm-3 col-md-2 col-lg-2 d-flex justify-content-end d-flex align-items-center">
                 </div>
                 <% } %>
-                    <div class="col-6 col-sm-3 col-md-3 d-flex justify-content-start d-flex align-items-center pd-left">
+                    <div class="col-6 col-sm-3 col-md-1 col-lg-1 d-flex justify-content-start d-flex align-items-center pd-left">
                         <% if(typeof user == 'undefined') { %>
                             <a class="item-space" href="/users/register"><i class="fa fa-user user-login"></i></a>
                             <% } %>
                                 <a class="item-space" href="/productCart"><i class="fa fa-shopping-cart cart-size"></i></a>
                                 <!-- <a class="item-space" href="#"><i class="fa fa-heart"></i></a> -->
-
                                 <!-- Posible Buscador -->
-                                <form action="/labios" method="POST" class="input-group">
-                                    <div class="input-group-prepend">
-                                        <button class="input-group-text btn btn-pink btn-block" id="basic-text1"><i
-                            class="fas fa-search text-white" aria-hidden="true"></i></button>
-                                    </div>
-                                    <input id="search" name="search" class="search form-control my-0 py-1" type="text" placeholder="Buscar" aria-label="Search">
-                                </form>
                     </div>
+                    <div class=" col-md-12 col-sm-12 col-12 col-lg-2 d-flex justify-content-start d-flex align-items-center pd-left pad10">
+                        <form action="/labios" method="POST" class="input-group">
+                            <div class="input-group-prepend">
+                                <button class="input-group-text btn btn-pink btn-block " id="basic-text1"><i
+                            class="fas fa-search text-white" aria-hidden="true"></i></button>
+                            </div>
+                            <input id="search" name="search" class="search form-control my-0 py-1" type="text" placeholder="Buscar" aria-label="Search">
+                        </form>
+                    </div>
+
 
 
 

@@ -314,8 +314,8 @@ nav i {
 
 /*buscador header*/
 
-@media (max-width: 1379px) {
-    .input-group {
-        display: none;
+@media (max-width: 827px) {
+    .pad10 {
+        padding-bottom: 15px;
     }
 }

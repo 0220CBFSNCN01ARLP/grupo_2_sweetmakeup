@@ -128,7 +128,7 @@ let usersController = {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 email: req.body.email,
-                avatar: req.files[0].filename,
+                // avatar: req.files[0].filename,
                 //  password: bcrypt.hashSync(req.body.password, 10),
             }, {
                 where: {

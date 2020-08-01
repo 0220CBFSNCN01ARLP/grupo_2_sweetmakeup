@@ -68,13 +68,14 @@ let controller = {
         });
     },
 
+
     cart: function(req, res, next) {
         let subtotal = 0;
         let discount = 0;
         let discountDecimal = 0;
         let totalDecimal = 0;
         let total = 0;
-        if (req.session.product == null || req.session.product == "undefined" || req.session.product == undefined) {
+        if (req.session.product == null || req.session.product == undefined) {
 
         } else {
 
@@ -203,6 +204,20 @@ let controller = {
             user: req.session.user
         });
     },
+    addToCart: async function(req, res, next) {
+        let product = await Product.findOne({
+            include: ["category", "images", "user"],
+            where: {
+                id: req.body.id,
+            },
+        });
+        if (req.session.product == null || req.session.product == undefined) {
+            req.session.product = [];
+        }
+        req.session.product.push(product);
+
+    },
+
     buyCart: async function(req, res, next) {
         let product = await Product.findOne({
             include: ["category", "images", "user"],
@@ -214,25 +229,10 @@ let controller = {
             req.session.product = [];
         }
         req.session.product.push(product);
-        let subtotal = 0;
-        let discount = 0;
-        for (prod of req.session.product) {
-            subtotal += Number(prod.price),
-                discount += Number(prod.discount)
-        }
-        subtotal = subtotal.toFixed(2);
-        let discountReal = discount * subtotal / 100;
-        let discountDecimal = discountReal.toFixed(2);
-        let total = subtotal - discountDecimal;
-        let totalDecimal = total.toFixed(2);
+        res.redirect("/buyCart+")
 
-        res.render("productCart", {
-            user: req.session.user,
-            product: req.session.product,
-            discountDecimal,
-            totalDecimal,
-            subtotal
-        });
+
+        
     }
 };
 

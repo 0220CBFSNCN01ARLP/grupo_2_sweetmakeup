@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 containter">
-                <form id="contact-form-edit" method="POST" action="/users/edit/<%= user.id %>?_method=PUT">
+                <form id="contact-form-edit" method="POST" action="/users/edit/<%= user.id %>?_method=PUT" enctype="multipart/form-data">
                     <label for="firstName">Nombre</label>
                     <input class="form-control" type="text" id="firstName" name="firstName"
                         value="<%= user.firstName %>" />
