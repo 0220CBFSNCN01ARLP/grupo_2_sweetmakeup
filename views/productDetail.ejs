@@ -168,7 +168,7 @@
         <div class="container-fluid vh-50 py-3">
             <h3 class="title-post-detail">Tu match ideal!<span style='font-size:30px;'>&#128526;</span></h3>
             <div class="row m-0">
-                <% for(elem of related) { %>
+                <% for(elem of match) { %>
                 <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center div-pd-art">
                     <article class="product-card card my-2">
                         <a href="/products/<%= elem.id %>">
@@ -186,7 +186,7 @@
                             </p>
                             <div class="d-flex justify-content-center">
                                 <p class="text-center  color-style upper-category">
-                                    <%= product.category.name %></p>
+                                    <%= elem.category.name %></p>
                             </div>
 
                         </a>

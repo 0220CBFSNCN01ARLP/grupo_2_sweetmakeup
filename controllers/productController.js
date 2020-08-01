@@ -1,5 +1,5 @@
 const multer = require("multer");
-
+const { Op } = require("sequelize");
 const { check, validationResult, body } = require("express-validator");
 
 const {
@@ -148,7 +148,7 @@ let controller = {
               route: req.files[i].filename,
             });
           }
-        };
+        }
         res.redirect("/products/" + req.params.id);
       } else {
         let pedidoCategories = await Category.findAll();
@@ -185,7 +185,7 @@ let controller = {
         where: {
           id: req.params.id,
         },
-      })
+      });
     } catch (e) {
       console.log("Error al eliminar el producto de la base de datos " + e);
     }
@@ -220,10 +220,33 @@ let controller = {
         ],
         limit: 4,
       });
+      let match = [];
+      let otherCategories = await Category.findAll({
+        where: {
+          id: {
+            [Op.not]: [product.category.id],
+          },
+        },
+      });
+      for (const category of otherCategories) {
+        let matchedProduct = await Product.findOne({
+          include: [
+            {
+              association: "category",
+              where: {
+                name: category.name,
+              },
+            },
+            "images",
+          ],
+        });
+        match.push(matchedProduct)
+      }
       res.render("productDetail", {
         product,
         related,
         sameBrand,
+        match,
         user: req.session.user,
       });
     } catch (e) {
@@ -241,7 +264,7 @@ let controller = {
           {
             association: "brand",
             where: {
-              id: req.params.id
+              id: req.params.id,
             },
           },
           "images",
