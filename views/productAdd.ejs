@@ -107,14 +107,13 @@
 
           <div class="col-12 margin-col">
             <label for="etiqueta">Etiqueta</label>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="new" name="etiqueta" value="nuevoLanzamiento" />
-              <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
+            <% for (let tag of tags) { %>
+            <div class="col-2 custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="<%= tag.name %>" name="etiqueta"
+                value="<%= tag.name %>" />
+              <label class="custom-control-label" for="<%= tag.name %>"><%= tag.name %></label>
             </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="descuento" name="etiqueta" value="conDescuento" />
-              <label class="custom-control-label" for="descuento">Con Descuento</label>
-            </div>
+            <% } %>
           </div>
 
           <div class="col-sm-6 none-cell margin-col">

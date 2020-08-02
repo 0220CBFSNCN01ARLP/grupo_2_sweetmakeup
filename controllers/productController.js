@@ -9,17 +9,22 @@ const {
   Color,
   Image,
   User,
+  Tag,
+  Product_Tag,
 } = require("../database/models");
 const { promiseImpl } = require("ejs");
+const product_tag = require("../database/models/product_tag");
 
 let controller = {
   // FER
   create: async function (req, res, next) {
     try {
       let categories = await Category.findAll();
+      let tags = await Tag.findAll();
       let brands = await Brand.findAll();
       res.render("productAdd", {
         categories,
+        tags,
         brands,
         user: req.session.user,
       });
@@ -27,7 +32,6 @@ let controller = {
       console.log("Error al obtener información de la base de datos" + e);
     }
   },
-
 
   // FER
   store: async function (req, res, next) {
@@ -52,6 +56,7 @@ let controller = {
           length: req.body.length,
           userId: req.session.user.id,
         });
+
         if (req.files.length > 0) {
           for (let i = 0; i < req.files.length; i++) {
             const newImage = await Image.create({
@@ -62,6 +67,11 @@ let controller = {
             });
           }
         }
+        const newRelationshipProductTag = await Product_Tag.create({
+          productId: newProduct.id,
+          tagId: req.body.etiqueta,
+        });
+
         console.log(newProduct);
         res.redirect(`/products/${newProduct.id}`);
       } else {
@@ -91,6 +101,8 @@ let controller = {
 
       let pedidoBrands = await Brand.findAll();
 
+      let brands = await Brand.findAll();
+
       let color = "#FFFFFF";
       let descuento = true;
 
@@ -98,6 +110,7 @@ let controller = {
         product: pedidoProduct,
         categories: pedidoCategories,
         brands: pedidoBrands,
+        brands,
         user: req.session.user,
         color,
         descuento,
@@ -241,12 +254,15 @@ let controller = {
             "images",
           ],
         });
-        match.push(matchedProduct)
+        match.push(matchedProduct);
       }
+      let brands = await Brand.findAll();
+
       res.render("productDetail", {
         product,
         related,
         sameBrand,
+        brands,
         match,
         user: req.session.user,
       });
@@ -271,8 +287,11 @@ let controller = {
           "images",
         ],
       });
+      let brands = await Brand.findAll();
+
       res.render("brandPage", {
         brand,
+        brands,
         brandProducts,
         user: req.session.user,
       });
