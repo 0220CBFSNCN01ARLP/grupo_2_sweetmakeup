@@ -31,12 +31,15 @@ let usersController = {
           roleId: req.body.role,
         });
 
-        let brands = await Brand.findAll();
+        
 
-        res.redirect("/", { brands });
+        res.redirect("/" );
       } else {
-        return res.render("register", {
+        let brands = await Brand.findAll();
+        return res.send(brands)
+         res.render("register", {
           errors: errors.errors,
+          brands 
         });
       }
     } catch (e) {
