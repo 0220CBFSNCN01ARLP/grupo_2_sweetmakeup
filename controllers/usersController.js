@@ -31,15 +31,10 @@ let usersController = {
           roleId: req.body.role,
         });
 
-        
-
-        res.redirect("/" );
+        res.redirect("/");
       } else {
-        let brands = await Brand.findAll();
-        return res.send(brands)
-         res.render("register", {
+        return res.render("register", {
           errors: errors.errors,
-          brands 
         });
       }
     } catch (e) {
@@ -56,7 +51,10 @@ let usersController = {
       });
 
       if (!user) {
+        let brands = await Brand.findAll();
+
         return res.render("register", {
+          brands,
           mensaje: "Usuario incorrecto",
         });
       }
@@ -66,10 +64,13 @@ let usersController = {
         user.password
       );
       if (!correctPw) {
+        let brands = await Brand.findAll();
+
         user = null;
         console.log("Contraseña incorrecta");
 
         return res.render("register", {
+          brands,
           mensaje2: "Contraseña incorrecta",
         });
       }
