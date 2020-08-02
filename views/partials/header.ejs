@@ -10,19 +10,20 @@
                 <a class="section-display" id="a-section" href=" /labios">Labios</a>
                 <a class="section-display" id="a-section" href=" /ojos">Ojos</a>
                 <a class="section-display" id="a-section" href=" /cejas">Cejas</a>
+                <div class="dropdown">
+                    <button style="color: #dc92a5" class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Marcas </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <% for (let brand of brands) { %>
+                        <a class="dropdown-item" href="/products/brand/<%= brand.id %>"> <%= brand.name %> </a>
+                        <% } %>
+                    </div>
+                </div>
             </nav>
         </div>
 
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Marcas </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <% for (let brand of brands) { %>
-                <a class="dropdown-item" href="/products/brand/<%= brand.id %>"> <%= brand.name %> </a>
-                <% } %>
-            </div>
-        </div>
+
 
 
         <% if(typeof user != 'undefined') { %>

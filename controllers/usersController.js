@@ -30,8 +30,10 @@ let usersController = {
           avatar: req.files[0].filename,
           roleId: req.body.role,
         });
-               
-        res.redirect("/");
+
+        let brands = await Brand.findAll();
+
+        res.redirect("/", { brands });
       } else {
         return res.render("register", {
           errors: errors.errors,

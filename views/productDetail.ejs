@@ -134,9 +134,11 @@
                     <form action="/productCart" method="POST">
                         <input name="id" id="id" hidden value="<%= product.id %>">
                         <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                            <a href="/cart"><button class="btn btn-pink btn-block">
-                                    <i class="far fa-heart"></i>
-                                </button>></a>
+                            <a href="/cart">
+                                <button class="btn btn-pink btn-block">
+                                    Agregar al carrito
+                                </button>
+                            </a>
                         </div>
                     </form>
                     <div class="button-wrapper col-12 col-md-6 py-1">
@@ -168,7 +170,7 @@
 
         <div class="container-fluid vh-50 py-3">
             <h3 class="title-post-detail">Tu match ideal!<span style='font-size:30px;'>&#128526;</span></h3>
-            <div class="row m-0">
+            <div class="row m-0 d-flex justify-content-center">
                 <% for(elem of match) { %>
                 <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center div-pd-art">
                     <article class="product-card card my-2">
@@ -189,11 +191,18 @@
                                 <p class="text-center  color-style upper-category">
                                     <%= elem.category.name %></p>
                             </div>
-
                         </a>
                     </article>
                 </div>
+                <a href="/cart">
+                    <button class="btn btn-pink btn-block">
+                        Agregar al carrito
+                    </button>
+                </a>
                 <% } %>
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-plus"></i>
+                </div>
             </div>
         </div>
 
