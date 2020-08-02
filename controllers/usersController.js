@@ -31,9 +31,7 @@ let usersController = {
           roleId: req.body.role,
         });
 
-        let brands = await Brand.findAll();
-
-        res.redirect("/", { brands });
+        res.redirect("/");
       } else {
         return res.render("register", {
           errors: errors.errors,
@@ -53,7 +51,10 @@ let usersController = {
       });
 
       if (!user) {
+        let brands = await Brand.findAll();
+
         return res.render("register", {
+          brands,
           mensaje: "Usuario incorrecto",
         });
       }
@@ -63,10 +64,13 @@ let usersController = {
         user.password
       );
       if (!correctPw) {
+        let brands = await Brand.findAll();
+
         user = null;
         console.log("Contraseña incorrecta");
 
         return res.render("register", {
+          brands,
           mensaje2: "Contraseña incorrecta",
         });
       }
