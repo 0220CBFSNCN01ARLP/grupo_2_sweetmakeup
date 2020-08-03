@@ -2,24 +2,26 @@ import React, { Component } from "react";
 import Product from "../Product";
 
 async function getProduct() {
-    const getResult = await fetch("http://localhost:3000/api/products");
-    const productsResult = await getResult.json();
-    const data = productsResult.products;
-    const lastProduct = await fetch(`http://localhost:3000/api/products/30`)
+   // const getResult = await fetch("http://localhost:3000/api/products");
+   // const productsResult = await getResult.json();
+   // const data = productsResult.products;
+    const result = await fetch(`http://localhost:3000/api/products/30`)
+    const lastProduct = await result.json();
     return lastProduct
 }
 
 class LastProduct extends Component {
-    state = { name: "pepe", price: 0, description: "", images: [] }
+    state = { name: "pepe", price: 0, description: "", image: "" }
     async updateState() {
         const lastProduct = await getProduct();
 
+        console.log(lastProduct);
         let image = "https://via.placeholder.com/500"
 
-        // if (lastProduct.images.length>0) {
-        //    image = lastProduct.images[0].route
-        //} 
-        this.setState({ name: lastProduct.name, price: lastProduct.price, description: lastProduct.description, image: image });
+        if (lastProduct.images.length>0) {
+            image = lastProduct.images[0].route
+        } 
+        this.setState({ name: lastProduct.name, price: lastProduct.price, description: lastProduct.description, image });
         
     }
     componentDidMount() {

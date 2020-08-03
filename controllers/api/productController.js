@@ -10,7 +10,7 @@ const {
 
 let controller = {
     products: async function(req, res) {
-        let products = await Product.findAll({include: "category"});
+        let products = await Product.findAll({include: "category" });
         // cambiar cada producto, sacarle propiedades
         let processedProducts = products.map((product)=>{
             return {
