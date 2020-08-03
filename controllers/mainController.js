@@ -228,33 +228,8 @@ let controller = {
       user: req.session.user,
     });
   },
+
   addToCart: async function (req, res, next) {
-    let product = await Product.findOne({
-      include: ["category", "images", "user"],
-      where: {
-        id: req.body.id,
-      },
-    });
-    if (!req.session.products) {
-      req.session.products = [];
-    }
-    const prod = req.session.products.find((e) => {
-      return e.id == product.id;
-    });
-    if (!prod) {
-      req.session.products.push({
-        id: product.id,
-        count: 1,
-      });
-    } else {
-      prod.count++;
-    }
-    let brands = await Brand.findAll({ limit: 10 });
-
-    res.redirect("/productCart", { brands });
-  },
-
-  addToCartAJAX: async function (req, res, next) {
     let product = await Product.findOne({
       include: ["category", "images", "user"],
       where: {

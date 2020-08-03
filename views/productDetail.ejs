@@ -16,6 +16,22 @@
     <%- include('partials/header') %>
 
     <main class="container-fluid container-color-detail">
+        <!-- Modal -->
+        <div class="modal" id="addToCartOk" tabindex="-1" role="dialog" aria-labelledby="addToCartOk"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        El producto fue agregado a tu carrito!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-pink" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Modal -->
+        
         <div class="row">
             <div class="col-12 padding-row-detail">
                 <a href="/<%= product.category.name %>"><i class="fas fa-long-arrow-alt-left icon-arrow"><span
