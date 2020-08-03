@@ -62,10 +62,22 @@ header {
 
 #a-section {
   position: relative;
-  margin: 0 20px;
+  margin: 0 15px;
   font-size: 1.2em;
   color: #dc92a5;
   text-decoration: none;
+}
+
+.brand-btn {
+  position: relative;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 1.2em;
+  color: #dc92a5;
+}
+
+.brand-btn:hover {
+  color: #dc92a5;
 }
 
 nav #marker {
@@ -77,6 +89,10 @@ nav #marker {
   bottom: -8px;
   transition: 0.5s;
   border-radius: 4px;
+}
+
+.item-ver-todos-brand {
+  color: #dc92a5;
 }
 
 .user-login {

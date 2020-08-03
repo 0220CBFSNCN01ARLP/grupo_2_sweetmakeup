@@ -13,7 +13,7 @@ const { log } = require("console");
 
 let usersController = {
   showRegister: async (req, res) => {
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.render("register", { brands });
   },
@@ -51,7 +51,7 @@ let usersController = {
       });
 
       if (!user) {
-        let brands = await Brand.findAll();
+        let brands = await Brand.findAll({ limit: 10 });
 
         return res.render("register", {
           brands,
@@ -64,7 +64,7 @@ let usersController = {
         user.password
       );
       if (!correctPw) {
-        let brands = await Brand.findAll();
+        let brands = await Brand.findAll({ limit: 10 });
 
         user = null;
         console.log("Contraseña incorrecta");
@@ -101,7 +101,7 @@ let usersController = {
 
   userDetail: async (req, res) => {
     try {
-      let brands = await Brand.findAll();
+      let brands = await Brand.findAll({ limit: 10 });
       res.render("userDetail", {
         brands,
         user: req.session.user,
@@ -111,7 +111,7 @@ let usersController = {
     }
   },
   userEdit: async (req, res, next) => {
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.render("userEdit", {
       brands,
@@ -119,7 +119,7 @@ let usersController = {
     });
   },
   userEditPassword: async (req, res, next) => {
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.render("userEditPassword", {
       brands,
@@ -185,7 +185,7 @@ let usersController = {
         },
         include: "images",
       });
-      let brands = await Brand.findAll();
+      let brands = await Brand.findAll({ limit: 10 });
 
       res.render("myProducts", {
         products,

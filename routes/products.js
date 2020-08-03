@@ -99,7 +99,6 @@ router.post(
   productController.store
 );
 
-
 router.get("/edit/:id", productEditMiddleware, productController.edit);
 router.put(
   "/edit/:id",
@@ -169,8 +168,9 @@ router.put(
 router.delete("/delete/:id", authMiddleware, productController.destroy);
 router.get("/:id", productController.detail);
 
-router.delete("/imgDelete/:id", productController.imgDestroy)
+router.delete("/imgDelete/:id", productController.imgDestroy);
 
+//router.get("/brand", productController.brand);
 router.get("/brand/:id", productController.brandDetail);
 
 module.exports = router;

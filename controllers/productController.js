@@ -21,7 +21,7 @@ let controller = {
     try {
       let categories = await Category.findAll();
       let tags = await Tag.findAll();
-      let brands = await Brand.findAll();
+      let brands = await Brand.findAll({ limit: 10 });
       res.render("productAdd", {
         categories,
         tags,
@@ -76,7 +76,7 @@ let controller = {
         res.redirect(`/products/${newProduct.id}`);
       } else {
         let categories = await Category.findAll();
-        let brands = await Brand.findAll();
+        let brands = await Brand.findAll({ limit: 10 });
         return res.render("productAdd", {
           errors: errors.errors,
           categories,
@@ -101,7 +101,7 @@ let controller = {
 
       let pedidoBrands = await Brand.findAll();
 
-      let brands = await Brand.findAll();
+      let brands = await Brand.findAll({ limit: 10 });
 
       let color = "#FFFFFF";
       let descuento = true;
@@ -256,7 +256,7 @@ let controller = {
         });
         match.push(matchedProduct);
       }
-      let brands = await Brand.findAll();
+      let brands = await Brand.findAll({ limit: 10 });
 
       res.render("productDetail", {
         product,
@@ -270,6 +270,13 @@ let controller = {
       console.error(e);
     }
   },
+
+  /*
+  brand: async (req, res, next) => {
+    let brands = await Brand.findAll();
+    res.render("brand", { brands });
+  },
+  */
 
   brandDetail: async (req, res) => {
     try {
@@ -287,7 +294,7 @@ let controller = {
           "images",
         ],
       });
-      let brands = await Brand.findAll();
+      let brands = await Brand.findAll({ limit: 10 });
 
       res.render("brandPage", {
         brand,

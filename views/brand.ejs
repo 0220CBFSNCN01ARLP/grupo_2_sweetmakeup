@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head") %>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/brand.css" />
+    <title>Make.u |
+        Marcas
+    </title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+    <div class="brand-banner-title">
+        <img src="/img/bannerBrand2.jpg" alt="Banner principal" class=" banner-img w-100 " />
+        <h1 class="upper-title-section">MARCAS</h1>
+    </div>
+
+    <main class="container">
+        <div class="row">
+            <article class="col-4">
+                <h2><%= brands.name %></h2>
+
+            </article>
+
+        </div>
+
+    </main>
+    <%- include("partials/footer") %>
+</body>
+
+</html>

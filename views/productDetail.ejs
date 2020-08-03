@@ -61,45 +61,45 @@
                 </a>
 
 
-                <a class="inline-block-detail" data-toggle="collapse" href="#collapseDescription" role="button"
-                    aria-expanded="false" aria-controls="collapseDescription">
+                <a class="inline-block-detail width-content d-flex justify-content-between" data-toggle="collapse"
+                    href="#collapseDescription" role="button" aria-expanded="false" aria-controls="collapseDescription">
                     <span class="subtitle-detail">Descripcion</span>
-                    <i class="fas fa-plus plus-icon"></i>
+                    <i class="fas fa-plus plus-icon d-flex justify-content-center"></i>
                 </a>
-                <div class="collapse" id="collapseDescription">
+                <div class="collapse width-content" id="collapseDescription">
                     <div class="card card-body">
                         <%= product.description%>
                     </div>
                 </div>
 
-                <a class="inline-block-detail" data-toggle="collapse" href="#collapseIngredients" role="button"
-                    aria-expanded="false" aria-controls="collapseIngredients">
+                <a class="inline-block-detail width-content d-flex justify-content-between" data-toggle="collapse"
+                    href="#collapseIngredients" role="button" aria-expanded="false" aria-controls="collapseIngredients">
                     <span class="subtitle-detail">Ingredientes</span>
                     <i class="fas fa-plus plus-icon"></i>
                 </a>
-                <div class="collapse" id="collapseIngredients">
+                <div class="collapse width-content" id="collapseIngredients">
                     <div class="card card-body">
                         <%= product.ingredients %>
                     </div>
                 </div>
 
-                <a class="inline-block-detail" data-toggle="collapse" href="#collapseShipping" role="button"
-                    aria-expanded="false" aria-controls="collapseShipping">
+                <a class="inline-block-detail width-content d-flex justify-content-between" data-toggle="collapse"
+                    href="#collapseShipping" role="button" aria-expanded="false" aria-controls="collapseShipping">
                     <span class="subtitle-detail">Envios</span>
                     <i class="fas fa-plus plus-icon"></i>
                 </a>
-                <div class="collapse" id="collapseShipping">
+                <div class="collapse width-content" id="collapseShipping">
                     <div class="card card-body">
                         <%= product.shipping %>
                     </div>
                 </div>
 
-                <a class="inline-block-detail" data-toggle="collapse" href="#collapsePolitic" role="button"
-                    aria-expanded="false" aria-controls="collapsePolitic">
+                <a class="inline-block-detail width-content d-flex justify-content-between" data-toggle="collapse"
+                    href="#collapsePolitic" role="button" aria-expanded="false" aria-controls="collapsePolitic">
                     <span class="subtitle-detail">Politicas de Devolucion</span>
                     <i class="fas fa-plus plus-icon"></i>
                 </a>
-                <div class="collapse" id="collapsePolitic">
+                <div class="collapse width-content" id="collapsePolitic">
                     <div class="card card-body">
                         <%= product.returnPolitic %>
                     </div>
@@ -172,7 +172,7 @@
             <h3 class="title-post-detail">Tu match ideal!<span style='font-size:30px;'>&#128526;</span></h3>
             <div class="row m-0 d-flex justify-content-center">
                 <% for(elem of match) { %>
-                <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center div-pd-art">
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center div-pd-art">
                     <article class="product-card card my-2">
                         <a href="/products/<%= elem.id %>">
                             <% if (elem.images.length > 0) { %>
@@ -192,17 +192,14 @@
                                     <%= elem.category.name %></p>
                             </div>
                         </a>
+                        <a href="/cart" class="d-flex justify-content-center btn-cart-match">
+                            <button class="btn btn-pink ">
+                                Agregar al carrito
+                            </button>
+                        </a>
                     </article>
                 </div>
-                <a href="/cart">
-                    <button class="btn btn-pink btn-block">
-                        Agregar al carrito
-                    </button>
-                </a>
                 <% } %>
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-plus"></i>
-                </div>
             </div>
         </div>
 
@@ -211,7 +208,7 @@
                         class="hover-btn-anchor"><%= product.brand.name %></span></a></h3>
             <div class=" row m-0">
                 <% for(elem of sameBrand) { %>
-                <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center div-pd-art">
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 d-flex justify-content-center div-pd-art">
                     <article class="product-card card my-2">
                         <a href="/products/<%= elem.id %>">
 
@@ -244,7 +241,7 @@
                         class="upper-category"><%= product.category.name %></span></a></h3>
             <div class="row m-0">
                 <% for(elem of related) { %>
-                <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center div-pd-art">
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 d-flex justify-content-center div-pd-art">
                     <article class="product-card card my-2">
                         <a href="/products/<%= elem.id %>">
 

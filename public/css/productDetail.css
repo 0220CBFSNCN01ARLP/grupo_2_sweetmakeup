@@ -156,3 +156,11 @@
   color: #e30052;
   border-radius: 5px;
 }
+
+.btn-cart-match {
+  padding: 15px;
+}
+
+.width-content {
+  width: 70%;
+}

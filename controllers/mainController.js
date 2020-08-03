@@ -62,7 +62,7 @@ let controller = {
       limit: 4,
     });
 
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.render("index", {
       ojos,
@@ -101,7 +101,7 @@ let controller = {
       total = subtotal - discountDecimal;
       totalDecimal = total.toFixed(2);
     }
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.render("productCart", {
       user: req.session.user,
@@ -125,7 +125,7 @@ let controller = {
         "images",
       ],
     });
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.render("section", {
       title: "ojos",
@@ -148,7 +148,7 @@ let controller = {
         "images",
       ],
     });
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.render("section", {
       title: "rostro",
@@ -176,7 +176,7 @@ let controller = {
         "images",
       ],
     });
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.render("section", {
       title: "cejas",
@@ -199,7 +199,7 @@ let controller = {
         "images",
       ],
     });
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.render("section", {
       title: "labios",
@@ -221,7 +221,7 @@ let controller = {
       },
     });
     console.log(productSearch);
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.render("section", {
       title: "labios",
@@ -252,7 +252,7 @@ let controller = {
     } else {
       prod.count++;
     }
-    let brands = await Brand.findAll();
+    let brands = await Brand.findAll({ limit: 10 });
 
     res.redirect("/productCart", { brands });
   },
