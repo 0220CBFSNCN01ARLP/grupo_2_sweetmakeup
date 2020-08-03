@@ -29,8 +29,6 @@ const upload = multer({
 /* GET home page. */
 router.get("/", mainController.index);
 
-router.get("/productCart", mainController.cart);
-
 router.get("/ojos", mainController.ojos);
 
 router.get("/labios", mainController.labios);
@@ -39,11 +37,13 @@ router.get("/rostro", mainController.rostro);
 
 router.get("/cejas", mainController.cejas);
 
-/*ver buscador*/
 router.post("/labios", mainController.search);
 
-router.post("/productCart", mainController.buyCart);
+router.post("/productCart", mainController.addToCart);
 
+router.get("/productCart", mainController.cart);
+router.get("/addToCart/:id", mainController.addToCartAJAX);
 
+router.get("/removeFromCart/:id", mainController.removeFromCart);
 
 module.exports = router;

@@ -4,8 +4,8 @@
 <head>
     <%- include("partials/head") %>
     <link rel="stylesheet" href="/css/productDetail.css" />
+    <script defer src="/js/addToCart.js"></script>
     <script defer src="/js/thumbnailGallery.js"></script>
-    <script defer src="/js/cart.js"></script>
     <title>Make.u |
         <%= product.name%>
     </title>
@@ -115,32 +115,32 @@
                             </button></a>
                     </div>
                     <% } else { %>
-                    <form action="/productCart" method="POST">
+                    
                         <input name="id" id="id" hidden value="<%= product.id %>">
                         <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                            <a href="/cart">
-                                <button class="btn btn-pink btn-block">
+                            
+                                <button id = <%= product.id %> class="addToCart btn btn-pink btn-block">
                                     Agregar al carrito
                                 </button>
-                            </a>
+                            
                         </div>
                         <div class="button-wrapper col-12 col-md-6 py-1">
                             <button class="btn btn-pink btn-block pepe">
                                 Agregar a la wishlist
                             </button>
-                    </form>
+                    
                     <% } %>
                     <% } else { %>
-                    <form action="/productCart" method="POST">
+                    
                         <input name="id" id="id" hidden value="<%= product.id %>">
-                        <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                            <a href="/cart">
-                                <button class="btn btn-pink btn-block">
+                        <div  class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+                            
+                                <button id = <%= product.id %> class="addToCart btn btn-pink btn-block">
                                     Agregar al carrito
                                 </button>
-                            </a>
+
                         </div>
-                    </form>
+                    
                     <div class="button-wrapper col-12 col-md-6 py-1">
                         <button class="btn btn-pink btn-block">
                             <i class="far fa-heart"></i>
@@ -199,6 +199,13 @@
                         </a>
                     </article>
                 </div>
+<<<<<<< HEAD
+=======
+                
+                    <button id = <%= elem.id %> class="addToCart btn btn-pink btn-block">
+                        Agregar al carrito
+                    </button>
+>>>>>>> 04251b3acd2bbad0152e5bc01a88f6d37bc49241
                 <% } %>
             </div>
         </div>
