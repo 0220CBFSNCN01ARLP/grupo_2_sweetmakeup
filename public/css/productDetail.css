@@ -72,6 +72,7 @@
 
 .padding-button-detail {
   padding-top: 35px;
+  width: 70%;
 }
 
 .icon-arrow {
@@ -158,7 +159,8 @@
 }
 
 .btn-cart-match {
-  padding: 15px;
+  margin: 15px;
+  width: 70%;
 }
 
 .width-content {

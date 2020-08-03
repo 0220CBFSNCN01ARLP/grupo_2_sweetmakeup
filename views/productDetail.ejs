@@ -67,10 +67,10 @@
                     $
                     <%= product.price %>
                 </p>
-                <p>
-                    $
-                    <%= product.discount %>
+                <% if (product.discount > 0) { %>
+                <p> Este producto tiene <%= Math.floor(product.discount) %>% de descuento!
                 </p>
+                <% } %>
                 <h2 class="subtitle-detail">Marca</h2>
                 <a href="/products/brand/<%= product.brand.id %>">
                     <p><%= product.brand.name %></p>
@@ -131,35 +131,35 @@
                             </button></a>
                     </div>
                     <% } else { %>
-                    
-                        <input name="id" id="id" hidden value="<%= product.id %>">
-                        <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                            
-                                <button id = <%= product.id %> class="addToCart btn btn-pink btn-block">
-                                    Agregar al carrito
-                                </button>
-                            
-                        </div>
-                        <div class="button-wrapper col-12 col-md-6 py-1">
-                            <button class="btn btn-pink btn-block pepe">
-                                Agregar a la wishlist
-                            </button>
-                    
-                    <% } %>
-                    <% } else { %>
-                    
-                        <input name="id" id="id" hidden value="<%= product.id %>">
-                        <div  class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-                            
-                                <button id = <%= product.id %> class="addToCart btn btn-pink btn-block">
-                                    Agregar al carrito
-                                </button>
 
-                        </div>
-                    
+                    <input name="id" id="id" hidden value="<%= product.id %>">
+                    <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+                        <button id=<%= product.id %> class="addToCart btn btn-pink btn-block">
+                            Agregar al carrito
+                        </button>
+                    </div>
+
                     <div class="button-wrapper col-12 col-md-6 py-1">
                         <button class="btn btn-pink btn-block">
-                            <i class="far fa-heart"></i>
+                            Agregar a la wishlist
+                        </button>
+                    </div>
+
+                    <% } %>
+                    <% } else { %>
+
+                    <input name="id" id="id" hidden value="<%= product.id %>">
+                    <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
+
+                        <button id=<%= product.id %> class="addToCart btn btn-pink btn-block">
+                            Agregar al carrito
+                        </button>
+
+                    </div>
+
+                    <div class="button-wrapper col-12 col-md-6 py-1">
+                        <button class="btn btn-pink btn-block">
+                            Agregar a la wishlist
                         </button>
                     </div>
                     <% } %>
@@ -168,23 +168,23 @@
         </div>
         </div>
 
-        <div class="container-fluid pd-container-video">
+        <!-- <div class="container-fluid pd-container-video">
             <div class="row">
                 <h2 class="title-post-detail color-title">Algunos consejos para el
-                    "<%= product.name %>"</h2>
+                    ""</h2>
                 <div class="col-12 d-flex justify-content-center">
-                    <iframe width="700" height="415" src="<%= product.link %>" frameborder="0"></iframe>
-                    <!-- 
+                    <iframe width="700" height="415" src="" frameborder="0"></iframe>
+
                     <iframe width="700" height="415" src="https://www.youtube.com/embed/efh3AEDMqXg" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe> -->
+                        allowfullscreen></iframe>
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
-        <div class="container-fluid vh-50 py-3">
+        <div class="container-fluid vh-50 py-3 pt-5">
             <h3 class="title-post-detail">Tu match ideal!<span style='font-size:30px;'>&#128526;</span></h3>
             <div class="row m-0 d-flex justify-content-center">
                 <% for(elem of match) { %>
@@ -208,20 +208,16 @@
                                     <%= elem.category.name %></p>
                             </div>
                         </a>
-                        <a href="/cart" class="d-flex justify-content-center btn-cart-match">
-                            <button class="btn btn-pink ">
+                        <div class="d-flex justify-content-center">
+                            <button id=<%= elem.id %> class="btn-cart-match addToCart btn btn-pink">
                                 Agregar al carrito
                             </button>
-                        </a>
+                        </div>
+
                     </article>
                 </div>
-<<<<<<< HEAD
-=======
-                
-                    <button id = <%= elem.id %> class="addToCart btn btn-pink btn-block">
-                        Agregar al carrito
-                    </button>
->>>>>>> 04251b3acd2bbad0152e5bc01a88f6d37bc49241
+
+
                 <% } %>
             </div>
         </div>
