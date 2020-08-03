@@ -81,8 +81,8 @@ let controller = {
     let totalDecimal = 0;
     let total = 0;
     const realProducts = [];
-    if (req.session.product) {
-      for (let sessionProduct of req.session.product) {
+    if (req.session.products) {
+      for (let sessionProduct of req.session.products) {
         const realProduct = await Product.findByPk(sessionProduct.id, {
           include: ["images"],
         });
@@ -227,21 +227,21 @@ let controller = {
       user: req.session.user,
     });
   },
-  buyCart: async function (req, res, next) {
+  addToCart: async function (req, res, next) {
     let product = await Product.findOne({
       include: ["category", "images", "user"],
       where: {
         id: req.body.id,
       },
     });
-    if (!req.session.product) {
-      req.session.product = [];
+    if (!req.session.products) {
+      req.session.products = [];
     }
-    const prod = req.session.product.find((e) => {
+    const prod = req.session.products.find((e) => {
       return e.id == product.id;
     });
     if (!prod) {
-      req.session.product.push({
+      req.session.products.push({
         id: product.id,
         count: 1,
       });
@@ -252,6 +252,14 @@ let controller = {
 
     res.redirect("/productCart");
   },
+  removeFromCart: async function (req,res,next){
+    if (!req.session.products) {
+      req.session.products = [];
+    }
+    req.session.products = req.session.products.filter(prod => prod.id != req.params.id);
+    res.redirect("/productCart")
+
+  }
 };
 
 module.exports = controller;

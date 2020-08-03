@@ -43,23 +43,6 @@
 
                                 <div class="center col-4 my-auto">
                                     <p><%= prod.count %> </p>
-                                    <!-- <form>
-                                        <div class="col-auto my-1">
-
-                                            <select class="custom-select form-control select-margin" id="inlineFormCustomSelect">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                                        </div>
-                                    </form> -->
                                 </div>
                                 <div class="center col-2 my-auto">
                                     <p>
@@ -67,7 +50,10 @@
                                     </p>
                                 </div>
                                 <div class="center col-1">
-                                    <button type="button" class="close price-margin" aria-label="Close" onclick="eliminarProducto(this)">
+                                    <form action="/removeFromCart/<%= prod.id %> ">
+                                    <button type="submit" class="close price-margin" aria-label="Close">
+                                    </form>
+                                        
                         <span aria-hidden="true">&times;</span>
                     </button>
                                 </div>
