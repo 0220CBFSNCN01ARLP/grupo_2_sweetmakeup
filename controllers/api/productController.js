@@ -39,11 +39,31 @@ let controller = {
                 "tags"
             ]
         });
-        let response = {
-            ...product,
-            imageURL: "pepito"
+        let imgURL = ""
+        if (product.images.length >0) {
+            let imgId = product.images[0].id;
+            imgURL = `http://localhost:3000/api/images/${imgId}`
         }
-        res.send(product)
+        let response = {
+            name: product.name,
+            price: product.price,
+            brandId: product.brand,
+            discount: product.discount,
+            description: product.description,
+            shipping: product.shipping,
+            link: product.link,
+            ingredients: product.ingredients,
+            returnPolitic: product.returnPolitic,
+            weight: product.weight,
+            height: product.height,
+            width: product.width,
+            length: product.length,
+            imgURL: imgURL,
+            category: product.category,
+            tags: product.tags,
+            images: product.images,
+        }
+        res.send(response)
     }
 }
 
