@@ -15,6 +15,7 @@ class CategoriesList extends Component {
     this.setState({
       categories,
     });
+    console.log(categories);
   }
   componentDidMount() {
     this.updateState();
@@ -33,10 +34,9 @@ class CategoriesList extends Component {
           </div>
           <div className="card-body">
             <div className="row">
-              <Category name={categories[0].name} />
-              <Category />
-              <Category />
-              <Category />
+              {categories.map((e, i) => {
+                return <Category key={i + 1} name={e.name} />;
+              })}
             </div>
           </div>
         </div>
