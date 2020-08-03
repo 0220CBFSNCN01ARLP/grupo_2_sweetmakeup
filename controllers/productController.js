@@ -67,10 +67,10 @@ let controller = {
             });
           }
         }
-        const newRelationshipProductTag = await Product_Tag.create({
-          productId: newProduct.id,
-          tagId: req.body.etiqueta,
-        });
+        //const newRelationshipProductTag = await Product_Tag.create({
+        //  productId: newProduct.id,
+        //  tagId: req.body.etiqueta,
+        //});
 
         console.log(newProduct);
         res.redirect(`/products/${newProduct.id}`);
