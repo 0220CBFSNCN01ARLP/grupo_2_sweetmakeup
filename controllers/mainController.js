@@ -248,9 +248,30 @@ let controller = {
     } else {
       prod.count++;
     }
-    let brands = await Brand.findAll();
-
-    res.redirect("/productCart");
+    res.redirect("/productCart")
+  },
+  addToCartAJAX: async function (req, res, next){
+    let product = await Product.findOne({
+      include: ["category", "images", "user"],
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!req.session.products) {
+      req.session.products = [];
+    }
+    const prod = req.session.products.find((e) => {
+      return e.id == product.id;
+    });
+    if (!prod) {
+      req.session.products.push({
+        id: product.id,
+        count: 1,
+      });
+    } else {
+      prod.count++;
+    }
+    res.send("ok")
   },
   removeFromCart: async function (req,res,next){
     if (!req.session.products) {

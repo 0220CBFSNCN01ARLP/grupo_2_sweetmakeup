@@ -25,13 +25,10 @@
                 Agregar a la wishlist
             </button>
 
-            <form action="/productCart" method="POST">
-                <input name="id" id="id" hidden value="<%= product.id %>">
-                <button class="btn btn-pink btn-block m-1">
+            <button id="<%= product.id %>" class="addToCart btn btn-pink btn-block m-1">
 
-                    Agregar al carrito
-                </button>
-            </form>
+                Agregar al carrito
+            </button>
         </div>
     </article>
 </div>

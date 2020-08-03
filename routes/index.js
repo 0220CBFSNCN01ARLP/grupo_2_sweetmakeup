@@ -42,6 +42,7 @@ router.post("/labios", mainController.search);
 router.post("/productCart", mainController.addToCart);
 
 router.get("/productCart", mainController.cart);
+router.get("/addToCart/:id", mainController.addToCartAJAX);
 
 router.get("/removeFromCart/:id", mainController.removeFromCart);
 
