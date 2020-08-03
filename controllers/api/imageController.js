@@ -1,3 +1,5 @@
+const fs = require("fs");
+const path = require("path");
 const {
     Product,
     Image,
@@ -7,12 +9,8 @@ const {
 let controller = {
     getOne: async function (req, res) {
         let image = await Image.findByPk(req.params.id);
-        let imageRoute = `/img/products/${image.route}`
-        let processedImg = {
-            ...image,
-            url: imageRoute
-        }
-        res.send(processedImg)
+        let imageRoute = `../../public/img/products/${image.route}`;
+        res.sendFile(path.join(__dirname, imageRoute))
     }
 }
 
