@@ -51,10 +51,10 @@
                     $
                     <%= product.price %>
                 </p>
-                <p>
-                    $
-                    <%= product.discount %>
+                <% if (product.discount > 0) { %>
+                <p> Este producto tiene <%= Math.floor(product.discount) %>% de descuento!
                 </p>
+                <% } %>
                 <h2 class="subtitle-detail">Marca</h2>
                 <a href="/products/brand/<%= product.brand.id %>">
                     <p><%= product.brand.name %></p>
