@@ -18,11 +18,16 @@ async function getUsers() {
 
 const calculatePrice = function (products) {
   let prices = products.map((product) => {
-    return product.price;
+    return Number(product.price);
   });
-  return prices.reduce(
-    (accumulator, currentValue) => accumulator + currentValue
-  );
+  //return prices.reduce(
+  //  (accumulator, currentValue) => accumulator + currentValue
+  //);
+  let total = 0;
+  for (let i = 0; i < prices.length; i++) {
+      total += prices[i]
+    }
+  return total.toFixed(2);
 };
 
 class PageContent extends Component {
@@ -33,6 +38,7 @@ class PageContent extends Component {
     const products = await getProducts();
     this.setState({ products });
     const totalPrice = calculatePrice(products);
+    this.setState({totalPrice});
     const users = await getUsers();
     this.setState({ users });
   }
@@ -41,9 +47,7 @@ class PageContent extends Component {
     this.updateState();
   }
 
-  constructor(props) {
-    super(props);
-  }
+  
 
   render() {
     const productsCount = this.state.products.length;
