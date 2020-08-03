@@ -76,28 +76,24 @@ let controller = {
 
   cart: async function (req, res, next) {
     let subtotal = 0;
-    let discount = 0;
-    let discountDecimal = 0;
+    let discountTotal = 0;
+    let discountDecimal = 0
     let totalDecimal = 0;
     let total = 0;
     const realProducts = [];
-    if (
-      req.session.product == null ||
-      req.session.product == "undefined" ||
-      req.session.product == undefined
-    ) {
-    } else {
+    if (req.session.product) {
       for (let sessionProduct of req.session.product) {
         const realProduct = await Product.findByPk(sessionProduct.id, {
           include: ["images"],
         });
+        realProduct.count = sessionProduct.count
         realProducts.push(realProduct);
         subtotal += Number(realProduct.price * sessionProduct.count);
-        discount += Number(realProduct.discount);
+        discountTotal += Number(realProduct.discount/100*realProduct.price*realProduct.count);
+        
       }
       subtotal = subtotal.toFixed(2);
-      discountReal = (discount * subtotal) / 100;
-      discountDecimal = discountReal.toFixed(2);
+      discountDecimal = discountTotal.toFixed(2);
       total = subtotal - discountDecimal;
       totalDecimal = total.toFixed(2);
     }
@@ -105,7 +101,7 @@ let controller = {
 
     res.render("productCart", {
       user: req.session.user,
-      product: realProducts,
+      products: realProducts,
       discountDecimal,
       totalDecimal,
       subtotal,
@@ -254,7 +250,7 @@ let controller = {
     }
     let brands = await Brand.findAll();
 
-    res.redirect("/productCart", { brands });
+    res.redirect("/productCart");
   },
 };
 

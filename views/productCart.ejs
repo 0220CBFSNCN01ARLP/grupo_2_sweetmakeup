@@ -31,18 +31,19 @@
                 </div>
                 <div class="row position product">
 
-                    <% if (product == null || product == "undefined" || product == undefined) { %>
+                    <% if (products.length== 0 || !products) { %>
                         <p>Aún no tenés seleccionado ningun Producto en tu carrito de Compras</p>
                         <% } else { %>
-                            <% for( prod of product ) { %>
+                            <% for( prod of products ) { %>
                                 <div class="center col-3 block"><img class="height-img" src="/img/products/<%= prod.images[0].route%>" alt="<%= prod.name %>">
                                     <p>
                                         <%= prod.name%>
                                     </p>
                                 </div>
 
-                                <div class="center col-4">
-                                    <form>
+                                <div class="center col-4 my-auto">
+                                    <p><%= prod.count %> </p>
+                                    <!-- <form>
                                         <div class="col-auto my-1">
 
                                             <select class="custom-select form-control select-margin" id="inlineFormCustomSelect">
@@ -58,9 +59,9 @@
                                 <option value="10">10</option>
                             </select>
                                         </div>
-                                    </form>
+                                    </form> -->
                                 </div>
-                                <div class="center col-2 price-margin">
+                                <div class="center col-2 my-auto">
                                     <p>
                                         <%= prod.price %>
                                     </p>
