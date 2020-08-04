@@ -27,7 +27,7 @@
             <% for( product of products ) { %>
             <div class="col-12 col-sm-6 col-md-4 h-100">
                 <article class="productCard card mt-2">
-                    <a class = "no-underline" href="/products/<%= product.id %>">
+                    <a class="no-underline" href="/products/<%= product.id %>">
                         <h4 class="card-title"><%= product.name %></h4>
                     </a>
                     <a href="/products/<%= product.id %>">
@@ -35,7 +35,8 @@
                         <img class="imgMain card-img-top img-fluid" src="/img/products/<%= product.images[0].route%>"
                             alt="<%= product.name %>" />
                         <% } else { %>
-                        <img class="imgMain card-img-top img-fluid" src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
+                        <img class="imgMain card-img-top img-fluid"
+                            src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
                         <% } %>
                     </a>
 
@@ -43,8 +44,9 @@
                         <p class="description">
                             <%= product.description %>
                         </p>
-                        <p class="price">$<%= product.price %></p>
-                        <a class = "no-underline" href="/products/edit/<%= product.id %> "><button class="btn btn-pink btn-block m-1">
+                        <p class="price">$<%= toThousand(product.price) %></p>
+                        <a class="no-underline" href="/products/edit/<%= product.id %> "><button
+                                class="btn btn-pink btn-block m-1">
                                 Editar
                             </button></a>
                     </div>

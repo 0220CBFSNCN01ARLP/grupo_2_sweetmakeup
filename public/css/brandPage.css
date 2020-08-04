@@ -8,6 +8,11 @@
   object-fit: cover;
 }
 
+.pd-container {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
 .upper-title-section {
   text-transform: uppercase;
   position: absolute;

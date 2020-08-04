@@ -62,14 +62,14 @@ let controller = {
       limit: 4,
     });
 
-    let brands = await Brand.findAll({ limit: 10 });
+    let brandsHeader = await Brand.findAll({ limit: 10 });
 
     res.render("index", {
       ojos,
       labios,
       cejas,
       rostro,
-      brands,
+      brandsHeader,
       user: req.session.user,
     });
   },
@@ -98,7 +98,7 @@ let controller = {
       total = subtotal - discountDecimal;
       totalDecimal = total.toFixed(2);
     }
-    let brands = await Brand.findAll({ limit: 10 });
+    let brandsHeader = await Brand.findAll({ limit: 10 });
 
     res.render("productCart", {
       user: req.session.user,
@@ -106,7 +106,7 @@ let controller = {
       discountDecimal,
       totalDecimal,
       subtotal,
-      brands,
+      brandsHeader,
     });
   },
 
@@ -122,13 +122,13 @@ let controller = {
         "images",
       ],
     });
-    let brands = await Brand.findAll({ limit: 10 });
+    let brandsHeader = await Brand.findAll({ limit: 10 });
 
     res.render("section", {
       title: "ojos",
       subsections: ["mascara", "delineador", "sombra"],
       products: productsOjos,
-      brands,
+      brandsHeader,
       user: req.session.user,
     });
   },
@@ -145,7 +145,7 @@ let controller = {
         "images",
       ],
     });
-    let brands = await Brand.findAll({ limit: 10 });
+    let brandsHeader = await Brand.findAll({ limit: 10 });
 
     res.render("section", {
       title: "rostro",
@@ -156,7 +156,7 @@ let controller = {
         "concealer",
       ],
       products: productsRostro,
-      brands,
+      brandsHeader,
       user: req.session.user,
     });
   },
@@ -173,13 +173,13 @@ let controller = {
         "images",
       ],
     });
-    let brands = await Brand.findAll({ limit: 10 });
+    let brandsHeader = await Brand.findAll({ limit: 10 });
 
     res.render("section", {
       title: "cejas",
       subsections: ["perfilador", "rellenador", "fijador", "cepillos"],
       products: productsCejas,
-      brands,
+      brandsHeader,
       user: req.session.user,
     });
   },
@@ -196,13 +196,13 @@ let controller = {
         "images",
       ],
     });
-    let brands = await Brand.findAll({ limit: 10 });
+    let brandsHeader = await Brand.findAll({ limit: 10 });
 
     res.render("section", {
       title: "labios",
       subsections: ["lápiz labial", "delineador", "brillo labial"],
       products: productsLabios,
-      brands,
+      brandsHeader,
       user: req.session.user,
     });
   },
@@ -218,13 +218,13 @@ let controller = {
       },
     });
     console.log(productSearch);
-    let brands = await Brand.findAll({ limit: 10 });
+    let brandsHeader = await Brand.findAll({ limit: 10 });
 
     res.render("section", {
       title: "labios",
       subsections: ["lápiz labial", "delineador", "brillo labial"],
       products: productSearch,
-      brands,
+      brandsHeader,
       user: req.session.user,
     });
   },

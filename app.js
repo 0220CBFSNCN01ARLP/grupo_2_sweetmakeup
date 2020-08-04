@@ -12,6 +12,7 @@ const cookieAuthMiddleware = require("./middlewares/rememberLoginMiddleware");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const productsRouter = require("./routes/products");
+const brandsRouter = require("./routes/brands");
 const apiRouter = require("./routes/api");
 
 const app = express();
@@ -47,10 +48,15 @@ app.get("/logout", function (req, res) {
   req.session.destroy();
 });
 
+app.locals.toThousand = function (n) {
+  return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+};
+
 // Routers
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+app.use("/brands", brandsRouter);
 app.use("/api", apiRouter);
 
 // catch 404 and forward to error handler

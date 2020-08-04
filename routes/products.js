@@ -170,7 +170,4 @@ router.get("/:id", productController.detail);
 
 router.delete("/imgDelete/:id", productController.imgDestroy);
 
-//router.get("/brand", productController.brand);
-router.get("/brand/:id", productController.brandDetail);
-
 module.exports = router;

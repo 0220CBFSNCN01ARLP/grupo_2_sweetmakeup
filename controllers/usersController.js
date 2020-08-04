@@ -13,9 +13,9 @@ const { log } = require("console");
 
 let usersController = {
   showRegister: async (req, res) => {
-    let brands = await Brand.findAll({ limit: 10 });
+    let brandsHeader = await Brand.findAll({ limit: 10 });
 
-    res.render("register", { brands });
+    res.render("register", { brandsHeader });
   },
 
   register: async (req, res, next) => {
@@ -51,10 +51,10 @@ let usersController = {
       });
 
       if (!user) {
-        let brands = await Brand.findAll({ limit: 10 });
+        let brandsHeader = await Brand.findAll({ limit: 10 });
 
         return res.render("register", {
-          brands,
+          brandsHeader,
           mensaje: "Usuario incorrecto",
         });
       }
@@ -101,9 +101,9 @@ let usersController = {
 
   userDetail: async (req, res) => {
     try {
-      let brands = await Brand.findAll({ limit: 10 });
+      let brandsHeader = await Brand.findAll({ limit: 10 });
       res.render("userDetail", {
-        brands,
+        brandsHeader,
         user: req.session.user,
       });
     } catch (e) {
@@ -111,18 +111,18 @@ let usersController = {
     }
   },
   userEdit: async (req, res, next) => {
-    let brands = await Brand.findAll({ limit: 10 });
+    let brandsHeader = await Brand.findAll({ limit: 10 });
 
     res.render("userEdit", {
-      brands,
+      brandsHeader,
       user: req.session.user,
     });
   },
   userEditPassword: async (req, res, next) => {
-    let brands = await Brand.findAll({ limit: 10 });
+    let brandsHeader = await Brand.findAll({ limit: 10 });
 
     res.render("userEditPassword", {
-      brands,
+      brandsHeader,
       user: req.session.user,
     });
   },
@@ -185,11 +185,11 @@ let usersController = {
         },
         include: "images",
       });
-      let brands = await Brand.findAll({ limit: 10 });
+      let brandsHeader = await Brand.findAll({ limit: 10 });
 
       res.render("myProducts", {
         products,
-        brands,
+        brandsHeader,
         user,
       });
     } catch (e) {
