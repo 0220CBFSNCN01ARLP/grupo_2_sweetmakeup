@@ -17,7 +17,7 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <% for (let brand of brandsHeader) { %>
-                        <a class="dropdown-item" href="/products/brand/<%= brand.id %>"> <%= brand.name %> </a>
+                        <a class="dropdown-item" href="/brands/<%= brand.id %>"> <%= brand.name %> </a>
                         <% } %>
                         <a class="dropdown-item item-ver-todos-brand" href="/brands">Ver todas</a>
                     </div>

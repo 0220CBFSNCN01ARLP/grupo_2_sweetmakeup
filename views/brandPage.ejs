@@ -8,6 +8,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="/css/brandPage.css" />
+    <script defer src="/js/addToCart.js"></script>
     <title>Make.u |
         <%= brand.name %>
     </title>
@@ -15,6 +16,20 @@
 
 <body>
     <%- include('partials/header') %>
+    <!-- Modal -->
+    <div class="modal" id="addToCartOk" tabindex="-1" role="dialog" aria-labelledby="addToCartOk" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    El producto fue agregado a tu carrito!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-pink" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal -->
 
     <div class="brand-banner-title">
         <img src="/img/bannerBrand2.jpg" alt="Banner principal" class=" banner-img w-100 " />
