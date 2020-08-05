@@ -33,7 +33,9 @@
 }
 
 .img-detail-product {
-  width: 80%;
+  width: auto;
+  height: 60vh;
+  padding: 20px;
 }
 
 .padding-title-detail {
@@ -115,9 +117,9 @@
 }
 
 .img-product {
-  width: 75%;
-  margin: auto;
-  margin-top: 7px;
+  width: auto;
+  height: 60vh;
+  padding: 30px;
 }
 
 .name-product {

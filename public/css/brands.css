@@ -1,0 +1,34 @@
+.brand-banner-title {
+  position: relative;
+}
+
+.banner-img {
+  height: 38vh;
+  filter: blur(3px);
+  object-fit: cover;
+}
+
+.upper-title-section {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 80px;
+  left: 50px;
+  font-size: 55px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.pd-container {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.card-brand {
+  margin: 10px;
+}
+
+.card-brand:hover {
+  -webkit-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+}

@@ -21,11 +21,11 @@ let controller = {
     try {
       let categories = await Category.findAll();
       let tags = await Tag.findAll();
-      let brands = await Brand.findAll({ limit: 10 });
+      let brandsHeader = await Brand.findAll({ limit: 10 });
       res.render("productAdd", {
         categories,
         tags,
-        brands,
+        brandsHeader,
         user: req.session.user,
       });
     } catch (e) {
@@ -76,11 +76,11 @@ let controller = {
         res.redirect(`/products/${newProduct.id}`);
       } else {
         let categories = await Category.findAll();
-        let brands = await Brand.findAll({ limit: 10 });
+        let brandsHeader = await Brand.findAll({ limit: 10 });
         return res.render("productAdd", {
           errors: errors.errors,
           categories,
-          brands,
+          brandsHeader,
           user: req.session.user,
         });
       }
@@ -101,7 +101,7 @@ let controller = {
 
       let pedidoBrands = await Brand.findAll();
 
-      let brands = await Brand.findAll({ limit: 10 });
+      let brandsHeader = await Brand.findAll({ limit: 10 });
 
       let color = "#FFFFFF";
       let descuento = true;
@@ -110,7 +110,7 @@ let controller = {
         product: pedidoProduct,
         categories: pedidoCategories,
         brands: pedidoBrands,
-        brands,
+        brandsHeader,
         user: req.session.user,
         color,
         descuento,
@@ -256,50 +256,14 @@ let controller = {
         });
         match.push(matchedProduct);
       }
-      let brands = await Brand.findAll({ limit: 10 });
+      let brandsHeader = await Brand.findAll({ limit: 10 });
 
       res.render("productDetail", {
         product,
         related,
         sameBrand,
-        brands,
+        brandsHeader,
         match,
-        user: req.session.user,
-      });
-    } catch (e) {
-      console.error(e);
-    }
-  },
-
-  /*
-  brand: async (req, res, next) => {
-    let brands = await Brand.findAll();
-    res.render("brand", { brands });
-  },
-  */
-
-  brandDetail: async (req, res) => {
-    try {
-      let brand = await Brand.findByPk(req.params.id, {
-        include: ["products"],
-      });
-      let brandProducts = await Product.findAll({
-        include: [
-          {
-            association: "brand",
-            where: {
-              id: req.params.id,
-            },
-          },
-          "images",
-        ],
-      });
-      let brands = await Brand.findAll({ limit: 10 });
-
-      res.render("brandPage", {
-        brand,
-        brands,
-        brandProducts,
         user: req.session.user,
       });
     } catch (e) {

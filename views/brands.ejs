@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head") %>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/brands.css" />
+    <title>Make.u |
+        Marcas
+    </title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+    <div class="brand-banner-title">
+        <img src="/img/bannerBrand2.jpg" alt="Banner principal" class=" banner-img w-100 " />
+        <h1 class="upper-title-section">MARCAS</h1>
+    </div>
+
+    <main class="container pd-container">
+        <div class="row d-flex justify-content-center">
+            <% for (let brand of brands) { %>
+            <div class="card col-3 card-brand" style="width: 18rem;">
+                <a href="/brands/<%= brand.id %> ">
+                    <img src="/img/bannerBrand3.jpg" class="card-img-top img-card-brand" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><%= brand.name %></h5>
+                    </div>
+                </a>
+            </div>
+            <% } %>
+        </div>
+
+    </main>
+    <%- include("partials/footer") %>
+</body>
+
+</html>
