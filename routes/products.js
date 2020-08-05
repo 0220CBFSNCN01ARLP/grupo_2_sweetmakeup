@@ -33,7 +33,7 @@ const upload = multer({
 router.get("/create", authMiddleware, productController.create);
 router.post(
   "/create",
-  upload.any(),
+  upload.array("productImg", 15),
   [
     check("productName")
       .isLength({
@@ -102,7 +102,7 @@ router.post(
 router.get("/edit/:id", productEditMiddleware, productController.edit);
 router.put(
   "/edit/:id",
-  upload.any(),
+  upload.array("productImg", 15),
   [
     check("productName")
       .isLength({

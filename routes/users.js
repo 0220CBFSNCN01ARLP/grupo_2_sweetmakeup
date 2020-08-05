@@ -44,7 +44,7 @@ async function checkRepeatEmail(email) {
 router.get("/register", guestMiddleware, usersController.showRegister);
 router.post(
   "/register",
-  upload.any(),
+  upload.single("avatar"),
   [
     check("firstName").trim().isLength({
       min: 2,

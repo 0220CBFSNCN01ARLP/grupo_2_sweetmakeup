@@ -3,13 +3,10 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const multer = require("multer");
 var express = require("express");
-
-//const { getUsers, usersFilePath } = require("../utils/users");
 const { User, Product, Brand, Image } = require("../database/models");
 
 let { check, validationResult, body } = require("express-validator");
 const session = require("express-session");
-const { log } = require("console");
 
 let usersController = {
   showRegister: async (req, res) => {
@@ -22,7 +19,7 @@ let usersController = {
     try {
       let errors = validationResult(req);
       if (errors.isEmpty()) {
-        await User.create({
+        let newUser = await User.create({
           email: req.body.email,
           password: bcrypt.hashSync(req.body.password, 10),
           firstName: req.body.firstName,
@@ -30,7 +27,10 @@ let usersController = {
           avatar: req.files[0].filename,
           roleId: req.body.role,
         });
-
+        req.session.user = newUser;
+        res.cookie("user", newUser.email, {
+          maxAge: 15*60*1000,
+        });
         res.redirect("/");
       } else {
         return res.render("register", {
@@ -64,13 +64,13 @@ let usersController = {
         user.password
       );
       if (!correctPw) {
-        let brands = await Brand.findAll({ limit: 10 });
+        let brandsHeader = await Brand.findAll({ limit: 10 });
 
         user = null;
         console.log("Contraseña incorrecta");
 
         return res.render("register", {
-          brands,
+          brandsHeader,
           mensaje2: "Contraseña incorrecta",
         });
       }
@@ -148,7 +148,6 @@ let usersController = {
       req.session.user.firstName = req.body.firstName;
       req.session.user.lastName = req.body.lastName;
       req.session.user.email = req.body.email;
-      // req.session.user.password = req.body.password;
       res.redirect("/users/admin");
     } catch (e) {
       console.log("Error al actualizar la base de datos " + e);
