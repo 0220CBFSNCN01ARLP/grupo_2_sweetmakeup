@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const { getProducts, productsFilePath } = require("../utils/products");
 const {
   Product,
   Category,
@@ -212,9 +211,9 @@ let controller = {
       include: ["category", "images"],
 
       where: {
-        // name: new RegExp(req.body.buscador, "i")
-        // name: /^req.body.buscador/
-        name: req.body.search,
+        name : {
+          [Op.like]: `%${req.body.search}%`
+        }
       },
     });
     console.log(productSearch);
