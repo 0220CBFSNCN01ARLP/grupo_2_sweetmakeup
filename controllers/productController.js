@@ -22,10 +22,12 @@ let controller = {
       let categories = await Category.findAll();
       let tags = await Tag.findAll();
       let brandsHeader = await Brand.findAll({ limit: 10 });
+      let brands = await Brand.findAll();
       res.render("productAdd", {
         categories,
         tags,
         brandsHeader,
+        brands,
         user: req.session.user,
       });
     } catch (e) {

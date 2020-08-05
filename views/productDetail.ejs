@@ -31,7 +31,7 @@
             </div>
         </div>
         <!-- /Modal -->
-
+        
         <div class="row">
             <div class="col-12 padding-row-detail">
                 <a href="/<%= product.category.name %>"><i class="fas fa-long-arrow-alt-left icon-arrow"><span
@@ -65,10 +65,10 @@
                 </h1>
                 <p class="price-style">
                     $
-                    <%= toThousand(product.price) %>
+                    <%= product.price %>
                 </p>
                 <% if (product.discount > 0) { %>
-                <p> ¡Este producto tiene <%= Math.floor(product.discount) %>% de descuento!
+                <p> Este producto tiene <%= Math.floor(product.discount) %>% de descuento!
                 </p>
                 <% } %>
                 <h2 class="subtitle-detail">Marca</h2>
@@ -132,7 +132,6 @@
                     </div>
                     <% } else { %>
 
-                    <input name="id" id="id" hidden value="<%= product.id %>">
                     <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
                         <button id=<%= product.id %> class="addToCart btn btn-pink btn-block">
                             Agregar al carrito
@@ -147,14 +146,10 @@
 
                     <% } %>
                     <% } else { %>
-
-                    <input name="id" id="id" hidden value="<%= product.id %>">
                     <div class="button-wrapper col-12 col-md-6 py-1" style="max-width: 100%;">
-
                         <button id=<%= product.id %> class="addToCart btn btn-pink btn-block">
                             Agregar al carrito
                         </button>
-
                     </div>
 
                     <div class="button-wrapper col-12 col-md-6 py-1">
@@ -201,7 +196,7 @@
                                 <%= elem.name %>
                             </h3>
                             <p class="text-center">
-                                <span class="price-symbol"><%= toThousand(elem.price) %></span>
+                                <span class="price-symbol"><%= elem.price %></span>
                             </p>
                             <div class="d-flex justify-content-center">
                                 <p class="text-center  color-style upper-category">
@@ -241,7 +236,7 @@
                                 <%= elem.name %>
                             </h3>
                             <p class="text-center">
-                                <span class="price-symbol"><%= toThousand(elem.price) %></span>
+                                <span class="price-symbol"><%= elem.price %></span>
                             </p>
                             <div class="d-flex justify-content-center">
                                 <p class="text-center color-style upper-category"><%= product.category.name %></p>
@@ -274,7 +269,7 @@
                                 <%= elem.name %>
                             </h3>
                             <p class="text-center">
-                                <span class="price-symbol"><%= toThousand(elem.price) %></span>
+                                <span class="price-symbol"><%= elem.price %></span>
                             </p>
                         </a>
                     </article>
