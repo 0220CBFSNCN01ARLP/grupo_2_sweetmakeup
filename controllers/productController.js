@@ -212,6 +212,7 @@ let controller = {
       let product = await Product.findByPk(req.params.id, {
         include: ["category", "images", "user", "brand", "tags"],
       });
+
       let related = await Product.findAll({
         include: [
           {

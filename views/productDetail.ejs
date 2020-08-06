@@ -31,7 +31,7 @@
             </div>
         </div>
         <!-- /Modal -->
-        
+
         <div class="row">
             <div class="col-12 padding-row-detail">
                 <a href="/<%= product.category.name %>"><i class="fas fa-long-arrow-alt-left icon-arrow"><span
@@ -59,7 +59,12 @@
             </div>
 
             <div class="productDetails col p-2">
-                <p> <%= product.tags.name %> </p>
+                <% for (let tag of product.tags) { %>
+                <div class="d-flex justify-content-start">
+                    <p class="text-center  tag-style upper-category">
+                        <%= tag.name %></p>
+                </div>
+                <% } %>
                 <h1 class="card-title">
                     <%= product.name%>
                 </h1>

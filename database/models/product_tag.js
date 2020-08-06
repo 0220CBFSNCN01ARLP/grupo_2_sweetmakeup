@@ -1,13 +1,21 @@
 module.exports = (sequelize, dataTypes) => {
-  const Product_Tag = sequelize.define("Product_Tag", {
-    id: {
-      type: dataTypes.INTEGER(11),
-      autoIncrement: true,
-      primaryKey: true,
-      allowNull: false,
+  const Product_Tag = sequelize.define(
+    "Product_Tag",
+    {
+      id: {
+        type: dataTypes.INTEGER(11),
+        autoIncrement: true,
+        primaryKey: true,
+        allowNull: false,
+      },
     },
-  });
+    {
+      tableName: "product_tag",
+      timestamps: false,
+    }
+  );
 
+  /*
   Product_Tag.associate = function (models) {
     Product_Tag.belongsTo(models.Product, {
       foreignKey: "productId",
@@ -19,6 +27,7 @@ module.exports = (sequelize, dataTypes) => {
       as: "tag",
     });
   };
+  */
 
   return Product_Tag;
 };
