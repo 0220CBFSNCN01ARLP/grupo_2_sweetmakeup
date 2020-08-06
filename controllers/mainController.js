@@ -12,69 +12,75 @@ const { promiseImpl } = require("ejs");
 
 let controller = {
   index: async function (req, res) {
-    ojos = await Product.findAll({
-      include: [
-        {
-          association: "category",
-          where: {
-            name: "rostro",
+    try {
+      ojos = await Product.findAll({
+        include: [
+          {
+            association: "category",
+            where: {
+              name: "rostro",
+            },
           },
-        },
-        "images",
-      ],
-      limit: 4,
-    });
-    labios = await Product.findAll({
-      include: [
-        {
-          association: "category",
-          where: {
-            name: "labios",
+          "images",
+        ],
+        limit: 4,
+      });
+      labios = await Product.findAll({
+        include: [
+          {
+            association: "category",
+            where: {
+              name: "labios",
+            },
           },
-        },
-        "images",
-      ],
-      limit: 4,
-    });
-    cejas = await Product.findAll({
-      include: [
-        {
-          association: "category",
-          where: {
-            name: "cejas",
+          "images",
+        ],
+        limit: 4,
+      });
+      cejas = await Product.findAll({
+        include: [
+          {
+            association: "category",
+            where: {
+              name: "cejas",
+            },
           },
-        },
-        "images",
-      ],
-      limit: 4,
-    });
-    rostro = await Product.findAll({
-      include: [
-        {
-          association: "category",
-          where: {
-            name: "rostro",
+          "images",
+        ],
+        limit: 4,
+      });
+      rostro = await Product.findAll({
+        include: [
+          {
+            association: "category",
+            where: {
+              name: "rostro",
+            },
           },
-        },
-        "images",
-      ],
-      limit: 4,
-    });
-
-    let brandsHeader = await Brand.findAll({ limit: 10 });
-
-    res.render("index", {
-      ojos,
-      labios,
-      cejas,
-      rostro,
-      brandsHeader,
-      user: req.session.user,
-    });
+          "images",
+        ],
+        limit: 4,
+      });
+  
+      let brandsHeader = await Brand.findAll({ limit: 10 });
+  
+      res.render("index", {
+        ojos,
+        labios,
+        cejas,
+        rostro,
+        brandsHeader,
+        user: req.session.user,
+      });
+    } catch (error) {
+      console.error(error)
+    }
+    
   },
 
   cart: async function (req, res, next) {
-    let subtotal = 0;
+    try {
+      let subtotal = 0;
     let discountTotal = 0;
     let discountDecimal = 0;
     let totalDecimal = 0;
@@ -107,6 +113,10 @@ let controller = {
       subtotal,
       brandsHeader,
     });
+    } catch (error) {
+      console.error(error)
+    }
+    
   },
 
   ojos: async function (req, res, next) {
@@ -125,7 +135,6 @@ let controller = {
 
     res.render("section", {
       title: "ojos",
-      subsections: ["mascara", "delineador", "sombra"],
       products: productsOjos,
       brandsHeader,
       user: req.session.user,
@@ -133,123 +142,137 @@ let controller = {
   },
 
   rostro: async function (req, res, next) {
-    let productsRostro = await Product.findAll({
-      include: [
-        {
-          association: "category",
-          where: {
-            name: "rostro",
+    try {
+      let productsRostro = await Product.findAll({
+        include: [
+          {
+            association: "category",
+            where: {
+              name: "rostro",
+            },
           },
-        },
-        "images",
-      ],
-    });
-    let brandsHeader = await Brand.findAll({ limit: 10 });
-
-    res.render("section", {
-      title: "rostro",
-      subsections: [
-        "base en polvo",
-        "base en crema",
-        "iluminador",
-        "concealer",
-      ],
-      products: productsRostro,
-      brandsHeader,
-      user: req.session.user,
-    });
+          "images",
+        ],
+      });
+      let brandsHeader = await Brand.findAll({ limit: 10 });
+  
+      res.render("section", {
+        title: "rostro",
+        products: productsRostro,
+        brandsHeader,
+        user: req.session.user,
+      });
+    } catch (error) {
+      console.error(error)
+    }
+    
   },
 
   cejas: async function (req, res, next) {
-    let productsCejas = await Product.findAll({
-      include: [
-        {
-          association: "category",
-          where: {
-            name: "cejas",
+    try {
+      let productsCejas = await Product.findAll({
+        include: [
+          {
+            association: "category",
+            where: {
+              name: "cejas",
+            },
           },
-        },
-        "images",
-      ],
-    });
-    let brandsHeader = await Brand.findAll({ limit: 10 });
-
-    res.render("section", {
-      title: "cejas",
-      subsections: ["perfilador", "rellenador", "fijador", "cepillos"],
-      products: productsCejas,
-      brandsHeader,
-      user: req.session.user,
-    });
+          "images",
+        ],
+      });
+      let brandsHeader = await Brand.findAll({ limit: 10 });
+  
+      res.render("section", {
+        title: "cejas",
+        products: productsCejas,
+        brandsHeader,
+        user: req.session.user,
+      });
+    } catch (error) {
+      console.error(error)
+    }
   },
 
   labios: async function (req, res, next) {
-    let productsLabios = await Product.findAll({
-      include: [
-        {
-          association: "category",
-          where: {
-            name: "labios",
+    try {
+      let productsLabios = await Product.findAll({
+        include: [
+          {
+            association: "category",
+            where: {
+              name: "labios",
+            },
           },
-        },
-        "images",
-      ],
-    });
-    let brandsHeader = await Brand.findAll({ limit: 10 });
-
-    res.render("section", {
-      title: "labios",
-      subsections: ["lápiz labial", "delineador", "brillo labial"],
-      products: productsLabios,
-      brandsHeader,
-      user: req.session.user,
-    });
+          "images",
+        ],
+      });
+      let brandsHeader = await Brand.findAll({ limit: 10 });
+  
+      res.render("section", {
+        title: "labios",
+        products: productsLabios,
+        brandsHeader,
+        user: req.session.user,
+      });
+    } catch (error) {
+     console.error(error) 
+    }
+    
   },
 
   search: async function (req, res, next) {
-    let productSearch = await Product.findAll({
-      include: ["category", "images"],
-
-      where: {
-        name : {
-          [Op.like]: `%${req.body.search}%`
-        }
-      },
-    });
-    console.log(productSearch);
-    let brandsHeader = await Brand.findAll({ limit: 10 });
-
-    res.render("section", {
-      title: "labios",
-      subsections: ["lápiz labial", "delineador", "brillo labial"],
-      products: productSearch,
-      brandsHeader,
-      user: req.session.user,
-    });
+    try {
+      let productSearch = await Product.findAll({
+        include: ["category", "images"],
+  
+        where: {
+          name : {
+            [Op.like]: `%${req.body.search}%`
+          }
+        },
+      });
+      let brandsHeader = await Brand.findAll({ limit: 10 });
+  
+      res.render("section", {
+        title: "labios",
+        products: productSearch,
+        brandsHeader,
+        user: req.session.user,
+      });
+    } catch (error) {
+      console.error(error)
+    }
+    
   },
 
   addToCart: async function (req, res, next) {
-    let product = await Product.findOne({
-      include: ["category", "images", "user"],
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (!req.session.products) {
-      req.session.products = [];
-    }
-    const prod = req.session.products.find((e) => {
-      return e.id == product.id;
-    });
-    if (!prod) {
-      req.session.products.push({
-        id: product.id,
-        count: 1,
+    try {
+      let product = await Product.findOne({
+        include: ["category", "images", "user"],
+        where: {
+          id: req.params.id,
+        },
       });
-    } else {
-      prod.count++;
+      if (!req.session.products) {
+        req.session.products = [];
+      }
+      const prod = req.session.products.find((e) => {
+        return e.id == product.id;
+      });
+      if (!prod) {
+        req.session.products.push({
+          id: product.id,
+          count: 1,
+        });
+      } else {
+        prod.count++;
+      }
+      res.send("ok");
+    } catch (error) {
+      console.log(error);
     }
-    res.send("ok");
+    
   },
   removeFromCart: async function (req, res, next) {
     if (!req.session.products) {

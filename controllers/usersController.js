@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const bcrypt = require("bcrypt");
 const multer = require("multer");
 var express = require("express");
@@ -8,7 +6,7 @@ const { User, Product, Brand, Image } = require("../database/models");
 let { check, validationResult, body } = require("express-validator");
 const session = require("express-session");
 
-let usersController = {
+let controller = {
   showRegister: async (req, res) => {
     let brandsHeader = await Brand.findAll({ limit: 10 });
 
@@ -111,20 +109,28 @@ let usersController = {
     }
   },
   userEdit: async (req, res, next) => {
-    let brandsHeader = await Brand.findAll({ limit: 10 });
-
+    try {
+      let brandsHeader = await Brand.findAll({ limit: 10 });
     res.render("userEdit", {
       brandsHeader,
       user: req.session.user,
     });
+    } catch (error) {
+      console.error(error)
+    }
+    
   },
   userEditPassword: async (req, res, next) => {
-    let brandsHeader = await Brand.findAll({ limit: 10 });
+    try {
+      let brandsHeader = await Brand.findAll({ limit: 10 });
 
     res.render("userEditPassword", {
       brandsHeader,
       user: req.session.user,
     });
+    } catch (error) {
+      console.error(error)
+    }
   },
 
   userUpdate: async (req, res, next) => {
@@ -150,7 +156,7 @@ let usersController = {
       req.session.user.email = req.body.email;
       res.redirect("/users/admin");
     } catch (e) {
-      console.log("Error al actualizar la base de datos " + e);
+      console.error(error)
     }
   },
 
@@ -169,7 +175,7 @@ let usersController = {
       req.session.user.password = req.body.password;
       res.redirect("/users/admin");
     } catch (e) {
-      console.log("Error al actualizar la base de datos " + e);
+      console.error(e);
     }
   },
   myProducts: async (req, res, next) => {
@@ -192,9 +198,9 @@ let usersController = {
         user,
       });
     } catch (e) {
-      console.log("Error al recuperar datos de la base de datos " + e);
+      console.error(e);
     }
   },
 };
 
-module.exports = usersController;
+module.exports = controller;
