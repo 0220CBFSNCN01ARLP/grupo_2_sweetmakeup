@@ -125,7 +125,6 @@ let controller = {
 
     res.render("section", {
       title: "ojos",
-      subsections: ["mascara", "delineador", "sombra"],
       products: productsOjos,
       brandsHeader,
       user: req.session.user,
@@ -148,12 +147,6 @@ let controller = {
 
     res.render("section", {
       title: "rostro",
-      subsections: [
-        "base en polvo",
-        "base en crema",
-        "iluminador",
-        "concealer",
-      ],
       products: productsRostro,
       brandsHeader,
       user: req.session.user,
@@ -176,7 +169,6 @@ let controller = {
 
     res.render("section", {
       title: "cejas",
-      subsections: ["perfilador", "rellenador", "fijador", "cepillos"],
       products: productsCejas,
       brandsHeader,
       user: req.session.user,
@@ -199,7 +191,6 @@ let controller = {
 
     res.render("section", {
       title: "labios",
-      subsections: ["lápiz labial", "delineador", "brillo labial"],
       products: productsLabios,
       brandsHeader,
       user: req.session.user,
