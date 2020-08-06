@@ -60,10 +60,7 @@
 
             <div class="productDetails col p-2">
                 <% for (let tag of product.tags) { %>
-                <div class="d-flex justify-content-start">
-                    <p class="text-center  tag-style upper-category">
-                        <%= tag.name %></p>
-                </div>
+                <a class="tag-style" href="/tags/<%= tag.id %>"><%= tag.name %></a>
                 <% } %>
                 <h1 class="card-title">
                     <%= product.name%>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head") %>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/brandPage.css" />
+    <script defer src="/js/addToCart.js"></script>
+    <title>Make.u |
+        <%= tag.name %>
+    </title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+    <!-- Modal -->
+    <div class="modal" id="addToCartOk" tabindex="-1" role="dialog" aria-labelledby="addToCartOk" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    El producto fue agregado a tu carrito!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-pink" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal -->
+
+    <div class="brand-banner-title">
+        <img src="/img/bannerBrand3.jpg" alt="Banner principal" class=" banner-img w-100 " />
+        <p class="p-subtitle-section">Estas viendo productos de</p>
+        <h1 class="upper-title-section"><%= tag.name %></h1>
+    </div>
+
+    <main class="container pd-container mt-1">
+        <div class="row vh-75">
+            <% if (tagProducts.length > 0) { %>
+            <% for( let i = 0; i < tagProducts.length; i++ ) { %>
+            <%- include("partials/productCard", {product: tagProducts[i]})  %>
+            <% } %>
+            <% } else { %>
+            <p>Todavía no existen productos para esta marca</p>
+            <% } %>
+
+        </div>
+
+
+    </main>
+    <%- include("partials/footer") %>
+</body>
+
+</html>
