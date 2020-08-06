@@ -31,7 +31,7 @@ let controller = {
         user: req.session.user,
       });
     } catch (e) {
-      console.log("Error al obtener información de la base de datos" + e);
+      console.error(e);
     }
   },
 
@@ -87,7 +87,7 @@ let controller = {
         });
       }
     } catch (e) {
-      console.log("Error al escribir en la base de datos " + e);
+      console.error(e);
     }
   },
 
@@ -118,7 +118,7 @@ let controller = {
         descuento,
       });
     } catch (e) {
-      console.log("Error al obtener datos de la base de datos " + e);
+      console.error(e);
     }
   },
 
@@ -169,7 +169,11 @@ let controller = {
       } else {
         let pedidoCategories = await Category.findAll();
         let pedidoBrands = await Brand.findAll();
+        let brandsHeader = pedidoBrands.slice(0,10);
         return res.render("productEdit", {
+          categories: pedidoCategories,
+          brands: pedidoBrands,
+          brandsHeader,
           errors: errors.errors,
           ...req.body,
           user: req.session.user,
@@ -191,7 +195,7 @@ let controller = {
       });
       res.redirect("/users/myProducts");
     } catch (e) {
-      console.log("Error al eliminar el producto de la base de datos " + e);
+      console.error(e);
     }
   },
 
@@ -203,7 +207,7 @@ let controller = {
         },
       });
     } catch (e) {
-      console.log("Error al eliminar el producto de la base de datos " + e);
+      console.error(e);
     }
   },
 
