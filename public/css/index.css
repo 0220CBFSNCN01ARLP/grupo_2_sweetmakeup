@@ -15,42 +15,41 @@
 
 .banner-pd {
   position: relative;
-  padding: 0;
 }
 
-.banner-img-prueba {
+.banner-img-index {
   width: 100%;
-  height: 110vh;
+  height: 80vh;
   object-fit: cover;
 }
 
-.pepe-div {
-  position: relative;
-}
-
-.title-banner-prueba {
+/* .title-banner-prueba {
   position: absolute;
   bottom: 110px;
   left: 500px;
   background-color: #0d2821;
   width: 400px;
   opacity: 0.6;
-}
+} */
 
-.title-banner-prueba2 {
+/* .title-banner-prueba2 {
   position: absolute;
   bottom: 110px;
   left: 500px;
   background-color: coral;
   width: 400px;
   opacity: 0.8;
-}
+} */
 
-.title-banner-main-prueba {
+.title-banner-main {
+  position: absolute;
+  bottom: 110px;
+  left: 250px;
   font-size: 35px;
   line-height: 45px;
   text-align: right;
-  color: white;
+  background-color: coral;
+  opacity: 0.8;
 }
 
 .title-banner {
@@ -58,7 +57,6 @@
   bottom: 30%;
   background-color: coral;
   width: 300px;
-  opacity: 0.6;
 }
 
 .title {
