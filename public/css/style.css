@@ -35,8 +35,14 @@ header {
   box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
 }
 
-.btn-pink-brand {
-  color: #dc92a5;
+.dropdown-pink:hover {
+  background-color: #f2d7de;
+}
+
+.dropdown-pink:focus,
+.dropdown-pink:active {
+  background-color: #dc92a5;
+  background-image: none;
 }
 
 .hello-user-display {

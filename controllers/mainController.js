@@ -234,8 +234,8 @@ let controller = {
       });
       let brandsHeader = await Brand.findAll({ limit: 10 });
   
-      res.render("section", {
-        title: "labios",
+      res.render("searchResults", {
+        title: `Resultados de la búsqueda: ${req.body.search}`,
         products: productSearch,
         brandsHeader,
         user: req.session.user,

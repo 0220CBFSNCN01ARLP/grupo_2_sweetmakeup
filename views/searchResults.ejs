@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head") %>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/section.css" />
+    <script defer src="/js/addToCart.js"></script>
+    <title>Make.u |
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+    <div class="section-banner-title">
+        <img src="../img/bannerBrand3.jpg" alt="Banner principal" class="banner w-100" />
+        <h1 class="upper-title-section">Búsqueda</h1>
+
+    </div>
+
+
+
+
+    <nav class="nav-section">
+        <ul class="nav justify-content-center filtros">
+            <li class="nav-item"><a class="btn btn-pink nav-link">destacado</a></li>
+            <li class="nav-item"><a class="btn btn-pink nav-link">lo nuevo</a></li>
+            <li class="nav-item"><a class="btn btn-pink nav-link">precio</a></li>
+        </ul>
+    </nav>
+
+    <main class="container mt-1">
+
+        <!-- Modal -->
+        <div class="modal" id="addToCartOk" tabindex="-1" role="dialog" aria-labelledby="addToCartOk"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        El producto fue agregado a tu carrito!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-pink" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Modal -->
+
+        <div class="row vh-75">
+
+            <% if (products.length > 0) { %>
+            <% for( let i = 0; i < products.length; i++ ) { %>
+            <%-include("partials/productCard", {product: products[i]}) %>
+            <% } %>
+            <% } else { %>
+            <h3 class="search-incorrect name-product">No se han encontrado productos para la busqueda realizada.</h3>
+            <% } %>
+        </div>
+
+
+    </main>
+    <%- include("partials/footer") %>
+</body>
+
+</html>

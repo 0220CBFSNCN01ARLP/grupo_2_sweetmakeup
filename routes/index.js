@@ -37,7 +37,7 @@ router.get("/rostro", mainController.rostro);
 
 router.get("/cejas", mainController.cejas);
 
-router.post("/labios", mainController.search);
+router.post("/search", mainController.search);
 
 router.get("/productCart", mainController.cart);
 router.get("/addToCart/:id", mainController.addToCart);

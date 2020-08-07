@@ -7,9 +7,9 @@
             <nav id="nav-section d-flex align-items-center">
                 <div class="section-display" id="marker"></div>
                 <a class="section-display m-2" id="a-section" href="/rostro">Rostro</a>
-                <a class="section-display m-2" id="a-section" href=" /labios">Labios</a>
-                <a class="section-display m-2" id="a-section" href=" /ojos">Ojos</a>
-                <a class="section-display m-2" id="a-section" href=" /cejas">Cejas</a>
+                <a class="section-display m-2" id="a-section" href="/labios">Labios</a>
+                <a class="section-display m-2" id="a-section" href="/ojos">Ojos</a>
+                <a class="section-display m-2" id="a-section" href="/cejas">Cejas</a>
                 <div class="dropdown section-display">
                     <button class="btn dropdown-toggle button-style-user brand-btn" type="button"
                         id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -17,10 +17,10 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <% for (let brand of brandsHeader) { %>
-                        <a class="btn-pink-brand dropdown-item" href="/brands/<%= brand.id %>"> <%= brand.name %> </a>
+                        <a class="dropdown-pink dropdown-item" href="/brands/<%= brand.id %>"> <%= brand.name %> </a>
                         <% } %>
                         <div class="dropdown-divider"></div>
-                        <a class="btn-pink-brand dropdown-item item-ver-todos-brand" href="/brands">Ver todas</a>
+                        <a class="dropdown-pink dropdown-item item-ver-todos-brand" href="/brands">Ver todas</a>
                     </div>
                 </div>
             </nav>
@@ -43,10 +43,10 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <% if (user.roleId == 2 || user.roleId == 3) { %>
-                    <a class="dropdown-item" href="/products/create">Agregar Producto</a>
-                    <a class="dropdown-item" href="/users/myProducts">Mis Productos</a>
+                    <a class="dropdown-pink dropdown-item" href="/products/create">Agregar Producto</a>
+                    <a class="dropdown-pink dropdown-item" href="/users/myProducts">Mis Productos</a>
                     <% } %>
-                    <a class="dropdown-item" href="/users/admin">Mis Datos</a>
+                    <a class="dropdown-pink dropdown-item" href="/users/admin">Mis Datos</a>
                     <div class="inline-user">
                         <form action="/users/logout" method="GET">
                             <button class="btn" type="submit">
@@ -68,7 +68,7 @@
 
         <div
             class="col-12 col-sm-12 col-md-12 col-lg-3 d-flex justify-content-center d-flex align-items-center pd-left pad10">
-            <form action="/labios" method="POST" class="input-group">
+            <form action="/search" method="POST" class="input-group">
                 <div class="input-group-prepend">
                     <button class="input-group-text btn btn-pink btn-block " id="basic-text1"><i
                             class="fas fa-search text-white" aria-hidden="true"></i></button>
