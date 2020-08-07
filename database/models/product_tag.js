@@ -15,19 +15,5 @@ module.exports = (sequelize, dataTypes) => {
     }
   );
 
-  /*
-  Product_Tag.associate = function (models) {
-    Product_Tag.belongsTo(models.Product, {
-      foreignKey: "productId",
-      as: "product",
-    });
-
-    Product_Tag.belongsTo(models.Tag, {
-      foreignKey: "tagId",
-      as: "tag",
-    });
-  };
-  */
-
   return Product_Tag;
 };

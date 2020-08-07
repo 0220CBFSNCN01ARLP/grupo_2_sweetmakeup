@@ -147,17 +147,14 @@
         </div>
 
         <div class="col-12 margin-col">
-          <label for="etiqueta">Etiqueta *</label>
-          <div class="custom-control custom-checkbox">
-            <input form="editForm" type="checkbox" class="custom-control-input" id="new" name="etiqueta"
-              value="nuevoLanzamiento" />
-            <label class="custom-control-label" for="new">Nuevo Lanzamiento</label>
+          <label for="etiqueta">Etiqueta</label>
+          <% for (let tag of tags) { %>
+          <div class="col-2 custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="<%= tag.name %>" name="etiqueta"
+              value="<%= tag.name %>" />
+            <label class="custom-control-label" for="<%= tag.name %>"><%= tag.name %></label>
           </div>
-          <div class="custom-control custom-checkbox">
-            <input form="editForm" type="checkbox" class="custom-control-input" id="descuento" name="etiqueta"
-              checked="<%= descuento %>" />
-            <label class="custom-control-label" for="descuento">Con Descuento</label>
-          </div>
+          <% } %>
         </div>
 
         <div class="col-sm-6 none-cell margin-col">
@@ -252,9 +249,10 @@
             <button form="editForm" type="submit" class="btn btn-primary btn-sm button-margin">
               Guardar Cambios
             </button>
-            
+
             <!-- Botón que abre el modal -->
-            <button type="button" class="btn btn-secondary btn-danger btn-sm button-margin" data-toggle="modal" data-target="#deleteConfirm">
+            <button type="button" class="btn btn-secondary btn-danger btn-sm button-margin" data-toggle="modal"
+              data-target="#deleteConfirm">
               Borrar Producto
             </button>
 
@@ -264,7 +262,7 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="deleteConfirmLabel">Modal title</h5>
+                    <h5 class="modal-title" id="deleteConfirmLabel">Eliminar Producto</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -273,7 +271,7 @@
                     ¿Está seguro de que quiere eliminar el producto?
                   </div>
                   <div class="modal-footer">
-                    
+
                     <button form="deleteFormProduct" type="submit" class="btn btn-secondary btn-danger">Sí</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                   </div>

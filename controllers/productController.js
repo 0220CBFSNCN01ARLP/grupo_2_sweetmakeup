@@ -69,12 +69,16 @@ let controller = {
             });
           }
         }
-        //const newRelationshipProductTag = await Product_Tag.create({
-        //  productId: newProduct.id,
-        //  tagId: req.body.etiqueta,
-        //});
 
-        console.log(newProduct);
+        for (let name of req.body.etiqueta) {
+          const tag = await Tag.findOne({
+            where: {
+              name: name,
+            },
+          });
+          await newProduct.addTag(tag);
+        }
+
         res.redirect(`/products/${newProduct.id}`);
       } else {
         let categories = await Category.findAll();
@@ -94,7 +98,7 @@ let controller = {
   edit: async function (req, res, next) {
     try {
       let pedidoProduct = await Product.findByPk(req.params.id, {
-        include: ["category", "images", "user"],
+        include: ["category", "images", "user", "tags"],
       });
 
       if (pedidoProduct == null) return res.redirect("/");
@@ -108,11 +112,14 @@ let controller = {
       let color = "#FFFFFF";
       let descuento = true;
 
+      let tags = await Tag.findAll();
+
       res.render("productEdit", {
         product: pedidoProduct,
         categories: pedidoCategories,
         brands: pedidoBrands,
         brandsHeader,
+        tags,
         user: req.session.user,
         color,
         descuento,
@@ -132,7 +139,7 @@ let controller = {
       let descuento = true;
 
       if (errors.isEmpty()) {
-        await Product.update(
+        const editedProduct = await Product.update(
           {
             name: req.body.productName,
             price: req.body.price,
@@ -155,6 +162,16 @@ let controller = {
             },
           }
         );
+
+        for (let name of req.body.etiqueta) {
+          const tag = await Tag.findOne({
+            where: {
+              name: name,
+            },
+          });
+          await editedProduct.addTag(tag);
+        }
+
         if (req.files.length > 0) {
           for (let i = 0; i < req.files.length; i++) {
             const newImage = await Image.create({
@@ -169,7 +186,7 @@ let controller = {
       } else {
         let pedidoCategories = await Category.findAll();
         let pedidoBrands = await Brand.findAll();
-        let brandsHeader = pedidoBrands.slice(0,10);
+        let brandsHeader = pedidoBrands.slice(0, 10);
         return res.render("productEdit", {
           categories: pedidoCategories,
           brands: pedidoBrands,

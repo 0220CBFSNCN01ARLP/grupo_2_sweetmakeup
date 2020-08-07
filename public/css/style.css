@@ -29,6 +29,12 @@ header {
   display: inline-block;
 }
 
+.button-style-user:focus {
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
+}
+
 .hello-user-display {
   display: none;
 }
@@ -71,9 +77,9 @@ header {
 .brand-btn {
   position: relative;
   text-decoration: none;
-  margin-left: 25px;
   font-size: 1.2em;
   color: #dc92a5;
+  padding-bottom: 2.5%;
 }
 
 .brand-btn:hover {
@@ -116,6 +122,7 @@ nav #marker {
 .pd-section-nav {
   padding-left: 0px;
   display: none;
+  padding-right: 0px;
 }
 
 .sub-menu-header {
@@ -323,6 +330,10 @@ nav i {
   }
   .sub-menu-header {
     display: none;
+  }
+
+  .pad10 {
+    padding-right: 15px;
   }
 }
 

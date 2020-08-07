@@ -42,7 +42,7 @@
                 <article class="product-card-principal card">
                     <% if (product.images.length > 0) { %>
                     <div class="d-flex justify-content-center">
-                        <img id="mainImg" class="card-img-top mh-50 img-detail-product"
+                        <img id="mainImg" class="img-fluid card-img-top mh-50 img-detail-product"
                             src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
                         <% } else { %>
                         <img class="card-img-top mh-50" src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
@@ -67,14 +67,14 @@
                 </h1>
                 <p class="price-style">
                     $
-                    <%= product.price %>
+                    <%= toThousand(product.price) %>
                 </p>
                 <% if (product.discount > 0) { %>
                 <p> Este producto tiene <%= Math.floor(product.discount) %>% de descuento!
                 </p>
                 <% } %>
                 <h2 class="subtitle-detail">Marca</h2>
-                <a href="/products/brand/<%= product.brand.id %>">
+                <a href="/brands/<%= product.brand.id %>">
                     <p><%= product.brand.name %></p>
                 </a>
 
@@ -165,22 +165,6 @@
         </div>
         </div>
 
-        <!-- <div class="container-fluid pd-container-video">
-            <div class="row">
-                <h2 class="title-post-detail color-title">Algunos consejos para el
-                    ""</h2>
-                <div class="col-12 d-flex justify-content-center">
-                    <iframe width="700" height="415" src="" frameborder="0"></iframe>
-
-                    <iframe width="700" height="415" src="https://www.youtube.com/embed/efh3AEDMqXg" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-
-                </div>
-            </div>
-        </div> -->
-
-
         <div class="container-fluid vh-50 py-3 pt-5">
             <h3 class="title-post-detail">Tu match ideal!<span style='font-size:30px;'>&#128526;</span></h3>
             <div class="row m-0 d-flex justify-content-center">
@@ -198,7 +182,7 @@
                                 <%= elem.name %>
                             </h3>
                             <p class="text-center">
-                                <span class="price-symbol"><%= elem.price %></span>
+                                <span class="price-symbol"><%= toThousand(elem.price) %></span>
                             </p>
                             <div class="d-flex justify-content-center">
                                 <p class="text-center  color-style upper-category">
@@ -238,7 +222,7 @@
                                 <%= elem.name %>
                             </h3>
                             <p class="text-center">
-                                <span class="price-symbol"><%= elem.price %></span>
+                                <span class="price-symbol"><%= toThousand(elem.price) %></span>
                             </p>
                             <div class="d-flex justify-content-center">
                                 <p class="text-center color-style upper-category"><%= product.category.name %></p>
@@ -271,7 +255,7 @@
                                 <%= elem.name %>
                             </h3>
                             <p class="text-center">
-                                <span class="price-symbol"><%= elem.price %></span>
+                                <span class="price-symbol"><%= toThousand(elem.price) %></span>
                             </p>
                         </a>
                     </article>
