@@ -35,6 +35,10 @@ header {
   box-shadow: 0 0 0 0.2rem rgba(255, 139, 255, 0.25);
 }
 
+.btn-pink-brand {
+  color: #dc92a5;
+}
+
 .hello-user-display {
   display: none;
 }

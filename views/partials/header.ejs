@@ -11,15 +11,16 @@
                 <a class="section-display m-2" id="a-section" href=" /ojos">Ojos</a>
                 <a class="section-display m-2" id="a-section" href=" /cejas">Cejas</a>
                 <div class="dropdown section-display">
-                    <button class="btn dropdown-toggle brand-btn" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn dropdown-toggle button-style-user brand-btn" type="button"
+                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Marcas
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <% for (let brand of brandsHeader) { %>
-                        <a class="dropdown-item" href="/brands/<%= brand.id %>"> <%= brand.name %> </a>
+                        <a class="btn-pink-brand dropdown-item" href="/brands/<%= brand.id %>"> <%= brand.name %> </a>
                         <% } %>
-                        <a class="dropdown-item item-ver-todos-brand" href="/brands">Ver todas</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="btn-pink-brand dropdown-item item-ver-todos-brand" href="/brands">Ver todas</a>
                     </div>
                 </div>
             </nav>
