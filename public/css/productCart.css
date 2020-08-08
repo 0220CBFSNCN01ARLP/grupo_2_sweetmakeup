@@ -61,10 +61,6 @@ body {
     margin-top: 39px;
 }
 
-.center {
-    text-align: center;
-}
-
 .block {
     display: block;
 }
@@ -111,10 +107,6 @@ body {
 
 .select-margin {
     margin-top: 20px;
-}
-
-.price-margin {
-    margin-top: 25px;
 }
 
 @media (min-width: 768px) {

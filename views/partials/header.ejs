@@ -47,13 +47,13 @@
                     <a class="dropdown-pink dropdown-item" href="/users/myProducts">Mis Productos</a>
                     <% } %>
                     <a class="dropdown-pink dropdown-item" href="/users/admin">Mis Datos</a>
-                    <div class="inline-user">
-                        <form action="/users/logout" method="GET">
-                            <button class="btn" type="submit">
-                                Cerrar Sesión
-                            </button>
-                        </form>
-                    </div>
+                    <div class="dropdown-divider"></div>
+                    <form action="/users/logout" method="GET">
+                        <button class="btn dropdown-item dropdown-pink" type="submit">
+                            Cerrar Sesión
+                        </button>
+                    </form>
+
                 </div>
             </div>
             <a class="item-space" href="/productCart"><i class="fa fa-shopping-cart cart-size"></i></a>

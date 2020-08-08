@@ -22,7 +22,7 @@ let controller = {
           password: bcrypt.hashSync(req.body.password, 10),
           firstName: req.body.firstName,
           lastName: req.body.lastName,
-          avatar: req.files[0].filename,
+          avatar: req.file.filename,
           roleId: req.body.role,
         });
         req.session.user = newUser;
@@ -135,14 +135,18 @@ let controller = {
 
   userUpdate: async (req, res, next) => {
     try {
-      console.log(req.files);
+      let avatar
+      if(req.files.length > 0){
+        avatar = req.files[0].filename
+      } else {
+        avatar = req.session.user.avatar
+      }
       await User.update(
         {
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           email: req.body.email,
-          // avatar: req.files[0].filename,
-          //  password: bcrypt.hashSync(req.body.password, 10),
+          avatar: avatar
         },
         {
           where: {
@@ -150,12 +154,10 @@ let controller = {
           },
         }
       );
-
-      req.session.user.firstName = req.body.firstName;
-      req.session.user.lastName = req.body.lastName;
-      req.session.user.email = req.body.email;
+      let user = await User.findByPk(req.params.id)
+      req.session.user = user;
       res.redirect("/users/admin");
-    } catch (e) {
+    } catch (error) {
       console.error(error)
     }
   },

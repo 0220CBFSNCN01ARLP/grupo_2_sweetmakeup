@@ -20,27 +20,27 @@
             <div class="col-12 containter">
                 <form id="contact-form-edit" method="POST" action="/users/edit/<%= user.id %>?_method=PUT" enctype="multipart/form-data">
                     <label for="firstName">Nombre</label>
-                    <input class="form-control" type="text" id="firstName" name="firstName"
+                    <input class="form-control mb-3" type="text" id="firstName" name="firstName"
                         value="<%= user.firstName %>" />
                     <div class="firstName invalid-feedback"></div>
 
                     <label for="lastName">Apellido</label>
-                    <input class="form-control" type="text" id="lastName" name="lastName"
+                    <input class="form-control mb-3" type="text" id="lastName" name="lastName"
                         value="<%= user.lastName %>" />
                     <div class="lastName invalid-feedback"></div>
 
                     <label for="email">Direccion de correo electronico</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" />
+                    <input type="email" class="form-control mb-3" id="email" name="email" value="<%= user.email %>" />
                     <div class="email invalid-feedback"></div>
 
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="avatar" name="avatar" lang="es" />
+                        <input type="file" class="custom-file-input mb-3" id="avatar" name="avatar" lang="es" />
                         <label class="custom-file-label" for="avatar">Modificar foto de perfil</label>
                         <div class="avatar invalid-feedback"></div>
                     </div>
                     <br>
                     <br>
-                    <button type="submit" class="btn btn-pink btn-block">
+                    <button type="submit" class="mb-3 btn btn-pink btn-block">
                         ¡Grabar!
                     </button>
 

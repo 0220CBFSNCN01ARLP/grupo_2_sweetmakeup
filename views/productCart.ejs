@@ -3,124 +3,123 @@
 
 <head>
     <%- include("partials/head")  %>
-        <link rel="stylesheet" href="/css/productCart.css">
-        <title>Make.u | Carrito de Compras</title>
+    <link rel="stylesheet" href="/css/productCart.css">
+    <title>Make.u | Carrito de Compras</title>
 </head>
 
 <body>
     <%- include('partials/header') %>
 
-        <main class="row position main-center">
+    <main class="row position main-center">
 
-            <div class="container-1 col-12 col-md-6 col-lg-6">
-                <h1 class="h-1">Carrito de Compras</h1>
-                <div class="row position product-header">
-                    <div class="center col-3">
-                        <p>Producto</p>
-                    </div>
-                    <div class="center col-4">
-                        <p>Cantidad</p>
-                    </div>
-                    <div class="center col-2">
-                        <p>Precio</p>
-                    </div>
-                    <div class="center col-1">
-                        <p>Elim.</p>
-                    </div>
-
+        <div class="container-1 col-12 col-md-6 col-lg-6">
+            <h1 class="h-1">Carrito de Compras</h1>
+            <div class="row position product-header">
+                <div class="center col-3">
+                    <p>Producto</p>
                 </div>
-                <div class="row position product">
-
-                    <% if (products.length== 0 || !products) { %>
-                        <p>Aún no tenés seleccionado ningun Producto en tu carrito de Compras</p>
-                        <% } else { %>
-                            <% for( prod of products ) { %>
-                                <div class="center col-3 block"><img class="height-img" src="/img/products/<%= prod.images[0].route%>" alt="<%= prod.name %>">
-                                    <p>
-                                        <%= prod.name%>
-                                    </p>
-                                </div>
-
-                                <div class="center col-4 my-auto">
-                                    <p><%= prod.count %> </p>
-                                </div>
-                                <div class="center col-2 my-auto">
-                                    <p>
-                                        <%= prod.price %>
-                                    </p>
-                                </div>
-                                <div class="center col-1">
-                                    <form action="/removeFromCart/<%= prod.id %> ">
-                                    <button type="submit" class="close price-margin" aria-label="Close">
-                                    </form>
-                                        
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                                </div>
-                                <% } %>
-                                    <% } %>
-
+                <div class="center col-4">
+                    <p>Cantidad</p>
                 </div>
-                <a href="/" style="text-decoration: none;"><button class="btn btn-pink btn-block add-product">+
+                <div class="center col-2">
+                    <p>Precio</p>
+                </div>
+                <div class="center col-1">
+                    <p>Elim.</p>
+                </div>
+
+            </div>
+            <div class="row position product">
+                <% if (products.length== 0 || !products) { %>
+                <p>Aún no tenés seleccionado ningun Producto en tu carrito de Compras</p>
+                <% } else { %>
+                <% for( prod of products ) { %>
+                <div class="col-3 block"><img class="height-img" src="/img/products/<%= prod.images[0].route%>"
+                        alt="<%= prod.name %>">
+                    <a href="/products/<%= prod.id%>">
+                        <%= prod.name%>
+                    </a>
+                </div>
+
+                <div class="col-4 my-auto">
+                    <p><%= prod.count %> </p>
+                </div>
+                <div class="col-2 my-auto">
+                    <p>
+                        <%= prod.price %>
+                    </p>
+                </div>
+                <div class="d-flex align-items-center justify-content-center col-1">
+                    <form action="/removeFromCart/<%= prod.id %> ">
+                        <button type="submit" class="close price-margin" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </form>
+                </div>
+                <% } %>
+                <% } %>
+
+            </div>
+            <a href="/" style="text-decoration: none;"><button class="btn btn-pink btn-block add-product">+
                     Agregar nuevo
                     producto</button></a>
 
 
-            </div>
+        </div>
 
-            <div class="container-2 col-12 col-md-4 col-lg-4">
-                <h2 class="h-2">Resumen de pedido</h2>
-                <div class="row position">
+        <div class="container-2 col-12 col-md-4 col-lg-4">
+            <h2 class="h-2">Resumen de pedido</h2>
+            <div class="row position">
 
-                    <div class="col-6">
-                        <p class="start">Subtotal</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="end">$
-                            <%= subtotal %>
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <p class="start">Costo de envío</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="end">$0.00</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="start">Impuestos</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="end">$0.00</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="start">Descuento</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="end">$
-                            <%= discountDecimal %>
-                        </p>
-                    </div>
-
-                    <p class="line"></p>
-                    <div class="col-6">
-                        <p class="start-f">Total</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="end-f">$
-                            <%= totalDecimal %>
-                        </p>
-                    </div>
-
-                    <button class="btn btn-pink btn-block" type="submit "><i class="fas fa-lock"></i></i>Comprar</button>
-
+                <div class="col-6">
+                    <p class="start">Subtotal</p>
+                </div>
+                <div class="col-6">
+                    <p class="end">$
+                        <%= subtotal %>
+                    </p>
+                </div>
+                <div class="col-6">
+                    <p class="start">Costo de envío</p>
+                </div>
+                <div class="col-6">
+                    <p class="end">$0.00</p>
+                </div>
+                <div class="col-6">
+                    <p class="start">Impuestos</p>
+                </div>
+                <div class="col-6">
+                    <p class="end">$0.00</p>
+                </div>
+                <div class="col-6">
+                    <p class="start">Descuento</p>
+                </div>
+                <div class="col-6">
+                    <p class="end">$
+                        <%= discountDecimal %>
+                    </p>
                 </div>
 
+                <p class="line"></p>
+                <div class="col-6">
+                    <p class="start-f">Total</p>
+                </div>
+                <div class="col-6">
+                    <p class="end-f">$
+                        <%= totalDecimal %>
+                    </p>
+                </div>
 
-        </main>
+                <button class="btn btn-pink btn-block" type="submit "><i class="fas fa-lock"></i></i>Comprar</button>
+
+            </div>
+
+
+    </main>
 
 
 
-        <%- include("partials/footer")  %>
+    <%- include("partials/footer")  %>
 </body>
 
 </html>

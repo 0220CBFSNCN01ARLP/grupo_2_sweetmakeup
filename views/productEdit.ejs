@@ -151,7 +151,7 @@
           <% for (let tag of tags) { %>
           <div class="col-2 custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="<%= tag.name %>" name="etiqueta"
-              value="<%= tag.name %>" />
+              value="<%= tag.name %>" <% if(product.tags.some(e => e.name == tag.name )) { %> checked <% } %>/>
             <label class="custom-control-label" for="<%= tag.name %>"><%= tag.name %></label>
           </div>
           <% } %>

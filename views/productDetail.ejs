@@ -40,8 +40,8 @@
             </div>
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-start">
                 <article class="product-card-principal card">
-                    <% if (product.images.length > 0) { %>
                     <div class="d-flex justify-content-center">
+                    <% if (product.images.length > 0) { %>
                         <img id="mainImg" class="img-fluid card-img-top mh-50 img-detail-product"
                             src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
                         <% } else { %>
@@ -50,9 +50,11 @@
                     </div>
 
                     <div class="row p-1 m-0 d-flex justify-content-center">
-                        <% for( let image of product.images ) { %>
-                        <img class="col-3 img-fluid img-thumbnail thumbnail" src="/img/products/<%= image.route %> "
-                            alt="Imagen del producto" />
+                        <% if (product.images.length > 1) { %>
+                            <% for( let image of product.images ) { %>
+                                <img class="col-3 img-fluid img-thumbnail thumbnail" src="/img/products/<%= image.route %> "
+                                    alt="Imagen del producto" />
+                                <% } %>
                         <% } %>
                     </div>
                 </article>

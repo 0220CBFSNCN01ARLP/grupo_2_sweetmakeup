@@ -2,7 +2,7 @@
 
 const formEdit = document.getElementById("contact-form-edit");
 
-const fieldsEdit = ["firstName", "lastName", "email", "avatar"];
+const fieldsEdit = ["firstName", "lastName", "email"];
 
 formEdit.onsubmit = (evt) => {
 
@@ -15,7 +15,6 @@ formEdit.onsubmit = (evt) => {
     }
 
     validateEmail("email", errors);
-    // validateIsEquals("loginPassword", errors);
     minCharacters("firstName", 2, errors);
     minCharacters("lastName", 2, errors);
 
