@@ -5,6 +5,8 @@
     <%- include("partials/head") %>
     <link rel="stylesheet" href="/css/productAdd.css" />
     <link rel="stylesheet" href="/css/myProducts.css">
+    <link rel="stylesheet" href="/css/section.css">
+
     <title>Make.u | Mis Productos</title>
 </head>
 
@@ -26,14 +28,16 @@
         <div class="row vh-75">
             <% for( product of products ) { %>
             <div class="col-12 col-sm-6 col-md-4 h-100">
-                <article class="productCard card mt-2">
-                    <a class="no-underline" href="/products/<%= product.id %>">
-                        <h4 class="card-title"><%= product.name %></h4>
+                <article class="productCard card mt-2 hover-product-card-section">
+                    <a href="/products/<%= product.id %>" class="anchor-title-section titulo-efecto">
+                        <h4 class="card-title titulo-efecto">
+                            <%= product.name %>
+                        </h4>
                     </a>
-                    <a href="/products/<%= product.id %>">
+                    <a href="/products/<%= product.id %>" class="d-flex justify-content-center">
                         <% if (product.images.length > 0) { %>
-                        <img class="imgMain card-img-top img-fluid" src="/img/products/<%= product.images[0].route%>"
-                            alt="<%= product.name %>" />
+                        <img class="imgMain card-img-top img-fluid img "
+                            src="/img/products/<%= product.images[0].route%>" alt="<%= product.name %>" />
                         <% } else { %>
                         <img class="imgMain card-img-top img-fluid"
                             src="https://amp.ampifyme.com/no_image_placeholder.png" alt="">
@@ -41,10 +45,12 @@
                     </a>
 
                     <div class="card-body h-30">
-                        <p class="description">
+                        <p class="description ajuste-descripcion">
                             <%= product.description %>
                         </p>
-                        <p class="price">$<%= toThousand(product.price) %></p>
+                        <p class="price">$
+                            <%= toThousand(product.price) %>
+                        </p>
                         <a class="no-underline" href="/products/edit/<%= product.id %> "><button
                                 class="btn btn-pink btn-block m-1">
                                 Editar

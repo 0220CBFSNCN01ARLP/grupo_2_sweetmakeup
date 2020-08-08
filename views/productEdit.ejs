@@ -141,17 +141,17 @@
         </div>
 
         <div class="col-12 col-sm-6 margin-col">
-          <label for="oferta">Oferta * <span class="descuento">(de 0 a 100)</span></label>
+          <label for="discountNumber">Oferta * <span class="descuento">(de 0 a 100)</span></label>
           <input form="editForm" class="form-control" placeholder="Porcentaje" type="number" name="discount"
-            id="discount" min="0" max="100" id="oferta" value="<%= product.discount %>" />
+            id="discountNumber" min="0" max="100" value="<%= product.discount %>" />
         </div>
 
         <div class="col-12 margin-col">
           <label for="etiqueta">Etiqueta</label>
           <% for (let tag of tags) { %>
           <div class="col-2 custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="<%= tag.name %>" name="etiqueta"
-              value="<%= tag.name %>" <% if(product.tags.some(e => e.name == tag.name )) { %> checked <% } %>/>
+            <input form="editForm" type="checkbox" class="custom-control-input" id="<%= tag.name %>" name="etiqueta"
+              value="<%= tag.name %>" <% if(product.tags.some(e => e.name == tag.name )) { %> checked <% } %> />
             <label class="custom-control-label" for="<%= tag.name %>"><%= tag.name %></label>
           </div>
           <% } %>

@@ -132,14 +132,9 @@ let controller = {
   update: async (req, res, next) => {
     try {
       let errors = validationResult(req);
-      // let pedidoProduct = await Product.findByPk(req.params.id, {
-      //   include: ["category", "images"],
-      // });
-      let color = "#FFFFFF";
-      let descuento = true;
 
       if (errors.isEmpty()) {
-        const editedProduct = await Product.update(
+        await Product.update(
           {
             name: req.body.productName,
             price: req.body.price,
@@ -163,13 +158,19 @@ let controller = {
           }
         );
 
+        let editedProduct = await Product.findByPk(req.params.id, {
+          include: ["tags"],
+        });
+
         for (let name of req.body.etiqueta) {
-          const tag = await Tag.findOne({
+          let tag = await Tag.findOne({
             where: {
               name: name,
             },
           });
-          await editedProduct.addTag(tag);
+          if (!editedProduct.tags.some((e) => e.name == tag.name)) {
+            await editedProduct.addTag(tag);
+          }
         }
 
         if (req.files.length > 0) {
@@ -182,6 +183,7 @@ let controller = {
             });
           }
         }
+
         res.redirect("/products/" + req.params.id);
       } else {
         let pedidoCategories = await Category.findAll();
