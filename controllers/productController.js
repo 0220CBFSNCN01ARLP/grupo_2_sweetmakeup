@@ -161,17 +161,18 @@ let controller = {
         let editedProduct = await Product.findByPk(req.params.id, {
           include: ["tags"],
         });
-
-        for (let name of req.body.etiqueta) {
-          let tag = await Tag.findOne({
-            where: {
-              name: name,
-            },
-          });
-          if (!editedProduct.tags.some((e) => e.name == tag.name)) {
-            await editedProduct.addTag(tag);
+        let selectedTags = [];
+        if (req.body.etiqueta) {
+          for (let name of req.body.etiqueta) {
+            let tag = await Tag.findOne({
+              where: {
+                name: name,
+              },
+            });
+            selectedTags.push(tag);
           }
         }
+        await editedProduct.setTags(selectedTags);
 
         if (req.files.length > 0) {
           for (let i = 0; i < req.files.length; i++) {
