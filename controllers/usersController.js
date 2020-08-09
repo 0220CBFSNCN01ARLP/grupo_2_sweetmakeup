@@ -1,10 +1,7 @@
 const bcrypt = require("bcrypt");
-const multer = require("multer");
-var express = require("express");
-const { User, Product, Brand, Image } = require("../database/models");
+const { User, Product, Brand} = require("../database/models");
 
 let { check, validationResult, body } = require("express-validator");
-const session = require("express-session");
 
 let controller = {
   showRegister: async (req, res) => {
@@ -36,7 +33,7 @@ let controller = {
         });
       }
     } catch (e) {
-      console.log("Error al escribir en la base de datos " + e);
+      console.error(e);
     }
   },
 
@@ -65,8 +62,7 @@ let controller = {
         let brandsHeader = await Brand.findAll({ limit: 10 });
 
         user = null;
-        console.log("Contraseña incorrecta");
-
+     
         return res.render("register", {
           brandsHeader,
           mensaje2: "Contraseña incorrecta",

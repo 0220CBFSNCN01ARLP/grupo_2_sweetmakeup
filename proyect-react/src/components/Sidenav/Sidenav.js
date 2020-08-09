@@ -7,7 +7,7 @@ import SidenavTitle from "./SidenavTitle";
 export default function Sidenav() {
     return (
         <ul
-            className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+            className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" 
             id="accordionSidebar"
         >
             <SidenavBrand />

@@ -1,14 +1,11 @@
-const fs = require("fs");
-const path = require("path");
+
 const {
   Product,
-  Category,
-  Image,
   Brand,
   Sequelize,
 } = require("../database/models");
 const Op = Sequelize.Op;
-const { promiseImpl } = require("ejs");
+
 
 let controller = {
   index: async function (req, res) {

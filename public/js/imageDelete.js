@@ -7,7 +7,6 @@ for (let i = 0; i < deleteButtons.length; i++) {
   console.log(btn);
   console.log(card);
   btn.addEventListener("click", (e) => {
-    e.preventDefault();
     card.remove();
   });
 }

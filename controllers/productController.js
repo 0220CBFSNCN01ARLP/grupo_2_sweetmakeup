@@ -1,4 +1,3 @@
-const multer = require("multer");
 const { Op } = require("sequelize");
 const { check, validationResult, body } = require("express-validator");
 
@@ -6,17 +5,12 @@ const {
   Product,
   Category,
   Brand,
-  Color,
   Image,
-  User,
   Tag,
   Product_Tag,
 } = require("../database/models");
-const { promiseImpl } = require("ejs");
-const product_tag = require("../database/models/product_tag");
 
 let controller = {
-  // FER
   create: async function (req, res, next) {
     try {
       let categories = await Category.findAll();
@@ -35,12 +29,10 @@ let controller = {
     }
   },
 
-  // FER
   store: async function (req, res, next) {
     try {
       let errors = validationResult(req);
       if (errors.isEmpty()) {
-        console.log(req.body.thematic);
         const newProduct = await Product.create({
           name: req.body.productName,
           price: req.body.price,
@@ -109,9 +101,6 @@ let controller = {
 
       let brandsHeader = await Brand.findAll({ limit: 10 });
 
-      let color = "#FFFFFF";
-      let descuento = true;
-
       let tags = await Tag.findAll();
 
       res.render("productEdit", {
@@ -121,9 +110,7 @@ let controller = {
         brandsHeader,
         tags,
         user: req.session.user,
-        color,
-        descuento,
-      });
+        });
     } catch (e) {
       console.error(e);
     }
@@ -172,8 +159,9 @@ let controller = {
             selectedTags.push(tag);
           }
         }
-        await editedProduct.setTags(selectedTags);
-
+        // await editedProduct.setTags([]);
+        await editedProduct.addTags(selectedTags);
+         
         if (req.files.length > 0) {
           for (let i = 0; i < req.files.length; i++) {
             const newImage = await Image.create({
@@ -197,9 +185,7 @@ let controller = {
           errors: errors.errors,
           ...req.body,
           user: req.session.user,
-          color,
-          descuento,
-        });
+          });
       }
     } catch (e) {
       console.error(e);
