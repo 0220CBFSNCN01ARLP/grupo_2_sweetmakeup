@@ -157,7 +157,7 @@ let controller = {
             selectedTags.push(tag);
           }
         }
-        // await editedProduct.setTags([]);
+        await editedProduct.setTags([]);
         await editedProduct.addTags(selectedTags);
          
         if (req.files.length > 0) {
