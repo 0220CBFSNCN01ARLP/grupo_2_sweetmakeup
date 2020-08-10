@@ -18,10 +18,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "admin",
+    "password": "makeup123",
+    "database": "grupo_2_sweetmakeup",
+    "host": "makeup-db.crlfnmdirgdd.sa-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
