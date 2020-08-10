@@ -31,6 +31,7 @@ const upload = multer({
 });
 
 router.get("/create", authMiddleware, productController.create);
+
 router.post(
   "/create",
   upload.array("productImg", 15),
@@ -100,6 +101,7 @@ router.post(
 );
 
 router.get("/edit/:id", productEditMiddleware, productController.edit);
+
 router.put(
   "/edit/:id",
   upload.array("productImg", 15),
@@ -162,10 +164,10 @@ router.put(
     }),
   ],
   productController.update
-); /* PUT - Update in DB */
+);
 
-// Borrando un producto
 router.delete("/delete/:id", authMiddleware, productController.destroy);
+
 router.get("/:id", productController.detail);
 
 router.delete("/imgDelete/:id", productController.imgDestroy);

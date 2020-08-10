@@ -29,11 +29,6 @@ const InfoCard = (props) => {
 };
 
 InfoCard.propTypes = {
-  colorClass: PropTypes.oneOf([
-    "border-left-primary",
-    "border-left-success",
-    "border-left-warning",
-  ]).isRequired,
   icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,

@@ -20,9 +20,6 @@ const calculatePrice = function (products) {
   let prices = products.map((product) => {
     return Number(product.price);
   });
-  //return prices.reduce(
-  //  (accumulator, currentValue) => accumulator + currentValue
-  //);
   let total = 0;
   for (let i = 0; i < prices.length; i++) {
       total += prices[i]

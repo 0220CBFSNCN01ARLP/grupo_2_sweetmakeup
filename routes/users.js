@@ -39,9 +39,8 @@ async function checkRepeatEmail(email) {
   }
 }
 
-// Creando un registro
-
 router.get("/register", guestMiddleware, usersController.showRegister);
+
 router.post(
   "/register",
   upload.single("avatar"),
@@ -65,23 +64,20 @@ router.post(
   usersController.register
 );
 
-// Log in
-
 router.post("/login", upload.any(), usersController.login);
 
-// Log out
 router.get("/logout", usersController.logout);
 
-// Admin
-
 router.get("/admin", usersController.userDetail);
+
 router.get("/myProducts", usersController.myProducts);
 
-//Edit
-
 router.get("/edit", usersController.userEdit);
+
 router.get("/editpassword", usersController.userEditPassword);
+
 router.put("/edit/:id", upload.any(), usersController.userUpdate);
+
 router.put(
   "/editpassword/:id",
   upload.any(),

@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
       price: {
         type: dataTypes.DECIMAL(10, 2),
         allowNull: false,
-      }, // 0123456789,11
+      },
       discount: {
         type: dataTypes.DECIMAL(4, 2),
       },
@@ -86,7 +86,6 @@ module.exports = (sequelize, dataTypes) => {
       through: models.Product_Tag,
       foreignKey: "productId",
       otherKey: "tagId",
-      //timestamps: false,
     });
   };
 

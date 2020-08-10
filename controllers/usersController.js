@@ -50,7 +50,7 @@ let controller = {
 
         return res.render("register", {
           brandsHeader,
-          mensaje: "Usuario incorrecto",
+          invalidUserMsg: "Usuario incorrecto",
         });
       }
 
@@ -65,7 +65,7 @@ let controller = {
      
         return res.render("register", {
           brandsHeader,
-          mensaje2: "Contraseña incorrecta",
+          invalidPwMsg: "Contraseña incorrecta",
         });
       }
       let cookieAge = 1800000;
@@ -78,7 +78,7 @@ let controller = {
       });
       res.redirect("/");
     } catch (e) {
-      console.log("Error al iniciar sesión " + e);
+      console.error(e);
     }
   },
 
@@ -93,7 +93,7 @@ let controller = {
     }
   },
 
-  userDetail: async (req, res) => {
+  userDetail: async (req, res, next) => {
     try {
       let brandsHeader = await Brand.findAll({ limit: 10 });
       res.render("userDetail", {
@@ -101,7 +101,7 @@ let controller = {
         user: req.session.user,
       });
     } catch (e) {
-      console.log("Error al recuperar datos de la base de datos " + e);
+      console.error(e);
     }
   },
   userEdit: async (req, res, next) => {

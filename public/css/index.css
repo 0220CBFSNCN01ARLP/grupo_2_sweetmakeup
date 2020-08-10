@@ -11,7 +11,6 @@
   object-fit: cover;
 }
 
-/* banner prueba */
 
 .banner-pd {
   position: relative;
@@ -22,24 +21,6 @@
   height: 80vh;
   object-fit: cover;
 }
-
-/* .title-banner-prueba {
-  position: absolute;
-  bottom: 110px;
-  left: 500px;
-  background-color: #0d2821;
-  width: 400px;
-  opacity: 0.6;
-} */
-
-/* .title-banner-prueba2 {
-  position: absolute;
-  bottom: 110px;
-  left: 500px;
-  background-color: coral;
-  width: 400px;
-  opacity: 0.8;
-} */
 
 .title-banner-main {
   position: absolute;
@@ -72,12 +53,6 @@
 }
 
 /* /Banner principal  */
-
-/* Submenu secciones iconos */
-
-/* .img-icon {
-  width: 85%;
-} */
 
 .sub-menu-index {
   display: none;
@@ -128,11 +103,6 @@
   border-radius: 10px;
 }
 
-/* 
-.hover-odd:hover {
-  background-color: #fff0f5;
-} */
-
 .hover-odd:hover {
   -webkit-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
@@ -163,19 +133,6 @@
 .price-symbol::before {
   content: "$";
 }
-
-/* Agregar icono */
-
-/* .award-icon {
-  color: #009975;
-  font-size: 30px;
-} 
-
-.position-icon {
-  position: relative;
-  left: 70px;
-  bottom: 220px;
-} */
 
 .section-even {
   background-color: whitesmoke;
@@ -229,9 +186,7 @@
 }
 
 @media (min-width: 426px) {
-  /* .img-icon {
-    width: 40%;
-  } */
+  
   .arrow {
     display: none;
   }

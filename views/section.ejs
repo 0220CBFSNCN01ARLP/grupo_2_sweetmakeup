@@ -23,9 +23,6 @@
 
     </div>
 
-
-
-
     <nav class="nav-section">
         <ul class="nav justify-content-center filtros">
             <li class="nav-item"><a class="btn btn-pink nav-link">destacado</a></li>
@@ -53,7 +50,6 @@
         <!-- /Modal -->
 
         <div class="row vh-75">
-
             <% if (products.length > 0) { %>
             <% for( let i = 0; i < products.length; i++ ) { %>
             <%-include("partials/productCard", {product: products[i]}) %>

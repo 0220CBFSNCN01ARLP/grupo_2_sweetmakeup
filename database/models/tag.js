@@ -15,7 +15,6 @@ module.exports = (sequelize, dataTypes) => {
       through: models.Product_Tag,
       foreignKey: "tagId",
       otherKey: "productId",
-      //timestamps: false,
     });
   };
 

@@ -18,7 +18,6 @@ const apiRouter = require("./routes/api");
 
 const app = express();
 
-// view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -34,7 +33,7 @@ app.use(
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-const secret = "secret";
+const secret = "secret makeu 123";
 app.use(cookieParser(secret));
 app.use(
   session({
@@ -44,10 +43,6 @@ app.use(
   })
 );
 app.use(cookieAuthMiddleware);
-
-app.get("/logout", function (req, res) {
-  req.session.destroy();
-});
 
 app.locals.toThousand = function (n) {
   return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");

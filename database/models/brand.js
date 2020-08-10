@@ -1,5 +1,3 @@
-const product = require("./product");
-
 module.exports = (sequelize, dataTypes) => {
   const Brand = sequelize.define("Brand", {
     id: {

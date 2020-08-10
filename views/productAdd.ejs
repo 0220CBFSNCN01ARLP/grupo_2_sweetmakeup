@@ -18,11 +18,7 @@
   <!-- /Navbar -->
 
   <main>
-    <!-- Cargar Producto -->
     <div class="container">
-
-
-
       <form action="/products/create" method="POST" enctype="multipart/form-data" id="createForm">
         <div class="row">
           <div class="col-12 margin-col">
@@ -197,11 +193,6 @@
             </div>
           </div>
 
-          <div class="col-12 none-cell margin-col">
-            <label for="link">Subir video de YouTube</label>
-            <input type="text" class="form-control" placeholder="Pegar el Link" name="link" id="link" />
-          </div>
-
           <div class="col-12 d-flex justify-content-end mg-button div-buttons">
             <button type="button" class="btn btn-secondary btn-sm button-margin">
               Guardar Borrador
@@ -213,12 +204,10 @@
         </div>
       </form>
     </div>
-    <!-- /Cargar Producto -->
   </main>
 
   <!-- Footer -->
   <%- include("partials/footer") %>
   <!-- /Footer -->
 </body>
-
 </html>

@@ -68,7 +68,6 @@
 }
 
 .plus-icon {
-  /* padding-left: 350px; */
   color: #dc92a5;
 }
 
@@ -90,9 +89,6 @@
   text-transform: uppercase;
 }
 
-/* .upper-first-letter::first-letter {
-  text-transform: uppercase;
-} */
 
 .container-color-detail {
   background-color: #ededed;

@@ -1,7 +1,4 @@
 import React from "react";
-
-//import dummyProductImg from "../assets/images/product_dummy.svg";
-
 const Product = (props) => {
   const { name, id, price, description, image } = props;
   return (
