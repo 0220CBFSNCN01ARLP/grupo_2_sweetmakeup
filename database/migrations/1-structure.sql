@@ -1,4 +1,4 @@
-CREATE DATABASE `grupo_2_sweetmakeup`;
+CREATE DATABASE if not exists `grupo_2_sweetmakeup`;
 
 USE `grupo_2_sweetmakeup`;
 
