@@ -89,7 +89,6 @@
   text-transform: uppercase;
 }
 
-
 .container-color-detail {
   background-color: #ededed;
   margin: 0;
@@ -114,7 +113,7 @@
 
 .img-product {
   width: auto;
-  height: 60vh;
+  height: 45vh;
   padding: 30px;
 }
 
