@@ -146,20 +146,27 @@ let controller = {
         let editedProduct = await Product.findByPk(req.params.id, {
           include: ["tags"],
         });
-        let selectedTags = [];
-        if (req.body.etiqueta) {
+
+        await editedProduct.setTags([]);
+        if (typeof (req.body.etiqueta) == "string") {
+          let tag = await Tag.findOne({
+            where: {
+              name: req.body.etiqueta,
+            }
+          })
+          await editedProduct.addTag(tag)
+        }
+        if (Array.isArray(req.body.etiqueta)) {
           for (let name of req.body.etiqueta) {
-            let tag = await Tag.findOne({
-              where: {
-                name: name,
-              },
-            });
-            selectedTags.push(tag);
+             let tag = await Tag.findOne({
+               where: {
+                 name: name,
+               },
+             });
+            await editedProduct.addTag(tag)
           }
         }
-        await editedProduct.setTags([]);
-        await editedProduct.addTags(selectedTags);
-         
+
         if (req.files.length > 0) {
           for (let i = 0; i < req.files.length; i++) {
             const newImage = await Image.create({
