@@ -1,14 +1,20 @@
 module.exports = (sequelize, dataTypes) => {
-  const Product_Purchase = sequelize.define("Product_Purchase", {
-    id: {
-      type: dataTypes.INTEGER(11),
-      autoIncrement: true,
-      primaryKey: true,
-      allowNull: false,
+  const Product_Purchase = sequelize.define(
+    "Product_Purchase",
+    {
+      id: {
+        type: dataTypes.INTEGER(11),
+        autoIncrement: true,
+        primaryKey: true,
+        allowNull: false,
+      },
+      price: { type: dataTypes.DECIMAL(10, 2) },
+      quantity: { type: dataTypes.DECIMAL(10, 2) },
     },
-    price: { type: dataTypes.DECIMAL(10, 2) },
-    quantity: { type: dataTypes.DECIMAL(10, 2) },
-  });
+    {
+      tableName: "product_purchase",
+    }
+  );
 
   Product_Purchase.associate = function (models) {
     Product_Purchase.belongsTo(models.Product, {
