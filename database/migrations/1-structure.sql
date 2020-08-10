@@ -287,13 +287,12 @@ CREATE TABLE brands
                           (id)
 );
 
-                          USE `grupo_2_sweetmakeup`;
 
-                          ALTER TABLE Products  
+                          ALTER TABLE products  
 ADD link  varchar(300);
 
-                          ALTER TABLE Products  
+                          ALTER TABLE products  
 ADD shipping  varchar(300) ;
 
-                          ALTER TABLE Products  
+                          ALTER TABLE products  
 ADD returnPolitic  varchar(300);
