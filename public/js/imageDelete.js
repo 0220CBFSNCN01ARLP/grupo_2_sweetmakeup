@@ -5,7 +5,6 @@ for (let i = 0; i < deleteButtons.length; i++) {
   let btn = deleteButtons[i];
   let card = document.getElementById(cardId);
   btn.addEventListener("click", (e) => {
-    console.log(e.target.id)
     fetch(`http://localhost:3000/api/images/${e.target.id}`, {method: "DELETE"})
     card.remove();
   });
