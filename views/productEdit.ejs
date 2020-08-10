@@ -25,12 +25,6 @@
       <form id="editForm" action="/products/edit/<%= product.id %>?_method=PUT" method="POST"
         enctype="multipart/form-data"></form>
       <form id="deleteFormProduct" method="POST" action="/products/delete/<%= product.id %>?_method=DELETE"></form>
-      <% if (product.images.length > 0) { %>
-      <% for( let i = 0; i < product.images.length; i++ ) { %>
-      <form class="imgDeleteForm" id="imgDeleteForm<%= i %>"
-        action="/products/imgDelete/<%= product.images[i].id %>?_method=DELETE" method="POST"></form>
-      <% } %>
-      <% } %>
 
       <div class="row">
         <div class="col-12 margin-col">
@@ -86,7 +80,7 @@
               <img class="img-product-edit card-img-top w-100" src="/img/products/<%= product.images[i].route%>" alt="">
               <div class="card-body">
                 <a href="#" class="delete-image">
-                  <button id="deleteBtn<%= i %>" form="imgDeleteForm<%= i %>" type="submit"
+                  <button id="<%= product.images[i].id %>"
                     class="imgDeleteBtn btn btn-danger">Eliminar</button>
                 </a>
               </div>
